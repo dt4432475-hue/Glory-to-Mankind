@@ -100,6 +100,11 @@ header {
     overflow: hidden; /* Evita que el anuncio se salga del borde redondeado */
 }
 
+.ad-top-horizontal img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Esto mantiene las proporciones del monstruo verde */
+}
 .sidebar-ads {
     display: flex;
     flex-direction: column;

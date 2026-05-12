@@ -1,342 +1,190 @@
-/* Configuración General */
+/* --- 1. RESET Y CONFIGURACIÓN BASE --- */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    /* El linear-gradient es para la opacidad que pediste (0.7 es 70% oscuro) */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.postimg.cc/rsqRMtMd/zxc-(9).jpg');
-     /* 'cover' es el estándar para que se vea bien, pero vamos a centrarlo mejor */
-      /* CAMBIO CLAVE: cover asegura que siempre tape todo el fondo */
-    background-size: cover; 
-    
-    /* Centramos la imagen para que no deje huecos negros arriba ni a los lados */
-    background-position: center center; 
-    
-    background-repeat: no-repeat;
-    
-    /* Esto congela el fondo mientras el contenido se desliza */
-    background-attachment: fixed; 
-    
-    background-color: #000;
-    margin: 0;
-    padding: 0;
+    background-color: #0d0d0d;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, .logo {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-}
-header {
+/* --- 2. EL BANNER NEGRO SUPERIOR (ESTILO YORHA) --- */
+.banner-negro {
+    background-color: #000;
+    width: 100%;
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;          /* Más espacio a los lados */
-    background-color: #000;
     border-bottom: 2px solid #ff0055;
-    height: 100px !important;  /* Un poco más alto para que respire */
-    position: relative;
 }
 
-/* EL SOBRE QUE CORTA */
-.contenedor-gif {
-    position: absolute;
-    right: 75px;       /* Ajusta esto para moverla a la izquierda */
-    bottom: -2px;       /* Pegado a la línea rosa */
-    height: 110px;       /* Altura del recorte (ajústalo si se corta mucho) */
-    width: 200px;
-    overflow: hidden;   /* LA TIJERA */
+.gif-titulo {
+    max-width: 400px;
+    width: 60%;
+    height: auto;
+}
+
+.gif-run {
+    max-width: 120px;
+    width: 20%;
+    height: auto;
+}
+
+/* --- 3. ANUNCIOS HORIZONTALES (CON EFECTO ZOOM) --- */
+.ads-container {
     display: flex;
-    align-items: flex-end;
-    z-index: 999;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
-.header-gif {
-    /* 1. VOLVEMOS A DARLE SU TAMAÑO */
-    height: 130px !important;  
-    width: auto !important;
-    image-rendering: pixelated;
-
-    /* 2. EL EFECTO DE LUZ (TODO EN UNA LÍNEA) */
-    filter: drop-shadow(0 0 8px #ff0055) drop-shadow(0 0 15px #ff0055) brightness(1.2);
-
-    /* 3. POSICIÓN Y RECORTE (LO QUE YA TENÍAMOS) */
-    margin-bottom: -25px !important; 
-    position: static !important;
+.ad-item {
+    border: 2px solid #ff0055;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 450px;
+    width: 100%;
+    background: #111;
+    transition: 0.3s ease; /* Para el efecto de zoom */
 }
 
+/* El efecto de zoom que pediste para los de arriba */
+.ad-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    border-color: #ff0055;
+}
 
+.ad-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 4. ESTRUCTURA PRINCIPAL (GRID) --- */
 .main-layout {
     display: grid;
-    /* Columna 1 (cuadros) es flexible | Columna 2 (anuncios) ahora es de 200px */
-    grid-template-columns: 1fr 200px; 
+    grid-template-columns: 1fr 280px;
     gap: 30px;
-    max-width: 1400px;
-    margin: 40px auto;
+    max-width: 1300px;
+    margin: 20px auto;
     padding: 0 20px;
-    align-items: start;
 }
 
-.header-gif {
-  height: 50px;                  /* Ajusta el tamaño para que no sea muy grande */
-  width: auto;
-  border-radius: 5px;            /* Opcional: por si quieres bordes redondeados */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-/* Este es el contenedor invisible que los sujeta */
-.ad-top-horizontal {
-    grid-column: 1 / span 2;
-    display: flex;
-    justify-content: center; /* Los centra en la pantalla */
-    gap: 20px;               /* ESTO crea el hueco entre los dos cuadros */
-    margin-bottom: 15px;
-    background: none;        /* Quitamos el fondo del contenedor grande */
-    border: none;            /* Quitamos el borde del contenedor grande */
-}
-
-/* Esta es la nueva clase para CADA cuadro */
-.ad-box {
-    background: rgba(21, 21, 21, 0.8);
-    border: 2px solid #ff0055;
+/* --- 5. ESTILO DE LAS TARJETAS --- */
+.card-btn {
+    background: #1a1a1a;
+    border: 2px solid #333;
     border-radius: 15px;
-    padding: 10px;
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
+.card-btn:hover {
+    border-color: #ff0055;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 0, 85, 0.3);
+}
+
+.card-btn img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+/* --- 6. BARRA LATERAL CON MARCO COMPLETO Y ZOOM --- */
 .sidebar-ads {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* BORRA EL STICKY Y EL TOP */
-    position: relative; 
-    margin-top: 70px; /* Ajusta esto para que no se pegue al header */
 }
 
-/* Estilo para que los anuncios combinen con tu estética de Nier */
-.ad-placeholder {
-    background: rgba(21, 21, 21, 0.8);
-    border: 2px solid #ff0055;
-    height: 620px; /* ¡Fundamental para que quepa el anuncio! */
-    width: 180px;  /* Para que el ancho también respire */
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
-    margin-bottom: 20px; /* Para que no se peguen entre ellos */
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-}
-
-
-.games-grid {
-    display: grid;
-    /* Bajamos el mínimo a 250px para que respire en móviles */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 25px;
-    padding: 20px;
-    width: 100%; /* Asegúrate de que el grid no se salga */
-    box-sizing: border-box; /* Fundamental para que el padding no sume ancho */
-}
-
-
-.container {
-    width: 100%;    /* Que use el espacio que le da el grid padre */
-    padding: 0;     /* Para que la imagen pegue a los bordes */
-    margin: 0;
-}
-
-/* 1. Estado normal de la tarjeta (sin el ratón encima) */
-.card-btn {
-    background-color: #1a1a1a;
-    border-radius: 15px;
+.ad-box-sidebar {
+    background: #111;
+    border: 2px solid #ff0055; 
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s ease;
     overflow: hidden;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #333;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 100%;   /* Que use el espacio que el Grid le de */
-    min-width: 0;  /* <--- CLAVE: permite que se encoja */
-    max-width: 100%;
-    box-sizing: border-box;
-
-
 }
 
-.card-btn:hover {
-    /* Mantenemos el scale en 1 para que al pasar el mouse recuperen su tamaño original */
-    transform: translateY(-10px) scale(1); 
-    border-color: #ff0055;
-    box-shadow: 0 0 20px rgba(255, 0, 85, 0.8);
+.ad-square { min-height: 200px; }
+.ad-vertical { min-height: 450px; background: linear-gradient(180deg, #111, #050505); }
+
+.ad-box-sidebar:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    transform: scale(1.02);
 }
 
-
-/* 3. Opcional: Que el título también cambie a rosa al pasar el mouse */
-.card-btn:hover h3 {
-    color: #ff0055;
-    transition: 0.3s;
+.ad-box-sidebar img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
 }
 
-.card-btn:hover .card-img {
-    transform: scale(1.05); /* Agranda la imagen un 5% */
-    transition: 0.4s;
-}
-
-/* Estilo de la imagen */
-.card-img {
-    height: 250px; /* Alto similar a tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-color: #222;
-}
-
-/* Estilo del texto */
-.card-body {
-    padding: 20px;
+/* --- 7. FOOTER --- */
+.yorha-footer {
     text-align: center;
-}
-
-.card-body h3 {
-    color: #fff;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.card-body p {
-    font-size: 0.75rem;
-    color: #ccc;
-    line-height: 1.5;
-}
-/* El círculo del logo */
-.logo-circular {
-    width: 75px;  /* Ajusta el tamaño según tu banner */
-    height: 75px;
-    border-radius: 50%; /* Esto lo hace circular */
-    border: 2px solid #ff0055; /* Borde rosa neón */
-    box-shadow: 0 0 10px rgba(255, 0, 85, 0.5); /* Brillo neón */
-    
-    /* CONFIGURACIÓN DE TU IMAGEN */
-    background-image: url('https://i.postimg.cc/7LJXkK6j/2B-Nier-Automata.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-color: #1a1a1d; /* Color de fondo mientras carga la imagen */
-}
-
-.logo-circular:hover {
-    box-shadow: 0 0 20px #ff0055;
-    transform: scale(1.05);
-    transition: 0.3s;
-}
-
-/* Estilo para las letras que ya tenías */
-.logo-text {
-
-     /* CAMBIA ESTO: Ponle unos 15px o 20px para que se mueva a la derecha */
-    margin-left: 40px !important; 
-
-}
-
-/* El GIF animado del banner */
-.logo-animado {
-    height: 65px; /* Antes tenías 40px, con 55px se verá más imponente */
-    width: auto;
-    image-rendering: pixelated; 
-    margin-left: 15px; /* Separa un poco el GIF del círculo del logo */
-}
-
-/* Footer */
-footer {
-    display: flex;
-    flex-direction: column; /* Alinea el GIF y el texto uno debajo del otro */
-    align-items: center;
-    padding: 40px 0;
-    gap: 15px; /* Espacio entre el GIF y el texto */
-    margin-top: 50px;
-    text-align: center;
-    background: #0a0a0a;
+    padding: 40px 20px;
     border-top: 1px solid #333;
-    padding: 25px 0; /* Menos espacio arriba y abajo */
-    gap: 10px;       /* Menos separación entre el GIF y el texto */
+    margin-top: 50px;
 }
 
-.footer-text {
-    color: #555; /* Un gris oscuro para que no distraiga */
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.footer-text span {
-    color: #ff0055; /* El toque rosa de tu marca */
-}
 .footer-gif {
-    height: 300px; /* Ajusta el tamaño que prefieras */
-    width: auto;
-    image-rendering: pixelated; /* Mantiene los píxeles definidos */
-    filter: drop-shadow(0 0 10px rgba(255, 0, 85, 0.4)); /* Brillo rosa sutil */
-    transition: 0.3s;
-}
-.footer-gif:hover {
-    filter: drop-shadow(0 0 20px rgba(255, 0, 85, 0.8)); /* Brilla más al pasar el mouse */
+    max-width: 120px;
+    margin-bottom: 10px;
 }
 
+/* --- 8. AJUSTES PARA MÓVIL (ANDROID) --- */
+@media screen and (max-width: 850px) {
+    .main-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px;
+    }
 
-/* Botón de Volver al Inicio */
-.back-to-top {
-    text-decoration: none;
-    color: #ff0055;
-    border: 1px solid #ff0055;
-    padding: 10px 25px; /* Un poco más de padding lo hará ver más profesional */
-    font-size: 0.8rem;   /* Subimos un poquito el tamaño para que sea legible */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 8px;  /* Bordes un poco más redondeados para que combine con Nier */
-    transition: all 0.3s ease;
-    background: rgba(21, 21, 21, 0.8); /* Le damos un fondo oscuro sutil */
-    display: inline-block; /* CLAVE: para que no se estire */
-    margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-.back-to-top:hover {
-    background-color: #ff0055;  /* Se rellena de rosa al pasar el mouse */
-    color: white;               /* La letra cambia a blanca */
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.6); /* Brillo rosa */
-}
-/* --- ESTO NO PUEDE FALLAR --- */
-@media screen and (max-width: 800px) {
-    #anuncio-lateral, 
-    .sidebar-ads, 
-    aside {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        position: absolute !important;
-        left: -9999px !important; /* Lo mandamos fuera de la pantalla por si acaso */
+    .sidebar-ads {
+        display: flex !important;
+        width: 100% !important;
+        margin-top: 30px;
     }
 
     .games-grid {
-        display: block !important; /* Cambiamos de Grid a Block para asegurar */
-        width: 100% !important;
-        padding: 10px !important;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+        gap: 15px !important;
     }
 
-    .card-btn {
-        width: 95% !important;
-        margin: 10px auto !important;
-        display: flex !important;
+    .card-btn img {
+        height: 120px !important;
+    }
+
+    .card-info p {
+        display: none;
+    }
+
+    .ad-box-sidebar {
+        min-height: unset !important;
     }
 }
-

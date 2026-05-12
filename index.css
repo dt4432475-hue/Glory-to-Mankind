@@ -140,10 +140,14 @@ header {
 
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Bajamos el mínimo a 250px para que respire en móviles */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 25px;
     padding: 20px;
+    width: 100%; /* Asegúrate de que el grid no se salga */
+    box-sizing: border-box; /* Fundamental para que el padding no sume ancho */
 }
+
 
 .container {
     width: 100%;    /* Que use el espacio que le da el grid padre */
@@ -164,6 +168,9 @@ header {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;   /* Que use el espacio que el Grid le de */
     min-width: 0;  /* <--- CLAVE: permite que se encoja */
+    max-width: 100%;
+    box-sizing: border-box;
+
 
 }
 
@@ -307,4 +314,20 @@ footer {
     background-color: #ff0055;  /* Se rellena de rosa al pasar el mouse */
     color: white;               /* La letra cambia a blanca */
     box-shadow: 0 0 15px rgba(255, 0, 85, 0.6); /* Brillo rosa */
+}
+/* Esto arreglará la vista en celulares */
+@media (max-width: 600px) {
+    .games-grid {
+        grid-template-columns: 1fr !important; /* Fuerza una sola columna */
+        padding: 10px; /* Menos espacio a los lados para que quepa más */
+        gap: 15px;    /* Espacio más pequeño entre tarjetas */
+    }
+
+    .card-btn {
+        width: 100% !important; /* Asegura que la tarjeta se estire */
+    }
+    
+    .sidebar-ads {
+        display: none; /* Esto quita el anuncio que empuja todo */
+    }
 }

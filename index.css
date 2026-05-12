@@ -259,6 +259,8 @@ footer {
     text-align: center;
     background: #0a0a0a;
     border-top: 1px solid #333;
+    padding: 25px 0; /* Menos espacio arriba y abajo */
+    gap: 10px;       /* Menos separación entre el GIF y el texto */
 }
 
 .footer-text {
@@ -286,22 +288,21 @@ footer {
 /* Botón de Volver al Inicio */
 .back-to-top {
     text-decoration: none;
-    color: #ff0055;             
-    border: 1px solid #ff0055;  
-    padding: 8px 20px;         
-    font-size: 0.7rem;
+    color: #ff0055;
+    border: 1px solid #ff0055;
+    padding: 10px 25px; /* Un poco más de padding lo hará ver más profesional */
+    font-size: 0.8rem;   /* Subimos un poquito el tamaño para que sea legible */
     text-transform: uppercase;
     letter-spacing: 2px;
-    border-radius: 4px;         
+    border-radius: 8px;  /* Bordes un poco más redondeados para que combine con Nier */
     transition: all 0.3s ease;
-    background: transparent;
-    margin-top: 10px;
+    background: rgba(21, 21, 21, 0.8); /* Le damos un fondo oscuro sutil */
+    display: inline-block; /* CLAVE: para que no se estire */
+    margin-top: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     width: 728px;           /* El ancho estándar del anuncio */
-    height: 90px;           /* El alto estándar */
-    margin-left: auto;      /* Estas dos líneas lo centran */
-    margin-right: auto;     
 }
+
+
 .back-to-top:hover {
     background-color: #ff0055;  /* Se rellena de rosa al pasar el mouse */
     color: white;               /* La letra cambia a blanca */

@@ -142,8 +142,6 @@ header {
     padding: 20px;
 }
 
-
-
 .container {
     width: 100%;    /* Que use el espacio que le da el grid padre */
     padding: 0;     /* Para que la imagen pegue a los bordes */
@@ -296,6 +294,10 @@ footer {
     background: transparent;
     margin-top: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     width: 728px;           /* El ancho estándar del anuncio */
+    height: 90px;           /* El alto estándar */
+    margin-left: auto;      /* Estas dos líneas lo centran */
+    margin-right: auto;     
 }
 .back-to-top:hover {
     background-color: #ff0055;  /* Se rellena de rosa al pasar el mouse */

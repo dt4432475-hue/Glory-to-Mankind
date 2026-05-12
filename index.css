@@ -112,9 +112,9 @@ header {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* Opcional: puedes hacer que se queden quietos al bajar con el mouse */
-    position: sticky;
-    top: 20px;
+    /* BORRA EL STICKY Y EL TOP */
+    position: relative; 
+    margin-top: 70px; /* Ajusta esto para que no se pegue al header */
 }
 
 /* Estilo para que los anuncios combinen con tu estética de Nier */

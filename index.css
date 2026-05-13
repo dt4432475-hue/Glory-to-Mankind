@@ -1,127 +1,107 @@
-/* =========================================
-   1. RESET Y CONFIGURACIÓN BASE
-   ========================================= */
+/* --- 1. RESET Y CONFIGURACIÓN BASE --- */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-color: #1a1a1a;
+    background-color: #0d0d0d;
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
 }
 
-@keyframes yorhaFade {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* =========================================
-   2. EL BANNER (2B FLOTANTE - NO EMPUJA)
-   ========================================= */
-.yorha-top-box {
-    background-color: #000000; /* Negro puro */
-    border-bottom: 2px solid #ff0055;
-    padding: 0 20px;
-    display: flex;
-    justify-content: flex-start; /* Alinea logo y texto a la izquierda */
-    align-items: center;
-    height: 120px;
+/* --- 2. EL BANNER NEGRO SUPERIOR (ESTILO YORHA) --- */
+.banner-negro {
+    background-color: #000;
     width: 100%;
-    position: relative; /* Necesario para que 2B se ancle aquí */
-    overflow: hidden;
-    animation: yorhaFade 0.8s ease-out forwards;
-}
-
-.logo-title-group {
+    padding: 10px 5%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    max-width: 75%; /* Deja espacio libre a la derecha para que 2B no tape el texto */
-    z-index: 1;
+    border-bottom: 2px solid #ff0055;
+    flex-wrap: wrap; /* Ajuste para que no se amontone en móvil */
 }
 
-.circular-logo {
-    height: clamp(40px, 10vw, 60px); 
-    width: clamp(40px, 10vw, 60px);
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid #ff0055;
-    flex-shrink: 0;
-}
-
-.banner-logo {
+.gif-titulo {
+    max-width: 400px;
+    width: 60%;
     height: auto;
-    max-height: clamp(25px, 6vw, 45px); 
-    width: auto;
-    object-fit: contain;
 }
 
-/* 2B AHORA ES FLOTANTE (ABSOLUTE) */
-.banner-gif {
-    position: absolute;   /* Se sale del flujo: ya no empuja al título */
-    right: 10px;          /* Pegada a la derecha */
-    bottom: -15px;        /* Pisando la línea rosa */
-    height: clamp(80px, 20vw, 115px); /* Tamaño grande y chido */
-    width: auto;
-    object-fit: contain;
-    z-index: 2;           /* Por encima de todo */
-    pointer-events: none; /* No estorba si haces clic cerca */
+.gif-run {
+    max-width: 120px;
+    width: 20%;
+    height: auto;
 }
 
-/* =========================================
-   3. ANUNCIOS Y CUADROS (GRID)
-   ========================================= */
+/* --- 3. ANUNCIOS HORIZONTALES (CON EFECTO ZOOM) --- */
 .ads-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     padding: 20px;
-}
-
-.ad-banner {
-    flex: 1;
-    min-width: 250px;
-    height: 50px;
-    border: 2px solid #ff0055;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-.main-content {
-    display: flex;
     flex-wrap: wrap;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 20px;
 }
 
-.cards-grid {
-    flex: 3;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background-color: #262626;
+.ad-item {
+    border: 2px solid #ff0055;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #333;
-    display: flex;
-    flex-direction: column;
-    animation: yorhaFade 0.6s ease-out forwards;
+    max-width: 450px;
+    width: 100%;
+    background: #111;
+    transition: 0.3s ease;
 }
 
-.card img {
+.ad-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+}
+
+.ad-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 4. ESTRUCTURA PRINCIPAL (GRID) --- */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* --- 5. ESTILO DE LAS TARJETAS --- */
+.card-btn {
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-btn:hover {
+    border-color: #ff0055;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 0, 85, 0.3);
+}
+
+.card-btn img {
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -132,67 +112,87 @@ body {
     text-align: center;
 }
 
-/* =========================================
-   4. SIDEBAR Y PIE
-   ========================================= */
-.sidebar {
-    flex: 1;
-    min-width: 300px;
+/* --- 6. BARRA LATERAL CON MARCO COMPLETO Y ZOOM --- */
+.sidebar-ads {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.widget {
-    background-color: #1a1a1a;
-    border: 2px solid #ff0055;
+.ad-box-sidebar {
+    background: #111;
+    border: 2px solid #ff0055; 
     border-radius: 12px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
+    transition: 0.3s ease;
+    overflow: hidden;
 }
 
+.ad-square { min-height: 200px; }
+.ad-vertical { min-height: 450px; background: linear-gradient(180deg, #111, #050505); }
+
+.ad-box-sidebar:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    transform: scale(1.02);
+}
+
+.ad-box-sidebar img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* --- 7. FOOTER --- */
 .yorha-footer {
-    background-color: #0d0d0d;
-    border-top: 2px solid #ff0055;
+    text-align: center;
     padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    border-top: 1px solid #333;
+    margin-top: 50px;
 }
 
 .footer-gif {
-    height: 60px;
-    width: auto;
+    max-width: 120px;
+    margin-bottom: 10px;
 }
 
-/* =========================================
-   5. RESPONSIVE MÓVIL
-   ========================================= */
+/* --- 8. AJUSTES PARA MÓVIL (ANDROID) --- */
 @media screen and (max-width: 850px) {
-    .main-content {
-        flex-direction: column !important;
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+    .banner-negro {
+        justify-content: center;
         gap: 10px;
     }
+    
+    .gif-titulo {
+        width: 80%;
+    }
 
-    .sidebar {
+    .main-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px;
+    }
+
+    .sidebar-ads {
+        display: flex !important;
         width: 100% !important;
-        min-width: 100% !important;
+        margin-top: 30px;
     }
 
-    .yorha-top-box {
-        height: 100px;
+    .games-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+        gap: 15px !important;
     }
 
-    .logo-title-group {
-        max-width: 70%; /* Se encoge un poco más en móvil para asegurar que 2B no tape */
+    .card-btn img {
+        height: 120px !important;
     }
 
-    .card img { height: 120px; }
-    .card-info h3 { font-size: 0.85rem; }
-    .card-info p { display: none; }
+    .card-info p {
+        display: none; /* Esto ayuda mucho a que quepa todo en el cel */
+    }
+
+    .ad-box-sidebar {
+        min-height: unset !important;
+    }
 }

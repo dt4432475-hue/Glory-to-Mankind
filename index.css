@@ -244,3 +244,77 @@ h2 {
     .gif-titulo { max-width: 100%; }
     .nav-item { flex: 1 1 100%; }
 }
+/* ==========================================================================
+   NUEVOS AJUSTES PARA EL SUB-MENÚ INTERACTIVO Y BOTÓN YORHA
+   ========================================================================== */
+.data-box-title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-bottom: 1px solid var(--text-dark);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Lista interactiva de herramientas */
+.sub-tools-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sub-tool-item {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.sub-tool-item:hover, .sub-tool-item.active {
+    background-color: var(--text-dark);
+    color: var(--bg-color);
+}
+
+/* Área de la descripción del software */
+.program-description-area {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: rgba(78, 75, 66, 0.05);
+    border-left: 3px solid var(--text-dark);
+    min-height: 80px;
+}
+
+.program-description-area p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Contenedor y diseño del botón Solicitar */
+.action-btn-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.yorha-btn-solicitar {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--text-dark);
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efecto hover inverso del botón militar */
+.yorha-btn-solicitar:hover {
+    background-color: var(--text-dark);
+    color: var(--bg-color) !important;
+}

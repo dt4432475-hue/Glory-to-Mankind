@@ -196,3 +196,99 @@ body {
         min-height: unset !important;
     }
 }
+
+/* --- COMPORTAMIENTO FORZADO DEL BANNER --- */
+.banner-negro {
+    background-color: #000000 !important;
+    display: flex !important;
+    flex-direction: row !important; /* Fuerza la alineación horizontal */
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 40px !important;
+    height: 120px !important; /* Limita la altura total de la barra negra */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important; /* Evita que logos gigantes se desborden */
+}
+
+/* --- CONTENEDOR INTERNO --- */
+.logo-titulo-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 15px !important;
+    max-height: 100% !important;
+}
+
+/* --- SOLUCIÓN AL LOGO GIGANTE --- */
+.logo-izquierdo {
+    height: 90px !important; /* Fuerza al logo a medir máximo 90px de alto */
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* --- TÍTULO GIF --- */
+.gif-titulo {
+    height: 60px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* --- CONTROL DE 2B CORRIENDO --- */
+.gif-run {
+    height: 85px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* --- CONFIGURACIÓN PARA CELULARES (MÁXIMO 768px DE ANCHO) --- */
+@media (max-width: 768px) {
+    .banner-negro {
+        height: 90px !important;      /* Hace el banner un poco más delgado en móviles */
+        padding: 0 15px !important;    /* Reduce los espacios en los bordes izquierdo y derecho */
+        justify-content: flex-start !important; /* Mantiene el logo y título fijos a la izquierda */
+    }
+
+    .logo-titulo-container {
+        gap: 8px !important;           /* Junta un poco más el logo y el título */
+        width: 100% !important;        /* Ocupa todo el espacio disponible */
+        max-width: 100% !important;
+    }
+
+    .logo-izquierdo {
+        height: 55px !important;       /* Reduce el tamaño del logo de 2B */
+        flex-shrink: 0 !important;     /* Evita que el logo se aplaste */
+    }
+
+    /* --- ESTA REGLA EVITA QUE EL TÍTULO SE CORTE --- */
+    .gif-titulo {
+        height: auto !important;       /* Deja que la altura se adapte libremente */
+        max-width: calc(100% - 70px) !important; /* Resta el espacio del logo para que el título quepa completo */
+        object-fit: contain !important;
+    }
+
+    /* --- OCULTA DEFINITIVAMENTE A 2B CORRIENDO EN MÓVILES --- */
+    .gif-run {
+        display: none !important;      /* Desaparece por completo para que no estorbe ni se caiga abajo */
+    }
+}
+
+/* 1. CONFIGURACIÓN PARA PANTALLAS GRANDES */
+.gif-titulo {
+    height: 90px !important;  /* Aumentado de 60px a 90px para que se vea más imponente */
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+/* 2. CONFIGURACIÓN PARA PANTALLAS DE CELULARES (Dentro de tu @media max-width: 768px) */
+@media (max-width: 768px) {
+    .banner-negro {
+        height: 100px !important; /* Damos un poco más de altura al banner en móvil para que quepa el título grande */
+    }
+
+    .gif-titulo {
+        height: 60px !important;  /* Aumentado en móviles (antes estaba en 45px) */
+        max-width: calc(100% - 75px) !important; /* Mantiene el margen seguro para que no se corte con el logo */
+        object-fit: contain !important;
+    }
+}

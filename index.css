@@ -1,5 +1,5 @@
 /* =========================================
-   1. RESET Y CONFIGURACIÓN
+   1. RESET Y CONFIGURACIÓN BASE
    ========================================= */
 * {
     margin: 0;
@@ -14,40 +14,66 @@ body {
     overflow-x: hidden;
 }
 
+@keyframes yorhaFade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* =========================================
-   2. EL BANNER NEGRO (AJUSTADO: NEGRO TOTAL)
+   2. EL BANNER (2B FLOTANTE - NO EMPUJA)
    ========================================= */
 .yorha-top-box {
-    background-color: #000000; /* Negro puro para ocultar el fondo del logo */
+    background-color: #000000; /* Negro puro */
     border-bottom: 2px solid #ff0055;
-    padding: 0 5%;
+    padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Alinea logo y texto a la izquierda */
     align-items: center;
-    height: 130px; /* Un poquito más de altura para que luzcan las imágenes */
+    height: 120px;
     width: 100%;
+    position: relative; /* Necesario para que 2B se ancle aquí */
+    overflow: hidden;
+    animation: yorhaFade 0.8s ease-out forwards;
 }
 
-.banner-logo {
-    height: 65%; /* El logo se mantiene elegante */
-    width: auto;
-    max-width: 60%;
-    object-fit: contain;
-}
-
-.banner-gif {
-    height: 110%; /* La hacemos un poquito más alta que el banner */
-    width: auto;
-    object-fit: contain;
-    flex-shrink: 0;
-    margin-bottom: -15px; /* Empujamos la imagen hacia abajo para ocultar la línea gris */
-    position: relative;
+.logo-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 75%; /* Deja espacio libre a la derecha para que 2B no tape el texto */
     z-index: 1;
 }
 
+.circular-logo {
+    height: clamp(40px, 10vw, 60px); 
+    width: clamp(40px, 10vw, 60px);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ff0055;
+    flex-shrink: 0;
+}
+
+.banner-logo {
+    height: auto;
+    max-height: clamp(25px, 6vw, 45px); 
+    width: auto;
+    object-fit: contain;
+}
+
+/* 2B AHORA ES FLOTANTE (ABSOLUTE) */
+.banner-gif {
+    position: absolute;   /* Se sale del flujo: ya no empuja al título */
+    right: 10px;          /* Pegada a la derecha */
+    bottom: -15px;        /* Pisando la línea rosa */
+    height: clamp(80px, 20vw, 115px); /* Tamaño grande y chido */
+    width: auto;
+    object-fit: contain;
+    z-index: 2;           /* Por encima de todo */
+    pointer-events: none; /* No estorba si haces clic cerca */
+}
 
 /* =========================================
-   3. ANUNCIOS SUPERIORES
+   3. ANUNCIOS Y CUADROS (GRID)
    ========================================= */
 .ads-container {
     display: flex;
@@ -69,9 +95,6 @@ body {
     font-weight: bold;
 }
 
-/* =========================================
-   4. LAYOUT Y CUADROS (GRID)
-   ========================================= */
 .main-content {
     display: flex;
     flex-wrap: wrap;
@@ -86,7 +109,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-    min-width: 300px;
 }
 
 .card {
@@ -96,6 +118,7 @@ body {
     border: 1px solid #333;
     display: flex;
     flex-direction: column;
+    animation: yorhaFade 0.6s ease-out forwards;
 }
 
 .card img {
@@ -109,18 +132,8 @@ body {
     text-align: center;
 }
 
-.card-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-}
-
-.card-info p {
-    font-size: 0.9rem;
-    color: #ccc;
-}
-
 /* =========================================
-   5. BARRA LATERAL (SIDEBAR)
+   4. SIDEBAR Y PIE
    ========================================= */
 .sidebar {
     flex: 1;
@@ -140,13 +153,21 @@ body {
 
 .yorha-footer {
     background-color: #0d0d0d;
-    text-align: center;
-    padding: 30px;
     border-top: 2px solid #ff0055;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-gif {
+    height: 60px;
+    width: auto;
 }
 
 /* =========================================
-   6. RESPONSIVE MÓVIL
+   5. RESPONSIVE MÓVIL
    ========================================= */
 @media screen and (max-width: 850px) {
     .main-content {
@@ -156,7 +177,6 @@ body {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px;
-        width: 100%;
     }
 
     .sidebar {
@@ -164,23 +184,15 @@ body {
         min-width: 100% !important;
     }
 
-    .card img {
-        height: 120px;
-    }
-
-    .card-info h3 {
-        font-size: 0.85rem;
-    }
-
-    .card-info p {
-        display: none;
-    }
-
     .yorha-top-box {
-        height: 90px; /* Se ajusta el alto en móvil */
+        height: 100px;
     }
 
-    .banner-gif {
-        height: 80%; /* Mantiene a 2B con buen tamaño en móvil */
+    .logo-title-group {
+        max-width: 70%; /* Se encoge un poco más en móvil para asegurar que 2B no tape */
     }
+
+    .card img { height: 120px; }
+    .card-info h3 { font-size: 0.85rem; }
+    .card-info p { display: none; }
 }

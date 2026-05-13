@@ -318,3 +318,15 @@ h2 {
     background-color: var(--text-dark);
     color: var(--bg-color) !important;
 }
+.bottom-layout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+.description-and-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}

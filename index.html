@@ -3,124 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glory to Mankind</title>
-    <!-- Vinculación a tu hoja de estilos externa -->
-    <link rel="stylesheet" href="index.css?v=2">
+    <title>Glory to Mankind // System Terminal</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <!-- CABECERA PRINCIPAL YORHA -->
-    <header class="yorha-top-box">
+    <div class="system-wrapper">
         
-        <!-- Banner Superior Flexible (Se adapta al ancho de pantalla) -->
-        <div class="banner-negro">
-            <div class="banner-inner">
-                <img src="https://i.postimg.cc/DytT6xLB/banner-izquierdo-modified.png" class="logo-izquierdo" alt="Logo">
-                <img src="img/banner.gif" class="gif-titulo" alt="Glory to Mankind">
-                <img src="https://i.postimg.cc/Bvv62LJ9/bannerderecho.gif" class="gif-run" alt="2B">
+        <!-- ==========================================
+             ZONA 1: CABECERA CON TU TÍTULO GIF
+             ========================================== -->
+        <header class="system-header">
+            <div class="banner-negro">
+                <div class="banner-inner">
+                    <img src="https://i.postimg.cc/fRDtGhrB/logo4.png" class="logo-izquierdo" alt="Logo">
+                    <img src="img/banner.gif" class="gif-titulo" alt="Glory to Mankind">
+                    <img src="img/sear.gif" class="gif-run" alt="2B">
+                </div>
             </div>
-        </div>
+            <div class="system-status">
+                <div class="status-indicator">SYS_STATUS: <span class="status-online">ONLINE</span></div>
+                <div id="system-time" class="status-time">TIME: 00:00:00</div>
+            </div>
+        </header>
 
-        <!-- Contenedor de Anuncios (Controlado mediante clase en CSS) -->
-        <div class="ads-container ads-hidden">
-            <div class="ad-item">
-                <img src="banner1.png" alt="Ad 1">
-            </div>
-            <div class="ad-item">
-                <img src="banner2.png" alt="Ad 2">
-            </div>
-        </div>
-    </header>
-
-    <!-- DISPOSICIÓN DE LA MAQUETA PRINCIPAL -->
-    <main class="main-layout">
-        
-        <!-- Rejilla de Tarjetas (Se adaptará de 1 a 3 columnas automáticamente en CSS) -->
-        <section class="games-grid">
+        <div class="main-layout">
             
-            <a href="seccion1.html" class="card-btn">
-                <div class="card-img-wrapper">
-                    <img src="https://i.postimg.cc/J0F33Dt8/image.png" alt="PC">
-                </div>
-                <div class="card-info">
-                    <h3>OPTIMIZA TU PC 🚀</h3>
-                    <p>Mejores herramientas para Windows 10/11</p>
-                </div>
-            </a>
+            <!-- ==========================================
+                 ZONA 2: MENÚ LATERAL CON TUS SECCIONES
+                 ========================================== -->
+            <nav class="side-navigation">
+                <ul>
+                    <li class="nav-item active" onclick="switchTab('pc-opt', event)">[ OPTIMIZA TU PC ]</li>
+                    <li class="nav-item" onclick="switchTab('cel-opt', event)">[ OPTIMIZA TU CEL ]</li>
+                    <li class="nav-item" onclick="switchTab('apk-games', event)">[ JUEGOS APK ]</li>
+                    <li class="nav-item" onclick="switchTab('pc-games', event)">[ JUEGOS PC ]</li>
+                    <li class="nav-item" onclick="switchTab('apps-util', event)">[ APPS ÚTILES ]</li>
+                    <li class="nav-item" onclick="switchTab('gamer-isos', event)">[ ISOS GAMER ]</li>
+                </ul>
+            </nav>
 
-            <a href="#" class="card-btn">
-                <div class="card-img-wrapper">
-                    <img src="https://i.postimg.cc/FFS0wRfy/Gemini-Generated-Image-lqzbadlqzbadlqzb.png" alt="Móvil">
-                </div>
-                <div class="card-info">
-                    <h3>OPTIMIZA TU CEL 📱</h3>
-                    <p>Mejores aplicaciones para optimizar tu celular</p>
-                </div>
-            </a>
+            <!-- ==========================================
+                 ZONA 3: CONTENIDOR DE TUS CUADROS DE CONTENIDO
+                 ========================================== -->
+            <main class="content-display">
+                
+                <!-- PESTAÑA: OPTIMIZA TU PC -->
+                <section id="pc-opt" class="content-section active">
+                    <h2>OPTIMIZA TU PC 🚀</h2>
+                    <div class="section-grid">
+                        <div class="card-img-wrapper">
+                            <img src="postimg.cc" alt="PC">
+                        </div>
+                        <div class="data-box">
+                            <div class="data-row"><span class="data-label">Categoría</span><span>Windows 10 / 11</span></div>
+                            <div class="data-row"><span class="data-label">Estado</span><span>Actualizado</span></div>
+                            <div class="data-row"><span class="data-label">Rendimiento</span><span>Máximo FPS</span></div>
+                        </div>
+                    </div>
+                    <div class="data-box description-box">
+                        <p class="profile-desc">
+                            <strong>Herramientas de Optimización:</strong> Aquí encontrarás los mejores scripts de limpieza, eliminadores de telemetría y configuraciones avanzadas para reducir el retraso (input lag) y exprimir cada componente de tu computadora en sesiones de juego intensas.
+                        </p>
+                    </div>
+                </section>
 
-            <a href="#" class="card-btn">
-                <div class="card-img-wrapper">
-                    <img src="https://i.postimg.cc/rshdxvnJ/image.png" alt="APK">
-                </div>
-                <div class="card-info">
-                    <h3>JUEGOS APK 👾</h3>
-                    <p>Ya tú sabes a qué va esto 😉</p>
-                </div>
-            </a>
+                <!-- PESTAÑA: OPTIMIZA TU CEL -->
+                <section id="cel-opt" class="content-section">
+                    <h2>OPTIMIZA TU CEL 📱</h2>
+                    <div class="section-grid">
+                        <div class="card-img-wrapper">
+                            <img src="postimg.cc" alt="Móvil">
+                        </div>
+                        <div class="data-box">
+                            <div class="data-row"><span class="data-label">Plataforma</span><span>Android / iOS</span></div>
+                            <div class="data-row"><span class="data-label">Prioridad</span><span>Batería y RAM</span></div>
+                            <div class="data-row"><span class="data-label">Compilación</span><span>Estable</span></div>
+                        </div>
+                    </div>
+                    <div class="data-box description-box">
+                        <p class="profile-desc">
+                            <strong>Limpieza Móvil:</strong> Aplicaciones seleccionadas paso a paso para liberar memoria caché profunda, hibernar procesos pesados en segundo plano y mejorar la respuesta táctica de tu dispositivo móvil.
+                        </p>
+                    </div>
+                </section>
 
-            <a href="#" class="card-btn">
-                <div class="card-img-wrapper">
-                    <img src="https://i.postimg.cc/Fs85zTry/Gemini-Generated-Image-a5xo9pa5xo9pa5xo.png" alt="PC">
-                </div>
-                <div class="card-info">
-                    <h3> JUEGOS PC 💻</h3>
-                    <p>Ya tú sabes a qué va esto 😉</p>
-                </div>
-            </a>
+                <!-- PESTAÑA: JUEGOS APK -->
+                <section id="apk-games" class="content-section">
+                    <h2>JUEGOS APK 👾</h2>
+                    <div class="section-grid">
+                        <div class="card-img-wrapper">
+                            <img src="postimg.cc" alt="APK">
+                        </div>
+                        <div class="data-box">
+                            <div class="data-row"><span class="data-label">Acceso</span><span>Directo</span></div>
+                            <div class="data-row"><span class="data-label">Seguridad</span><span>Verificado</span></div>
+                            <div class="data-row"><span class="data-label">Filtro</span><span>Ya tú sabes 😉</span></div>
+                        </div>
+                    </div>
+                    <div class="data-box description-box">
+                        <p class="profile-desc">
+                            <strong>Almacenamiento de Mods:</strong> Catálogo completo de tus títulos favoritos listos para descargar e instalar directamente. Todo configurado sin acortadores molestos ni riesgos para tu terminal móvil.
+                        </p>
+                    </div>
+                </section>
 
-            <a href="#" class="card-btn">
-                <div class="card-img-wrapper">
-                    <img src="https://i.postimg.cc/506Dfvcc/Gemini-Generated-Image-prso7hprso7hprso.png" alt="Programas">
-                </div>
-                <div class="card-info">
-                    <h3> PROGRAMAS Y APPS UTILES 🛠️</h3>
-                    <p>Ya tú sabes a qué va esto 😉</p>
-                </div>
-            </a>
+                <!-- PESTAÑA: JUEGOS PC -->
+                <section id="pc-games" class="content-section">
+                    <h2>JUEGOS PC 💻</h2>
+                    <div class="section-grid">
+                        <div class="card-img-wrapper">
+                            <img src="postimg.cc" alt="Juegos PC">
+                        </div>
+                        <div class="data-box">
+                            <div class="data-row"><span class="data-label">Formato</span><span>ISO / Portable</span></div>
+                            <div class="data-row"><span class="data-label">Servidor</span><span>Alta Velocidad</span></div>
+                            <div class="data-row"><span class="data-label">Contenido</span><span>Ya tú sabes 😉</span></div>
+                        </div>
+                    </div>
+                    <div class="data-box description-box">
+                        <p class="profile-desc">
+                            <strong>Base de Datos Computarizada:</strong> Repositorio masivo de juegos para ordenador. Desde los clásicos que no pueden faltar en tu disco duro hasta lanzamientos modernos testeados para asegurar su compatibilidad.
+                        </p>
+                    </div>
+                </section>
 
-            <a href="#" class="card-btn">
-                <div class="card-img-wrapper">
-                    <img src="https://i.postimg.cc/MK83FgGW/Gemini-Generated-Image-vssusavssusavssu.png" alt="ISOs">
-                </div>
-                <div class="card-info">
-                    <h3>ISOS GAMER 💿</h3>
-                    <p>Ya tú sabes a qué va esto 😉</p>
-                </div>
-            </a>
+                <!-- PESTAÑA: PROGRAMAS Y APPS UTILES -->
+                <section id="apps-util" class="content-section">
+                    <h2>PROGRAMAS Y APPS ÚTILES 🛠️</h2>
+                    <div class="section-grid">
+                        <div class="card-img-wrapper">
+                            <img src="postimg.cc" alt="Programas">
+                        </div>
+                        <div class="data-box">
+                            <div class="data-row"><span class="data-label">Utilidad</span><span>Sistemas</span></div>
+                            <div class="data-row"><span class="data-label">Licencia</span><span>Full / Libre</span></div>
+                            <div class="data-row"><span class="data-label">Gestión</span><span>Herramientas</span></div>
+                        </div>
+                    </div>
+                    <div class="data-box description-box">
+                        <p class="profile-desc">
+                            <strong>Caja de Herramientas:</strong> Compilación selecta de programas indispensables de software: editores de video optimizados, descompresores, suites de oficina ligeras y utilidades de mantenimiento del sistema.
+                        </p>
+                    </div>
+                </section>
 
-        </section>
+                <!-- PESTAÑA: ISOS GAMER -->
+                <section id="gamer-isos" class="content-section">
+                    <h2>ISOS GAMER 💿</h2>
+                    <div class="section-grid">
+                        <div class="card-img-wrapper">
+                            <img src="postimg.cc" alt="ISOs">
+                        </div>
+                        <div class="data-box">
+                            <div class="data-row"><span class="data-label">Núcleo</span><span>Windows Modded</span></div>
+                            <div class="data-row"><span class="data-label">Bloatware</span><span>0% / Eliminado</span></div>
+                            <div class="data-row"><span class="data-label">Procesos</span><span>Reducidos</span></div>
+                        </div>
+                    </div>
+                    <div class="data-box description-box">
+                        <p class="profile-desc">
+                            <strong>Sistemas Operativos Modificados:</strong> Descarga imágenes ISO personalizadas de Windows diseñadas exclusivamente para jugar. Sin servicios innecesarios corriendo de fondo para garantizar la menor latencia posible.
+                        </p>
+                    </div>
+                </section>
 
-        <!-- Barra Lateral de Anuncios (Controlada mediante clase en CSS) -->
-        <aside class="sidebar-ads ads-hidden">
-            <div class="ad-box-sidebar ad-square">
-                <p>RECOMENDADO</p>
-                <img src="img/1win.png" alt="1win">
-            </div>
-
-            <div class="ad-box-sidebar ad-vertical">
-                <p>MÁS RECURSOS</p>
-                <img src="img/otro-anuncio.png" alt="Publicidad">
-            </div>
-        </aside>
-    </main>
-
-    <!-- PIE DE PÁGINA ADAPTABLE -->
-    <footer class="yorha-footer">
-        <div class="footer-container">
-            <img src="https://i.postimg.cc/pThL1whd/footer.gif" alt="2B" class="footer-gif">
-            <p>© 2026 GLORY TO MANKIND | PROJECT 01</p>
+            </main>
         </div>
-    </footer>
 
+        <!-- PIE DE PÁGINA YORHA CON TU GIF -->
+        <footer class="system-footer">
+            <div class="footer-container">
+                <img src="postimg.cc" alt="2B" class="footer-gif">
+                <p>© 2026 GLORY TO MANKIND | PROJECT 01</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- CONTROLADOR JAVASCRIPT DE PESTAÑAS -->
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toISOString().slice(11, 19);
+            document.getElementById('system-time').innerText = `TIME: ${timeString}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function switchTab(sectionId, event) {
+            document.querySelectorAll('.nav-item').forEach(li => li.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </body>
 </html>

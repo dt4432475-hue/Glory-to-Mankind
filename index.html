@@ -56,7 +56,7 @@
         <h2>OPTIMIZA TU PC 🚀</h2>
         <div class="yorha-search-box">
             <span>[ BUSCAR:</span>
-            <input type="text" id="pc-search-input" onkeyup="filterTools('pc-opt')" placeholder="INGRESAR TÉRMINO...">
+            <input type="text" id="pc-search-input" onkeyup="filterTools('pc-opt', 'pc-search-input')" placeholder="...">
             <span>]</span>
         </div>
     </div>
@@ -117,7 +117,8 @@
         <h2>OPTIMIZA TU CEL 📱</h2>
         <div class="yorha-search-box">
             <span>[ BUSCAR:</span>
-            <input type="text" id="cel-search-input" onkeyup="filterTools('cel-opt', 'cel-search-input')" placeholder="INGRESAR TÉRMINO...">
+            <input type="text" id="cel-search-input" onkeyup="filterTools('cel-opt', 'cel-search-input')" placeholder="...">
+        
             <span>]</span>
         </div>
     </div>
@@ -163,7 +164,7 @@
         <h2>JUEGOS APK 👾</h2>
         <div class="yorha-search-box">
             <span>[ BUSCAR:</span>
-            <input type="text" id="apk-search-input" onkeyup="filterTools('apk-games', 'apk-search-input')" placeholder="INGRESAR TÉRMINO...">
+          <input type="text" id="apk-search-input" onkeyup="filterTools('apk-games', 'apk-search-input')" placeholder="...">
             <span>]</span>
         </div>
     </div>
@@ -208,7 +209,8 @@
         <h2>JUEGOS PC 💻</h2>
         <div class="yorha-search-box">
             <span>[ BUSCAR:</span>
-            <input type="text" id="pcg-search-input" onkeyup="filterTools('pc-games', 'pcg-search-input')" placeholder="INGRESAR TÉRMINO...">
+            <input type="text" id="pcg-search-input" onkeyup="filterTools('pc-games', 'pcg-search-input')" placeholder="...">
+
             <span>]</span>
         </div>
     </div>
@@ -253,7 +255,8 @@
         <h2>PROGRAMAS Y APPS ÚTILES 🛠️</h2>
         <div class="yorha-search-box">
             <span>[ BUSCAR:</span>
-            <input type="text" id="util-search-input" onkeyup="filterTools('apps-util', 'util-search-input')" placeholder="INGRESAR TÉRMINO...">
+            <input type="text" id="util-search-input" onkeyup="filterTools('apps-util', 'util-search-input')" placeholder="...">
+
             <span>]</span>
         </div>
     </div>
@@ -298,7 +301,8 @@
         <h2>ISOS GAMER 💿</h2>
         <div class="yorha-search-box">
             <span>[ BUSCAR:</span>
-            <input type="text" id="iso-search-input" onkeyup="filterTools('gamer-isos', 'iso-search-input')" placeholder="INGRESAR TÉRMINO...">
+            <input type="text" id="iso-search-input" onkeyup="filterTools('gamer-isos', 'iso-search-input')" placeholder="...">
+
             <span>]</span>
         </div>
     </div>
@@ -366,7 +370,7 @@
             event.currentTarget.classList.add('active');
             document.getElementById(sectionId).classList.add('active');
         }
-        // Base de datos de las herramientas de optimización de PC
+        // Base de datos de las herramientas de (optimiza tu pc)
 const pcProgramsData = {
     'script-limpieza': {
         name: 'SCRIPT DE LIMPIEZA',
@@ -407,6 +411,7 @@ function changePCProgram(programKey, element) {
     
     // Cambiar enlace del botón Solicitar
     document.getElementById('pc-prog-link').href = data.link;
+    document.getElementById('pc-prog-img').src = data.img;
 
     // Manejar color de estado visual
     const statusSpan = document.getElementById('pc-prog-status');
@@ -417,7 +422,7 @@ function changePCProgram(programKey, element) {
         statusSpan.style.color = '#5c6f52';
     }
 }
-         // BASE DE DATOS PARA LA PESTAÑA DE CELULAR (INCLUYE IMÁGENES CAMBIANTES)
+         // BASE DE DATOS PARA LA PESTAÑA DE CELULAR (optimiza tu cel)
         const celProgramsData = {
             'limpieza-ram': {
                 name: 'LIMPIEZA DE RAM',
@@ -460,7 +465,7 @@ function changePCProgram(programKey, element) {
             document.getElementById('cel-prog-weight').innerText = data.weight;
             document.getElementById('cel-prog-desc').innerText = data.desc;
             document.getElementById('cel-prog-link').href = data.link;
-            document.getElementById('cel-prog-img').src = data.img; // Aquí cambia la imagen (1)
+            document.getElementById('cel-prog-img').src = data.img; 
 
             const statusSpan = document.getElementById('cel-prog-status');
             statusSpan.innerText = data.status;
@@ -469,7 +474,202 @@ function changePCProgram(programKey, element) {
             } else {
                 statusSpan.style.color = '#5c6f52';
             }
+        
+    // BASE DE DATOS PARA LA PESTAÑA DE JUEGOS APK
         }
+        const apkProgramsData = {
+    'juego-apk-1': {
+        name: 'JUEGO APK EJEMPLO 1',
+        status: 'OPERATIVO',
+        compatibility: 'Android 11+',
+        weight: '85 MB',
+        desc: 'Descripción de tu primer juego modificado o APK para Android.',
+        link: '#',
+        img: 'postimg.cc'
+    },
+    'juego-apk-2': {
+        name: 'JUEGO APK EJEMPLO 2',
+        status: 'OPERATIVO',
+        compatibility: 'Android 10+',
+        weight: '140 MB',
+        desc: 'Descripción de tu segundo juego modificado o APK para Android.',
+        link: '#',
+        img: 'postimg.cc'
+    }
+};
+
+   function changeApkProgram(programKey, element) {
+    document.querySelectorAll('#apk-games .sub-tool-item').forEach(item => item.classList.remove('active'));
+    element.classList.add('active');
+
+    const d = apkProgramsData[programKey];
+
+    // Cambia los textos e imagen dinámicamente
+    document.getElementById('apk-prog-name').innerText = d.name;
+    document.getElementById('apk-prog-comp').innerText = d.compatibility;
+    document.getElementById('apk-prog-weight').innerText = d.weight;
+    document.getElementById('apk-prog-desc').innerText = d.desc;
+    document.getElementById('apk-prog-link').href = d.link;
+    document.getElementById('apk-prog-img').src = d.img;
+
+            const statusSpan = document.getElementById('cel-prog-status');
+            statusSpan.innerText = data.status;
+            if(data.status === 'MANTENIMIENTO') {
+                statusSpan.style.color = 'var(--glitch-red)';
+            } else {
+                statusSpan.style.color = '#5c6f52';
+            }
+            }
+         
+                // ==========================================================================
+        // BASE DE DATOS Y LÓGICA PARA LA PESTAÑA DE JUEGOS PC
+        // ==========================================================================
+        const pcgProgramsData = {
+            'juego-pc-1': {
+                name: 'JUEGO PC EJEMPLO 1',
+                status: 'OPERATIVO',
+                compatibility: 'Win 10 / 11',
+                weight: '12 GB',
+                desc: 'Acción y aventura optimizado en formato portable y probado libre de errores.',
+                link: '#',
+                img: 'postimg.cc'
+            },
+            'juego-pc-2': {
+                name: 'JUEGO PC EJEMPLO 2',
+                status: 'OPERATIVO',
+                compatibility: 'Win 10 / 11',
+                weight: '4.5 GB',
+                desc: 'Juego clásico de estrategia y simulación con todos los parches de rendimiento.',
+                link: '#',
+                img: 'postimg.cc'
+            }
+        };
+
+        function changePcgProgram(programKey, element) {
+            // Busca los elementos activos SOLO dentro de la pestaña de juegos de PC
+            document.querySelectorAll('#pc-games .sub-tool-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+
+            const d = pcgProgramsData[programKey];
+
+            // Cambia los textos e imagen dinámicamente usando la variable 'd'
+            document.getElementById('pcg-prog-name').innerText = d.name;
+            document.getElementById('pcg-prog-comp').innerText = d.compatibility;
+            document.getElementById('pcg-prog-weight').innerText = d.weight;
+            document.getElementById('pcg-prog-desc').innerText = d.desc;
+            document.getElementById('pcg-prog-link').href = d.link;
+            document.getElementById('pcg-prog-img').src = d.img;
+
+            // Control de color para el estado
+            const statusSpan = document.getElementById('pcg-prog-status');
+            statusSpan.innerText = d.status;
+            if(d.status === 'MANTENIMIENTO') {
+                statusSpan.style.color = 'var(--glitch-red)';
+            } else {
+                statusSpan.style.color = '#5c6f52';
+            }
+        }
+        // ==========================================================================
+        // BASE DE DATOS Y LÓGICA PARA LA PESTAÑA DE APPS ÚTILES
+        // ==========================================================================
+        const utilProgramsData = {
+            'app-1': {
+                name: 'PROGRAMA EJEMPLO 1',
+                status: 'OPERATIVO',
+                compatibility: 'Windows 10 / 11',
+                weight: '25 MB',
+                desc: 'Herramienta utilitaria avanzada para la gestión, descompresión u optimización de archivos.',
+                link: '#',
+                img: 'postimg.cc'
+            },
+            'app-2': {
+                name: 'PROGRAMA EJEMPLO 2',
+                status: 'OPERATIVO',
+                compatibility: 'Android 9.0+',
+                weight: '12 MB',
+                desc: 'Aplicación útil recomendada para la edición multimedia sin marcas de agua de fondo.',
+                link: '#',
+                img: 'postimg.cc'
+            }
+        };
+
+        function changeUtilProgram(programKey, element) {
+            // Filtra y remueve la selección activa solo en la pestaña de Apps Útiles
+            document.querySelectorAll('#apps-util .sub-tool-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+
+            const d = utilProgramsData[programKey];
+
+            // Inyecta la información en la Ficha Técnica y actualiza el banner
+            document.getElementById('util-prog-name').innerText = d.name;
+            document.getElementById('util-prog-comp').innerText = d.compatibility;
+            document.getElementById('util-prog-weight').innerText = d.weight;
+            document.getElementById('util-prog-desc').innerText = d.desc;
+            document.getElementById('util-prog-link').href = d.link;
+            document.getElementById('util-prog-img').src = d.img;
+
+            // Manejo estético del estado de la herramienta
+            const statusSpan = document.getElementById('util-prog-status');
+            statusSpan.innerText = d.status;
+            if(d.status === 'MANTENIMIENTO') {
+                statusSpan.style.color = 'var(--glitch-red)';
+            } else {
+                statusSpan.style.color = '#5c6f52';
+            }
+        }
+        // ==========================================================================
+        // BASE DE DATOS Y LÓGICA PARA LA PESTAÑA DE ISOS GAMER
+        // ==========================================================================
+        const isoProgramsData = {
+            'iso-1': {
+                name: 'WINDOWS GAMER OS 1',
+                status: 'OPERATIVO',
+                compatibility: 'RAM 4GB+',
+                weight: '3.1 GB',
+                desc: 'Sistema operativo Windows 10 Modificado. Telemetría y servicios innecesarios completamente removidos para priorizar el rendimiento del procesador.',
+                link: '#',
+                img: 'postimg.cc'
+            },
+            'iso-2': {
+                name: 'WINDOWS GAMER OS 2',
+                status: 'OPERATIVO',
+                compatibility: 'RAM 8GB+',
+                weight: '3.8 GB',
+                desc: 'Imagen ISO de Windows 11 Lite optimizada para videojuegos competitivos. Tweaks aplicados de fábrica para estabilizar los milisegundos de input lag.',
+                link: '#',
+                img: 'postimg.cc'
+            }
+        };
+
+        function changeIsoProgram(programKey, element) {
+            // Remueve la selección activa únicamente dentro de la pestaña de ISOs Gamer
+            document.querySelectorAll('#gamer-isos .sub-tool-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+
+            const d = isoProgramsData[programKey];
+
+            // Inyecta la información en la Ficha Técnica y actualiza la portada
+            document.getElementById('iso-prog-name').innerText = d.name;
+            document.getElementById('iso-prog-comp').innerText = d.compatibility;
+            document.getElementById('iso-prog-weight').innerText = d.weight;
+            document.getElementById('iso-prog-desc').innerText = d.desc;
+            document.getElementById('iso-prog-link').href = d.link;
+            document.getElementById('iso-prog-img').src = d.img;
+
+            // Control de color para el estado de la ISO
+            const statusSpan = document.getElementById('iso-prog-status');
+            statusSpan.innerText = d.status;
+            if(d.status === 'MANTENIMIENTO') {
+                statusSpan.style.color = 'var(--glitch-red)';
+            } else {
+                statusSpan.style.color = '#5c6f52';
+            }
+        }
+
+
+
+
+            
                  // MOTOR DE BÚSQUEDA ASÍNCRONO MULTISECCIÓN (ZONA 5)
         function filterTools(sectionId, inputId) {
             const searchInput = document.getElementById(inputId);
@@ -494,8 +694,6 @@ function changePCProgram(programKey, element) {
                 firstMatch.click();
             }
         }
-
-       
     </script>
 </body>
 </html>

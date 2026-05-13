@@ -330,3 +330,87 @@ h2 {
     justify-content: space-between;
     height: 100%;
 }
+
+/* ==========================================================================
+   INTERFAZ PREMIUM: BÚSQUEDA Y SCROLLBARS TÁCTICAS YoRHa
+   ========================================================================== */
+
+/* Zona 5: Caja alineada de título y motor de búsqueda */
+.section-title-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid var(--text-dark);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.section-title-search-container h2 {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.yorha-search-box {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.yorha-search-box input {
+    background-color: rgba(78, 75, 66, 0.08);
+    border: none;
+    border-bottom: 1px solid var(--text-dark);
+    color: var(--text-dark);
+    padding: 4px 8px;
+    margin: 0 5px;
+    font-family: var(--font-base);
+    font-size: 0.85rem;
+    outline: none;
+    width: 180px;
+    text-transform: uppercase;
+}
+
+/* Zona 2: Contenedor con altura fija y scroll interno para botones */
+.scrollable-tools-box {
+    max-height: 160px; /* Limita la altura de la botonera vertical */
+    overflow-y: auto;
+    border-right: 1px dashed rgba(78, 75, 66, 0.3);
+    padding-right: 5px;
+}
+
+/* Zona 4: Contenedor con altura fija y scroll interno para descripción */
+.scrollable-desc-box {
+    max-height: 110px; /* Limita la altura del texto descriptivo */
+    overflow-y: auto;
+}
+
+/* Personalización estética de la barra de desplazamiento (Scrollbar) */
+.scrollable-tools-box::-webkit-scrollbar,
+.scrollable-desc-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollable-tools-box::-webkit-scrollbar-track,
+.scrollable-desc-box::-webkit-scrollbar-track {
+    background: rgba(78, 75, 66, 0.05);
+}
+
+.scrollable-tools-box::-webkit-scrollbar-thumb,
+.scrollable-desc-box::-webkit-scrollbar-thumb {
+    background: var(--text-dark);
+}
+
+/* Adaptación responsive para la búsqueda */
+@media (max-width: 600px) {
+    .section-title-search-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .yorha-search-box input {
+        width: 100%;
+    }
+}

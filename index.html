@@ -4,42 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glory to Mankind</title>
+    <!-- Vinculación a tu hoja de estilos externa -->
     <link rel="stylesheet" href="index.css?v=2">
 </head>
 <body>
-<header class="yorha-top-box">
-    <!-- El Banner Negro Superior con tu título GIF -->
-    <div class="banner-negro">
-        <img src="https://i.postimg.cc/DytT6xLB/banner-izquierdo-modified.png" class="logo-izquierdo" alt="Logo">
-        <img src="img/titulo.gif" class="gif-titulo" alt="Glory to Mankind">
-        <img src="https://i.postimg.cc/Bvv62LJ9/bannerderecho.gif" class="gif-run" alt="2B">
-    </div>
 
-    <!-- Los Anuncios (Ad 1 y Ad 2) ocultos para evitar error de seguridad -->
-    <div class="ads-container" style="display: none;">
-        <div class="ad-item">
-            <img src="banner1.png" alt="Ad 1">
+    <!-- CABECERA PRINCIPAL YORHA -->
+    <header class="yorha-top-box">
+        
+        <!-- Banner Superior Flexible (Se adapta al ancho de pantalla) -->
+        <div class="banner-negro">
+            <div class="banner-inner">
+                <img src="https://i.postimg.cc/DytT6xLB/banner-izquierdo-modified.png" class="logo-izquierdo" alt="Logo">
+                <img src="img/titulo.gif" class="gif-titulo" alt="Glory to Mankind">
+                <img src="https://i.postimg.cc/Bvv62LJ9/bannerderecho.gif" class="gif-run" alt="2B">
+            </div>
         </div>
-        <div class="ad-item">
-            <img src="banner2.png" alt="Ad 2">
-        </div>
-    </div>
-  </header>
 
+        <!-- Contenedor de Anuncios (Controlado mediante clase en CSS) -->
+        <div class="ads-container ads-hidden">
+            <div class="ad-item">
+                <img src="banner1.png" alt="Ad 1">
+            </div>
+            <div class="ad-item">
+                <img src="banner2.png" alt="Ad 2">
+            </div>
+        </div>
+    </header>
+
+    <!-- DISPOSICIÓN DE LA MAQUETA PRINCIPAL -->
     <main class="main-layout">
-        <!-- Sección de contenido principal -->
+        
+        <!-- Rejilla de Tarjetas (Se adaptará de 1 a 3 columnas automáticamente en CSS) -->
         <section class="games-grid">
             
             <a href="seccion1.html" class="card-btn">
-                <img src="https://i.postimg.cc/J0F33Dt8/image.png" alt="PC">
+                <div class="card-img-wrapper">
+                    <img src="https://i.postimg.cc/J0F33Dt8/image.png" alt="PC">
+                </div>
                 <div class="card-info">
                     <h3>OPTIMIZA TU PC 🚀</h3>
                     <p>Mejores herramientas para Windows 10/11</p>
                 </div>
             </a>
 
-            <a href="" class="card-btn">
-                <img src="https://i.postimg.cc/FFS0wRfy/Gemini-Generated-Image-lqzbadlqzbadlqzb.png" alt="Móvil">
+            <a href="#" class="card-btn">
+                <div class="card-img-wrapper">
+                    <img src="https://i.postimg.cc/FFS0wRfy/Gemini-Generated-Image-lqzbadlqzbadlqzb.png" alt="Móvil">
+                </div>
                 <div class="card-info">
                     <h3>OPTIMIZA TU CEL 📱</h3>
                     <p>Mejores aplicaciones para optimizar tu celular</p>
@@ -47,28 +59,39 @@
             </a>
 
             <a href="#" class="card-btn">
-                <img src="https://i.postimg.cc/rshdxvnJ/image.png" alt="APK">
+                <div class="card-img-wrapper">
+                    <img src="https://i.postimg.cc/rshdxvnJ/image.png" alt="APK">
+                </div>
                 <div class="card-info">
                     <h3>JUEGOS APK 👾</h3>
                     <p>Ya tú sabes a qué va esto 😉</p>
                 </div>
             </a>
+
             <a href="#" class="card-btn">
-                <img src="https://i.postimg.cc/Fs85zTry/Gemini-Generated-Image-a5xo9pa5xo9pa5xo.png" alt="APK">
+                <div class="card-img-wrapper">
+                    <img src="https://i.postimg.cc/Fs85zTry/Gemini-Generated-Image-a5xo9pa5xo9pa5xo.png" alt="PC">
+                </div>
                 <div class="card-info">
                     <h3> JUEGOS PC 💻</h3>
                     <p>Ya tú sabes a qué va esto 😉</p>
                 </div>
             </a>
+
             <a href="#" class="card-btn">
-                <img src="https://i.postimg.cc/506Dfvcc/Gemini-Generated-Image-prso7hprso7hprso.png" alt="APK">
+                <div class="card-img-wrapper">
+                    <img src="https://i.postimg.cc/506Dfvcc/Gemini-Generated-Image-prso7hprso7hprso.png" alt="Programas">
+                </div>
                 <div class="card-info">
                     <h3> PROGRAMAS Y APPS UTILES 🛠️</h3>
                     <p>Ya tú sabes a qué va esto 😉</p>
                 </div>
             </a>
+
             <a href="#" class="card-btn">
-                <img src="https://i.postimg.cc/MK83FgGW/Gemini-Generated-Image-vssusavssusavssu.png" alt="APK">
+                <div class="card-img-wrapper">
+                    <img src="https://i.postimg.cc/MK83FgGW/Gemini-Generated-Image-vssusavssusavssu.png" alt="ISOs">
+                </div>
                 <div class="card-info">
                     <h3>ISOS GAMER 💿</h3>
                     <p>Ya tú sabes a qué va esto 😉</p>
@@ -77,8 +100,8 @@
 
         </section>
 
-        <!-- Anuncio Lateral oculto para evitar error de seguridad -->
-        <aside class="sidebar-ads" style="display: none;">
+        <!-- Barra Lateral de Anuncios (Controlada mediante clase en CSS) -->
+        <aside class="sidebar-ads ads-hidden">
             <div class="ad-box-sidebar ad-square">
                 <p>RECOMENDADO</p>
                 <img src="img/1win.png" alt="1win">
@@ -91,9 +114,12 @@
         </aside>
     </main>
 
+    <!-- PIE DE PÁGINA ADAPTABLE -->
     <footer class="yorha-footer">
-        <img src="https://i.postimg.cc/pThL1whd/footer.gif" alt="2B" class="footer-gif">
-        <p>© 2026 GLORY TO MANKIND | PROJECT 01</p>
+        <div class="footer-container">
+            <img src="https://i.postimg.cc/pThL1whd/footer.gif" alt="2B" class="footer-gif">
+            <p>© 2026 GLORY TO MANKIND | PROJECT 01</p>
+        </div>
     </footer>
 
 </body>

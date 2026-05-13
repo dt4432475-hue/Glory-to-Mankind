@@ -1,294 +1,269 @@
-/* --- 1. RESET Y CONFIGURACIÓN BASE --- */
+/* ==========================================================================
+   1. VARIABLES DE ESTILO (Temática YoRHa / NieR Automata)
+   ========================================================================== */
+:root {
+    --bg-color: #cdcaaf;         /* Fondo beige arena clásico */
+    --panel-bg: #bab7a2;         /* Contenedores secundarios */
+    --text-dark: #4e4b42;        /* Texto militar oscuro */
+    --text-light: #f2f1ec;       /* Texto claro */
+    --accent-dark: #2b2924;      /* Negro YoRHa para el banner superior */
+    --font-base: 'Courier New', Courier, monospace;
+}
+
+/* ==========================================================================
+   2. REGLAS GENERALES Y RESETEO RESPONSIVO
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: var(--font-base);
 }
 
 body {
-    background-color: #0d0d0d;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
 }
 
-/* --- 2. EL BANNER NEGRO SUPERIOR (ESTILO YORHA) --- */
-.banner-negro {
-    background-color: #000;
+/* Filtro estético opcional de líneas de escaneo de pantalla militar */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.03) 50%);
+    z-index: 999;
+    pointer-events: none;
+    background-size: 100% 4px;
+    opacity: 0.6;
+}
+
+/* Clase de utilidad para ocultar anuncios solicitados u otros elementos */
+.ads-hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   3. CABECERA (Banner Negro Superior Adaptable)
+   ========================================================================== */
+.yorha-top-box {
     width: 100%;
-    padding: 10px 5%;
+    background-color: var(--accent-dark);
+    border-bottom: 4px double var(--text-dark);
+}
+
+.banner-negro {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.banner-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #ff0055;
-    flex-wrap: wrap; /* Ajuste para que no se amontone en móvil */
-}
-
-.gif-titulo {
-    max-width: 400px;
-    width: 60%;
-    height: auto;
-}
-
-.gif-run {
-    max-width: 120px;
-    width: 20%;
-    height: auto;
-}
-
-/* --- 3. ANUNCIOS HORIZONTALES (CON EFECTO ZOOM) --- */
-.ads-container {
-    display: flex;
-    justify-content: center;
     gap: 15px;
-    padding: 20px;
-    flex-wrap: wrap;
 }
 
-.ad-item {
-    border: 2px solid #ff0055;
-    border-radius: 12px;
-    overflow: hidden;
-    max-width: 450px;
-    width: 100%;
-    background: #111;
-    transition: 0.3s ease;
-}
-
-.ad-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
-}
-
-.ad-item img {
-    width: 100%;
-    height: auto;
+/* Optimización de imágenes de la cabecera */
+.banner-inner img {
     display: block;
+    max-height: 60px; /* Evita que los GIFs deformen el diseño vertical */
+    width: auto;
+    object-fit: contain;
 }
 
-/* --- 4. ESTRUCTURA PRINCIPAL (GRID) --- */
+/* ==========================================================================
+   4. DISTRIBUCIÓN PRINCIPAL (Layout Flexible)
+   ========================================================================== */
 .main-layout {
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 30px;
-    max-width: 1300px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(15px, 3vw, 30px); /* Márgenes dinámicos */
+    flex-grow: 1;
+    display: flex;
     gap: 25px;
 }
 
-/* --- 5. ESTILO DE LAS TARJETAS --- */
+/* Cuadrícula de Tarjetas auto-adaptable */
+.games-grid {
+    flex-grow: 1;
+    display: grid;
+    /* Crea tantas columnas como quepan, mínimo de 280px por tarjeta */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+}
+
+/* ==========================================================================
+   5. COMPONENTES: TARJETAS DE CONTENIDO (Card Buttons)
+   ========================================================================== */
 .card-btn {
-    background: #1a1a1a;
-    border: 2px solid #333;
-    border-radius: 15px;
+    background-color: rgba(186, 183, 162, 0.3);
+    border: 1px solid var(--text-dark);
     text-decoration: none;
-    color: white;
-    overflow: hidden;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
 }
 
+/* Efecto hover interactivo estilo menú táctico */
 .card-btn:hover {
-    border-color: #ff0055;
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 0, 85, 0.3);
+    background-color: var(--text-dark);
+    transform: translateY(-2px);
 }
 
-.card-btn img {
+.card-btn:hover * {
+    color: var(--bg-color) !important; /* Invierte colores al pasar el cursor */
+}
+
+/* Contenedor de Imagen con proporción fija */
+.card-img-wrapper {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    aspect-ratio: 16 / 9; /* Mantiene formato panorámico en cualquier pantalla */
+    overflow: hidden;
+    border-bottom: 1px solid var(--text-dark);
+    background-color: var(--panel-bg);
 }
 
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen limpiamente sin deformarla */
+    transition: transform 0.3s ease;
+}
+
+.card-btn:hover .card-img-wrapper img {
+    transform: scale(1.03); /* Sutil zoom táctico */
+}
+
+/* Textos de la tarjeta */
 .card-info {
     padding: 15px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* --- 6. BARRA LATERAL CON MARCO COMPLETO Y ZOOM --- */
+.card-info h3 {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+}
+
+.card-info p {
+    font-size: 0.85rem;
+    color: #6b6859;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   6. PUBLICIDAD LATERAL (Por si decides activarla en el futuro)
+   ========================================================================== */
 .sidebar-ads {
+    width: 250px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .ad-box-sidebar {
-    background: #111;
-    border: 2px solid #ff0055; 
-    border-radius: 12px;
-    padding: 15px;
+    background-color: rgba(186, 183, 162, 0.2);
+    border: 1px dashed var(--text-dark);
+    padding: 10px;
     text-align: center;
-    transition: 0.3s ease;
-    overflow: hidden;
-}
-
-.ad-square { min-height: 200px; }
-.ad-vertical { min-height: 450px; background: linear-gradient(180deg, #111, #050505); }
-
-.ad-box-sidebar:hover {
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
-    transform: scale(1.02);
 }
 
 .ad-box-sidebar img {
     width: 100%;
     height: auto;
-    margin-top: 10px;
+    object-fit: contain;
+    margin-top: 8px;
 }
 
-/* --- 7. FOOTER --- */
+/* ==========================================================================
+   7. PIE DE PÁGINA (YorHa Footer)
+   ========================================================================== */
 .yorha-footer {
+    width: 100%;
+    background-color: rgba(78, 75, 66, 0.1);
+    border-top: 1px solid var(--text-dark);
+    padding: 20px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     text-align: center;
-    padding: 40px 20px;
-    border-top: 1px solid #333;
-    margin-top: 50px;
 }
 
 .footer-gif {
-    max-width: 120px;
-    margin-bottom: 10px;
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
-/* --- 8. AJUSTES PARA MÓVIL (ANDROID) --- */
-@media screen and (max-width: 850px) {
-    .banner-negro {
-        justify-content: center;
-        gap: 10px;
+.yorha-footer p {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES (Puntos de quiebre para pantallas móviles)
+   ========================================================================== */
+
+/* Ajustes para Tablets y Pantallas Medianas */
+@media (max-width: 900px) {
+    /* Si la publicidad lateral se activa, se desplaza abajo de las tarjetas */
+    .main-layout {
+        flex-direction: column;
     }
     
-    .gif-titulo {
-        width: 80%;
-    }
-
-    .main-layout {
-        display: flex !important;
-        flex-direction: column !important;
-        padding: 10px;
-    }
-
     .sidebar-ads {
-        display: flex !important;
-        width: 100% !important;
-        margin-top: 30px;
+        width: 100%;
+        flex-direction: row; /* Coloca los banners de lado a lado */
     }
-
-    .games-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
-        gap: 15px !important;
-    }
-
-    .card-btn img {
-        height: 120px !important;
-    }
-
-    .card-info p {
-        display: none; /* Esto ayuda mucho a que quepa todo en el cel */
-    }
-
+    
     .ad-box-sidebar {
-        min-height: unset !important;
+        flex: 1;
     }
 }
 
-/* --- COMPORTAMIENTO FORZADO DEL BANNER --- */
-.banner-negro {
-    background-color: #000000 !important;
-    display: flex !important;
-    flex-direction: row !important; /* Fuerza la alineación horizontal */
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 10px 40px !important;
-    height: 120px !important; /* Limita la altura total de la barra negra */
-    width: 100% !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important; /* Evita que logos gigantes se desborden */
-}
-
-/* --- CONTENEDOR INTERNO --- */
-.logo-titulo-container {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 15px !important;
-    max-height: 100% !important;
-}
-
-/* --- SOLUCIÓN AL LOGO GIGANTE --- */
-.logo-izquierdo {
-    height: 90px !important; /* Fuerza al logo a medir máximo 90px de alto */
-    width: auto !important;
-    object-fit: contain !important;
-}
-
-/* --- TÍTULO GIF --- */
-.gif-titulo {
-    height: 60px !important;
-    width: auto !important;
-    object-fit: contain !important;
-}
-
-/* --- CONTROL DE 2B CORRIENDO --- */
-.gif-run {
-    height: 85px !important;
-    width: auto !important;
-    object-fit: contain !important;
-}
-
-/* --- CONFIGURACIÓN PARA CELULARES (MÁXIMO 768px DE ANCHO) --- */
-@media (max-width: 768px) {
-    .banner-negro {
-        height: 90px !important;      /* Hace el banner un poco más delgado en móviles */
-        padding: 0 15px !important;    /* Reduce los espacios en los bordes izquierdo y derecho */
-        justify-content: flex-start !important; /* Mantiene el logo y título fijos a la izquierda */
+/* Ajustes para Dispositivos Móviles (Smartphones) */
+@media (max-width: 600px) {
+    /* Reorganiza los logos del banner negro verticalmente para que no se amontonen */
+    .banner-inner {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
     }
 
-    .logo-titulo-container {
-        gap: 8px !important;           /* Junta un poco más el logo y el título */
-        width: 100% !important;        /* Ocupa todo el espacio disponible */
-        max-width: 100% !important;
+    .logo-izquierdo, .gif-run {
+        display: none; /* Opcional: oculta los adornos laterales en móviles para priorizar el título */
+    }
+    
+    /* Forza a que la cuadrícula ocupe filas individuales completas */
+    .games-grid {
+        grid-template-columns: 1fr;
     }
 
-    .logo-izquierdo {
-        height: 55px !important;       /* Reduce el tamaño del logo de 2B */
-        flex-shrink: 0 !important;     /* Evita que el logo se aplaste */
-    }
-
-    /* --- ESTA REGLA EVITA QUE EL TÍTULO SE CORTE --- */
-    .gif-titulo {
-        height: auto !important;       /* Deja que la altura se adapte libremente */
-        max-width: calc(100% - 70px) !important; /* Resta el espacio del logo para que el título quepa completo */
-        object-fit: contain !important;
-    }
-
-    /* --- OCULTA DEFINITIVAMENTE A 2B CORRIENDO EN MÓVILES --- */
-    .gif-run {
-        display: none !important;      /* Desaparece por completo para que no estorbe ni se caiga abajo */
-    }
-}
-
-/* 1. CONFIGURACIÓN PARA PANTALLAS GRANDES */
-.gif-titulo {
-    height: 90px !important;  /* Aumentado de 60px a 90px para que se vea más imponente */
-    width: auto !important;
-    object-fit: contain !important;
-}
-
-/* 2. CONFIGURACIÓN PARA PANTALLAS DE CELULARES (Dentro de tu @media max-width: 768px) */
-@media (max-width: 768px) {
-    .banner-negro {
-        height: 100px !important; /* Damos un poco más de altura al banner en móvil para que quepa el título grande */
-    }
-
-    .gif-titulo {
-        height: 60px !important;  /* Aumentado en móviles (antes estaba en 45px) */
-        max-width: calc(100% - 75px) !important; /* Mantiene el margen seguro para que no se corte con el logo */
-        object-fit: contain !important;
+    /* El footer adopta una disposición limpia */
+    .footer-container {
+        gap: 8px;
     }
 }

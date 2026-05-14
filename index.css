@@ -171,15 +171,24 @@ h2 {
 /* Manejo de imágenes de PostIMG */
 .card-img-wrapper {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+    max-width: 240px; /* Achica el contenedor exactamente al ancho de tus líneas azules */
+    aspect-ratio: 1 / 1; /* Lo mantiene perfectamente cuadrado y simétrico */
+    margin: 0 auto; /* Fuerza a que la caja se quede exactamente en el medio */
+    overflow: hidden; /* Corta la imagen sobrante para que funcione el zoom */
     border: 1px solid var(--text-dark);
+    background-color: var(--panel-bg);
 }
 
 .card-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease-in-out; /* Controla la suavidad del zoom al entrar y salir */
+}
+
+/* Efecto hover: se activa automáticamente cuando el usuario pasa el mouse sobre la caja */
+.card-img-wrapper:hover img {
+    transform: scale(1.1); /* Zoom limpio del 10% sin deformar el contenedor */
 }
 
 /* Cajas de Parámetros */
@@ -189,6 +198,16 @@ h2 {
     background-color: rgba(205, 202, 175, 0.2);
 }
 
+.data-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(78, 75, 66, 0.4);
+    font-size: 0.9rem;
+    width: 100%;
+}
 
 
 .data-row:last-child { border-bottom: none; }
@@ -368,10 +387,13 @@ h2 {
 }
 
 .yorha-search-box {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start;
     font-weight: bold;
     font-size: 0.9rem;
+    white-space: nowrap !important; /* Prohíbe terminantemente los saltos de línea */
+    gap: 4px; /* Agrega un espacio simétrico y limpio entre caracteres */
 }
 
 .yorha-search-box input {
@@ -379,14 +401,18 @@ h2 {
     border: none;
     border-bottom: 1px solid var(--text-dark);
     color: var(--text-dark);
-    padding: 4px 8px;
-    margin: 0 5px;
+    padding: 2px 6px;
     font-family: var(--font-base);
     font-size: 0.85rem;
     outline: none;
-    width: 180px;
+    width: 130px; /* Tamaño compacto ideal para que no empuje el corchete */
     text-transform: uppercase;
 }
+.search-bracket, .search-label {
+    display: inline-block;
+    user-select: none;
+}
+
 
 /* Zona 2: Contenedor con altura fija y scroll interno para botones */
 .scrollable-tools-box {

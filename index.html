@@ -54,11 +54,13 @@
     <!-- ZONA 5: CABECERA DE SECCIÓN CON BARRA DE BÚSQUEDA FLUIDA -->
     <div class="section-title-search-container">
         <h2>OPTIMIZA TU PC 🚀</h2>
-        <div class="yorha-search-box">
-            <span>[ BUSCAR:</span>
-            <input type="text" id="pc-search-input" onkeyup="filterTools('pc-opt', 'pc-search-input')" placeholder="...">
-            <span>]</span>
-        </div>
+       <div class="yorha-search-box">
+    <span class="search-bracket">[</span>
+    <span class="search-label">BUSCAR:</span>
+    <input type="text" id="pc-search-input" onkeyup="filterTools('pc-opt', 'pc-search-input')" placeholder="...">
+    <span class="search-bracket">]</span>
+</div>
+
     </div>
     
     <!-- Fila superior: Imagen (1) y Ficha Técnica (3) -->
@@ -792,23 +794,22 @@ function changePCProgram(programKey, element) {
         }
             
                  // MOTOR DE BÚSQUEDA ASÍNCRONO MULTISECCIÓN (ZONA 5)
-        function filterTools(sectionId, inputId) {
-            const searchInput = document.getElementById(inputId);
-            const filterValue = searchInput.value.toLowerCase().trim();
-            const toolItems = document.querySelectorAll(`#${sectionId} .sub-tool-item`);
-            
-            let firstMatch = null;
+function filterTools(sectionId, inputId) {
+    const searchInput = document.getElementById(inputId);
+    const filterValue = searchInput.value.toLowerCase().trim();
+    const toolItems = document.querySelectorAll(`#${sectionId} .sub-tool-item`);
 
-            toolItems.forEach(item => {
-                const textAttr = item.getAttribute('data-search') || item.innerText.toLowerCase();
-                
-                if (textAttr.includes(filterValue)) {
-                    item.style.display = "block";
-                    if (!firstMatch) firstMatch = item;
-                } else {
-                    item.style.display = "none";
-                }
-            });
+    toolItems.forEach(item => {
+        const textAttr = item.getAttribute('data-search') || item.innerText.toLowerCase();
+        
+        if (textAttr.includes(filterValue)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
 
             // Auto-clic interactivo al primer resultado encontrado
             if (firstMatch && filterValue !== "") {
@@ -830,7 +831,7 @@ function changePCProgram(programKey, element) {
 
     // Línea de desmarcar botones que ya tienes
     document.querySelectorAll('.sub-tool-item').forEach(item => item.classList.remove('active'));
-} // <-- Llave final de cierre de la función
+ // <-- Llave final de cierre de la función
 
         
     </script>

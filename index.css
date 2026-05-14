@@ -422,10 +422,16 @@ h2 {
     padding-right: 5px;
 }
 
-/* Zona 4: Contenedor con altura fija y scroll interno para descripción */
 .scrollable-desc-box {
-    max-height: 110px; /* Limita la altura del texto descriptivo */
-    overflow-y: auto;
+    direction: ltr !important; /* Forza a que el contenido vaya de Izquierda a Derecha */
+    text-align: left !important; /* Alinea el texto limpiamente a la izquierda */
+    padding-right: 15px !important; /* Le deja un espacio de seguridad a la barra */
+    overflow-y: auto !important;
+}
+
+.program-description-area {
+    direction: ltr !important;
+    text-align: left !important;
 }
 
 /* Personalización estética de la barra de desplazamiento (Scrollbar) */

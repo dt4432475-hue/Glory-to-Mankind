@@ -32,12 +32,15 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-/* --- 1. CABECERA SUPERIOR --- */
 .main-header {
   text-align: center;
   padding: 25px 0;
   border-bottom: 1px solid #1e293b;
+  
+  display: flex;
+  justify-content: center; /* Centra todo el bloque en la pantalla */
+  align-items: center;     /* Alinea verticalmente los gifs con el texto */
+  gap: 25px;               /* CONTROL: Ajusta este número para acercar o alejar más los gifs */
 }
 
 .main-header h1 {
@@ -56,6 +59,53 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.gif-lateral {
+  width: 90px;   /* Subido de 50px a 90px para hacerlos más grandes */
+  height: 90px;  /* Subido de 50px a 90px para mantener la proporción */
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px var(--neon-cyan)); /* Aumentamos un pelo el brillo neón */
+  flex-shrink: 0; 
+}
+
+/* Fijamos uno a cada extremo de la pantalla */
+.gif-lateral.izquierdo {
+  left: 40px; /* Distancia desde el borde izquierdo */
+}
+
+.gif-lateral.derecho {
+  right: 40px; /* Distancia desde el borde derecho */
+}
+
+/* --- CONTENEDOR EN FORMA DE CUADRADO PERFECTO --- */
+.imagen-referencial {
+  width: 70px;          /* Ancho fijo idéntico al alto */
+  height: 70px;         /* Alto fijo idéntico al ancho */
+  background-color: #050508;
+  border: 1px solid #1e293b;
+  border-radius: 8px;   /* Esquinas sutilmente redondeadas */
+  margin: 0 auto 15px auto; /* Centra el cuadrado horizontalmente en la tarjeta */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+.imagen-referencial img {
+  max-width: 90%;   /* Deja un pequeño margen estético dentro del marco */
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain; 
+}
+
+
+
+/* Cuando el usuario pase el mouse por la tarjeta, el borde de la foto también reacciona */
+.card:hover .imagen-referencial {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);
 }
 
 /* --- CONTENEDOR FLEX PARA SIDEBAR + CONTENIDO --- */
@@ -182,22 +232,23 @@ body {
   100% { transform: scale(0.9); opacity: 1; }
 }
 
-/* --- REJILLA DE CASILLAS COMPACTAS --- */
 .grid-downloads {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
+  /* Bajamos de 240px a 200px para que entren más tarjetas juntas */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 15px; /* Reducimos un poco el espacio entre tarjetas */
 }
 
 .card {
   background-color: var(--card-bg);
   border: 2px solid #1e293b;
   border-radius: 12px;
-  padding: 20px;
+  padding: 15px; /* Menos espacio interno para ahorrar tamaño */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 240px;
+  min-height: 210px; /* Bajamos la altura total de la tarjeta */
+  position: relative;
   transition: all 0.4s ease;
 }
 
@@ -284,5 +335,8 @@ body {
     flex: 1;
     min-width: 140px;
     text-align: center;
+  }
+.gif-lateral {
+    display: none; /* Evita que los gifs choquen con el título en pantallas chicas */
   }
 }

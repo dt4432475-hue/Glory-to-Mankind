@@ -23,7 +23,7 @@
             </div>
             <div class="system-status">
                 <div class="status-indicator">Estado Actual: <span class="status-online">En linea</span></div>
-                <div id="system-time" class="status-time">TIME: 00:00:00</div>
+                <div id="system-time" class="status-time">Hora: 00:00:00</div>
             </div>
         </header>
 
@@ -65,7 +65,7 @@
     <div class="section-grid">
         <!-- ZONA 1: IMAGEN DE BIENVENIDA GENERAL / DINÁMICA -->
         <div class="card-img-wrapper">
-            <img src="postimg.cc" id="pc-prog-img" alt="PC">
+            <img src="https://i.postimg.cc/J0F33Dt8/image.png'" id="pc-prog-img" alt="PC">
         </div>
 
         <!-- ZONA 3: FICHA TÉCNICA -->
@@ -88,17 +88,18 @@
             <!-- ZONA 2: BOTONERA VERTICAL LIMITADA CON SCROLLBAR -->
             <div class="scrollable-tools-box">
                 <ul class="sub-tools-menu" id="pc-tools-list">
-                    <li class="sub-tool-item active" data-search="script de limpieza" onclick="changePCProgram('script-limpieza', this)">[ 01. SCRIPT DE LIMPIEZA ]</li>
-                    <li class="sub-tool-item" data-search="reducir input lag" onclick="changePCProgram('reducir-lag', this)">[ 02. REDUCIR INPUT LAG ]</li>
-                    <li class="sub-tool-item" data-search="eliminar telemetria" onclick="changePCProgram('eliminar-telemetria', this)">[ 03. ELIMINAR TELEMETRÍA ]</li>
-                    <li class="sub-tool-item" data-search="maximo rendimiento fps" onclick="changePCProgram('activar-fps', this)">[ 04. MÁXIMO RENDIMIENTO FPS ]</li>
+                    <li class="sub-tool-item active" data-search="driver booster" onclick="changePCProgram('script-limpieza', this)">[Driver booster]</li>
+                    <li class="sub-tool-item" data-search="snappy driver installer" onclick="changePCProgram('reducir-lag', this)">[Snappy driver Installer]</li>
+                    <li class="sub-tool-item" data-search="ibot unlocker" onclick="changePCProgram('eliminar-telemetria', this)">[Ibot Unlocker]</li>
+                    <li class="sub-tool-item" data-search="wise disk cleaner" onclick="changePCProgram('activar-fps', this)">[Wise disk cleaner]</li>
+
+                     <li class="sub-tool-item" data-search="dism++64" onclick="changePCProgram('dism-plus-plus-64', this)">[Dism++64]</li>
                 </ul>
             </div>
-
             <!-- ZONA 4: DESCRIPCIÓN LIMITADA CON SCROLLBAR + BOTÓN SOLICITAR -->
             <div class="description-and-action">
                 <div class="program-description-area scrollable-desc-box">
-                    <p id="pc-prog-desc">Limpieza profunda del caché del sistema, archivos temporales de Windows y optimización del registro de arranque para liberar espacio en disco de inmediato.</p>
+                    <p id="pc-prog-desc">hola, busca lo que necesitas...</p>
                 </div>
 
                 <div class="action-btn-wrapper">
@@ -144,6 +145,7 @@
                     <li class="sub-tool-item active" data-search="limpieza de ram" onclick="changeCelProgram('limpieza-ram', this)">[ 01. LIMPIEZA DE RAM ]</li>
                     <li class="sub-tool-item" data-search="optimizar bateria" onclick="changeCelProgram('ahorro-bateria', this)">[ 02. OPTIMIZAR BATERÍA ]</li>
                     <li class="sub-tool-item" data-search="game booster apk" onclick="changeCelProgram('game-booster', this)">[ 03. GAME BOOSTER APK ]</li>
+                    <li class="sub-tool-item" data-search="wise game booster" onclick="changeCelProgram('otra-herramienta', this)">[wisin yandel]</li>
                 </ul>
             </div>
             <div class="description-and-action">
@@ -343,33 +345,61 @@
 
 
              </main>
-        <!-- PIE DE PÁGINA YORHA CON TU GIF -->
-        <footer class="system-footer">
-            <div class="footer-container">
-                <img src="img/footer.gif" alt="2B" class="footer-gif">
-                <p>© 2026 GLORY TO MANKIND | dt4432475</p>
-            </div>
-        </footer>
-
+    <footer class="yorha-footer">
+    <div class="footer-container">
+        <img src="img/footer.gif" alt="2B" class="footer-gif">
+        <p>© 2026 GLORY TO MANKIND | dt4432475</p>
     </div>
+</footer>
 
     <!-- CONTROLADOR JAVASCRIPT DE PESTAÑAS -->
     <script>
-        function updateClock() {
-            const now = new Date();
-            const timeString = now.toISOString().slice(11, 19);
-            document.getElementById('system-time').innerText = `TIME: ${timeString}`;
-        }
+       function updateClock() {
+    const now = new Date();
+    // Obtiene la hora en formato local de 12 horas (ej: "6:45:12 p. m.")
+    let timeString = now.toLocaleTimeString('es-ES', { hour12: true });
+    
+    // Convierte el indicador a mayúsculas limpias estilo YoRHa (AM/PM)
+    timeString = timeString.toUpperCase().replace(/\s*([AP]\.?\s*M\.?)/, ' $1').replace(/\./g, '');
+    
+    document.getElementById('system-time').innerText = `HORA: ${timeString}`;
+}
+
         setInterval(updateClock, 1000);
         updateClock();
 
-        function switchTab(sectionId, event) {
-            document.querySelectorAll('.nav-item').forEach(li => li.classList.remove('active'));
-            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+       function switchTab(sectionId, event) {
+    // 1. Oculta y desmarca las secciones anteriores
+    document.querySelectorAll('.nav-item').forEach(li => li.classList.remove('active'));
+    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
 
-            event.currentTarget.classList.add('active');
-            document.getElementById(sectionId).classList.add('active');
-        }
+    // 2. Activa la nueva pestaña seleccionada
+    event.currentTarget.classList.add('active');
+    document.getElementById(sectionId).classList.add('active');
+
+    // ==========================================================================
+    // RESTAURACIÓN AUTOMÁTICA DE IMÁGENES GENERALES DE BIENVENIDA
+    // ==========================================================================
+    document.getElementById('pc-prog-img').src = 'postimg.cc'; 
+    document.getElementById('cel-prog-img').src = 'postimg.cc'; 
+    document.getElementById('apk-prog-img').src = 'postimg.cc'; 
+    document.getElementById('pcg-prog-img').src = 'postimg.cc'; 
+    document.getElementById('util-prog-img').src = 'postimg.cc'; 
+    document.getElementById('iso-prog-img').src = 'postimg.cc';
+
+    // ==========================================================================
+    // NUEVO REPARO: RESTAURACIÓN AUTOMÁTICA DE LAS DESCRIPCIONES DE BIENVENIDA
+    // ==========================================================================
+    document.getElementById('pc-prog-desc').innerText = 'hola, busca lo que necesitas...';
+    document.getElementById('cel-prog-desc').innerText = 'Libera memoria RAM cerrando procesos ocultos en segundo plano para mejorar la fluidez general del sistema táctil.';
+    document.getElementById('apk-prog-desc').innerText = 'Selecciona un juego de la botonera para cargar su ficha técnica y el enlace de descarga directa sin acortadores.';
+    document.getElementById('pcg-prog-desc').innerText = 'Selecciona un juego de PC para visualizar los requisitos mínimos de instalación y su link de descarga masiva.';
+    document.getElementById('util-prog-desc').innerText = 'Explora el software utilitario verificado para gestionar tareas de descompresión, edición u oficina.';
+    document.getElementById('iso-prog-desc').innerText = 'Selecciona una imagen de sistema optimizada para ver el registro de componentes eliminados y su enlace ISO.';
+}
+
+
+
         // Base de datos de las herramientas de (optimiza tu pc)
 const pcProgramsData = {
     'script-limpieza': {
@@ -390,7 +420,36 @@ const pcProgramsData = {
         link: 'https://tu-link-de-descarga2.com',
         img: 'AQUÍ_EL_ENLACE_DE_IMAGEN_DEL_PROGRAMA_2.png' // Captura específica del Input Lag
     },
+    'eliminar-telemetria': {
+                name: 'ELIMINAR TELEMETRÍA',
+                status: 'OPERATIVO',
+                compatibility: 'Win 10 / Win 11',
+                weight: '2.5 MB',
+                desc: 'Desactiva por completo los servicios de rastreo en segundo plano de Microsoft, liberando ciclos de tu procesador y disminuyendo el uso innecesario de la memoria RAM.',
+                link: 'https://tu-link-de-descarga3.com',
+                img: 'postimg.cc'
+            },
+            'activar-fps': {
+                name: 'MÁXIMO RENDIMIENTO FPS',
+                status: 'MANTENIMIENTO',
+                compatibility: 'Todos los Sistemas',
+                weight: '12.0 MB',
+                desc: 'Plan de energía ultra-avanzado oculto y desfragmentación lógica de memoria RAM para exprimir el rendimiento de tu tarjeta de video en zonas de alta carga de texturas.',
+                link: 'https://tu-link-de-descarga4.com',
+                img: 'postimg.cc'
+            },
+            'dism-plus-plus-64': {
+                name: 'Dism++64',
+                status: 'OPERATIVO',
+                compatibility: 'Windows 10/13 x64',
+                weight: '5.3 MB',
+                desc: '2b es mia cuate mia mai aaaaaaaaa',
+                img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSRNWVbmBAKrQ_0vNkTcswZ7-n7QTQUZ8W7A&s=10'
+            }
+            
+             
     // ... haz lo mismo para las demás herramientas
+
 };
 function changePCProgram(programKey, element) {
     // 1. Quitar selección activa de la lista de herramientas
@@ -542,7 +601,17 @@ function changePCProgram(programKey, element) {
                 desc: 'Juego clásico de estrategia y simulación con todos los parches de rendimiento.',
                 link: '#',
                 img: 'postimg.cc'
-            }
+            }, 
+                'juego-pc-3': {
+                    name: 'Dism++64',
+                    status: 'MANTENIMIENTO',
+                    compatibility: 'Win 10 / 12',
+                    weight: '999 GB',
+                    desc: 'oye 2b es mia solo mia',
+                    link: '#',
+                    img: 'https://i.postimg.cc/fRDtGhrB/logo4.png'
+                },
+            
         };
 
         function changePcgProgram(programKey, element) {

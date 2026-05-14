@@ -136,13 +136,22 @@ body {
 .content-section { display: none; }
 .content-section.active {
     display: block;
-    animation: bootEffect 0.2s steps(2, end);
+    animation: smoothYorhaBoot 0.4s ease-out forwards; /* Animación de 0.4 segundos muy suave */
 }
 
-@keyframes bootEffect {
-    0% { opacity: 0; filter: brightness(1.5); }
-    100% { opacity: 1; filter: brightness(1); }
+@keyframes smoothYorhaBoot {
+    0% { 
+        opacity: 0; 
+        transform: translateY(8px); 
+        filter: brightness(1.5); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+        filter: brightness(1); 
+    }
 }
+
 
 h2 {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
@@ -180,13 +189,7 @@ h2 {
     background-color: rgba(205, 202, 175, 0.2);
 }
 
-.data-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 9px 0;
-    border-bottom: 1px dashed rgba(78, 75, 66, 0.4);
-    font-size: 0.9rem;
-}
+
 
 .data-row:last-child { border-bottom: none; }
 .data-label { font-weight: bold; text-transform: uppercase; }
@@ -195,24 +198,35 @@ h2 {
 /* ==========================================================================
    PIE DE PÁGINA
    ========================================================================== */
-.system-footer {
+.yorha-footer {
+    width: 100%;
+    background-color: rgba(78, 75, 66, 0.1);
     border-top: 1px solid var(--text-dark);
-    padding-top: 15px;
+    padding: 25px 10px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    align-items: center; /* Centra horizontalmente todo el contenido */
+    justify-content: center;
+    gap: 15px; /* Deja un espacio estético entre el GIF y el copyright */
+    text-align: center;
+    width: 100%;
 }
-
 .footer-gif {
-    max-height: 45px;
-    width: auto;
+    width: 250px !important; /* Agrandado masivo para monitores de PC */
+    max-width: 60% !important; /* En celulares se encoge de forma responsive para no romper la pantalla */
+    height: auto !important;
+    object-fit: contain;
 }
 
-.system-footer p { font-size: 0.8rem; font-weight: bold; }
+.yorha-footer p { font-size: 0.8rem; font-weight: bold; }
+
 
 /* ==========================================================================
    MEDIA QUERIES PARA RESPONSIVE COMPLETO EN MÓVILES

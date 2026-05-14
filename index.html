@@ -8,125 +8,148 @@
 </head>
 <body>
 
-  <div class="container">
+  <!-- 1. HEADER (TÍTULO SUPERIOR) -->
+  <header class="main-header">
+    <h1>CYBER DOWNLOADS</h1>
+    <p>• Centro de Descarga Directa Avanzada •</p>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL QUE DIVIDE LATERAL Y CONTENIDO -->
+  <div class="dashboard-wrapper">
     
-    <!-- ENCABEZADO ESTILO NEÓN -->
-    <header>
-      <h1>CYBER DOWNLOADS</h1>
-      <p>• Centro de Descarga Directa Avanzada •</p>
-    </header>
+    <!-- 2. BARRA LATERAL IZQUIERDA (LAS 6 SECCIONES) -->
+    <aside class="sidebar-tabs">
+      <nav class="nav-tabs">
+        <button class="tab-btn" onclick="switchTab(event, 'opt-pc')">Optimizar Tu PC</button>
+        <button class="tab-btn" onclick="switchTab(event, 'opt-cel')">Optimizar Tu Cel</button>
+        <button class="tab-btn" onclick="switchTab(event, 'juegos-apk')">Juegos APK</button>
+        <button class="tab-btn" onclick="switchTab(event, 'juegos-pc')">Juegos PC</button>
+        <button class="tab-btn" onclick="switchTab(event, 'programas')">Programas y Apps Útiles</button>
+        <button class="tab-btn" onclick="switchTab(event, 'sistemas')">Sistemas ISOS</button>
+      </nav>
+    </aside>
 
-    <!-- BOTONERA DE LAS 6 CATEGORÍAS RESPONSIVE -->
-    <nav class="nav-tabs">
-      <button class="tab-btn active" onclick="switchTab(event, 'opt-pc')">Optimizar Tu PC</button>
-      <button class="tab-btn" onclick="switchTab(event, 'opt-cel')">Optimizar Tu Cel</button>
-      <button class="tab-btn" onclick="switchTab(event, 'juegos-apk')">Juegos APK</button>
-      <button class="tab-btn" onclick="switchTab(event, 'juegos-pc')">Juegos PC</button>
-      <button class="tab-btn" onclick="switchTab(event, 'programas')">Programas y Apps Útiles</button>
-      <button class="tab-btn" onclick="switchTab(event, 'sistemas')">Sistemas ISOS</button>
-    </nav>
+    <!-- 4. ZONA CENTRAL DE CONTENIDO -->
+    <main class="content-area">
 
-    <!-- 1. SECCIÓN: OPTIMIZAR TU PC -->
-    <section id="opt-pc" class="download-section active">
-      <div class="grid-downloads">
-        <div class="card">
-          <span class="card-tag">Windows Utility</span>
-          <h3>Optimizer v16.5</h3>
-          <p>Elimina telemetría invasiva, limpia el registro de Windows y exprime tus FPS en juegos.</p>
-          <a href="archive.org" download="Optimizer_CyberEdition.zip" class="btn-download">
-            Descarga Directa
-          </a>
+      <!-- PANTALLA DE BIENVENIDA (ACTIVA POR DEFECTO) -->
+      <section id="bienvenida" class="download-section active">
+        <div class="welcome-box">
+          <h2>[ SISTEMA INICIALIZADO ]</h2>
+          <p class="welcome-text">Bienvenido al centro definitivo de optimización y recursos gaming. Selecciona cualquiera de las categorías del menú lateral izquierdo para desplegar los instaladores y herramientas disponibles.</p>
+          <div class="status-indicator">
+            <span class="pulse-dot"></span> Servidores: ONLINE // Descargas Directas Activas
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 2. SECCIÓN: OPTIMIZAR TU CEL -->
-    <section id="opt-cel" class="download-section">
-      <div class="grid-downloads">
-        <div class="card">
-          <span class="card-tag">Android Tool</span>
-          <h3>Game Booster Pro</h3>
-          <p>Libera memoria RAM y optimiza los hilos del procesador antes de iniciar tus juegos favoritos.</p>
-          <a href="archive.org" download="GameBooster_Pro.apk" class="btn-download">
-            Descarga Directa
-          </a>
+      <!-- SECCIÓN 1: OPTIMIZAR TU PC -->
+      <section id="opt-pc" class="download-section">
+        <div class="grid-downloads">
+          <div class="card">
+            <span class="card-tag">Windows Utility</span>
+            <h3>Optimizer v16.5</h3>
+            <p>Elimina telemetría invasiva, limpia el registro de Windows y exprime tus FPS en juegos.</p>
+            <a href="archive.org" download="Optimizer_CyberEdition.zip" class="btn-download">
+              Descarga Directa
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 3. SECCIÓN: JUEGOS APK -->
-    <section id="juegos-apk" class="download-section">
-      <div class="grid-downloads">
-        <div class="card">
-          <span class="card-tag">Android Mod</span>
-          <h3>Minecraft Premium</h3>
-          <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
-          <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
-            Descarga Directa
-          </a>
+      <!-- SECCIÓN 2: OPTIMIZAR TU CEL -->
+      <section id="opt-cel" class="download-section">
+        <div class="grid-downloads">
+          <div class="card">
+            <span class="card-tag">Android Tool</span>
+            <h3>Game Booster Pro</h3>
+            <p>Libera memoria RAM y optimiza los hilos del procesador antes de iniciar tus juegos favoritos.</p>
+            <a href="archive.org" download="GameBooster_Pro.apk" class="btn-download">
+              Descarga Directa
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 4. SECCIÓN: JUEGOS PC -->
-    <section id="juegos-pc" class="download-section">
-      <div class="grid-downloads">
-        <div class="card">
-          <span class="card-tag">PC Game // Portable</span>
-          <h3>Hades Lite</h3>
-          <p>Edición comprimida sin pérdida de audio ni texturas. Ideal para jugar desde un USB.</p>
-          <a href="archive.org" download="Hades_Portable.zip" class="btn-download">
-            Descarga Directa
-          </a>
+      <!-- SECCIÓN 3: JUEGOS APK -->
+      <section id="juegos-apk" class="download-section">
+        <div class="grid-downloads">
+          <div class="card">
+            <span class="card-tag">Android Mod</span>
+            <h3>Minecraft Premium</h3>
+            <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
+            <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
+              Descarga Directa
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 5. SECCIÓN: PROGRAMAS Y APPS ÚTILES -->
-    <section id="programas" class="download-section">
-      <div class="grid-downloads">
-        <div class="card">
-          <span class="card-tag">Multiplatform App</span>
-          <h3>Brave Browser</h3>
-          <p>Navegador ultra veloz con bloqueador nativo de publicidad externa y rastreadores trackers.</p>
-          <a href="archive.org" download="Brave_Setup.exe" class="btn-download">
-            Descarga Directa
-          </a>
+      <!-- SECCIÓN 4: JUEGOS PC -->
+      <section id="juegos-pc" class="download-section">
+        <div class="grid-downloads">
+          <div class="card">
+            <span class="card-tag">PC Game // Portable</span>
+            <h3>Hades Lite</h3>
+            <p>Edición comprimida sin pérdida de audio ni texturas. Ideal para jugar desde un USB.</p>
+            <a href="archive.org" download="Hades_Portable.zip" class="btn-download">
+              Descarga Directa
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 6. SECCIÓN: SISTEMAS ISOS -->
-    <section id="sistemas" class="download-section">
-      <div class="grid-downloads">
-        <div class="card">
-          <span class="card-tag">OS Modificado</span>
-          <h3>Windows 10 UltraOS</h3>
-          <p>ISO ultra limpia sin aplicaciones basura de fábrica. Latencia optimizada para eSports.</p>
-          <a href="archive.org" download="Win10_UltraOS_Gamer.iso" class="btn-download">
-            Descarga Directa
-          </a>
+      <!-- SECCIÓN 5: PROGRAMAS Y APPS ÚTILES -->
+      <section id="programas" class="download-section">
+        <div class="grid-downloads">
+          <div class="card">
+            <span class="card-tag">Multiplatform App</span>
+            <h3>Brave Browser</h3>
+            <p>Navegador ultra veloz con bloqueador nativo de publicidad externa y rastreadores.</p>
+            <a href="archive.org" download="Brave_Setup.exe" class="btn-download">
+              Descarga Directa
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-      <p>&copy; 2026 CYBER DOWNLOADS // Almacenamiento directo mediante redes de alta velocidad.</p>
-    </footer>
+      <!-- SECCIÓN 6: SISTEMAS ISOS -->
+      <section id="sistemas" class="download-section">
+        <div class="grid-downloads">
+          <div class="card">
+            <span class="card-tag">OS Modificado</span>
+            <h3>Windows 10 UltraOS</h3>
+            <p>ISO ultra limpia sin aplicaciones basura de fábrica. Latencia optimizada para eSports.</p>
+            <a href="archive.org" download="Win10_UltraOS_Gamer.iso" class="btn-download">
+              Descarga Directa
+            </a>
+          </div>
+        </div>
+      </section>
 
+    </main>
   </div>
 
-  <!-- SCRIPT DE INTERACTIVIDAD INMEDIATA -->
+  <!-- 3. FOOTER GAMING INFERIOR -->
+  <footer class="main-footer">
+    <p>&copy; 2026 CYBER DOWNLOADS // Almacenamiento directo mediante redes de alta velocidad.</p>
+  </footer>
+
+  <!-- SCRIPT DE INTERACTIVIDAD ACTUALIZADO -->
   <script>
     function switchTab(event, sectionId) {
+      // Ocultar todas las secciones de descarga (incluyendo bienvenida)
       const sections = document.querySelectorAll('.download-section');
       sections.forEach(sec => sec.classList.remove('active'));
 
+      // Desactivar el estilo activo de los botones laterales
       const buttons = document.querySelectorAll('.tab-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
 
+      // Mostrar la sección correspondiente
       document.getElementById(sectionId).classList.add('active');
+      
+      // Activar el botón presionado
       event.currentTarget.classList.add('active');
     }
   </script>

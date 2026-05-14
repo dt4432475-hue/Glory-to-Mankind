@@ -1,11 +1,11 @@
 /* --- CONFIGURACIÓN DE NEÓN CYBERPUNK --- */
 :root {
-  --bg-dark: #050508;        /* Negro noche ultra profundo */
-  --card-bg: #0d0e12;        /* Gris oscuro de alta tecnología */
-  --neon-cyan: #00f3ff;      /* Cian eléctrico brillante */
-  --neon-pink: #ff0055;      /* Rosa magenta neón */
-  --text-main: #f0f1f5;      /* Blanco brillante */
-  --text-muted: #64748b;     /* Gris tenue para descripciones */
+  --bg-dark: #050508;
+  --card-bg: #0d0e12;
+  --neon-cyan: #00f3ff;
+  --neon-pink: #ff0055;
+  --text-main: #f0f1f5;
+  --text-muted: #64748b;
 }
 
 * {
@@ -21,80 +21,101 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 20px;
   background-image: radial-gradient(circle at 50% 50%, #141520 0%, #050508 100%);
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* --- CABECERA ESTILO CARTEL ENTRADA --- */
-header {
+/* --- 1. CABECERA SUPERIOR --- */
+.main-header {
   text-align: center;
-  margin-bottom: 50px;
-  padding: 30px 0;
+  padding: 25px 0;
+  border-bottom: 1px solid #1e293b;
 }
 
-header h1 {
-  font-size: 2.5rem;
+.main-header h1 {
+  font-size: 2.3rem;
   font-weight: 900;
   letter-spacing: 4px;
-  color: #fff;
   text-transform: uppercase;
-  text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
-  margin-bottom: 10px;
+  text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+  margin-bottom: 5px;
 }
 
-header p {
+.main-header p {
   color: var(--neon-pink);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 0 0 5px var(--neon-pink);
 }
 
-/* --- MENÚ DE PESTAÑAS (FLEXBOX RESPONSIVE) --- */
+/* --- CONTENEDOR FLEX PARA SIDEBAR + CONTENIDO --- */
+.dashboard-wrapper {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 25px;
+}
+
+/* --- 2. BARRA LATERAL IZQUIERDA --- */
+.sidebar-tabs {
+  width: 280px;
+  flex-shrink: 0; /* Evita que se encoja */
+}
+
 .nav-tabs {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
+  flex-direction: column; /* Botones en vertical */
+  gap: 12px;
 }
 
 .tab-btn {
   background: rgba(13, 14, 18, 0.6);
   border: 2px solid #1e293b;
   color: var(--text-muted);
-  padding: 10px 18px;
+  padding: 14px 20px;
   font-weight: 800;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  border-radius: 6px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  text-align: left; /* Alineado a la izquierda como menú pro */
+  transition: all 0.3s ease;
 }
 
 .tab-btn:hover {
   color: #fff;
   border-color: var(--neon-pink);
-  box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
+  transform: translateX(5px); /* Desplazamiento gamer */
 }
 
 .tab-btn.active {
   color: #fff;
   background: #0d0e12;
   border-color: var(--neon-cyan);
-  box-shadow: 0 0 20px rgba(0, 243, 255, 0.6), inset 0 0 10px rgba(0, 243, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+  transform: translateX(8px);
 }
 
-/* --- SISTEMA DE SECCIONES --- */
+/* --- 4. ÁREA CENTRAL DE CONTENIDO --- */
+.content-area {
+  flex: 1;
+}
+
 .download-section {
   display: none;
   animation: neonGlow 0.4s ease-out forwards;
@@ -105,18 +126,69 @@ header p {
 }
 
 @keyframes neonGlow {
-  from { opacity: 0; transform: scale(0.98); }
+  from { opacity: 0; transform: scale(0.99); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* --- SE HICIERON LAS CASILLAS MÁS ESTRECHAS Y COMPACTAS --- */
+/* --- CAJA DE BIENVENIDA ESTILO LOBBY --- */
+.welcome-box {
+  background: var(--card-bg);
+  border: 2px dashed var(--neon-pink);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.05);
+}
+
+.welcome-box h2 {
+  color: var(--neon-pink);
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px var(--neon-pink);
+}
+
+.welcome-text {
+  color: var(--text-main);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--neon-cyan);
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--neon-cyan);
+}
+
+/* Puntito parpadeante en vivo */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-cyan);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.4; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+/* --- REJILLA DE CASILLAS COMPACTAS --- */
 .grid-downloads {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Reducido de 300px a 240px */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
 }
 
-/* --- TARJETA CARTEL DE NEÓN --- */
 .card {
   background-color: var(--card-bg);
   border: 2px solid #1e293b;
@@ -126,14 +198,13 @@ header p {
   flex-direction: column;
   justify-content: space-between;
   min-height: 240px;
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s ease;
 }
 
 .card:hover {
   border-color: var(--neon-cyan);
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0, 243, 255, 0.25), inset 0 0 15px rgba(0, 243, 255, 0.05);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.25);
 }
 
 .card-tag {
@@ -145,17 +216,14 @@ header p {
   padding: 3px 8px;
   border-radius: 4px;
   margin-bottom: 12px;
-  letter-spacing: 1px;
   text-transform: uppercase;
   text-shadow: 0 0 5px var(--neon-pink);
-  box-shadow: 0 0 8px rgba(255, 0, 85, 0.2);
 }
 
 .card h3 {
   font-size: 1.2rem;
   font-weight: 800;
   margin-bottom: 8px;
-  letter-spacing: 0.5px;
   color: #fff;
 }
 
@@ -167,7 +235,6 @@ header p {
   flex-grow: 1;
 }
 
-/* --- BOTÓN DESCARGA DIRECTA AUTOMÁTICA --- */
 .btn-download {
   display: block;
   width: 100%;
@@ -180,35 +247,42 @@ header p {
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 800;
-  letter-spacing: 1px;
   text-transform: uppercase;
   text-shadow: 0 0 5px var(--neon-cyan);
-  box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .card:hover .btn-download {
   background: var(--neon-cyan);
   color: #000000;
-  font-weight: 900;
-  text-shadow: none;
   box-shadow: 0 0 20px var(--neon-cyan);
 }
 
-/* --- PIE DE PÁGINA --- */
-footer {
+/* --- 3. PIE DE PÁGINA --- */
+.main-footer {
   text-align: center;
-  padding: 40px 0 20px 0;
+  padding: 25px 0;
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-top: 60px;
   border-top: 1px solid #1e293b;
+  margin-top: auto; /* Empuja el footer siempre abajo */
 }
 
-/* --- CONTROL RESPONSIVE PARA SMARTPHONES --- */
-@media (max-width: 600px) {
-  body { padding: 15px; }
-  header h1 { font-size: 1.8rem; }
-  .tab-btn { width: 100%; text-align: center; padding: 12px; }
-  .grid-downloads { gap: 15px; }
+/* --- RESPONSIVE ADAPTABLE PARA MÓVILES --- */
+@media (max-width: 850px) {
+  .dashboard-wrapper {
+    flex-direction: column; /* Se pone en lista vertical en celulares */
+  }
+  .sidebar-tabs {
+    width: 100%;
+  }
+  .nav-tabs {
+    flex-direction: row; /* Las pestañas vuelven a ser horizontales en cel */
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
 }

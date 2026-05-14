@@ -219,11 +219,12 @@ h2 {
     width: 100%;
 }
 .footer-gif {
-    width: 250px !important; /* Agrandado masivo para monitores de PC */
-    max-width: 60% !important; /* En celulares se encoge de forma responsive para no romper la pantalla */
+    width: 350px !important; /* Lo subimos a 320px para que luzca imponente en PC */
+    max-width: 75% !important; /* En celulares se adapta y encoja fluidamente */
     height: auto !important;
     object-fit: contain;
 }
+
 
 .yorha-footer p { font-size: 0.8rem; font-weight: bold; }
 

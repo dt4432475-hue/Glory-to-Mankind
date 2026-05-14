@@ -1,0 +1,214 @@
+/* --- CONFIGURACIÓN DE NEÓN CYBERPUNK --- */
+:root {
+  --bg-dark: #050508;        /* Negro noche ultra profundo */
+  --card-bg: #0d0e12;        /* Gris oscuro de alta tecnología */
+  --neon-cyan: #00f3ff;      /* Cian eléctrico brillante */
+  --neon-pink: #ff0055;      /* Rosa magenta neón */
+  --text-main: #f0f1f5;      /* Blanco brillante */
+  --text-muted: #64748b;     /* Gris tenue para descripciones */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-image: radial-gradient(circle at 50% 50%, #141520 0%, #050508 100%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+/* --- CABECERA ESTILO CARTEL ENTRADA --- */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 30px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+  margin-bottom: 10px;
+}
+
+header p {
+  color: var(--neon-pink);
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--neon-pink);
+}
+
+/* --- MENÚ DE PESTAÑAS (FLEXBOX RESPONSIVE) --- */
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: rgba(13, 14, 18, 0.6);
+  border: 2px solid #1e293b;
+  color: var(--text-muted);
+  padding: 10px 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-btn:hover {
+  color: #fff;
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+}
+
+.tab-btn.active {
+  color: #fff;
+  background: #0d0e12;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.6), inset 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+/* --- SISTEMA DE SECCIONES --- */
+.download-section {
+  display: none;
+  animation: neonGlow 0.4s ease-out forwards;
+}
+
+.download-section.active {
+  display: block;
+}
+
+@keyframes neonGlow {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- SE HICIERON LAS CASILLAS MÁS ESTRECHAS Y COMPACTAS --- */
+.grid-downloads {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Reducido de 300px a 240px */
+  gap: 20px;
+}
+
+/* --- TARJETA CARTEL DE NEÓN --- */
+.card {
+  background-color: var(--card-bg);
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  border-color: var(--neon-cyan);
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.25), inset 0 0 15px rgba(0, 243, 255, 0.05);
+}
+
+.card-tag {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: var(--neon-pink);
+  border: 1px solid var(--neon-pink);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--neon-pink);
+  box-shadow: 0 0 8px rgba(255, 0, 85, 0.2);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* --- BOTÓN DESCARGA DIRECTA AUTOMÁTICA --- */
+.btn-download {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover .btn-download {
+  background: var(--neon-cyan);
+  color: #000000;
+  font-weight: 900;
+  text-shadow: none;
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+  text-align: center;
+  padding: 40px 0 20px 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 60px;
+  border-top: 1px solid #1e293b;
+}
+
+/* --- CONTROL RESPONSIVE PARA SMARTPHONES --- */
+@media (max-width: 600px) {
+  body { padding: 15px; }
+  header h1 { font-size: 1.8rem; }
+  .tab-btn { width: 100%; text-align: center; padding: 12px; }
+  .grid-downloads { gap: 15px; }
+}

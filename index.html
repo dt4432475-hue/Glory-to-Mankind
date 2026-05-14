@@ -1,839 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glory to Mankind</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER DOWNLOADS | Elite Gaming Center</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <div class="system-wrapper">
-        
-        <!-- ==========================================
-             ZONA 1: CABECERA CON TU TÍTULO GIF
-             ========================================== -->
-        <header class="system-header">
-            <div class="banner-negro">
-                <div class="banner-inner">
-                    <img src="https://i.postimg.cc/fRDtGhrB/logo4.png" class="logo-izquierdo" alt="Logo">
-                    <img src="img/banner.gif" class="gif-titulo" alt="Glory to Mankind">
-                    <img src="img/sear.gif" class="gif-run" alt="2B">
-                </div>
-            </div>
-            <div class="system-status">
-                <div class="status-indicator">Estado Actual: <span class="status-online">En linea</span></div>
-                <div id="system-time" class="status-time">Hora: 00:00:00</div>
-            </div>
-        </header>
-
-        <div class="main-layout">
-            
-            <!-- ==========================================
-                 ZONA 2: MENÚ LATERAL CON TUS SECCIONES
-                 ========================================== -->
-            <nav class="side-navigation">
-                <ul>
-                    <li class="nav-item active" onclick="switchTab('pc-opt', event)">[ OPTIMIZA TU PC ]</li>
-                    <li class="nav-item" onclick="switchTab('cel-opt', event)">[ OPTIMIZA TU CEL ]</li>
-                    <li class="nav-item" onclick="switchTab('apk-games', event)">[ JUEGOS APK ]</li>
-                    <li class="nav-item" onclick="switchTab('pc-games', event)">[ JUEGOS PC ]</li>
-                    <li class="nav-item" onclick="switchTab('apps-util', event)">[ APPS ÚTILES ]</li>
-                    <li class="nav-item" onclick="switchTab('gamer-isos', event)">[ ISOS GAMER ]</li>
-                </ul>
-            </nav>
-
-            <!-- ==========================================
-                 ZONA 3: CONTENIDOR DE TUS CUADROS DE CONTENIDO
-                 ========================================== -->
-            <main class="content-display">
-                
-  <!-- PESTAÑA: OPTIMIZA TU PC 🚀 -->
-<section id="pc-opt" class="content-section active">
+  <div class="container">
     
-    <!-- ZONA 5: CABECERA DE SECCIÓN CON BARRA DE BÚSQUEDA FLUIDA -->
-    <div class="section-title-search-container">
-        <h2>OPTIMIZA TU PC 🚀</h2>
-       <div class="yorha-search-box">
-    <span class="search-bracket">[</span>
-    <span class="search-label">BUSCAR:</span>
-    <input type="text" id="pc-search-input" onkeyup="filterTools('pc-opt', 'pc-search-input')" placeholder="...">
-    <span class="search-bracket">]</span>
-</div>
+    <!-- ENCABEZADO ESTILO NEÓN -->
+    <header>
+      <h1>CYBER DOWNLOADS</h1>
+      <p>• Centro de Descarga Directa Avanzada •</p>
+    </header>
 
-    </div>
-    
-    <!-- Fila superior: Imagen (1) y Ficha Técnica (3) -->
-    <div class="section-grid">
-        <!-- ZONA 1: IMAGEN DE BIENVENIDA GENERAL / DINÁMICA -->
-        <div class="card-img-wrapper">
-            <img src="https://i.postimg.cc/J0F33Dt8/image.png'" id="pc-prog-img" alt="PC">
+    <!-- BOTONERA DE LAS 6 CATEGORÍAS RESPONSIVE -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab(event, 'opt-pc')">Optimizar Tu PC</button>
+      <button class="tab-btn" onclick="switchTab(event, 'opt-cel')">Optimizar Tu Cel</button>
+      <button class="tab-btn" onclick="switchTab(event, 'juegos-apk')">Juegos APK</button>
+      <button class="tab-btn" onclick="switchTab(event, 'juegos-pc')">Juegos PC</button>
+      <button class="tab-btn" onclick="switchTab(event, 'programas')">Programas y Apps Útiles</button>
+      <button class="tab-btn" onclick="switchTab(event, 'sistemas')">Sistemas ISOS</button>
+    </nav>
+
+    <!-- 1. SECCIÓN: OPTIMIZAR TU PC -->
+    <section id="opt-pc" class="download-section active">
+      <div class="grid-downloads">
+        <div class="card">
+          <span class="card-tag">Windows Utility</span>
+          <h3>Optimizer v16.5</h3>
+          <p>Elimina telemetría invasiva, limpia el registro de Windows y exprime tus FPS en juegos.</p>
+          <a href="archive.org" download="Optimizer_CyberEdition.zip" class="btn-download">
+            Descarga Directa
+          </a>
         </div>
+      </div>
+    </section>
 
-        <!-- ZONA 3: FICHA TÉCNICA -->
-        <div class="data-box dynamic-info-container">
-            <span class="data-box-title">■ FICHA TÉCNICA Y ACCESO</span>
-            <!-- REPETIR ESTO EN LAS 6 PESTAÑAS (pc-opt, cel-opt, apk-games, pc-games, apps-util, gamer-isos) -->
-<div class="dynamic-rows">
-    <div class="data-row"><span class="data-label">HERRAMIENTA:</span><span id="pc-prog-name">--</span></div>
-    <div class="data-row"><span class="data-label">ESTADO:</span><span id="pc-prog-status">--</span></div>
-    <div class="data-row"><span class="data-label">COMPATIBILIDAD:</span><span id="pc-prog-comp">--</span></div>
-    <div class="data-row"><span class="data-label">PESO:</span><span id="pc-prog-weight">--</span></div>
-</div>
-
+    <!-- 2. SECCIÓN: OPTIMIZAR TU CEL -->
+    <section id="opt-cel" class="download-section">
+      <div class="grid-downloads">
+        <div class="card">
+          <span class="card-tag">Android Tool</span>
+          <h3>Game Booster Pro</h3>
+          <p>Libera memoria RAM y optimiza los hilos del procesador antes de iniciar tus juegos favoritos.</p>
+          <a href="archive.org" download="GameBooster_Pro.apk" class="btn-download">
+            Descarga Directa
+          </a>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Fila inferior: Botonera con Scroll (2) y Descripción con Scroll (4) -->
-    <div class="data-box tools-bottom-container" style="margin-top: 20px;">
-        <span class="data-box-title">■ SELECCIONAR HERRAMIENTA DISPONIBLE</span>
-        
-        <div class="bottom-layout-grid">
-            <!-- ZONA 2: BOTONERA VERTICAL LIMITADA CON SCROLLBAR -->
-            <div class="scrollable-tools-box">
-                <ul class="sub-tools-menu" id="pc-tools-list">
-                    <li class="sub-tool-item" data-search="driver booster" onclick="changePCProgram('script-limpieza', this)">[Driver booster]</li>
-                    <li class="sub-tool-item" data-search="snappy driver installer" onclick="changePCProgram('reducir-lag', this)">[Snappy driver Installer]</li>
-                    <li class="sub-tool-item" data-search="ibot unlocker" onclick="changePCProgram('eliminar-telemetria', this)">[Ibot Unlocker]</li>
-                    <li class="sub-tool-item" data-search="wise disk cleaner" onclick="changePCProgram('activar-fps', this)">[Wise disk cleaner]</li>
-
-                     <li class="sub-tool-item" data-search="dism++64" onclick="changePCProgram('dism-plus-plus-64', this)">[Dism++64]</li>
-                </ul>
-            </div>
-            <!-- ZONA 4: DESCRIPCIÓN LIMITADA CON SCROLLBAR + BOTÓN SOLICITAR -->
-            <div class="description-and-action">
-                <div class="program-description-area scrollable-desc-box">
-                    <p id="pc-prog-desc">hola, busca lo que necesitas...</p>
-                </div>
-
-                <div class="action-btn-wrapper">
-                    <a href="https://tu-link-de-descarga1.com" id="pc-prog-link" target="_blank" class="yorha-btn-solicitar">
-                        [ SOLICITAR ACCESO ]
-                    </a>
-                </div>
-            </div>
+    <!-- 3. SECCIÓN: JUEGOS APK -->
+    <section id="juegos-apk" class="download-section">
+      <div class="grid-downloads">
+        <div class="card">
+          <span class="card-tag">Android Mod</span>
+          <h3>Minecraft Premium</h3>
+          <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
+          <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
+            Descarga Directa
+          </a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- PESTAÑA: OPTIMIZA TU CEL 📱 -->
-<section id="cel-opt" class="content-section">
-    <div class="section-title-search-container">
-        <h2>OPTIMIZA TU CEL 📱</h2>
-        <div class="yorha-search-box">
-            <span>[ BUSCAR:</span>
-            <input type="text" id="cel-search-input" onkeyup="filterTools('cel-opt', 'cel-search-input')" placeholder="...">
-        
-            <span>]</span>
+    <!-- 4. SECCIÓN: JUEGOS PC -->
+    <section id="juegos-pc" class="download-section">
+      <div class="grid-downloads">
+        <div class="card">
+          <span class="card-tag">PC Game // Portable</span>
+          <h3>Hades Lite</h3>
+          <p>Edición comprimida sin pérdida de audio ni texturas. Ideal para jugar desde un USB.</p>
+          <a href="archive.org" download="Hades_Portable.zip" class="btn-download">
+            Descarga Directa
+          </a>
         </div>
-    </div>
-    <div class="section-grid">
-        <div class="card-img-wrapper">
-            <img src="postimg.cc" id="cel-prog-img" alt="Móvil">
+      </div>
+    </section>
+
+    <!-- 5. SECCIÓN: PROGRAMAS Y APPS ÚTILES -->
+    <section id="programas" class="download-section">
+      <div class="grid-downloads">
+        <div class="card">
+          <span class="card-tag">Multiplatform App</span>
+          <h3>Brave Browser</h3>
+          <p>Navegador ultra veloz con bloqueador nativo de publicidad externa y rastreadores trackers.</p>
+          <a href="archive.org" download="Brave_Setup.exe" class="btn-download">
+            Descarga Directa
+          </a>
         </div>
-        <div class="data-box dynamic-info-container">
-            <span class="data-box-title">■ FICHA TÉCNICA Y ACCESO</span>
-           <!-- REPETIR ESTO EN LAS 6 PESTAÑAS (pc-opt, cel-opt, apk-games, pc-games, apps-util, gamer-isos) -->
-<div class="dynamic-rows">
-    <div class="data-row"><span class="data-label">HERRAMIENTA:</span><span id="cel-prog-name">--</span></div>
-    <div class="data-row"><span class="data-label">ESTADO:</span><span id="cel-prog-status">--</span></div>
-    <div class="data-row"><span class="data-label">COMPATIBILIDAD:</span><span id="cel-prog-comp">--</span></div>
-    <div class="data-row"><span class="data-label">PESO:</span><span id="cel-prog-weight">--</span></div>
-</div>
+      </div>
+    </section>
 
+    <!-- 6. SECCIÓN: SISTEMAS ISOS -->
+    <section id="sistemas" class="download-section">
+      <div class="grid-downloads">
+        <div class="card">
+          <span class="card-tag">OS Modificado</span>
+          <h3>Windows 10 UltraOS</h3>
+          <p>ISO ultra limpia sin aplicaciones basura de fábrica. Latencia optimizada para eSports.</p>
+          <a href="archive.org" download="Win10_UltraOS_Gamer.iso" class="btn-download">
+            Descarga Directa
+          </a>
         </div>
-    </div>
-    <div class="data-box tools-bottom-container" style="margin-top: 20px;">
-        <span class="data-box-title">■ SELECCIONAR HERRAMIENTA DISPONIBLE</span>
-        <div class="bottom-layout-grid">
-            <div class="scrollable-tools-box">
-                <ul class="sub-tools-menu">
-                    <li class="sub-tool-item" data-search="limpieza de ram" onclick="changeCelProgram('limpieza-ram', this)">[ 01. LIMPIEZA DE RAM ]</li>
-                    <li class="sub-tool-item" data-search="optimizar bateria" onclick="changeCelProgram('ahorro-bateria', this)">[ 02. OPTIMIZAR BATERÍA ]</li>
-                    <li class="sub-tool-item" data-search="game booster apk" onclick="changeCelProgram('game-booster', this)">[ 03. GAME BOOSTER APK ]</li>
-                    <li class="sub-tool-item" data-search="wise game booster" onclick="changeCelProgram('otra-herramienta', this)">[wisin yandel]</li>
-                </ul>
-            </div>
-            <div class="description-and-action">
-                <div class="program-description-area scrollable-desc-box">
-                    <p id="cel-prog-desc">Libera memoria RAM cerrando procesos ocultos en segundo plano para mejorar la fluidez general del sistema táctil.</p>
-                </div>
-                <div class="action-btn-wrapper">
-                    <a href="https://tu-link-celular1.com" id="cel-prog-link" target="_blank" class="yorha-btn-solicitar">[ SOLICITAR ACCESO ]</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- PESTAÑA: JUEGOS APK 👾 -->
-<section id="apk-games" class="content-section">
-    <div class="section-title-search-container">
-        <h2>JUEGOS APK 👾</h2>
-        <div class="yorha-search-box">
-            <span>[ BUSCAR:</span>
-          <input type="text" id="apk-search-input" onkeyup="filterTools('apk-games', 'apk-search-input')" placeholder="...">
-            <span>]</span>
-        </div>
-    </div>
-    <div class="section-grid">
-        <div class="card-img-wrapper">
-            <img src="postimg.cc" id="apk-prog-img" alt="Juegos APK">
-        </div>
-        <div class="data-box dynamic-info-container">
-            <span class="data-box-title">■ FICHA TÉCNICA Y ACCESO</span>
-            <!-- REPETIR ESTO EN LAS 6 PESTAÑAS (pc-opt, cel-opt, apk-games, pc-games, apps-util, gamer-isos) -->
-<div class="dynamic-rows">
-    <div class="data-row"><span class="data-label">HERRAMIENTA:</span><span id="apk-prog-name">--</span></div>
-    <div class="data-row"><span class="data-label">ESTADO:</span><span id="apk-prog-status">--</span></div>
-    <div class="data-row"><span class="data-label">COMPATIBILIDAD:</span><span id="apk-prog-comp">--</span></div>
-    <div class="data-row"><span class="data-label">PESO:</span><span id="apk-prog-weight">--</span></div>
-</div>
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <p>&copy; 2026 CYBER DOWNLOADS // Almacenamiento directo mediante redes de alta velocidad.</p>
+    </footer>
 
-        </div>
-    </div>
-    <div class="data-box tools-bottom-container" style="margin-top: 20px;">
-        <span class="data-box-title">■ SELECCIONAR JUEGO DISPONIBLE</span>
-        <div class="bottom-layout-grid">
-            <div class="scrollable-tools-box">
-                <ul class="sub-tools-menu">
-                    <li class="sub-tool-item" data-search="juego apk ejemplo 1" onclick="changeApkProgram('juego-apk-1', this)">[ 01. JUEGO APK EJEMPLO 1 ]</li>
-                    <li class="sub-tool-item" data-search="juego apk ejemplo 2" onclick="changeApkProgram('juego-apk-2', this)">[ 02. JUEGO APK EJEMPLO 2 ]</li>
-                </ul>
-            </div>
-            <div class="description-and-action">
-                <div class="program-description-area scrollable-desc-box">
-                    <p id="apk-prog-desc">Selecciona un juego de la botonera para cargar su ficha técnica y el enlace de descarga directa sin acortadores.</p>
-                </div>
-                <div class="action-btn-wrapper">
-                    <a href="#" id="apk-prog-link" target="_blank" class="yorha-btn-solicitar">[ SOLICITAR ACCESO ]</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+  </div>
 
-<!-- PESTAÑA: JUEGOS PC 💻 -->
-<section id="pc-games" class="content-section">
-    <div class="section-title-search-container">
-        <h2>JUEGOS PC 💻</h2>
-        <div class="yorha-search-box">
-            <span>[ BUSCAR:</span>
-            <input type="text" id="pcg-search-input" onkeyup="filterTools('pc-games', 'pcg-search-input')" placeholder="...">
+  <!-- SCRIPT DE INTERACTIVIDAD INMEDIATA -->
+  <script>
+    function switchTab(event, sectionId) {
+      const sections = document.querySelectorAll('.download-section');
+      sections.forEach(sec => sec.classList.remove('active'));
 
-            <span>]</span>
-        </div>
-    </div>
-    <div class="section-grid">
-        <div class="card-img-wrapper">
-            <img src="postimg.cc" id="pcg-prog-img" alt="Juegos PC">
-        </div>
-        <div class="data-box dynamic-info-container">
-            <span class="data-box-title">■ FICHA TÉCNICA Y ACCESO</span>
-           <!-- REPETIR ESTO EN LAS 6 PESTAÑAS (pc-opt, cel-opt, apk-games, pc-games, apps-util, gamer-isos) -->
-<div class="dynamic-rows">
-    <div class="data-row"><span class="data-label">HERRAMIENTA:</span><span id="pcg-prog-name">--</span></div>
-    <div class="data-row"><span class="data-label">ESTADO:</span><span id="pcg-prog-status">--</span></div>
-    <div class="data-row"><span class="data-label">COMPATIBILIDAD:</span><span id="pcg-prog-comp">--</span></div>
-    <div class="data-row"><span class="data-label">PESO:</span><span id="pcg-prog-weight">--</span></div>
-</div>
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
 
-        </div>
-    </div>
-    <div class="data-box tools-bottom-container" style="margin-top: 20px;">
-        <span class="data-box-title">■ SELECCIONAR TITULO DISPONIBLE</span>
-        <div class="bottom-layout-grid">
-            <div class="scrollable-tools-box">
-                <ul class="sub-tools-menu">
-                    <li class="sub-tool-item" data-search="juego pc ejemplo 1" onclick="changePcgProgram('juego-pc-1', this)">[ 01. JUEGO PC EJEMPLO 1 ]</li>
-                    <li class="sub-tool-item" data-search="juego pc ejemplo 2" onclick="changePcgProgram('juego-pc-2', this)">[ 02. JUEGO PC EJEMPLO 2 ]</li>
-                </ul>
-            </div>
-            <div class="description-and-action">
-                <div class="program-description-area scrollable-desc-box">
-                    <p id="pcg-prog-desc">Selecciona un juego de PC para visualizar los requisitos mínimos de instalación y su link de descarga masiva.</p>
-                </div>
-                <div class="action-btn-wrapper">
-                    <a href="#" id="pcg-prog-link" target="_blank" class="yorha-btn-solicitar">[ SOLICITAR ACCESO ]</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PESTAÑA: PROGRAMAS Y APPS UTILES 🛠️ -->
-<section id="apps-util" class="content-section">
-    <div class="section-title-search-container">
-        <h2>PROGRAMAS Y APPS ÚTILES 🛠️</h2>
-        <div class="yorha-search-box">
-            <span>[ BUSCAR:</span>
-            <input type="text" id="util-search-input" onkeyup="filterTools('apps-util', 'util-search-input')" placeholder="...">
-
-            <span>]</span>
-        </div>
-    </div>
-    <div class="section-grid">
-        <div class="card-img-wrapper">
-            <img src="postimg.cc" id="util-prog-img" alt="Apps Útiles">
-        </div>
-        <div class="data-box dynamic-info-container">
-            <span class="data-box-title">■ FICHA TÉCNICA Y ACCESO</span>
-          <!-- REPETIR ESTO EN LAS 6 PESTAÑAS (pc-opt, cel-opt, apk-games, pc-games, apps-util, gamer-isos) -->
-<div class="dynamic-rows">
-    <div class="data-row"><span class="data-label">HERRAMIENTA:</span><span id="util-prog-name">--</span></div>
-    <div class="data-row"><span class="data-label">ESTADO:</span><span id="util-prog-status">--</span></div>
-    <div class="data-row"><span class="data-label">COMPATIBILIDAD:</span><span id="util-prog-comp">--</span></div>
-    <div class="data-row"><span class="data-label">PESO:</span><span id="util-prog-weight">--</span></div>
-</div>
-
-        </div>
-    </div>
-    <div class="data-box tools-bottom-container" style="margin-top: 20px;">
-        <span class="data-box-title">■ SELECCIONAR HERRAMIENTA ÚTIL</span>
-        <div class="bottom-layout-grid">
-            <div class="scrollable-tools-box">
-                <ul class="sub-tools-menu">
-                    <li class="sub-tool-item" data-search="programa ejemplo 1" onclick="changeUtilProgram('app-1', this)">[ 01. PROGRAMA EJEMPLO 1 ]</li>
-                    <li class="sub-tool-item" data-search="programa ejemplo 2" onclick="changeUtilProgram('app-2', this)">[ 02. PROGRAMA EJEMPLO 2 ]</li>
-                </ul>
-            </div>
-            <div class="description-and-action">
-                <div class="program-description-area scrollable-desc-box">
-                    <p id="util-prog-desc">Explora el software utilitario verificado para gestionar tareas de descompresión, edición u oficina.</p>
-                </div>
-                <div class="action-btn-wrapper">
-                    <a href="#" id="util-prog-link" target="_blank" class="yorha-btn-solicitar">[ SOLICITAR ACCESO ]</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PESTAÑA: ISOS GAMER 💿 -->
-<section id="gamer-isos" class="content-section">
-    <div class="section-title-search-container">
-        <h2>ISOS GAMER 💿</h2>
-        <div class="yorha-search-box">
-            <span>[ BUSCAR:</span>
-            <input type="text" id="iso-search-input" onkeyup="filterTools('gamer-isos', 'iso-search-input')" placeholder="...">
-
-            <span>]</span>
-        </div>
-    </div>
-    <div class="section-grid">
-        <div class="card-img-wrapper">
-            <img src="postimg.cc" id="iso-prog-img" alt="ISOs Gamer">
-        </div>
-        <div class="data-box dynamic-info-container">
-            <span class="data-box-title">■ FICHA TÉCNICA Y ACCESO</span>
-          <!-- REPETIR ESTO EN LAS 6 PESTAÑAS (pc-opt, cel-opt, apk-games, pc-games, apps-util, gamer-isos) -->
-<div class="dynamic-rows">
-    <div class="data-row"><span class="data-label">HERRAMIENTA:</span><span id="iso-prog-name">--</span></div>
-    <div class="data-row"><span class="data-label">ESTADO:</span><span id="iso-prog-status">--</span></div>
-    <div class="data-row"><span class="data-label">COMPATIBILIDAD:</span><span id="iso-prog-comp">--</span></div>
-    <div class="data-row"><span class="data-label">PESO:</span><span id="iso-prog-weight">--</span></div>
-</div>
-
-        </div>
-    </div>
-    <div class="data-box tools-bottom-container" style="margin-top: 20px;">
-        <span class="data-box-title">■ SELECCIONAR SISTEMA MODIFICADO</span>
-        <div class="bottom-layout-grid">
-            <div class="scrollable-tools-box">
-                <ul class="sub-tools-menu">
-                    <li class="sub-tool-item" data-search="windows gamer os 1" onclick="changeIsoProgram('iso-1', this)">[ 01. WINDOWS GAMER OS 1 ]</li>
-                    <li class="sub-tool-item" data-search="windows gamer os 2" onclick="changeIsoProgram('iso-2', this)">[ 02. WINDOWS GAMER OS 2 ]</li>
-                </ul>
-            </div>
-            <div class="description-and-action">
-                <div class="program-description-area scrollable-desc-box">
-                    <p id="iso-prog-desc">Selecciona una imagen de sistema optimizada para ver el registro de componentes eliminados y su enlace ISO.</p>
-                </div>
-                <div class="action-btn-wrapper">
-                    <a href="#" id="iso-prog-link" target="_blank" class="yorha-btn-solicitar">[ SOLICITAR ACCESO ]</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</main>
-</div> <!-- <-- ESTE DIV REPARALOTODO: Cierra la grilla 'main-layout' -->
-
-<footer class="yorha-footer">
-    <div class="footer-container">
-        <img src="img/footer.gif" alt="2B" class="footer-gif">
-        <p>© 2026 GLORY TO MANKIND | dt4432475</p>
-    </div>
-</footer>
-
-
-    <!-- CONTROLADOR JAVASCRIPT DE PESTAÑAS -->
-    <script>
-       function updateClock() {
-    const now = new Date();
-    // Obtiene la hora en formato local de 12 horas (ej: "6:45:12 p. m.")
-    let timeString = now.toLocaleTimeString('es-ES', { hour12: true });
-    
-    // Convierte el indicador a mayúsculas limpias estilo YoRHa (AM/PM)
-    timeString = timeString.toUpperCase().replace(/\s*([AP]\.?\s*M\.?)/, ' $1').replace(/\./g, '');
-    
-    document.getElementById('system-time').innerText = `HORA: ${timeString}`;
-}
-
-        setInterval(updateClock, 1000);
-        updateClock();
-
-       function switchTab(sectionId, event) {
-    // 1. Oculta y desmarca las secciones anteriores
-    document.querySelectorAll('.nav-item').forEach(li => li.classList.remove('active'));
-    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-
-    // 2. Activa la nueva pestaña seleccionada
-    event.currentTarget.classList.add('active');
-    document.getElementById(sectionId).classList.add('active');
-
-    // ==========================================================================
-    // 1. RESTAURACIÓN AUTOMÁTICA DE IMÁGENES GENERALES DE BIENVENIDA
-    // ==========================================================================
-    document.getElementById('pc-prog-img').src = 'https://i.postimg.cc/J0F33Dt8/image.png'; 
-    document.getElementById('cel-prog-img').src = 'postimg.cc'; 
-    document.getElementById('apk-prog-img').src = 'postimg.cc'; 
-    document.getElementById('pcg-prog-img').src = 'postimg.cc'; 
-    document.getElementById('util-prog-img').src = 'postimg.cc'; 
-    document.getElementById('iso-prog-img').src = 'postimg.cc';
-
-    // ==========================================================================
-    // 2. RESTAURACIÓN AUTOMÁTICA DE LAS DESCRIPCIONES DE BIENVENIDA (CAJA 4)
-    // ==========================================================================
-    document.getElementById('pc-prog-desc').innerText = 'Limpieza profunda del caché del sistema, archivos temporales de Windows y optimización del registro de arranque para liberar espacio en disco de inmediato.';
-    document.getElementById('cel-prog-desc').innerText = 'Libera memoria RAM cerrando procesos ocultos en segundo plano para mejorar la fluidez general del sistema táctil.';
-    document.getElementById('apk-prog-desc').innerText = 'Selecciona un juego de la botonera para cargar su ficha técnica y el enlace de descarga directa sin acortadores.';
-    document.getElementById('pcg-prog-desc').innerText = 'Selecciona un juego de PC para visualizar los requisitos mínimos de instalación y su link de descarga masiva.';
-    document.getElementById('util-prog-desc').innerText = 'Explora el software utilitario verificado para gestionar tareas de descompresión, edición u oficina.';
-    document.getElementById('iso-prog-desc').innerText = 'Selecciona una imagen de sistema optimizada para ver el registro de componentes eliminados y su enlace ISO.';
-
-    // ==========================================================================
-    // 3. NUEVO: LIMPÌAR COMPLETAMENTE LAS FICHAS TÉCNICAS (CAJA 3)
-    // ==========================================================================
-    // Resetea a vacío la sección de PC
-    document.getElementById('pc-prog-name').innerText = '--';
-    document.getElementById('pc-prog-status').innerText = '--';
-    document.getElementById('pc-prog-status').style.color = 'var(--text-dark)';
-    document.getElementById('pc-prog-comp').innerText = '--';
-    document.getElementById('pc-prog-weight').innerText = '--';
-
-    // Resetea a vacío la sección de Celular
-    document.getElementById('cel-prog-name').innerText = '--';
-    document.getElementById('cel-prog-status').innerText = '--';
-    document.getElementById('cel-prog-status').style.color = 'var(--text-dark)';
-    document.getElementById('cel-prog-comp').innerText = '--';
-    document.getElementById('cel-prog-weight').innerText = '--';
-
-    // Resetea a vacío la sección de Juegos APK
-    document.getElementById('apk-prog-name').innerText = '--';
-    document.getElementById('apk-prog-status').innerText = '--';
-    document.getElementById('apk-prog-comp').innerText = '--';
-    document.getElementById('apk-prog-weight').innerText = '--';
-
-    // Resetea a vacío la sección de Juegos PC
-    document.getElementById('pcg-prog-name').innerText = '--';
-    document.getElementById('pcg-prog-status').innerText = '--';
-    document.getElementById('pcg-prog-comp').innerText = '--';
-    document.getElementById('pcg-prog-weight').innerText = '--';
-
-    // Resetea a vacío la sección de Apps Útiles
-    document.getElementById('util-prog-name').innerText = '--';
-    document.getElementById('util-prog-status').innerText = '--';
-    document.getElementById('util-prog-comp').innerText = '--';
-    document.getElementById('util-prog-weight').innerText = '--';
-
-    // Resetea a vacío la sección de ISOs Gamer
-    document.getElementById('iso-prog-name').innerText = '--';
-    document.getElementById('iso-prog-status').innerText = '--';
-    document.getElementById('iso-prog-comp').innerText = '--';
-    document.getElementById('iso-prog-weight').innerText = '--';
-
-    // ==========================================================================
-    // 4. NUEVO: DESMARCAR TODOS LOS BOTONES SELECCIONADOS (CAJA 2)
-    // ==========================================================================
-    // Remueve el color activo de absolutamente todos los listados de la página
-   document.querySelectorAll('.sub-tool-item').forEach(item => item.classList.remove('active'));
-}
-        // Base de datos de las herramientas de (optimiza tu pc)
-const pcProgramsData = {
-    'script-limpieza': {
-        name: 'SCRIPT DE LIMPIEZA',
-        status: 'OPERATIVO',
-        compatibility: 'Win 10 / Win 11',
-        weight: '4.2 MB',
-        desc: 'Limpieza profunda del caché del sistema, archivos temporales de Windows y optimización del registro de arranque para liberar espacio en disco de inmediato.',
-        link: 'https://tu-link-de-descarga1.com',
-        img: 'postimg.cc' // Captura específica del Script
-    },
-    'reducir-lag': {
-        name: 'REDUCIR INPUT LAG',
-        status: 'OPERATIVO',
-        compatibility: 'Windows 11',
-        weight: '1.8 MB',
-        desc: 'Ajustes del registro de Windows enfocados en la tasa de sondeo del teclado y mouse. Reduce drásticamente el tiempo de respuesta en milisegundos dentro de juegos competitivos.',
-        link: 'https://tu-link-de-descarga2.com',
-        img: 'AQUÍ_EL_ENLACE_DE_IMAGEN_DEL_PROGRAMA_2.png' // Captura específica del Input Lag
-    },
-    'eliminar-telemetria': {
-                name: 'ELIMINAR TELEMETRÍA',
-                status: 'OPERATIVO',
-                compatibility: 'Win 10 / Win 11',
-                weight: '2.5 MB',
-                desc: 'Desactiva por completo los servicios de rastreo en segundo plano de Microsoft, liberando ciclos de tu procesador y disminuyendo el uso innecesario de la memoria RAM.',
-                link: 'https://tu-link-de-descarga3.com',
-                img: 'postimg.cc'
-            },
-            'activar-fps': {
-                name: 'MÁXIMO RENDIMIENTO FPS',
-                status: 'MANTENIMIENTO',
-                compatibility: 'Todos los Sistemas',
-                weight: '12.0 MB',
-                desc: 'Plan de energía ultra-avanzado oculto y desfragmentación lógica de memoria RAM para exprimir el rendimiento de tu tarjeta de video en zonas de alta carga de texturas.',
-                link: 'https://tu-link-de-descarga4.com',
-                img: 'postimg.cc'
-            },
-            'dism-plus-plus-64': {
-                name: 'Dism++64',
-                status: 'OPERATIVO',
-                compatibility: 'Windows 10/13 x64',
-                weight: '5.3 MB',
-                desc: '2b es mia cuate mia mai aaaaaaaaa',
-                img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSRNWVbmBAKrQ_0vNkTcswZ7-n7QTQUZ8W7A&s=10'
-            }
-            
-             
-    // ... haz lo mismo para las demás herramientas
-
-};
-function changePCProgram(programKey, element) {
-    document.querySelectorAll('.sub-tool-item').forEach(item => item.classList.remove('active')); // <-- DEJA SOLO ESTO
-    element.classList.add('active');
-    
-    // 3. Extraer datos correspondientes
-    const data = pcProgramsData[programKey];
-    
-    // 4. Inyectar la información en el Cuadro 2
-    document.getElementById('pc-prog-name').innerText = data.name;
-    document.getElementById('pc-prog-compatibility');
-    document.getElementById('pc-prog-comp').innerText = data.compatibility;
-    document.getElementById('pc-prog-weight').innerText = data.weight;
-    document.getElementById('pc-prog-desc').innerText = data.desc;
-    
-    // Cambiar enlace del botón Solicitar
-    document.getElementById('pc-prog-link').href = data.link;
-    document.getElementById('pc-prog-img').src = data.img;
-
-    // Manejar color de estado visual
-    const statusSpan = document.getElementById('pc-prog-status');
-    statusSpan.innerText = data.status;
-    if(data.status === 'MANTENIMIENTO') {
-        statusSpan.style.color = 'var(--glitch-red)';
-    } else {
-        statusSpan.style.color = '#5c6f52';
+      document.getElementById(sectionId).classList.add('active');
+      event.currentTarget.classList.add('active');
     }
-}
-         // BASE DE DATOS PARA LA PESTAÑA DE CELULAR (optimiza tu cel)
-        const celProgramsData = {
-            'limpieza-ram': {
-                name: 'LIMPIEZA DE RAM',
-                status: 'OPERATIVO',
-                compatibility: 'Android 10+',
-                weight: '15.4 MB',
-                desc: 'Libera memoria RAM cerrando procesos ocultos en segundo plano para mejorar la fluidez general del sistema táctil.',
-                link: 'https://tu-link-celular1.com',
-                img: 'postimg.cc' // Imagen inicial
-            },
-            'ahorro-bateria': {
-                name: 'OPTIMIZAR BATERÍA',
-                status: 'OPERATIVO',
-                compatibility: 'Android / iOS',
-                weight: '8.1 MB',
-                desc: 'Calibración lógica del ciclo de carga e hibernación extrema de aplicaciones devoradoras de energía.',
-                link: 'https://tu-link-celular2.com',
-                img: 'postimg.cc' // Pon aquí tu otra imagen de PostIMG
-            },
-            'game-booster': {
-                name: 'GAME BOOSTER APK',
-                status: 'OPERATIVO',
-                compatibility: 'Android 9+',
-                weight: '22.5 MB',
-                desc: 'Fuerza al procesador móvil a enfocarse en el juego activo, reduciendo los tirones de pantalla (stuttering).',
-                link: 'https://tu-link-celular3.com',
-                img: 'postimg.cc' // Pon aquí tu otra imagen de PostIMG
-            }
-        };
-
-       function changeCelProgram(programKey, element) {
-    document.querySelectorAll('.sub-tool-item').forEach(item => item.classList.remove('active')); // <-- DEJA SOLO ESTO
-    element.classList.add('active');
-
-            
-            const data = celProgramsData[programKey];
-            
-            // Cambia los textos e imagen dinámicamente
-            document.getElementById('cel-prog-name').innerText = data.name;
-            document.getElementById('cel-prog-comp').innerText = data.compatibility;
-            document.getElementById('cel-prog-weight').innerText = data.weight;
-            document.getElementById('cel-prog-desc').innerText = data.desc;
-            document.getElementById('cel-prog-link').href = data.link;
-            document.getElementById('cel-prog-img').src = data.img; 
-
-            const statusSpan = document.getElementById('cel-prog-status');
-            statusSpan.innerText = data.status;
-            if(data.status === 'MANTENIMIENTO') {
-                statusSpan.style.color = 'var(--glitch-red)';
-            } else {
-                statusSpan.style.color = '#5c6f52';
-            }
-        
-    // BASE DE DATOS PARA LA PESTAÑA DE JUEGOS APK
-        }
-        const apkProgramsData = {
-    'juego-apk-1': {
-        name: 'JUEGO APK EJEMPLO 1',
-        status: 'OPERATIVO',
-        compatibility: 'Android 11+',
-        weight: '85 MB',
-        desc: 'Descripción de tu primer juego modificado o APK para Android.',
-        link: '#',
-        img: 'postimg.cc'
-    },
-    'juego-apk-2': {
-        name: 'JUEGO APK EJEMPLO 2',
-        status: 'OPERATIVO',
-        compatibility: 'Android 10+',
-        weight: '140 MB',
-        desc: 'Descripción de tu segundo juego modificado o APK para Android.',
-        link: '#',
-        img: 'postimg.cc'
-    }
-};
-
-  function changeApkProgram(programKey, element) {
-    document.querySelectorAll('.sub-tool-item').forEach(item => item.classList.remove('active')); // <-- DEJA SOLO ESTO
-    element.classList.add('active');
-
-
-    const d = apkProgramsData[programKey];
-
-    // Cambia los textos e imagen dinámicamente
-    document.getElementById('apk-prog-name').innerText = d.name;
-    document.getElementById('apk-prog-comp').innerText = d.compatibility;
-    document.getElementById('apk-prog-weight').innerText = d.weight;
-    document.getElementById('apk-prog-desc').innerText = d.desc;
-    document.getElementById('apk-prog-link').href = d.link;
-    document.getElementById('apk-prog-img').src = d.img;
-
-            const statusSpan = document.getElementById('cel-prog-status');
-            statusSpan.innerText = data.status;
-            if(data.status === 'MANTENIMIENTO') {
-                statusSpan.style.color = 'var(--glitch-red)';
-            } else {
-                statusSpan.style.color = '#5c6f52';
-            }
-            }
-         
-                // ==========================================================================
-        // BASE DE DATOS Y LÓGICA PARA LA PESTAÑA DE JUEGOS PC
-        // ==========================================================================
-        const pcgProgramsData = {
-            'juego-pc-1': {
-                name: 'JUEGO PC EJEMPLO 1',
-                status: 'OPERATIVO',
-                compatibility: 'Win 10 / 11',
-                weight: '12 GB',
-                desc: 'Acción y aventura optimizado en formato portable y probado libre de errores.',
-                link: '#',
-                img: 'postimg.cc'
-            },
-            'juego-pc-2': {
-                name: 'JUEGO PC EJEMPLO 2',
-                status: 'OPERATIVO',
-                compatibility: 'Win 10 / 11',
-                weight: '4.5 GB',
-                desc: 'Juego clásico de estrategia y simulación con todos los parches de rendimiento.',
-                link: '#',
-                img: 'postimg.cc'
-            }, 
-                'juego-pc-3': {
-                    name: 'Dism++64',
-                    status: 'MANTENIMIENTO',
-                    compatibility: 'Win 10 / 12',
-                    weight: '999 GB',
-                    desc: 'oye 2b es mia solo mia',
-                    link: '#',
-                    img: 'https://i.postimg.cc/fRDtGhrB/logo4.png'
-                },
-            
-        };
-
-        function changePcgProgram(programKey, element) {
-            // Busca los elementos activos SOLO dentro de la pestaña de juegos de PC
-            document.querySelectorAll('#pc-games .sub-tool-item').forEach(item => item.classList.remove('active'));
-            element.classList.add('active');
-
-            const d = pcgProgramsData[programKey];
-
-            // Cambia los textos e imagen dinámicamente usando la variable 'd'
-            document.getElementById('pcg-prog-name').innerText = d.name;
-            document.getElementById('pcg-prog-comp').innerText = d.compatibility;
-            document.getElementById('pcg-prog-weight').innerText = d.weight;
-            document.getElementById('pcg-prog-desc').innerText = d.desc;
-            document.getElementById('pcg-prog-link').href = d.link;
-            document.getElementById('pcg-prog-img').src = d.img;
-
-            // Control de color para el estado
-            const statusSpan = document.getElementById('pcg-prog-status');
-            statusSpan.innerText = d.status;
-            if(d.status === 'MANTENIMIENTO') {
-                statusSpan.style.color = 'var(--glitch-red)';
-            } else {
-                statusSpan.style.color = '#5c6f52';
-            }
-        }
-        // ==========================================================================
-        // BASE DE DATOS Y LÓGICA PARA LA PESTAÑA DE APPS ÚTILES
-        // ==========================================================================
-        const utilProgramsData = {
-            'app-1': {
-                name: 'PROGRAMA EJEMPLO 1',
-                status: 'OPERATIVO',
-                compatibility: 'Windows 10 / 11',
-                weight: '25 MB',
-                desc: 'Herramienta utilitaria avanzada para la gestión, descompresión u optimización de archivos.',
-                link: '#',
-                img: 'postimg.cc'
-            },
-            'app-2': {
-                name: 'PROGRAMA EJEMPLO 2',
-                status: 'OPERATIVO',
-                compatibility: 'Android 9.0+',
-                weight: '12 MB',
-                desc: 'Aplicación útil recomendada para la edición multimedia sin marcas de agua de fondo.',
-                link: '#',
-                img: 'postimg.cc'
-            }
-        };
-
-       function changeUtilProgram(programKey, element) {
-    document.querySelectorAll('.sub-tool-item').forEach(item => item.classList.remove('active')); // <-- DEJA SOLO ESTO
-    element.classList.add('active');
-
-
-            const d = utilProgramsData[programKey];
-
-            // Inyecta la información en la Ficha Técnica y actualiza el banner
-            document.getElementById('util-prog-name').innerText = d.name;
-            document.getElementById('util-prog-comp').innerText = d.compatibility;
-            document.getElementById('util-prog-weight').innerText = d.weight;
-            document.getElementById('util-prog-desc').innerText = d.desc;
-            document.getElementById('util-prog-link').href = d.link;
-            document.getElementById('util-prog-img').src = d.img;
-
-            // Manejo estético del estado de la herramienta
-            const statusSpan = document.getElementById('util-prog-status');
-            statusSpan.innerText = d.status;
-            if(d.status === 'MANTENIMIENTO') {
-                statusSpan.style.color = 'var(--glitch-red)';
-            } else {
-                statusSpan.style.color = '#5c6f52';
-            }
-        }
-        // ==========================================================================
-        // BASE DE DATOS Y LÓGICA PARA LA PESTAÑA DE ISOS GAMER
-        // ==========================================================================
-        const isoProgramsData = {
-            'iso-1': {
-                name: 'WINDOWS GAMER OS 1',
-                status: 'OPERATIVO',
-                compatibility: 'RAM 4GB+',
-                weight: '3.1 GB',
-                desc: 'Sistema operativo Windows 10 Modificado. Telemetría y servicios innecesarios completamente removidos para priorizar el rendimiento del procesador.',
-                link: '#',
-                img: 'postimg.cc'
-            },
-            'iso-2': {
-                name: 'WINDOWS GAMER OS 2',
-                status: 'OPERATIVO',
-                compatibility: 'RAM 8GB+',
-                weight: '3.8 GB',
-                desc: 'Imagen ISO de Windows 11 Lite optimizada para videojuegos competitivos. Tweaks aplicados de fábrica para estabilizar los milisegundos de input lag.',
-                link: '#',
-                img: 'postimg.cc'
-            }
-        };
-
-      function changeIsoProgram(programKey, element) {
-    document.querySelectorAll('.sub-tool-item').forEach(item => item.classList.remove('active')); // <-- DEJA SOLO ESTO
-    element.classList.add('active');
-
-
-            const d = isoProgramsData[programKey];
-
-            // Inyecta la información en la Ficha Técnica y actualiza la portada
-            document.getElementById('iso-prog-name').innerText = d.name;
-            document.getElementById('iso-prog-comp').innerText = d.compatibility;
-            document.getElementById('iso-prog-weight').innerText = d.weight;
-            document.getElementById('iso-prog-desc').innerText = d.desc;
-            document.getElementById('iso-prog-link').href = d.link;
-            document.getElementById('iso-prog-img').src = d.img;
-
-            // Control de color para el estado de la ISO
-            const statusSpan = document.getElementById('iso-prog-status');
-            statusSpan.innerText = d.status;
-            if(d.status === 'MANTENIMIENTO') {
-                statusSpan.style.color = 'var(--glitch-red)';
-            } else {
-                statusSpan.style.color = '#5c6f52';
-            }
-        }
-            
-                 // MOTOR DE BÚSQUEDA ASÍNCRONO MULTISECCIÓN (ZONA 5)
-function filterTools(sectionId, inputId) {
-    const searchInput = document.getElementById(inputId);
-    const filterValue = searchInput.value.toLowerCase().trim();
-    const toolItems = document.querySelectorAll(`#${sectionId} .sub-tool-item`);
-
-    toolItems.forEach(item => {
-        const textAttr = item.getAttribute('data-search') || item.innerText.toLowerCase();
-        
-        if (textAttr.includes(filterValue)) {
-            item.style.display = "block";
-        } else {
-            item.style.display = "none";
-        }
-    });
-}
-
-
-            // Auto-clic interactivo al primer resultado encontrado
-            if (firstMatch && filterValue !== "") {
-                firstMatch.click();
-            }
-                // ... todo el código anterior de limpiar fichas técnicas y desmarcar botones ...
-
-    // 5. NUEVO: BORRAR TODA ACTIVIDAD DE BÚSQUEDA AL ENTRAR A UNA SECCIÓN
-    if(document.getElementById('pc-search-input')) document.getElementById('pc-search-input').value = '';
-    if(document.getElementById('cel-search-input')) document.getElementById('cel-search-input').value = '';
-    if(document.getElementById('apk-search-input')) document.getElementById('apk-search-input').value = '';
-    if(document.getElementById('pcg-search-input')) document.getElementById('pcg-search-input').value = '';
-    if(document.getElementById('util-search-input')) document.getElementById('util-search-input').value = '';
-    if(document.getElementById('iso-search-input')) document.getElementById('iso-search-input').value = '';
-
-    document.querySelectorAll('.sub-tool-item').forEach(item => {
-        item.style.display = 'block';
-    });
-
-    // Línea de desmarcar botones que ya tienes
-    document.querySelectorAll('.sub-tool-item').forEach(item => item.classList.remove('active'));
- // <-- Llave final de cierre de la función
-
-        
-    </script>
+  </script>
 </body>
 </html>

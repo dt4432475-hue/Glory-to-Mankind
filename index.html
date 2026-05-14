@@ -10,13 +10,13 @@
 
 <!-- 1. CABECERA CON GIFS A LOS EXTREMOS LATERALES (ZONAS 1 Y 2) -->
 <header class="main-header">
-  <!-- GIF Zona 1 (Izquierda) -->
-  <img src="img/win.gif" alt="deco-izq" class="gif-lateral izquierdo">
-  
+  <!-- GIF Izquierdo Decorativo -->
+  <img src="img/win.gif" alt="deco" class="gif-lateral">
   <div class="header-text">
-    <h1>Glory to Mankind</h1>
-    <p>• Centro de Descargas•</p>
+    <img src="img/baner.gif" alt="GLORY TO MANKIND" class="titulo-gif-principal">
+    <p class="subtitulo-cyber">• Servidor activo de descargas •</p>
   </div>
+  
   
   <!-- GIF Zona 2 (Derecha) -->
   <img src="img/android.png" alt="deco-der" class="gif-lateral derecho">
@@ -28,8 +28,8 @@
     <!-- 2. BARRA LATERAL IZQUIERDA (LAS 6 SECCIONES) -->
     <aside class="sidebar-tabs">
       <nav class="nav-tabs">
-        <button class="tab-btn" onclick="switchTab(event, 'opt-pc')">Optimizar Tu PC</button>
-        <button class="tab-btn" onclick="switchTab(event, 'opt-cel')">Optimizar Tu Cel</button>
+        <button class="tab-btn" onclick="switchTab(event, 'opt-pc')">Optimiza Tu PC</button>
+        <button class="tab-btn" onclick="switchTab(event, 'opt-cel')">Optimiza Tu Cel</button>
         <button class="tab-btn" onclick="switchTab(event, 'juegos-apk')">Juegos APK</button>
         <button class="tab-btn" onclick="switchTab(event, 'juegos-pc')">Juegos PC</button>
         <button class="tab-btn" onclick="switchTab(event, 'programas')">Programas y Apps Útiles</button>
@@ -40,91 +40,151 @@
     <!-- 4. ZONA CENTRAL DE CONTENIDO -->
     <main class="content-area">
 
+        <!-- COLLA EL BUSCADOR JUSTO AQUÍ (LÍNEA 116) -->
+      <div class="search-container" id="cyber-search-wrapper" style="display: none;">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="cyber-search" placeholder=" BUSCAR ... " onkeyup="filtrarPublicaciones()">
+          <div class="search-glow-border"></div>
+        </div>
+      </div>
+
       <!-- PANTALLA DE BIENVENIDA (ACTIVA POR DEFECTO) -->
       <section id="bienvenida" class="download-section active">
         <div class="welcome-box">
-          <h2>[ SISTEMA INICIALIZADO ]</h2>
-          <p class="welcome-text">Bienvenido al centro definitivo de optimización y recursos gaming. Selecciona cualquiera de las categorías del menú lateral izquierdo para desplegar los instaladores y herramientas disponibles.</p>
-          <div class="status-indicator">
-            <span class="pulse-dot"></span> Servidores: ONLINE // Descargas Directas Activas
-          </div>
-        </div>
+  <h2>[ Bienvenid@ ]</h2>
+  <p class="welcome-text">Bienvenido a Glory to Mankind, una página de descargas directas en su mayoría y te ofrecemos contenido variado en el mundo del gaming.</p>
+  
+  <!-- AQUÍ COLOCAS EL GIF PARA LOS USUARIOS NUEVOS -->
+  <div class="gif-bienvenida-container">
+    <img src="img/footer.gif" alt="Animación de Bienvenida" class="gif-bienvenida">
+  </div>
+  
+  <div class="status-indicator">
+    <span class="pulse-dot"></span> Servidores: ONLINE // Descargas Directas Activas
+  </div>
+</div>
+
       </section>
 
       <!-- SECCIÓN 1: OPTIMIZAR TU PC -->
       <section id="opt-pc" class="download-section">
         <div class="grid-downloads">
-         <!-- TARJETA 2: MINECRAFT -->
+         
     <div class="card">
-      <span class="card-tag">Android Mod</span>
-      <h3>Wise Memory Optimizer</h3>
+      <span class="card-tag">Confiable</span>
+      <h3>Dism++x64</h3>
       <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
-      
-      <!-- IMAGEN REFERENCIAL DE LA APLICACIÓN -->
       <div class="imagen-referencial">
-        <img src="https://www.arzalpro.com/wp-content/uploads/2025/10/Wise-Memory-Optimizer.webp" alt="Minecraft Arte">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlXaSlPyDogs35IEawrs5Rm1CDnq_Souqmg&s" alt="Minecraft Arte">
       </div>
-      
       <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
         Descarga Directa
       </a>
     </div>
-    <!-- TARJETA 2: MINECRAFT -->
+
     <div class="card">
       <span class="card-tag">Android Mod</span>
       <h3>Minecraft Premium</h3>
       <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
-      
-      <!-- IMAGEN REFERENCIAL DE LA APLICACIÓN -->
       <div class="imagen-referencial">
         <img src="pinimg.com" alt="Minecraft Arte">
       </div>
-      
       <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
         Descarga Directa
       </a>
     </div>
-    <!-- TARJETA 2: MINECRAFT -->
+
     <div class="card">
       <span class="card-tag">Android Mod</span>
       <h3>Minecraft Premium</h3>
       <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
-      
-      <!-- IMAGEN REFERENCIAL DE LA APLICACIÓN -->
       <div class="imagen-referencial">
         <img src="pinimg.com" alt="Minecraft Arte">
       </div>
-      
       <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
+         Descarga Directa
       </a>
     </div>
-    <!-- TARJETA 2: MINECRAFT -->
+
     <div class="card">
       <span class="card-tag">Android Mod</span>
       <h3>Minecraft Premium</h3>
       <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
-      
-      <!-- IMAGEN REFERENCIAL DE LA APLICACIÓN -->
       <div class="imagen-referencial">
         <img src="" alt="Minecraft Arte">
       </div>
-      
       <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
+         Descarga Directa
       </a>
     </div>
-      <!-- TARJETA 2: MINECRAFT -->
+     
     <div class="card">
       <span class="card-tag">Android Mod</span>
       <h3>Minecraft Premium</h3>
       <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
-      
-      <!-- IMAGEN REFERENCIAL DE LA APLICACIÓN -->
       <div class="imagen-referencial">
         <img src="pinimg.com" alt="Minecraft Arte">
       </div>
-      
+      <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
+        Descarga Directa
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag">Confiable</span>
+      <h3>Dism++x64</h3>
+      <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
+      <div class="imagen-referencial">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlXaSlPyDogs35IEawrs5Rm1CDnq_Souqmg&s" alt="Minecraft Arte">
+      </div>
+      <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
+        Descarga Directa
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag">Confiable</span>
+      <h3>Dism++x64</h3>
+      <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
+      <div class="imagen-referencial">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlXaSlPyDogs35IEawrs5Rm1CDnq_Souqmg&s" alt="Minecraft Arte">
+      </div>
+      <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
+        Descarga Directa
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag">Confiable</span>
+      <h3>Dism++x64</h3>
+      <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
+      <div class="imagen-referencial">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlXaSlPyDogs35IEawrs5Rm1CDnq_Souqmg&s" alt="Minecraft Arte">
+      </div>
+      <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
+        Descarga Directa
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag">Confiable</span>
+      <h3>Dism++x64</h3>
+      <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
+      <div class="imagen-referencial">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlXaSlPyDogs35IEawrs5Rm1CDnq_Souqmg&s" alt="Minecraft Arte">
+      </div>
+      <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
+        Descarga Directa
+      </a>
+    </div>
+    <div class="card">
+      <span class="card-tag">Confiable</span>
+      <h3>Dism++x64</h3>
+      <p>Optimizado con renderizado fluido, shaders de bajo consumo y skins desbloqueadas.</p>
+      <div class="imagen-referencial">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlXaSlPyDogs35IEawrs5Rm1CDnq_Souqmg&s" alt="Minecraft Arte">
+      </div>
       <a href="archive.org" download="Minecraft_CyberMod.apk" class="btn-download">
         Descarga Directa
       </a>
@@ -260,26 +320,67 @@
 
   <!-- 3. FOOTER GAMING INFERIOR -->
   <footer class="main-footer">
-    <p>&copy; 2026 CYBER DOWNLOADS // Almacenamiento directo mediante redes de alta velocidad.</p>
+    <p>&copy; 2026 Glory to Mankind // Almacenamiento directo mediante redes de alta velocidad.</p>
   </footer>
 
   <!-- SCRIPT DE INTERACTIVIDAD ACTUALIZADO -->
   <script>
-    function switchTab(event, sectionId) {
-      // Ocultar todas las secciones de descarga (incluyendo bienvenida)
-      const sections = document.querySelectorAll('.download-section');
-      sections.forEach(sec => sec.classList.remove('active'));
 
-      // Desactivar el estilo activo de los botones laterales
-      const buttons = document.querySelectorAll('.tab-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
+  function switchTab(event, sectionId) {
+    // 1. Ocultar todas las secciones de descarga
+    const sections = document.querySelectorAll('.download-section');
+    sections.forEach(sec => sec.classList.remove('active'));
 
-      // Mostrar la sección correspondiente
-      document.getElementById(sectionId).classList.add('active');
-      
-      // Activar el botón presionado
-      event.currentTarget.classList.add('active');
+    // 2. Desactivar el estilo activo de los botones laterales
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // 3. Mostrar la sección correspondiente
+    document.getElementById(sectionId).classList.add('active');
+    
+    // 4. Activar el botón presionado
+    event.currentTarget.classList.add('active');
+
+    // 5. TRUCO MAESTRO: CONTROL DE VISIBILIDAD DEL BUSCADOR
+    const buscadorWrapper = document.getElementById('cyber-search-wrapper');
+    
+    if (sectionId === 'bienvenida') {
+      buscadorWrapper.style.display = 'none'; // Se oculta en la bienvenida
+    } else {
+      buscadorWrapper.style.display = 'flex'; // Se enciende con luces neón en los 6 índices
     }
-  </script>
+
+    // 6. Limpiar el texto del buscador automáticamente al cambiar de pestaña
+    document.getElementById('cyber-search').value = '';
+  }
+
+  // --- AQUÍ ESTÁ EL MOTOR QUE TE FALTABA, MI KING ---
+  function filtrarPublicaciones() {
+    // Jalamos lo que escribe el usuario, quitamos espacios y a minúsculas
+    const textoBuscador = document.getElementById('cyber-search').value.toLowerCase().trim();
+    
+    // Apuntamos únicamente a las tarjetas de la pestaña activa
+    const seccionActiva = document.querySelector('.download-section.active');
+    if (!seccionActiva) return;
+    
+    const tarjetas = seccionActiva.querySelectorAll('.card');
+
+    // Evaluamos tarjeta por tarjeta
+    tarjetas.forEach(tarjeta => {
+      const etiquetaH3 = tarjeta.querySelector('h3');
+      
+      if (etiquetaH3) {
+        const tituloPublicacion = etiquetaH3.textContent.toLowerCase();
+        
+        // Si el título contiene la palabra se queda, si no se oculta de inmediato
+        if (tituloPublicacion.includes(textoBuscador)) {
+          tarjeta.style.setProperty('display', 'flex', 'important');
+        } else {
+          tarjeta.style.setProperty('display', 'none', 'important');
+        }
+      }
+    });
+  }
+</script>
 </body>
 </html>

@@ -340,3 +340,113 @@ body {
     display: none; /* Evita que los gifs choquen con el título en pantallas chicas */
   }
 }
+/* --- CONTENEDOR PRINCIPAL DEL BUSCADOR --- */
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 25px;
+  padding-right: 5px;
+}
+
+/* CAJA CYBERPUNK CON FONDO OSCURO Y BORDE DE NEÓN */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #0d0e12; /* Mismo fondo oscuro de tus tarjetas */
+  border: 2px solid #1e293b;
+  border-radius: 6px;
+  padding: 8px 14px;
+  width: 260px;
+  transition: all 0.3s ease;
+}
+
+/* EL INPUT INTERNO AHORA TIENE TEXTO BLANCO Y FONDO TRANSPARENTE */
+.search-box input {
+  width: 100%;
+  background: transparent !important; /* Quita el fondo blanco por defecto */
+  border: none !important;            /* Quita el borde nativo */
+  outline: none !important;           /* Quita la línea azul al dar clic */
+  color: #ffffff !important;          /* Texto en blanco brillante */
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.search-icon {
+  font-size: 0.95rem;
+  margin-right: 10px;
+  color: var(--neon-cyan);
+  /* Doble capa de brillo neón para que resalte en el fondo oscuro */
+  filter: drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(0 0 10px var(--neon-cyan));
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+/* COLOR DEL TEXTO PREVIO [ BUSCAR RECURSO... ] */
+.search-box input::placeholder {
+  color: #475569;
+}
+
+/* EFECTO DE ENCENDIDO CUANDO EL USUARIO DA CLIC PARA ESCRIBIR */
+.search-box:focus-within .search-icon {
+  transform: rotate(15px) scale(1.1);
+  filter: drop-shadow(0 0 8px var(--neon-cyan));
+}
+/* --- TAMAÑO AJUSTADO PARA EL GIF DE 2B --- */
+.gif-bienvenida {
+  width: 100%;             
+  max-width: 350px;        /* Subido de 140px a 200px para que se vea un poquito más grande */
+  height: auto;            
+  object-fit: contain;
+  image-rendering: pixelated; 
+  filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.25)); /* Le aumentamos un toque el brillo a los bordes */
+}
+
+.gif-bienvenida-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;    /* Separa el GIF del texto de bienvenida de arriba */
+  margin-bottom: 35px; /* Subido a 35px para que no choque con la línea de Servidores ONLINE */
+}
+/* --- SUBIR TAMAÑO AL TÍTULO ANIMADO --- */
+.titulo-gif-principal {
+  width: 100%;            /* Permite flexibilidad en pantallas pequeñas */
+  max-width: 510px;       /* SUBIDO de 320px a 480px para que se vea mucho más grande */
+  height: auto;           /* Protege la proporción original del GIF para que no se estire feo */
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px var(--neon-cyan)); /* Le subimos un pelo el brillo neón a las letras */
+  display: block;
+  margin: 0 auto 10px auto; 
+}
+
+/* --- ZONA 2: SUBTÍTULO EN MINÚSCULAS REALES --- */
+.subtitulo-cyber {
+  color: var(--neon-pink);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: none !important; /* TRUCO MAESTRO: Bloquea las mayúsculas automáticas del navegador */
+  text-shadow: 0 0 5px var(--neon-pink);
+}
+.content-area {
+  flex: 1;
+  max-height: 75vh;       /* Fuerza a que el área de descargas ocupe máximo el 75% de la pantalla */
+  overflow-y: auto;       /* Si las tarjetas superan esa altura, activa un scroll interno limpio */
+  padding-right: 10px;    /* Espacio para que el scroll no choque con tus tarjetas neón */
+}
+
+/* Opcional: Personaliza la barra de scroll interna para que se vea gamer */
+.content-area::-webkit-scrollbar {
+  width: 6px;
+}
+.content-area::-webkit-scrollbar-track {
+  background: #050508;
+}
+.content-area::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan); /* Tu barra de scroll brillará en cian */
+  border-radius: 4px;
+}

@@ -1,307 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glory to Mankind</title>
-  <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Gamer - Inicio</title>
+    <link rel="stylesheet" href="estilos/index.css">
 </head>
 <body>
 
-<header class="main-header">
- 
-  <img src="img/win.gif" alt="deco" class="gif-lateral">
-  <div class="header-text">
-    <img src="img/baner.gif" alt="GLORY TO MANKIND" class="titulo-gif-principal">
-  </div>
-  
-  <img src="img/android.png" alt="deco-der" class="gif-lateral derecho">
-</header>
+    <!-- ANUNCIO TOP: Alta visibilidad al cargar la página -->
+    <div class="ad-slot ad-top">Espacio Publicitario (Banner Superior)</div>
 
-  <div class="dashboard-wrapper">
-    
-    <aside class="sidebar-tabs">
-      <nav class="nav-tabs">
-        <button class="tab-btn" onclick="switchTab(event, 'opt-pc')">Programas Utiles PC</button>
-        <button class="tab-btn" onclick="switchTab(event, 'opt-cel')">Apps y Juegos APK</button>
-        <button class="tab-btn" onclick="switchTab(event, 'juegos-pc')">Juegos PC</button>
-        <button class="tab-btn" onclick="switchTab(event, 'sistemas')">Sistemas ISOS</button>
-      </nav>
-    </aside>
+    <!-- BANNER DE INICIO -->
+    <header class="gamer-banner">
+        <h1>GLORY TO MANKIND</h1>
+        <p>Tu dosis diaria de gaming</p>
+    </header>
 
-    <main class="content-area">
-
-      <div class="search-container" id="cyber-search-wrapper" style="display: none;">
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="cyber-search" placeholder=" BUSCAR ... " onkeyup="filtrarPublicaciones()">
-          <div class="search-glow-border"></div>
-        </div>
-      </div>
-
-      <section id="bienvenida" class="download-section active">
-        <div class="welcome-box">
-  <h2>[ Bienvenid@ ]</h2>
-  <p class="welcome-text">Disfruta de nuestro contenido en las diferentes secciones de la pagina. Si tienes alguna sugerencia , siéntete libre de compartirlo conmigo. UWU</p>
-  
-  <div class="gif-bienvenida-container">
-    <img src="img/footer.gif" alt="Animación de Bienvenida" class="gif-bienvenida">
-  </div>
-</div>
-      </section>
-
-      <section id="opt-pc" class="download-section">
-        <div class="grid-downloads">
-         
-    <div class="card">
-      <span class="card-tag">Win 10, Win 11</span>
-      <span class="card-tag">1 Falso Positivo</span>
-      <h3>Dism++ x64</h3>
-      <p>Limpieza profunda del sistema, eliminación de bloatware y reducción drástica del espacio en disco.</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/PJR10czd/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/dism-x-64/Dism%2B%2B%20x64.rar" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-    <div class="card">
-      <span class="card-tag">Win 10, Win 11</span>
-      <h3>Wise Memory Optimizer</h3>
-      <p>Libera memoria RAM automáticamente y elimina procesos colgados para reducir tirones en juegos.
-</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/25DnpnvN/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/wmosetup-4.2.4.132/WMOSetup_4.2.4.132.exe" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-   
-    <div class="card">
-      <span class="card-tag">Win 10, Win 11</span>
-      <h3>Wise Disk Cleaner</h3>
-      <p>Borra basura digital y archivos temporales ocultos. Optimiza la velocidad de carga de tus discos.</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/QCxq212K/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/wise-disk-cleaner/Wise%20Disk%20Cleaner.rar" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-     <div class="card">
-      <span class="card-tag">Win 10, Win 11</span>
-      <span class="card-tag">6 Falsos Positivos</span>
-      <h3>IObit Unlocker</h3>
-      <p>Desbloquea y elimina archivos rebeldes que el sistema operativo o procesos ocultos impiden borrar.</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/VLbwSVZ4/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/iobit-unlocker_202605/IObit%20Unlocker.rar" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-     <div class="card">
-      <span class="card-tag">Win 10, Win 11</span>
-      <h3>O&O ShutUp10++</h3>
-      <p>Desactiva de forma segura la telemetría, el rastreo de ubicación y la publicidad integrada de Windows.</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/bwsmY7m5/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/oosu-10_202605/OOSU10.exe" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-    <div class="card">
-      <span class="card-tag">Win 10, Win 11</span>
-      <h3>Revo Uninstaller</h3>
-      <p>Desinstalador avanzado que escanea y elimina carpetas huérfanas y registros ocultos tras borrar un programa.</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/z3mGbZnF/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/revo-uninstaller/Revo%20Uninstaller.rar" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-    <div class="card">
-      <span class="card-tag">Win 10, Win 11</span>
-      <h3>Geek Uninstaller</h3>
-      <p>Desinstalador portable y ultra rápido que fuerza la eliminación de programas rebeldes y limpia sus residuos.
-
-</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/prktvwsP/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/geek_20260514/geek.zip" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-    <div class="card">
-      <span class="card-tag">Win 10, Win 11</span>
-      <h3>Wise Game Booster</h3>
-      <p>Desactiva temporalmente servicios y procesos secundarios para enfocar toda la CPU y RAM en tus juegos.</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/y8g2p3Cm/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/wgbsetup-1.5.7.81/WGBSetup_1.5.7.81.exe" download="Minecraft_CyberMod.apk" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-     <div class="card">
-      <span class="card-tag">Pack</span>
-      <h3>Visual-C-Runtimes-All-in-One</h3>
-      <p>Instala de golpe todas las librerías C++ necesarias para evitar errores de falta de archivos .DLL al abrir juegos.
-</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/MHggzzyB/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/visual-c-runtimes-all-in-one-may-2026/Visual-C-Runtimes-All-in-One-May-2026.zip" download="Visual-C-Runtimes-All-in-One-May-2026.zip" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-              <div class="card">
-      <span class="card-tag">Pack</span>
-      <h3>DirectX Runtime Offline Installer</h3>
-      <p>Componentes esenciales de API gráfica para garantizar la máxima compatibilidad y rendimiento de tus juegos</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/mrqnYb5y/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://archive.org/download/direct-x-redist-jun-2010_202605/DirectX-Redist-Jun-2010.zip" download="DirectX-Redist-Jun-2010.zip" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-      <div class="card">
-      <span class="card-tag">Pack</span>
-      <h3>Show or Hide Updates Troubleshooter </h3>
-      <p>Sirve para ocultar actualizaciones específicas de la lista, evitando que controladores problemáticos se instalen solos.</p>
-      <div class="imagen-referencial">
-        <img src="https://i.postimg.cc/65s5tZBx/image.png" alt="Minecraft Arte">
-      </div>
-      <a href="https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab" download="DirectX-Redist-Jun-2010.zip" class="btn-download">
-        Descarga Directa
-      </a>
-    </div>
-
-      </section>
-
-      <!-- SECCIÓN 2: APPS Y JUEGOS APK -->
-      <section id="opt-cel" class="download-section">
-        <div class="grid-downloads">
-          <div class="card">
-            <span class="card-tag">Android Tool</span>
-            <h3>Game Booster Pro</h3>
-            <p>Libera memoria RAM y optimiza los hilos del procesador antes de iniciar tus juegos favoritos.</p>
-            <a href="archive.org" download="GameBooster_Pro.apk" class="btn-download">
-              Descarga Directa
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECCIÓN 3: JUEGOS PC -->
-      <section id="juegos-pc" class="download-section">
-        <div class="grid-downloads">
-          <div class="card">
-            <span class="card-tag">PC Game // Portable</span>
-            <h3>Hades Lite</h3>
-            <p>Edición comprimida sin pérdida de audio ni texturas. Ideal para jugar desde un USB.</p>
-            <a href="archive.org" download="Hades_Portable.zip" class="btn-download">
-              Descarga Directa
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECCIÓN 4: SISTEMAS ISOS -->
-      <section id="sistemas" class="download-section">
-        <div class="grid-downloads">
-          <div class="card">
-            <span class="card-tag">OS Modificado</span>
-            <h3>Windows 10 UltraOS</h3>
-            <p>ISO ultra limpia sin aplicaciones basura de fábrica. Latencia optimizada para eSports.</p>
-            <a href="archive.org" download="Win10_UltraOS_Gamer.iso" class="btn-download">
-              Descarga Directa
-            </a>
-          </div>
-        </div>
-      </section>
-
+    <!-- NAVEGACIÓN PRINCIPAL (4 Casillas / Botones) -->
+    <main class="menu-container">
+        <a href="secciones/seccion1.html" class="gamer-card">
+            <div class="card-icon">🎮</div>
+            <h3>Sección 1</h3>
+        </a>
+        <a href="secciones/seccion2.html" class="gamer-card">
+            <div class="card-icon">🕹️</div>
+            <h3>Sección 2</h3>
+        </a>
+        <a href="secciones/seccion3.html" class="gamer-card">
+            <div class="card-icon">🏆</div>
+            <h3>Sección 3</h3>
+        </a>
+        <a href="secciones/seccion4.html" class="gamer-card">
+            <div class="card-icon">🚀</div>
+            <h3>Sección 4</h3>
+        </a>
     </main>
-  </div>
 
-  <!-- 3. FOOTER GAMING INFERIOR -->
-  <footer class="main-footer">
-     <div class="status-indicator">
-    <span class="pulse-dot"></span> Servidor: 100% Activo
-  </div>
-  </footer>
+    <!-- ANUNCIO MEDIO: Separa los botones de las novedades -->
+    <div class="ad-slot ad-middle">Espacio Publicitario (Contenido)</div>
 
-  <!-- SCRIPT DE INTERACTIVIDAD ACTUALIZADO -->
-  <script>
+    <!-- RECUADRO DE NOVEDADES -->
+    <section class="news-container">
+        <h2>⚡ Últimas Novedades</h2>
+        <div id="novedades-lista">
+            <!-- Las novedades se cargarán dinámicamente con script.js -->
+        </div>
+    </section>
 
-  function switchTab(event, sectionId) {
-    // 1. Ocultar todas las secciones de descarga
-    const sections = document.querySelectorAll('.download-section');
-    sections.forEach(sec => sec.classList.remove('active'));
+    <!-- FOOTER BASE -->
+    <footer class="gamer-footer">
+        <p>&copy; 2026 Glory To Mankind. Todos los derechos reservados.</p>
+    </footer>
 
-    // 2. Desactivar el estilo activo de los botones laterales
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-
-    // 3. Mostrar la sección correspondiente
-    document.getElementById(sectionId).classList.add('active');
-    
-    // 4. Activar el botón presionado
-    event.currentTarget.classList.add('active');
-
-    // 5. TRUCO MAESTRO: CONTROL DE VISIBILIDAD DEL BUSCADOR
-    const buscadorWrapper = document.getElementById('cyber-search-wrapper');
-    
-    if (sectionId === 'bienvenida') {
-      buscadorWrapper.style.display = 'none'; // Se oculta en la bienvenida
-    } else {
-      buscadorWrapper.style.display = 'flex'; // Se enciende con luces neón en los 6 índices
-    }
-
-    // 6. Limpiar el texto del buscador automáticamente al cambiar de pestaña
-    document.getElementById('cyber-search').value = '';
-  }
-
-  // --- AQUÍ ESTÁ EL MOTOR QUE TE FALTABA, MI KING ---
-  function filtrarPublicaciones() {
-    // Jalamos lo que escribe el usuario, quitamos espacios y a minúsculas
-    const textoBuscador = document.getElementById('cyber-search').value.toLowerCase().trim();
-    
-    // Apuntamos únicamente a las tarjetas de la pestaña activa
-    const seccionActiva = document.querySelector('.download-section.active');
-    if (!seccionActiva) return;
-    
-    const tarjetas = seccionActiva.querySelectorAll('.card');
-
-    // Evaluamos tarjeta por tarjeta
-    tarjetas.forEach(tarjeta => {
-      const etiquetaH3 = tarjeta.querySelector('h3');
-      
-      if (etiquetaH3) {
-        const tituloPublicacion = etiquetaH3.textContent.toLowerCase();
-        
-        // Si el título contiene la palabra se queda, si no se oculta de inmediato
-        if (tituloPublicacion.includes(textoBuscador)) {
-          tarjeta.style.setProperty('display', 'flex', 'important');
-        } else {
-          tarjeta.style.setProperty('display', 'none', 'important');
-        }
-      }
-    });
-  }
-</script>
+    <script src="script.js"></script>
 </body>
 </html>

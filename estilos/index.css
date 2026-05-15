@@ -118,12 +118,43 @@ a, button, input, .gamer-card, .search-box input {
 /* ==========================================================================
    5. CASILLAS DEL MENU (MEDIDAS FIJAS GRANDES E IDÉNTICAS)
    ========================================================================== */
+/* 🖥️ Modo PC: Muestra las 4 tarjetas en una sola fila si hay espacio */
 .menu-container {
-    display: flex;
-    flex-wrap: wrap;     /* Permite que las tarjetas bajen a la siguiente línea si no caben */
-    gap: 25px;           /* Crea la separación exacta en px que necesitas entre tarjetas */
-    justify-content: center; /* Centra las tarjetas en la pantalla */
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
 }
+/* 📱 Modo Celular: Fuerza a que se organicen estrictamente en 2 columnas con espacio */
+@media (max-width: 1023px) {
+    .menu-container {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 12px !important; /* Separación compacta para pantallas chicas */
+        padding: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Forzamos a que las tarjetas reduzcan ligeramente su tamaño máximo para no asfixiarse */
+    .gamer-card {
+        width: 100% !important;
+        max-width: 180px !important; /* Se reduce el tope máximo para que respiren en pantallas angostas */
+        height: auto !important; /* Altura automática para que no se deformen los elementos internos */
+        min-height: 220px !important; 
+        margin: 0 auto !important; /* Centrado perfecto en su celda */
+    }
+
+    /* Reducción del tamaño de los títulos pixel art para que no empujen los bordes */
+    .gamer-card h2, 
+    .gamer-card [class*="title"] {
+        font-size: 1rem !important; /* Letras un poco más chicas para que entren completas */
+    }
+}
+
 .gamer-card {
     background: #161822;
     border: 2px solid #ff0055;
@@ -136,10 +167,12 @@ a, button, input, .gamer-card, .search-box input {
     justify-content: space-between;
     gap: 15px;
     
-    /* 🚀 BLOQUEO SIMÉTRICO: Cuadrados adaptables */
-    width: 260px !important;   /* Cambia 100% por 260px para recuperar el ancho de caja */
-    height: 260px !important;  /* Mantiene la altura fija perfectamente cuadrada */
- 
+       /* Configura el tamaño de esta manera elástica: */
+    width: 100% !important;        /* Se estira para rellenar su mitad de la pantalla */
+    max-width: 260px !important;   /* No permite que sea más grande que tu diseño original */
+    height: 260px !important;      /* Mantiene el cuadrado perfecto intacto */
+    box-sizing: border-box !important;
+     flex-shrink: 0 !important;      
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 

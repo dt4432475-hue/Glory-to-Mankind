@@ -174,10 +174,6 @@ body {
     max-width: 100% !important;
 }
 
-
-
-
-
 .post-card {
     background: #161822;
     border: 1px solid #334155;
@@ -187,9 +183,10 @@ body {
     flex-direction: column;
     gap: 10px;
     transition: transform 0.2s;
-    width: 100%;
-    max-width: 260px; /* Limitamos el ancho máximo para blindar su tamaño */
+    width: 100% !important;     /* Modificado: Ocupa el 100% de su columna asignada */
+    max-width: 100% !important; /* Modificado: Rompe el bloqueo rígido anterior */
 }
+
 
 .post-card:hover {
     transform: scale(1.02);
@@ -203,11 +200,10 @@ body {
     padding-bottom: 5px;
 }
 
-/* Ajuste opcional para las imágenes de los aportes */
 .post-image {
     width: 100%;
-    height: 140px; /* Ajustamos la altura de la imagen para mantener la proporción */
-    object-fit: cover;
+    height: 160px; 
+    object-fit: contain !important; /* Cambiado de 'cover' a 'contain' para que no se deformen los logos */
     border-radius: 6px;
     background: #090a0f;
 }
@@ -691,5 +687,28 @@ a, button, input, .gamer-card, .search-box input {
 @media (max-width: 600px) {
     .banner-decor-2b {
         max-height: 60px !important; /* Se encoge a la mitad en móviles para no romper la fila */
+    }
+}
+/* 🖥️ CONFIGURACIÓN BASE: Solo aplica en pantallas grandes (PC) */
+@media (min-width: 1024px) {
+    .posts-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important; /* 4 columnas fijas gordonas */
+        gap: 20px !important;
+        width: 100% !important;
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+}
+/* 📱 CONFIGURACIÓN MÓVIL: Aplica en pantallas medianas, chicas y celulares */
+@media (max-width: 1023px) {
+    .posts-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Fuerza 2 columnas sin aplastar */
+        gap: 15px !important;
+        padding: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 }

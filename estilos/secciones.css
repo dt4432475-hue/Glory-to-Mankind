@@ -378,7 +378,7 @@ body.fondo-juegos {
 
 /* 📱 Fondo fijo para la Sección 3: Apps y Juegos APK */
 body.fondo-apks {
-    background: linear-gradient(rgba(9, 10, 15, 0.9), rgba(9, 10, 15, 0.9)), url('../img/android.png');
+    background: linear-gradient(rgba(9, 10, 15, 0.9), rgba(9, 10, 15, 0.9)), url('https://i.postimg.cc/QdMt0sMH/video-game-nier-automata-yorha-no-2-type-b-827563.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Forzar que no se mueva con el contenido */

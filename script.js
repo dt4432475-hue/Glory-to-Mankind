@@ -5,14 +5,14 @@ const publicaciones = [
     // 💻 SECCIÓN 1: PROGRAMAS
     {
         seccion: 1,
-        titulo: "WinRAR Pro v7.0 Full",
+        titulo: "Wise Disk Cleaner",
         imagen: "img/win.gif", // Usa las imágenes de tu carpeta
         funcion: "Compresor de archivos definitivo con activación permanente incluida.",
         urlDescarga: "https://archive.org"
     },
     {
         seccion: 1,
-        titulo: "VLC Media Player Portable",
+        titulo: "Wise Memory Otimizer",
         imagen: "img/win.gif",
         funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
         urlDescarga: "https://archive.org"

@@ -71,8 +71,8 @@ a, button, input, .gamer-card, .search-box input {
     display: inline-block !important;
 
     /* 🚀 MODIFICA ESTOS DOS VALORES A TU GUSTO */
-    max-width: 800px !important;  /* Controla qué tan ancho se puede extender de lado a lado */
-    max-height: 2
+    max-width: 600px !important;  /* Controla qué tan ancho se puede extender de lado a lado */
+    max-height: 100px !important; /* Controla qué tan alto puede ser el GIF (ajústalo para que se vea bien con tu imagen) */
 }
 
 @media (max-width: 600px) {
@@ -183,52 +183,7 @@ a, button, input, .gamer-card, .search-box input {
     object-fit: cover !important; 
 }
 
-/* ==========================================================================
-   6. RECUADRO DE NOVEDADES CELESTE NEÓN CON SCROLL ACTIVO
-   ========================================================================== */
-.news-container {
-    background: #11131e;
-    border: 2px solid #00f0ff;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 15px rgba(0, 240, 255, 0.1);
-    border-radius: 8px;
-    padding: 25px;
-    max-width: 1100px;
-    margin: 0 auto 50px auto;
 
-    /* Control de Scroll vertical */
-    max-height: 350px;        
-    overflow-y: auto;          
-    -webkit-overflow-scrolling: touch;   
-}
-
-.news-container h2 {
-    color: #00f0ff;
-    text-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(0, 240, 255, 0.6);
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-    border-bottom: 2px solid #00f0ff;
-    padding-bottom: 8px;
-    letter-spacing: 2px;
-}
-
-#novedades-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.news-item {
-    background: #161822;
-    padding: 15px;
-    border-left: 4px solid #00f0ff;
-    border-radius: 0 6px 6px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Barra de desplazamiento celeste neón personalizada */
-.news-container::-webkit-scrollbar { width: 6px; }
-.news-container::-webkit-scrollbar-track { background: #0d0e12; border-radius: 4px; }
-.news-container::-webkit-scrollbar-thumb { background: #00f0ff; border-radius: 4px; }
 
 /* ==========================================================================
    7. MEDIA QUERIES RESPONSIVAS (DISEÑO MÓVIL)

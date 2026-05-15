@@ -225,25 +225,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// ==========================================================================
-// 4. LÓGICA DE LAS NOVEDADES (SÓLO PARA EL INICIO)
-// ==========================================================================
-const novedades = [
-    { fecha: "15/05/2026", texto: "¡Sección de Programas y Juegos actualizada con servidores estables!" },
-    { fecha: "12/05/2026", texto: "Implementamos la fuente fija Orbitron Cyberpunk para soporte móvil total." },
-    { fecha: "10/05/2026", texto: "Añadidos contenedores con scroll vertical para navegación infinita." },
-    { fecha: "10/05/2026", texto: "Añadidos contenedores con scroll vertical para navegación infinita." },
-    { fecha: "10/05/2026", texto: "Añadidos contenedores con scroll vertical para navegación infinita." },
-];
-
-function cargarNovedades() {
-    const contenedor = document.getElementById('novedades-lista');
-    if (!contenedor) return;
-    contenedor.innerHTML = novedades.map(item => `
-        <div class="news-item">
-            <small style="color: #64748b; font-weight: bold;">${item.fecha}</small>
-            <p style="margin-top: 5px;">${item.texto}</p>
-        </div>
-    `).join('');
-}
+ 

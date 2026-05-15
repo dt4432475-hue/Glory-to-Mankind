@@ -1,3 +1,17 @@
+/* ==========================================================================
+   MOVIMIENTOS Y DESPLAZAMIENTOS FLUIDOS GLOBALES
+   ========================================================================== */
+html {
+    /* Hace que el movimiento al subir o bajar la página con enlaces sea súper suave */
+    scroll-behavior: smooth; 
+}
+
+/* Aplicar transiciones automáticas a los elementos interactivos del portal */
+a, button, input, .gamer-card, .post-card, .download-btn, .search-box input {
+    /* Controla que los cambios de color, tamaños y sombras tarden 0.3 segundos y sean elásticos */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
 /* Configuración General y Reset */
 * {
     margin: 0;
@@ -8,7 +22,11 @@
 }
 
 body {
-    background-color: #0d0e12;
+    /* Cambia 'img/baner.gif' por el fondo que quieras para el inicio */
+    background: linear-gradient(rgba(13, 14, 18, 0.85), rgba(13, 14, 18, 0.85)), url('https://i.postimg.cc/4NVBTsy3/image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #e2e8f0;
     padding: 15px;
     overflow-x: hidden;
@@ -27,39 +45,56 @@ body {
     font-size: 0.8rem;
     text-transform: uppercase;
 }
-
-/* Banner Principal */
-.gamer-banner {
-    background: linear-gradient(135deg, #1e1b4b, #311042);
-    border: 2px solid #06b6d4;
-    box-shadow: 0 0 15px #06b6d4;
+/* ==========================================================================
+   CABECERA LIMPIA (SIN CAJA NI BORDES ROSAS)
+   ========================================================================== */
+.banner-inicio-limpio {
     text-align: center;
-    padding: 30px 15px;
-    border-radius: 8px;
+    padding: 10px;
     margin-bottom: 25px;
     width: 100%;
 }
+
+.banner-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.banner-main-title-gif {
+    max-width: 90% !important; /* Aumentado para ocupar más espacio horizontal */
+    height: auto !important;
+    max-height: 140px !important; /* Subido de 80px a 140px para que sea gigante en PC */
+    object-fit: contain !important;
+}
+
+.banner-decor-gif {
+    width: 50px;  
+    height: 50px; 
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 
 h1, h2, h3, .gamer-banner h1, .section-banner h1 {
     font-family: 'Orbitron', sans-serif !important;
     font-weight: 700;
 }
 
-.gamer-banner p {
-    font-size: 0.9rem;
-    margin-top: 5px;
-    color: #a5b4fc;
-}
-
 .menu-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-    gap: 20px;
+    /* Mantiene las 4 columnas en monitores grandes */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Un poco más de separación para que luzcan premium */
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 25px auto;
+    max-width: 1100px; /* Aumentado el ancho general para que las tarjetas se expandan */
+    margin: 0 auto 45px auto;
 }
-
+  
 .gamer-card {
     background: #161822;
     border: 2px solid #ec4899;
@@ -68,16 +103,22 @@ h1, h2, h3, .gamer-banner h1, .section-banner h1 {
     text-align: center;
     text-decoration: none;
     color: #fff;
+    
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Espacio entre el título y la imagen */
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    justify-content: space-between; /* Alinea el título arriba y la foto abajo perfectamente */
+    gap: 15px;
+     /* 🚀 MEDIDAS FIJAS: Todas las casillas miden exactamente lo mismo de alto y ancho */
+    width: 100% !important;
+    height: 240px !important; /* Subido el tamaño para que sean más grandes e imponentes */
+    
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .gamer-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #ec4899;
+    transform: translateY(-6px) scale(1.02); /* Movimiento elástico hacia arriba un poco más marcado */
+    box-shadow: 0 0 20px #ec4899;
     background: #1f1f2e;
 }
 
@@ -88,22 +129,39 @@ h1, h2, h3, .gamer-banner h1, .section-banner h1 {
     text-shadow: 0 0 5px rgba(236, 72, 153, 0.5);
 }
 
-/* Recuadro contenedor de la imagen */
+/* 🚀 Recuadro contenedor de la foto de referencia (Más grande) */
 .card-img-box {
     width: 100%;
-    height: 130px; /* Altura fija para que todas las casillas midan igual */
+    height: 140px; /* Subido de 120px a 140px para dar más impacto visual */
     border-radius: 6px;
     border: 1px solid #3f3f46;
-    background: #0d0e12;
-    overflow: hidden; /* Corta los bordes sobrantes de las imágenes */
+    background: #090a0f;
+    overflow: hidden;
 }
 
-/* Comportamiento de la imagen de referencia */
+/* Mantiene el llenado completo que configuramos antes */
 .card-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta la imagen al recuadro sin deformarla */
-    transition: transform 0.3s;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+}
+
+/* ==========================================================================
+   MEDIA QUERY: MANTIENE EL TAMAÑO SIMÉTRICO DE 2 EN 2 EN CELULARES
+   ========================================================================== */
+@media (max-width: 800px) {
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+
+    .gamer-card {
+        height: 200px !important; /* Un poco más compactas en celulares para que entren bien */
+    }
+
+    .card-img-box {
+        height: 110px;
+    }
 }
 
 .gamer-card:hover .card-img-box img {
@@ -115,25 +173,42 @@ h1, h2, h3, .gamer-banner h1, .section-banner h1 {
     margin-bottom: 8px;
 }
 
-
-
-/* Recuadro de Novedades */
 .news-container {
-    background: #11131e;
-    border: 1px solid #3b82f6;
-    border-radius: 8px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 25px auto;
+    background: #11131e !important;
+    border: 2px solid #00f0ff !important;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 15px rgba(0, 240, 255, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 25px !important;
+    max-width: 1000px !important;
+    margin: 0 auto 50px auto !important; /* Mantiene la separación con el footer */
+}
+/* Personalización de la barra de desplazamiento (Scrollbar Celeste Neón) */
+.news-container::-webkit-scrollbar {
+    width: 6px;
+}
+.news-container::-webkit-scrollbar-track {
+    background: #0d0e12;
+    border-radius: 4px;
+}
+.news-container::-webkit-scrollbar-thumb {
+    background: #00f0ff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #00f0ff;
+}
+.news-container::-webkit-scrollbar-thumb:hover {
+    background: #70f7ff;
 }
 
+/* Título de novedades encendido */
 .news-container h2 {
-    color: #3b82f6;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    border-bottom: 2px solid #3b82f6;
-    padding-bottom: 5px;
+    color: #00f0ff !important;
+    font-family: 'Orbitron', sans-serif !important;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(0, 240, 255, 0.5) !important; /* Efecto de luz encendida */
+    margin-bottom: 20px !important;
+    font-size: 1.6rem !important;
+    border-bottom: 2px solid #00f0ff !important;
+    padding-bottom: 8px !important;
+    letter-spacing: 2px !important;
 }
 
 .news-item {
@@ -189,5 +264,123 @@ h1, h2, h3, .gamer-banner h1, .section-banner h1 {
     }
     .news-container h2 {
         font-size: 1.6rem;
+    }
+     .banner-main-title-gif {
+        max-height: 80px !important;
+    }
+}
+/* ==========================================================================
+   CONEXIÓN RESPONSIVA PARA LOS GIFS DEL BANNER PRINCIPAL
+   ========================================================================== */
+.banner-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Ajustes del GIF del Título Central */
+.banner-main-title-gif {
+    max-width: 75%; /* Evita que ocupe todo el ancho para dar espacio a los lados */
+    height: auto;
+    max-height: 80px; 
+    object-fit: contain;
+}
+
+/* Ajustes de los dos GIFs laterales decorativos */
+.banner-decor-gif {
+    width: 50px;  
+    height: 50px; 
+    object-fit: contain;
+    flex-shrink: 0; /* Evita que el navegador aplaste el GIF deformándolo */
+}
+
+/* ==========================================================================
+   MEDIA QUERIES: AJUSTE EXACTO PARA CELULARES
+   ========================================================================== */
+@media (max-width: 600px) {
+    .banner-title-wrapper {
+        gap: 5px; /* Reduce la separación al mínimo en móviles */
+    }
+    
+    .banner-decor-gif {
+        width: 25px; /* Encoge los GIFs laterales en pantallas pequeñas */
+        height: 25px;
+    }
+
+    .banner-main-title-gif {
+        max-height: 45px; /* Achica un poco el título para que no se salga */
+    }
+}
+
+/* Para pantallas extremadamente pequeñas (Celulares antiguos o modo vertical angosto) */
+@media (max-width: 400px) {
+    .banner-decor-gif {
+        display: none; /* Oculta los adornos para priorizar un título limpio y centrado */
+    }
+    .banner-main-title-gif {
+        max-width: 100%;
+        max-height: 50px;
+    }
+}
+
+/* ==========================================================================
+   ESTILO PARA LOS TITULOS EN FORMATO GIF DENTRO DE LAS TARJETAS
+   ========================================================================== */
+    .card-title-box {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-title-gif {
+    max-width: 100%; /* 🌟 Corregido a 100% para que el GIF no se pase del ancho de la tarjeta */
+    height: auto;
+    max-height: 40px; /* Evita que el GIF sea demasiado alto */
+    object-fit: contain; /* Evita que se estire feo */
+}
+
+/* Ajuste responsivo para celulares pequeños */
+@media (max-width: 600px) {
+    .card-title-box {
+        height: 35px;
+    }
+    .card-title-gif {
+        max-height: 30px;
+    }
+}
+@media (max-width: 800px) {
+    .menu-container {
+        /* Fuerza exactamente 2 columnas en celulares y tablets medianas */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .card-img-box {
+        height: 100px; /* Ajusta un poco la altura en pantallas compactas */
+    }
+}
+/* ==========================================================================
+   EFECTO FADE-IN PARA LA CARGA DE LA WEB
+   ========================================================================== */
+body {
+    animation: cargarPantalla Gamer 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes cargarPantallaGamer {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Viene un poco desde abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Queda en su posición final */
     }
 }

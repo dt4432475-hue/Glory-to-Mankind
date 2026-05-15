@@ -1,14 +1,30 @@
+/* ==========================================================================
+   MOVIMIENTOS Y DESPLAZAMIENTOS FLUIDOS GLOBALES
+   ========================================================================== */
+html {
+    /* Hace que el movimiento al subir o bajar la página con enlaces sea súper suave */
+    scroll-behavior: smooth; 
+}
+
+/* Aplicar transiciones automáticas a los elementos interactivos del portal */
+a, button, input, .gamer-card, .post-card, .download-btn, .search-box input {
+    /* Controla que los cambios de color, tamaños y sombras tarden 0.3 segundos y sean elásticos */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
 /* Reset y Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    background-color: #090a0f;
+    /* Cambia 'img/footer.gif' por el fondo que prefieras para las secciones */
+    background: linear-gradient(rgba(9, 10, 15, 0.9), rgba(9, 10, 15, 0.9)), url('../img/footer.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #e2e8f0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 15px;
     overflow-x: hidden;
 }
@@ -26,36 +42,17 @@ body {
     text-transform: uppercase;
 }
 
-/* Banner de Sección */
-.section-banner {
-    background: linear-gradient(135deg, #0f172a, #1e1b4b);
-    border: 2px solid #a855f7;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-    border-radius: 8px;
-    padding: 25px 20px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.section-banner h1 {
-    font-size: 2.2rem;
-    color: #fff;
-    text-shadow: 0 0 10px #a855f7;
-    margin-bottom: 15px;
-}
-
-/* Diseño llamativo de Seguridad */
 .safety-badge {
     background: rgba(16, 185, 129, 0.1);
     border: 1px solid #10b981;
     box-shadow: inset 0 0 10px rgba(16, 185, 129, 0.2);
     border-radius: 6px;
-    padding: 12px;
+    padding: 15px;
     display: flex;
     align-items: center;
     gap: 12px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 45px auto; /* Incremetado a 45px abajo para despejar el buscador */
     text-align: left;
 }
 
@@ -69,18 +66,17 @@ body {
     line-height: 1.4;
 }
 
-/* Buscador alineado a la Derecha */
 .search-wrapper {
     max-width: 1100px;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 50px auto; /* Incrementado a 50px para alejarlo por completo de las casillas */
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .search-box {
     position: relative;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px; /* Lo hacemos un poquito más ancho para que sea cómodo de usar */
 }
 
 .search-box input {
@@ -108,18 +104,29 @@ body {
     pointer-events: none;
 }
 
-/* Barra Lateral / Contenedor con Scroll para evitar páginas largas */
+/* ==========================================================================
+   BARRA LATERAL ADAPTATIVA (NUNCA GIGANTE, NUNCA COLAPSADA)
+   ========================================================================== */
 .posts-scroll-container {
     max-width: 1100px;
     margin: 0 auto;
-    max-height: 650px; /* Tamaño máximo vertical */
-    overflow-y: auto; /* Activa la barra lateral */
+    
+    /* 🚀 ALTURAS PROPORCIONALES PARA EVITAR CAJAS ENORMES */
+    min-height: 200px;    /* Altura pequeña y estética ideal si está vacío o tiene 1 post */
+    max-height: 550px;    /* Límite máximo para que la barra lateral no se alargue infinitamente */
+    
+    overflow-y: auto;     /* Activa la barra lateral gamer solo cuando pasas el límite */
     padding-right: 8px;
     border: 1px solid #1e1b4b;
     background: rgba(15, 23, 42, 0.3);
     border-radius: 8px;
+    
+    /* Asegura estabilidad visual interna */
+    display: flex;
+    flex-direction: column;
 }
 
+   
 /* Personalización de la barra de desplazamiento (Scrollbar Gamer) */
 .posts-scroll-container::-webkit-scrollbar {
     width: 8px;
@@ -135,17 +142,16 @@ body {
     background: #c084fc;
 }
 
-/* Grid de publicaciones */
 .posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    /* Usamos 'auto-fill' en lugar de 'auto-fit' para que mantengan su tamaño original y no se estiren */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
     padding: 15px;
 }
 
-/* Tarjeta de Publicación */
 .post-card {
-    background: #131520;
+    background: #161822;
     border: 1px solid #334155;
     border-radius: 8px;
     padding: 15px;
@@ -153,6 +159,8 @@ body {
     flex-direction: column;
     gap: 10px;
     transition: transform 0.2s;
+    width: 100%;
+    max-width: 260px; /* Limitamos el ancho máximo para blindar su tamaño */
 }
 
 .post-card:hover {
@@ -167,9 +175,10 @@ body {
     padding-bottom: 5px;
 }
 
+/* Ajuste opcional para las imágenes de los aportes */
 .post-image {
     width: 100%;
-    height: 160px;
+    height: 140px; /* Ajustamos la altura de la imagen para mantener la proporción */
     object-fit: cover;
     border-radius: 6px;
     background: #090a0f;
@@ -285,4 +294,117 @@ body {
     .safety-badge { flex-direction: column; text-align: center; }
     .search-wrapper { justify-content: center; }
     .search-box { max-width: 100%; }
+}
+
+/* ==========================================================================
+   CABECERA LIMPIA PARA SECCIONES (SIN CAJA NI BORDES ROSAS)
+   ========================================================================== */
+.banner-inicio-limpio {
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 45px; /* Incremetado para darle un respiro al título */
+    width: 100%;
+}
+
+.banner-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.banner-main-title-gif {
+    max-width: 75%;
+    height: auto;
+    max-height: 80px; 
+    object-fit: contain;
+}
+
+.banner-decor-gif {
+    width: 50px;  
+    height: 50px; 
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+/* Comportamiento responsivo para pantallas de celulares */
+@media (max-width: 600px) {
+    .banner-title-wrapper {
+        gap: 8px;
+    }
+    .banner-decor-gif {
+        width: 35px; /* Se reducen en celular para que no empujen el título fuera de la pantalla */
+        height: 35px;
+    }
+    .banner-main-title-gif {
+        max-height: 60px;
+    }
+}
+
+/* Estilo base compartido para todos los fondos de secciones */
+body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e2e8f0;
+    padding: 15px;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   FONDOS INDIVIDUALES CORREGIDOS (COMPLETAMENTE FIJOS)
+   ========================================================================== */
+
+/* 💻 Fondo fijo para la Sección 1: Programas */
+body.fondo-programas {
+    background: linear-gradient(rgba(9, 10, 15, 0.9), rgba(9, 10, 15, 0.9)), url('https://i.postimg.cc/zvSb0tDG/2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Forzar que no se mueva con el contenido */
+}
+
+/* 🎮 Fondo fijo para la Sección 2: Juegos PC */
+body.fondo-juegos {
+    background: linear-gradient(rgba(9, 10, 15, 0.9), rgba(9, 10, 15, 0.9)), url('https://i.postimg.cc/brdWRM9z/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Forzar que no se mueva con el contenido */
+}
+
+/* 📱 Fondo fijo para la Sección 3: Apps y Juegos APK */
+body.fondo-apks {
+    background: linear-gradient(rgba(9, 10, 15, 0.9), rgba(9, 10, 15, 0.9)), url('../img/android.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Forzar que no se mueva con el contenido */
+}
+
+/* 💿 Fondo fijo para la Sección 4: ISOs */
+body.fondo-isos {
+    background: linear-gradient(rgba(9, 10, 15, 0.9), rgba(9, 10, 15, 0.9)), url('../img/footer.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Forzar que no se mueva con el contenido */
+}
+/* ==========================================================================
+   EFECTO FADE-IN PARA LA CARGA DE LA WEB
+   ========================================================================== */
+body {
+    animation: cargarPantalla Gamer 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes cargarPantallaGamer {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Viene un poco desde abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Queda en su posición final */
+    }
 }

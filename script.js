@@ -24,12 +24,75 @@ const publicaciones = [
         funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
         urlDescarga: "https://archive.org"
     },
+     {
+        seccion: 1,
+        titulo: "wise game booster",
+        imagen: "img/win.gif",
+        funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
+        urlDescarga: "https://archive.org"
+    },
+     {
+        seccion: 1,
+        titulo: "wise game booster",
+        imagen: "img/win.gif",
+        funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
+        urlDescarga: "https://archive.org"
+    },
+     {
+        seccion: 1,
+        titulo: "wise game booster",
+        imagen: "img/win.gif",
+        funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
+        urlDescarga: "https://archive.org"
+    },
 
     // 🎮 SECCIÓN 2: JUEGOS PC
     {
         seccion: 2,
         titulo: "Counter Strike 1.6 No Steam",
-        imagen: "img/baner.gif",
+        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
+        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
+        urlDescarga: "https://archive.org"
+    },
+     {
+        seccion: 2,
+        titulo: "Counter Strike 1.6 No Steam",
+        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
+        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
+        urlDescarga: "https://archive.org"
+    },
+     {
+        seccion: 2,
+        titulo: "Counter Strike 1.6 No Steam",
+        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
+        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
+        urlDescarga: "https://archive.org"
+    },
+     {
+        seccion: 2,
+        titulo: "Counter Strike 1.6 No Steam",
+        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
+        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
+        urlDescarga: "https://archive.org"
+    },
+    {
+        seccion: 2,
+        titulo: "Counter Strike 1.6 No Steam",
+        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
+        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
+        urlDescarga: "https://archive.org"
+    },
+    {
+        seccion: 2,
+        titulo: "Counter Strike 1.6 No Steam",
+        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
+        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
+        urlDescarga: "https://archive.org"
+    },
+    {
+        seccion: 2,
+        titulo: "Counter Strike 1.6 No Steam",
+        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
         funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
         urlDescarga: "https://archive.org"
     },
@@ -169,7 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const novedades = [
     { fecha: "15/05/2026", texto: "¡Sección de Programas y Juegos actualizada con servidores estables!" },
     { fecha: "12/05/2026", texto: "Implementamos la fuente fija Orbitron Cyberpunk para soporte móvil total." },
-    { fecha: "10/05/2026", texto: "Añadidos contenedores con scroll vertical para navegación infinita." }
+    { fecha: "10/05/2026", texto: "Añadidos contenedores con scroll vertical para navegación infinita." },
+    { fecha: "10/05/2026", texto: "Añadidos contenedores con scroll vertical para navegación infinita." },
+    { fecha: "10/05/2026", texto: "Añadidos contenedores con scroll vertical para navegación infinita." },
 ];
 
 function cargarNovedades() {

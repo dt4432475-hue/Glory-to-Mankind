@@ -119,14 +119,11 @@ a, button, input, .gamer-card, .search-box input {
    5. CASILLAS DEL MENU (MEDIDAS FIJAS GRANDES E IDÉNTICAS)
    ========================================================================== */
 .menu-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 casillas en PC */
-    gap: 20px; 
-    width: 100%;
-    max-width: 1100px; 
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;     /* Permite que las tarjetas bajen a la siguiente línea si no caben */
+    gap: 25px;           /* Crea la separación exacta en px que necesitas entre tarjetas */
+    justify-content: center; /* Centra las tarjetas en la pantalla */
 }
-
 .gamer-card {
     background: #161822;
     border: 2px solid #ff0055;
@@ -139,9 +136,10 @@ a, button, input, .gamer-card, .search-box input {
     justify-content: space-between;
     gap: 15px;
     
-    /* 🚀 BLOQUEO SIMÉTRICO: Cuadrados perfectos de 260px x 260px */
-    width: 100% !important;
-    height: 260px !important; 
+    /* 🚀 BLOQUEO SIMÉTRICO: Cuadrados adaptables */
+    width: 260px !important;   /* Cambia 100% por 260px para recuperar el ancho de caja */
+    height: 260px !important;  /* Mantiene la altura fija perfectamente cuadrada */
+ 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 

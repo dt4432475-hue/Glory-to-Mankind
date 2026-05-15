@@ -156,14 +156,27 @@ body {
 .posts-scroll-container::-webkit-scrollbar-thumb:hover {
     background: #c084fc;
 }
-
+/* Configuración base para pantallas grandes (PC) */
 .posts-grid {
-    display: grid;
-    /* Usamos 'auto-fill' en lugar de 'auto-fit' para que mantengan su tamaño original y no se estiren */
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 15px;
-    padding: 15px;
+    display: grid !important;
+    /* Fuerza a crear 4 columnas del mismo tamaño en monitores grandes */
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important; /* Espaciado estético entre las 4 tarjetas */
+    width: 100% !important;
+    max-width: 1400px !important; /* Evita que se estiren al infinito en monitores gigantes */
+    margin: 0 auto !important; /* Centra el bloque completo de publicaciones */
+    box-sizing: border-box !important;
 }
+
+/* Asegura que las tarjetas se adapten perfectamente a las 4 columnas */
+.posts-grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+
+
+
 
 .post-card {
     background: #161822;

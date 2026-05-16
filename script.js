@@ -173,3 +173,261 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+let activeSection = null;
+let currentSearchQuery = "";
+
+function inicializarSecciones() {
+    // Detecta la sección activa mediante el ID en el HTML
+    for (let i = 1; i <= 4; i++) {
+        if (document.getElementById(`posts-seccion${i}`)) {
+            activeSection = i;
+            break;
+        }
+    }
+
+    if (!activeSection) return; // Si estamos en el index, se detiene aquí
+
+    renderizarPosts();
+
+    // Vinculación del buscador en tiempo real
+    const buscador = document.getElementById('search-input');
+    if (buscador) {
+        buscador.addEventListener('input', (e) => {
+            currentSearchQuery = e.target.value.toLowerCase();
+            renderizarPosts();
+        });
+    }
+
+    // 🎯 NUEVO: ACTIVACIÓN DE LAS FLECHAS LOCAS PARA EL CARRUSEL
+    const flechaIzquierda = document.getElementById('btn-carrusel-izq');
+    const flechaDerecha = document.getElementById('btn-carrusel-der');
+    const contenedorPublicaciones = document.getElementById(`posts-seccion${activeSection}`);
+
+    if (flechaDerecha && contenedorPublicaciones) {
+        flechaDerecha.addEventListener('click', () => {
+            const tarjeta = contenedorPublicaciones.querySelector('.post-card');
+            if (tarjeta) {
+                // Calcula el ancho de una tarjeta + su espacio (gap) y lo multiplica por 4
+                const avanceTotal = (tarjeta.clientWidth + 20) * 4; 
+                contenedorPublicaciones.scrollLeft += avanceTotal; // Avanza 4 casillas
+            }
+        });
+    }
+
+    if (flechaIzquierda && contenedorPublicaciones) {
+        flechaIzquierda.addEventListener('click', () => {
+            contenedorPublicaciones.scrollLeft = 0; // Regresa de golpe a la primerísima casilla
+        });
+    }
+}
+
+function renderizarPosts() {
+    const contenedor = document.getElementById(`posts-seccion${activeSection}`);
+    if (!contenedor) return;
+
+    // Filtra los elementos que corresponden a la sección y coinciden con la lupa
+    const postsFiltrados = publicaciones.filter(post => {
+        const perteneceSeccion = post.seccion === activeSection;
+        const coincideBuscador = post.titulo.toLowerCase().includes(currentSearchQuery) || 
+                                 post.funcion.toLowerCase().includes(currentSearchQuery);
+        return perteneceSeccion && coincideBuscador;
+    });
+
+    if (postsFiltrados.length === 0) {
+        contenedor.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 40px; font-family: inherit;">No se encontraron aportes con ese nombre.</p>`;
+        return;
+    }
+
+    contenedor.innerHTML = postsFiltrados.map(post => {
+        // SOLUCIÓN INTELIGENTE: Si la imagen empieza con http (Postimg), se queda igual. 
+        // Si es una ruta local (como img/win.gif), le añade el "../" para que salga de la carpeta "secciones".
+        const urlFinalImagen = post.imagen.startsWith('http') ? post.imagen : `../${post.imagen}`;
+
+        return `
+            <div class="post-card">
+                <h3>${post.titulo}</h3>
+                <img src="${urlFinalImagen}" alt="${post.titulo}" class="post-image">
+                <p class="post-function">${post.funcion}</p>
+                <button class="download-btn" onclick="abrirAcortadorPublicitario('${post.urlDescarga}')">⚡ Descarga Directa</button>
+            </div>
+        `;
+    }).join('');
+}
+
+let timerInterval = null;
+
+function abrirAcortadorPublicitario(urlFinal) {
+    const modal = document.getElementById('download-modal');
+    const secondsSpan = document.getElementById('seconds');
+    const counterText = document.getElementById('counter-text');
+    const finalBtn = document.getElementById('final-download-btn');
+
+    if (!modal) return;
+
+    clearInterval(timerInterval);
+    let tiempoRestante = 5;
+    
+    secondsSpan.textContent = tiempoRestante;
+    counterText.classList.remove('hidden');
+    finalBtn.classList.add('hidden');
+    finalBtn.href = urlFinal; // Asigna el enlace de Internet Archive
+
+    modal.classList.add('active'); // Muestra la pantalla flotante
+
+    timerInterval = setInterval(() => {
+        tiempoRestante--;
+        secondsSpan.textContent = tiempoRestante;
+
+        if (tiempoRestante <= 0) {
+            clearInterval(timerInterval);
+            counterText.classList.add('hidden');
+            finalBtn.classList.remove('hidden'); // Revela el botón de descarga
+        }
+    }, 1000);
+}
+
+// Inicialización de eventos al cargar el documento
+document.addEventListener('DOMContentLoaded', () => {
+    // CORRECCIÓN FINAL: Eliminada la línea de novedades obsoleta para evitar caídas de script
+    inicializarSecciones();
+
+    const closeBtn = document.getElementById('close-modal-btn');
+    const modal = document.getElementById('download-modal');
+    
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+            clearInterval(timerInterval);
+            modal.classList.remove('active');
+        });
+    }
+});
+let activeSection = null;
+let currentSearchQuery = "";
+
+function inicializarSecciones() {
+    // Detecta la sección activa mediante el ID en el HTML
+    for (let i = 1; i <= 4; i++) {
+        if (document.getElementById(`posts-seccion${i}`)) {
+            activeSection = i;
+            break;
+        }
+    }
+
+    if (!activeSection) return; // Si estamos en el index, se detiene aquí
+
+    renderizarPosts();
+
+    // Vinculación del buscador en tiempo real
+    const buscador = document.getElementById('search-input');
+    if (buscador) {
+        buscador.addEventListener('input', (e) => {
+            currentSearchQuery = e.target.value.toLowerCase();
+            renderizarPosts();
+        });
+    }
+
+    // 🎯 CONTROL DE LAS FLECHAS PARA LAS CASILLAS COMPACTAS
+    const flechaIzquierda = document.getElementById('btn-carrusel-izq');
+    const flechaDerecha = document.getElementById('btn-carrusel-der');
+    const contenedorPublicaciones = document.getElementById(`posts-seccion${activeSection}`);
+
+    if (flechaDerecha && contenedorPublicaciones) {
+        flechaDerecha.addEventListener('click', () => {
+            const tarjeta = contenedorPublicaciones.querySelector('.post-card');
+            if (tarjeta) {
+                // Toma el ancho real de tu nueva casilla compacta (220px) más su espacio (15px)
+                const anchoCasilla = tarjeta.clientWidth + 15; 
+                // Avanza exactamente 4 casillas hacia la derecha
+                contenedorPublicaciones.scrollLeft += (anchoCasilla * 4);
+            }
+        });
+    }
+
+    if (flechaIzquierda && contenedorPublicaciones) {
+        flechaIzquierda.addEventListener('click', () => {
+            // Devuelve el carrusel instantáneamente a la primerísima casilla
+            contenedorPublicaciones.scrollLeft = 0;
+        });
+    }
+}
+
+function renderizarPosts() {
+    const contenedor = document.getElementById(`posts-seccion${activeSection}`);
+    if (!contenedor) return;
+
+    // Filtra los elementos que corresponden a la sección y coinciden con la lupa
+    const postsFiltrados = publicaciones.filter(post => {
+        const belongs = post.seccion === activeSection;
+        const matches = post.titulo.toLowerCase().includes(currentSearchQuery) || 
+                        post.funcion.toLowerCase().includes(currentSearchQuery);
+        return belongs && matches;
+    });
+
+    if (postsFiltrados.length === 0) {
+        contenedor.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 40px; font-family: inherit;">No se encontraron aportes con ese nombre.</p>`;
+        return;
+    }
+
+    contenedor.innerHTML = postsFiltrados.map(post => {
+        // Mantiene tu lógica inteligente de imágenes locales y de Postimg intacta
+        const urlFinalImagen = post.imagen.startsWith('http') ? post.imagen : `../${post.imagen}`;
+
+        return `
+            <div class="post-card">
+                <h3>${post.titulo}</h3>
+                <img src="${urlFinalImagen}" alt="${post.titulo}" class="post-image">
+                <p class="post-function">${post.funcion}</p>
+                <button class="download-btn" onclick="abrirAcortadorPublicitario('${post.urlDescarga}')">⚡ Descarga Directa</button>
+            </div>
+        `;
+    }).join('');
+}
+
+let timerInterval = null;
+
+function abrirAcortadorPublicitario(urlFinal) {
+    const modal = document.getElementById('download-modal');
+    const secondsSpan = document.getElementById('seconds');
+    const counterText = document.getElementById('counter-text');
+    const finalBtn = document.getElementById('final-download-btn');
+
+    if (!modal) return;
+
+    clearInterval(timerInterval);
+    let tiempoRestante = 5;
+    
+    secondsSpan.textContent = tiempoRestante;
+    counterText.classList.remove('hidden');
+    finalBtn.classList.add('hidden');
+    finalBtn.href = urlFinal;
+
+    modal.classList.add('active');
+
+    timerInterval = setInterval(() => {
+        tiempoRestante--;
+        secondsSpan.textContent = tiempoRestante;
+
+        if (tiempoRestante <= 0) {
+            clearInterval(timerInterval);
+            counterText.classList.add('hidden');
+            finalBtn.classList.remove('hidden');
+        }
+    }, 1000);
+}
+
+// Inicialización de eventos al cargar el documento
+document.addEventListener('DOMContentLoaded', () => {
+    inicializarSecciones();
+
+    const closeBtn = document.getElementById('close-modal-btn');
+    const modal = document.getElementById('download-modal');
+    
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+            clearInterval(timerInterval);
+            modal.classList.remove('active');
+        });
+    }
+});
+

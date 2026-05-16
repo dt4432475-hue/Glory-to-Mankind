@@ -1,48 +1,17 @@
-// ==========================================================================
-// 1. BASE DE DATOS CENTRALIZADA (Añade o edita publicaciones aquí)
-// ==========================================================================
 const publicaciones = [
     // 💻 SECCIÓN 1: PROGRAMAS
     {
         seccion: 1,
         titulo: "Wise Disk Cleaner",
-        imagen: "img/win.gif", // Usa las imágenes de tu carpeta
+        imagen: "img/win.gif", // 👈 Al ser local, el script le pondrá "../img/win.gif" automáticamente en las secciones
         funcion: "Compresor de archivos definitivo con activación permanente incluida.",
         urlDescarga: "https://archive.org"
     },
     {
         seccion: 1,
-        titulo: "Wise Memory Otimizer",
-        imagen: "img/win.gif",
-        funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
-        urlDescarga: "https://archive.org"
-    },
-     {
-        seccion: 1,
-        titulo: "wise game booster",
-        imagen: "img/win.gif",
-        funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
-        urlDescarga: "https://archive.org"
-    },
-     {
-        seccion: 1,
-        titulo: "wise game booster",
-        imagen: "img/win.gif",
-        funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
-        urlDescarga: "https://archive.org"
-    },
-     {
-        seccion: 1,
-        titulo: "wise game booster",
-        imagen: "img/win.gif",
-        funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
-        urlDescarga: "https://archive.org"
-    },
-     {
-        seccion: 1,
-        titulo: "wise game booster",
-        imagen: "img/win.gif",
-        funcion: "Reproductor multimedia ligero que lee todos los formatos de video existentes.",
+        titulo: "Dism",
+        imagen: "#", // 👈 Si pegas un link de Postimg, el script lo dejará intacto
+        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
         urlDescarga: "https://archive.org"
     },
 
@@ -50,49 +19,7 @@ const publicaciones = [
     {
         seccion: 2,
         titulo: "Counter Strike 1.6 No Steam",
-        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
-        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
-        urlDescarga: "https://archive.org"
-    },
-     {
-        seccion: 2,
-        titulo: "Counter Strike 1.6 No Steam",
-        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
-        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
-        urlDescarga: "https://archive.org"
-    },
-     {
-        seccion: 2,
-        titulo: "Counter Strike 1.6 No Steam",
-        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
-        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
-        urlDescarga: "https://archive.org"
-    },
-     {
-        seccion: 2,
-        titulo: "Counter Strike 1.6 No Steam",
-        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
-        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 2,
-        titulo: "Counter Strike 1.6 No Steam",
-        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
-        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 2,
-        titulo: "Counter Strike 1.6 No Steam",
-        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
-        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 2,
-        titulo: "Counter Strike 1.6 No Steam",
-        imagen: "https://i.postimg.cc/ht37247B/isosgamer.png",
+        imagen: "https://postimg.cc", // 👈 Link directo de Postimg que no se alterará
         funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
         urlDescarga: "https://archive.org"
     },
@@ -100,10 +27,10 @@ const publicaciones = [
     // 📱 SECCIÓN 3: APPS Y JUEGOS APK
     {
         seccion: 3,
-        titulo: "RetroArch Plus APK",
-        imagen: "img/android.png",
-        funcion: "Emulador todo en uno optimizado para celulares Android de gama baja y media.",
-        urlDescarga: "https://archive.org"
+        titulo: "Minecraft 1.21.111",
+        imagen: "https://static.wikia.nocookie.net/logopedia/images/0/0f/Minecraft_Bedrock_2023.svg/revision/latest/scale-to-width-down/250?cb=20230920113315",
+        funcion: "Ultima version we",
+        urlDescarga: "https://archive.org/download/base_20260516/base.apk"
     },
 
     // 💿 SECCIÓN 4: ISOS
@@ -116,9 +43,6 @@ const publicaciones = [
     }
 ];
 
-// ==========================================================================
-// 2. MOTOR DE RENDERIZADO Y BUSCADOR AUTOMÁTICO
-// ==========================================================================
 let activeSection = null;
 let currentSearchQuery = "";
 
@@ -162,20 +86,22 @@ function renderizarPosts() {
         return;
     }
 
-    contenedor.innerHTML = postsFiltrados.map(post => `
-        <div class="post-card">
-            <h3>${post.titulo}</h3>
-            <!-- El "../" permite que la sección cargue la imagen de la raíz -->
-            <img src="../${post.imagen}" alt="${post.titulo}" class="post-image">
-            <p class="post-function">${post.funcion}</p>
-            <button class="download-btn" onclick="abrirAcortadorPublicitario('${post.urlDescarga}')">⚡ Descarga Directa</button>
-        </div>
-    `).join('');
+    contenedor.innerHTML = postsFiltrados.map(post => {
+        // SOLUCIÓN INTELIGENTE: Si la imagen empieza con http (Postimg), se queda igual. 
+        // Si es una ruta local (como img/win.gif), le añade el "../" para que salga de la carpeta "secciones".
+        const urlFinalImagen = post.imagen.startsWith('http') ? post.imagen : `../${post.imagen}`;
+
+        return `
+            <div class="post-card">
+                <h3>${post.titulo}</h3>
+                <img src="${urlFinalImagen}" alt="${post.titulo}" class="post-image">
+                <p class="post-function">${post.funcion}</p>
+                <button class="download-btn" onclick="abrirAcortadorPublicitario('${post.urlDescarga}')">⚡ Descarga Directa</button>
+            </div>
+        `;
+    }).join('');
 }
 
-// ==========================================================================
-// 3. SISTEMA DE ACORTADOR DE DESCARGAS CON CONTADOR
-// ==========================================================================
 let timerInterval = null;
 
 function abrirAcortadorPublicitario(urlFinal) {
@@ -210,9 +136,7 @@ function abrirAcortadorPublicitario(urlFinal) {
 
 // Inicialización de eventos al cargar el documento
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('novedades-lista')) {
-        cargarNovedades();
-    }
+    // CORRECCIÓN FINAL: Eliminada la línea de novedades obsoleta para evitar caídas de script
     inicializarSecciones();
 
     const closeBtn = document.getElementById('close-modal-btn');
@@ -225,4 +149,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
- 

@@ -713,44 +713,45 @@ a, button, input, .gamer-card, .search-box input {
     }
 }
 
-/* ==========================================================================
-   🎮 CARRUSEL DE CASILLAS COMPACTAS DEFINITIVO
-   ========================================================================== */
-
+/* 1. Mantiene el contenedor centrado pero añade colchón de aire a los lados */
 .carrusel-wrapper {
     position: relative !important;
-    width: 100% !important;
+    width: 92% !important;        
+    max-width: 1200px !important;  
+    margin: 40px auto !important;  
     display: flex !important;
     align-items: center !important;
     background: none !important;
     border: none !important;
     box-shadow: none !important;
-    margin: 30px 0 !important;
-    padding: 0 !important;
+    padding: 0 40px !important;    /* 🎯 Aumentamos de 10px a 40px para alejar las apps de los bordes externos */
+    box-sizing: border-box !important;
 }
 
-/* Contenedor horizontal sin fondo morado molesto */
+/* 2. El pasillo horizontal donde viajan las apps */
 .posts-container {
     display: flex !important;
     flex-direction: row !important;
-    gap: 20px !important;
-    overflow-x: hidden !important; /* Oculta la barra de scroll */
+    gap: 15px !important;            
+    overflow-x: hidden !important; 
     scroll-behavior: smooth !important;
     width: 100% !important;
-    min-height: 380px !important;
+    min-height: 350px !important;    
     background: none !important;
     border: none !important;
     padding: 15px 5px !important;
 }
 
-/* 🎯 CONFIGURACIÓN CASILLAS COMPACTAS */
+/* 3. 📐 CASILLAS REDUCIDAS: Achicamos el tamaño fijo para que no se sofoquen */
 .posts-container .post-card {
-    flex: 0 0 230px !important; /* Ancho perfecto para cada mod */
-    width: 230px !important;
-    background: #14121f !important; /* Fondo oscuro individual */
+    /* Calculado para 5 columnas dejando aire extra en los costados */
+    flex: 0 0 calc(20% - 15px) !important; 
+    width: calc(20% - 15px) !important;
+    min-width: 175px !important;     /* 🎯 Lo bajamos de 190px a 175px para hacerlas más delgadas y estéticas */
+    background: #14121f !important; 
     border: 1px solid #3b2d54 !important;
     border-radius: 12px !important;
-    padding: 15px !important;
+    padding: 12px !important;         
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -758,14 +759,22 @@ a, button, input, .gamer-card, .search-box input {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Imágenes dentro de las casillas */
+/* Ajustamos la altura de la imagen dentro de la casilla pequeña */
 .posts-container .post-image {
     width: 100% !important;
-    height: 130px !important;
+    height: 115px !important;        /* Reducida de 130px a 115px para mantener la proporción */
     object-fit: cover !important;
     border-radius: 8px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
 }
+
+/* Títulos ligeramente más pequeños para que no se corten */
+.posts-container .post-card h3 {
+    font-size: 15px !important;       /* Bajamos a 15px para que se adapte al ancho mini */
+    color: #ffffff !important;
+    margin: 3px 0 !important;
+}
+
 
 /* Flechas Flotantes de Navegación */
 .flecha-carrusel {
@@ -792,9 +801,13 @@ a, button, input, .gamer-card, .search-box input {
     transform: scale(1.1) !important;
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.8) !important;
 }
-
-#btn-carrusel-izq { left: -20px !important; }
-#btn-carrusel-der { right: -20px !important; }
+/* 4. Ajuste de las flechas moradas para que queden perfectas en el aire libre */
+#btn-carrusel-izq { 
+    left: 0px !important; /* 🎯 Las metemos un toque hacia adentro para alinearlas con el nuevo aire */
+}
+#btn-carrusel-der { 
+    right: 0px !important; 
+}
 
 @media (max-width: 600px) {
     #btn-carrusel-izq { left: -5px !important; }
@@ -805,13 +818,6 @@ a, button, input, .gamer-card, .search-box input {
 
 #btn-carrusel-izq { left: -20px; }
 #btn-carrusel-der { right: -20px; }
-
-@media (max-width: 600px) {
-    #btn-carrusel-izq { left: -5px; }
-    #btn-carrusel-der { right: -5px; }
-    .posts-container { overflow-x: auto; }
-}
-
 
 /* Opcional: Oculta las flechas en celulares muy pequeños si prefieres que usen el dedo */
 @media (max-width: 600px) {

@@ -10,7 +10,7 @@ const publicaciones = [
     {
         seccion: 1,
         titulo: "Dism",
-        imagen: "#", // 👈 Si pegas un link de Postimg, el script lo dejará intacto
+        imagen: "https://postimg.cc", // 👈 Si pegas un link de Postimg, el script lo dejará intacto
         funcion: "Compresor de archivos definitivo con activación permanente incluida.",
         urlDescarga: "https://archive.org"
     },
@@ -28,7 +28,7 @@ const publicaciones = [
     {
         seccion: 3,
         titulo: "Minecraft 1.21.111",
-        imagen: "https://static.wikia.nocookie.net/logopedia/images/0/0f/Minecraft_Bedrock_2023.svg/revision/latest/scale-to-width-down/250?cb=20230920113315",
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DLXb7rd3qS7aCagDrv0sDSNGuEFbCNkuaw&s",
         funcion: "Ultima version we",
         urlDescarga: "https://archive.org/download/base_20260516/base.apk"
     },

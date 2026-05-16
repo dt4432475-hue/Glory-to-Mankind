@@ -5,97 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glory To Mankind</title>
     <link rel="stylesheet" href="estilos/index.css">
-
+</head>
 <body>
-
-    <!-- ANUNCIO TOP: Adaptable a pantallas móviles -->
-    <div class="ad-slot ad-top">Espacio Publicitario (Banner Superior)</div>
-
-    <div class="banner-inicio-limpio">
-        <div class="banner-title-wrapper">
-            <!-- Tu GIF de Título Principal -->
-            <img src="img/baner.gif" class="banner-main-title-gif" alt="GLORY TO MANKIND">
-            <!-- GIF Derecha -->
-            <!-- Cambia el GIF de la derecha para darle un control de tamaño único -->
-            <img src="img/gifla.gif" class="banner-decor-2b" alt="2B bailando">
-
+        <!-- 1. Título arriba como Banner Principal -->
+    <header class="banner-principal">
+        <div class="contenedor-titulo">
+            <!-- Letras animadas principales -->
+            <img class="logo-animado" src="https://i.postimg.cc/3xq73nyG/baner.gif" alt="Glory to Mankind">
+            <!-- Personaje 2B decorativo -->
+            <img class="gif-decorativo" src="https://i.postimg.cc/XN9SfDNw/gifla.gif" alt="2B Decoración">
         </div>
-    </div>
-    </div>
+    </header>
 
-       <!-- NAVEGACIÓN PRINCIPAL (4 Casillas con Título GIF e Imagen de Referencia) -->
-    <main class="menu-container">
+    <!-- 2. Anuncio abajo del título -->
+    <div class="banner">ESPACIO PUBLICITARIO (BANNER SUPERIOR)</div>
 
-        <!-- CASILLA 1: PROGRAMAS -->
-        <a href="secciones/seccion1.html" class="gamer-card">
-            <div class="card-title-box">
-                <!-- Cambia 'img/win.gif' por el GIF exacto de tu título para Programas -->
-                <img src="https://i.postimg.cc/K8f7wZFZ/output-onlinegiftools-com-(3).gif" class="card-title-gif" alt="Programas">
-            </div>
-            <div class="card-img-box">
-                <img src="img/win.gif" alt="Programas PC"></div></a>
+             <!-- Contenedor principal de las 4 casillas/botones -->
+    <main class="contenedor-secciones">
 
-        <!-- CASILLA 2: JUEGOS PC -->
-        <a href="secciones/seccion2.html" class="gamer-card">
-            <div class="card-title-box">
-                <!-- Cambia 'img/baner.gif' por el GIF de tu título para Juegos PC -->
-                <img src="https://i.postimg.cc/htYvfw0F/output-onlinegiftools-com-(4).gif" class="card-title-gif" alt="Juegos PC">
-            </div>
-            <div class="card-img-box">
-                <img src="https://i.postimg.cc/hjm4bcVH/juegospc.png" alt="Juegos PC"> </div> </a>
-
-        <!-- CASILLA 3: APPS Y JUEGOS APK -->
-        <a href="secciones/seccion3.html" class="gamer-card">
-            <div class="card-title-box">
-                <!-- Cambia 'img/android.png' por el GIF de tu título para APKs -->
-                <img src="https://i.postimg.cc/Gh2bGK2f/output-onlinegiftools-com-(5).gif" class="card-title-gif" alt="Apps y Juegos APK">
-            </div>
-            <div class="card-img-box">
-                <img src="img/android.png" alt="Android">
+        <!-- Casilla 1: Programas PC -->
+        <a href="secciones/programas.html" class="tarjeta-boton">
+            <!-- Título reemplazado por GIF -->
+            <img src="https://i.postimg.cc/4ywqMqS7/sec1.gif" alt="PROGRAMAS PC" class="tarjeta-gif-titulo">
+            <div class="tarjeta-imagen-wrapper">
+                <img src="https://i.postimg.cc/RhZFt55B/isosgamer.png" alt="Programas PC" class="tarjeta-img">
             </div>
         </a>
 
-        <!-- CASILLA 4: ISOs -->
-        <a href="secciones/seccion4.html" class="gamer-card">
-            <div class="card-title-box">
-                <!-- Cambia 'img/footer.gif' por el GIF de tu título para ISOs -->
-                <img src="img/sec4.gif" class="card-title-gif" alt="ISOs">
-            </div>
-            <div class="card-img-box">
-                <img src="https://i.postimg.cc/j2Cdx4Jb/image.png" alt="ISOs Discos">
+        <!-- Casilla 2: Juegos PC -->
+        <a href="secciones/juegos.html" class="tarjeta-boton">
+            <!-- Título reemplazado por GIF -->
+            <img src="https://i.postimg.cc/bJp6hLbQ/sec2.gif" alt="JUEGOS PC" class="tarjeta-gif-titulo">
+            <div class="tarjeta-imagen-wrapper">
+                <img src="https://i.postimg.cc/mZH6xc0g/juegospc.png." alt="Juegos PC" class="tarjeta-img">
             </div>
         </a>
-        </main>
-        
+
+        <!-- Casilla 3: Apps & Juegos APK -->
+        <a href="secciones/android.html" class="tarjeta-boton">
+            <!-- Título reemplazado por GIF -->
+            <img src="https://i.postimg.cc/ZKCw4WBm/sec3.gif" alt="APPS & JUEGOS APK" class="tarjeta-gif-titulo">
+            <div class="tarjeta-imagen-wrapper">
+                <img src="https://i.postimg.cc/SN2fHH3b/android.png alt="Apps y Juegos APK" class="tarjeta-img">
+            </div>
+        </a>
+
+        <!-- Casilla 4: Isos Gamer -->
+        <a href="secciones/isos.html" class="tarjeta-boton">
+            <!-- Título reemplazado por GIF -->
+            <img src="https://i.postimg.cc/jSfvnB4m/sec4.gif" alt="ISOS GAMER" class="tarjeta-gif-titulo">
+            <div class="tarjeta-imagen-wrapper">
+                <img src="https://wallpapercave.com/wp/wp9614330.jpg" alt="Isos Gamer" class="tarjeta-img">
+            </div>
+        </a>
+
+    </main>
+
+
     <!-- ANUNCIO MEDIO -->
     <div class="ad-slot ad-middle">Espacio Publicitario (Contenido)</div>
 
-    <footer style="background: #161822; color: #bbb; padding: 40px 20px; font-family: Arial, sans-serif; font-size: 14px; border-top: 3px solid #ff0055;">
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
-        <div>
-            <h4 style="color: #fff; border-bottom: 2px solid #ff0055; padding-bottom: 8px; display: inline-block;">Sobre la pagina</h4>
-            <p style="line-height: 1.6; color: #999;">Aportes y Herramientas seleccionadas rigurosamente para garantizar rendimiento y seguridad total en tu setup gamer.</p>
+      <!-- Pie de página ordenado y estilizado -->
+    <footer class="footer-principal">
+        <div class="contenedor-footer">
+            <p>&copy; 2026 Glory to Mankind - Todos los derechos reservados.</p>
+            <p class="creditos">Diseñado con estilo para la comunidad gamer.</p>
         </div>
-        <div>
-            <h4 style="color: #fff; border-bottom: 2px solid #ff0055; padding-bottom: 8px; display: inline-block;">Enlaces de Interés</h4>
-            <ul style="list-style: none; padding: 0; line-height: 2;">
-                <li><a href="#" style="color: #999; text-decoration: none;">Reportar Link Caído</a></li>
-                <li><a href="#" style="color: #999; text-decoration: none;">Sugerencias</a></li>
-                <li><a href="#" style="color: #999; text-decoration: none;">Políticas de Privacidad</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 style="color: #fff; border-bottom: 2px solid #ff0055; padding-bottom: 8px; display: inline-block;">Estado del Servidor</h4>
-            <p style="margin: 5px 0; color: #00ff66; font-weight: bold;">● Servidor de Descargas</p>
-            <p style="color: #999; font-size: 12px;">Actualizado continuamente por nuestros amigos.</p>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; color: #666; font-size: 12px;">
-        © 2026 Glory To Mankind. Todos los derechos reservados. Diseñado con pasión por la comunidad gamer.
-    </div>
-</footer>
-
-
-
+    </footer>
 </body>
 </html>

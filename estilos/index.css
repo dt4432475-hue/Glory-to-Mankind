@@ -6,31 +6,37 @@
 }
 
 body {
-    background-image: url('https://i.postimg.cc/fRqm8CTR/image.jpg'); 
-    background-size: cover;          
-    background-position: center;     
-    background-attachment: fixed;    
-    background-repeat: no-repeat;    
-    background-color: #0b0b11;       
+    background-image: url('https://i.postimg.cc/fRqm8CTR/image.jpg'); /* Deja tu link completo aquí */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #0b0b11;
     font-family: Arial, sans-serif;
     width: 100%;
-    min-height: 100vh;               
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    
-    /* Filtro premium que oscurece el fondo un 40% para que resalten tus botones */
     backdrop-filter: brightness(0.3);
+
+    /* NUEVO: Esto alinea los anuncios y las secciones con la misma distancia */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 1. CAMBIA ESTO: Alinea todo al inicio de corrido */
+    gap: 0;    
 }
+
 
 
 /* Banner Superior que ahora se pega completamente a los bordes */
 .banner {
     width: 100%;
+    max-width: 1200px; /* Ajusta este ancho al máximo que desees para tus bloques */
     text-align: center;
-    padding: 15px;
-    margin-bottom: 120px; /* Aumentado drásticamente para empujar las tarjetas hacia abajo */
-    box-sizing: border-box;
+    margin: 0 auto;
 }
+
 
 .banner-principal {
     width: 100%;
@@ -62,16 +68,31 @@ body {
     object-fit: contain;
 }
 
+/* EFECTO HOVER: Brillo neón rosa al pasar el mouse */
+
+/* 1. Para el texto "Glory to Mankind" */
+header h1:hover, 
+.titulo:hover {
+    text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 0 0 30px #ff0055 !important;
+    cursor: pointer;
+    transition: text-shadow 0.3s ease; /* Hace que el brillo aparezca suave */
+}
+
+/* 2. Para la 2B chiquita (si tiene una clase asignada, cambia el 'header img') */
+header img:hover {
+    filter: drop-shadow(0 0 8px #ff0055) drop-shadow(0 0 15px #ff0055) !important;
+    cursor: pointer;
+    transition: filter 0.3s ease; /* Hace que el brillo del GIF aparezca suave */
+}
+
 /* 2. Espaciado del Contenedor de las Tarjetas */
 .contenedor-secciones {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; 
-    max-width: 1300px;
-    margin: 0 auto 140px auto; /* 140px de separación total con el pie de página */
-    padding: 0 20px;
-    box-sizing: border-box;
+    gap: 20px; /* Espacio interno entre las tarjetas */
+    flex-wrap: wrap;
 }
 /* Estilo individual de cada cuadro / botón */
 .tarjeta-boton {
@@ -107,11 +128,13 @@ body {
     text-transform: uppercase;
 }
 .tarjeta-gif-titulo {
-    width: 100% !important; /* Si se ve muy chico, prueba con 85% o 90% */
-    height: auto !important; /* Mantiene la proporción para que no se deforme */
     display: block;
-    margin: 0 auto 10px auto; /* Centra el título y le da espacio abajo */
+    height: 22px !important;       /* Define el alto ideal para todos */
+    max-width: 90% !important;    /* Evita que los textos largos choquen con los bordes */
+    width: auto !important;       /* Mantiene la proporción correcta */
+    margin: 0 auto 12px auto;     /* Centra perfectamente el GIF en horizontal */
 }
+
 
 /* Contenedor de la imagen principal */
 .tarjeta-imagen-wrapper {
@@ -134,40 +157,95 @@ body {
 .tarjeta-boton:hover .tarjeta-img {
     transform: scale(1.15); /* Hace que la imagen crezca un 15% suavemente */
 }
-/* Cuadro del Footer Sólido igual al Banner Superior */
-.footer-principal {
-    width: 100%;
-    background-color: #0d0d14; /* Mismo color oscuro sólido que el banner de arriba */
-    border-top: 3px solid #ff0055; /* Línea rosa neón ahora en la parte de arriba */
-    padding: 35px 0;
-    margin-top: 80px; /* Asegura una excelente separación con las casillas */
-}
 
-/* Contenedor interno para centrar los textos */
-.contenedor-footer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
+footer {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Separación entre las líneas de texto */
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    
+    /* SOLUCIÓN: Volvemos a poner la casilla oscura del footer */
+    background-color: #0b0b11 !important; 
+    
+    /* El toque neón que querías */
+    border-top: 2px solid #ff0055;
+    box-shadow: 0px -10px 20px rgba(255, 0, 85, 0.2); 
+    
+    position: relative;
+    z-index: 10; /* Asegura que se pinte por encima del fondo de pantalla */
 }
 
-/* Estilo para los textos del footer */
-.contenedor-footer p {
-    color: #ffffff;
+/* Controla el tamaño y espacio del GIF animado */
+.footer-gif {
+    height: 120px !important; /* <- CAMBIA ESTO: Subimos de 45px a 90px para que sea el doble de grande */
+    width: auto !important;  /* Mantiene la proporción para que no se deforme */
+    margin-bottom: 15px;     /* Separa un poco más el GIF del texto de los derechos reservados */
+    display: block;
+   
+}
+
+/* Estilo para tunear las letras del footer */
+footer p {
+    margin: 4px 0;
     font-family: Arial, sans-serif;
-    font-size: 0.9rem;
-    margin: 0;
-    letter-spacing: 0.5px;
+    font-size: 11px !important;       /* <- ACHICAR: Bajamos el tamaño del texto */
+    color: #a0a0aa !important;       /* <- COLOR: Un gris claro elegante para que se lea bien */
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
-/* Texto secundario de créditos un poco más discreto */
-.contenedor-footer .creditos {
-    color: #888888;
-    font-size: 0.8rem;
+/* EFECTO HOVER EN EL FOOTER */
+
+/* 1. Brillo rosa para la 2B grande con su Pod */
+.footer-gif:hover {
+    filter: drop-shadow(0 0 10px #ff0055) drop-shadow(0 0 20px #ff0055) !important;
+    cursor: pointer;
+    transition: filter 0.3s ease; /* Encendido suave */
 }
+
+/* 2. Brillo rosa para las letras del footer */
+footer p:hover {
+    color: #ffffff !important; /* Se ilumina a blanco puro al pasar el mouse */
+    text-shadow: 0 0 8px #ff0055, 0 0 15px #ff0055 !important;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Cambio suave de color y brillo */
+}
+
+
+/* Espacio abajo del título principal "Glory to Mankind" */
+header, h1 {
+    margin-bottom: 40px !important; /* Ajusta qué tan cerca quieres el anuncio superior */
+}
+
+/* El anuncio superior */
+.banner:first-of-type {
+    margin-bottom: 35px !important; /* Separación entre el anuncio de arriba y las tarjetas */
+}
+
+/* El bloque de tus 4 tarjetas */
+/* CON ESTO SIMETRIZAMOS LAS DISTANCIAS */
+.contenedor-secciones {
+    margin-top: 45px !important;    /* Ajusta la distancia con el anuncio de ARRIBA */
+    margin-bottom: 45px !important; /* Ajusta la distancia con el anuncio de ABAJO */
+}
+
+/* El anuncio inferior */
+.banner:last-of-type {
+    margin-top: 40px !important;    /* <- NUEVO: Esto empuja el anuncio lejos del footer */
+    margin-bottom: 40px !important; /* Mantiene la distancia con lo que tenga abajo */
+}
+
+/* Ahora sí afectamos al anuncio real */
+.ad-middle {
+    margin-top: 45px !important;    /* Separa el anuncio de las tarjetas de arriba */
+    margin-bottom: 45px !important; /* Separa el anuncio del footer de abajo */
+    text-align: center;
+    width: 100%;
+}
+
+
 /* Ajustes automáticos para pantallas de celulares */
 @media (max-width: 768px) {
     .contenedor-titulo {
@@ -185,3 +263,4 @@ body {
         height: 50px;           /* Hace a 2B un poquito más pequeña para que encaje mejor en celular */
     }
 }
+

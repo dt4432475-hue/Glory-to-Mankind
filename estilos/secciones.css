@@ -713,86 +713,95 @@ a, button, input, .gamer-card, .search-box input {
     }
 }
 
-
 /* ==========================================================================
-   🎮 CARRUSEL DE CASILLAS COMPACTAS (SIN FONDO MORADO)
+   🎮 CARRUSEL DE CASILLAS COMPACTAS DEFINITIVO
    ========================================================================== */
 
-/* Alinea las flechas perfectamente con tus tarjetas */
 .carrusel-wrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background: none !important; /* Asegura eliminar cualquier fondo viejo */
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    background: none !important;
     border: none !important;
     box-shadow: none !important;
-    padding: 0;
-    margin: 20px 0;
+    margin: 30px 0 !important;
+    padding: 0 !important;
 }
 
-/* El contenedor donde viajan tus apps en fila */
+/* Contenedor horizontal sin fondo morado molesto */
 .posts-container {
     display: flex !important;
     flex-direction: row !important;
-    gap: 15px; /* Espacio moderado entre las casillas */
-    overflow-x: hidden; /* Oculta barras de scroll feas */
-    scroll-behavior: smooth;
+    gap: 20px !important;
+    overflow-x: hidden !important; /* Oculta la barra de scroll */
+    scroll-behavior: smooth !important;
     width: 100% !important;
-    background: none !important; /* Cero cajas moradas */
+    min-height: 380px !important;
+    background: none !important;
     border: none !important;
-    padding: 10px 5px !important;
+    padding: 15px 5px !important;
 }
 
-/* 🎯 TAMAÑO DE LAS CASILLAS: Las hacemos más compactas y bonitas */
+/* 🎯 CONFIGURACIÓN CASILLAS COMPACTAS */
 .posts-container .post-card {
-    flex: 0 0 220px !important; /* Ancho ideal y compacto para cada casilla */
-    width: 220px !important;
-    background: #1e1b29; /* Un fondo oscuro gamer individual para cada app */
-    border: 1px solid #3b2d54;
-    border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex: 0 0 230px !important; /* Ancho perfecto para cada mod */
+    width: 230px !important;
+    background: #14121f !important; /* Fondo oscuro individual */
+    border: 1px solid #3b2d54 !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Ajuste para que las imágenes de los aportes se vean perfectas en la casilla */
+/* Imágenes dentro de las casillas */
 .posts-container .post-image {
-    width: 100%;
-    height: 130px; /* Altura controlada para que no sea gigante */
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 8px 0;
+    width: 100% !important;
+    height: 130px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin-bottom: 10px !important;
 }
 
-/* Estilo flotante para tus dos flechas laterales */
+/* Flechas Flotantes de Navegación */
 .flecha-carrusel {
-    position: absolute;
-    background: rgba(147, 51, 234, 0.8);
-    color: #ffffff;
-    border: 2px solid #a855f7;
-    font-size: 20px;
-    font-weight: bold;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    transition: all 0.2s ease;
-    user-select: none;
+    position: absolute !important;
+    background: rgba(147, 51, 234, 0.9) !important;
+    color: #ffffff !important;
+    border: 2px solid #a855f7 !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    z-index: 100 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
 }
 
 .flecha-carrusel:hover {
-    background: #a855f7;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+    background: #a855f7 !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.8) !important;
 }
+
+#btn-carrusel-izq { left: -20px !important; }
+#btn-carrusel-der { right: -20px !important; }
+
+@media (max-width: 600px) {
+    #btn-carrusel-izq { left: -5px !important; }
+    #btn-carrusel-der { right: -5px !important; }
+    .posts-container { overflow-x: auto !important; }
+}
+
 
 #btn-carrusel-izq { left: -20px; }
 #btn-carrusel-der { right: -20px; }

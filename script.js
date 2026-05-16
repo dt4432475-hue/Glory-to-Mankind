@@ -53,7 +53,7 @@ const publicaciones = [
         titulo: "InShot v2.Pro",
         imagen: "https://i.postimg.cc/sf6k8WKg/image.png",
         funcion: "Tiene 1 falso positivo, no te alarmes 😝",
-        urlDescarga: "#"
+        urlDescarga: "https://archive.org/download/inshot.-apk-pro/INSHOT.APK_pro.rar"
     },
 
 

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "titulo": "minecraft",
+    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
+    "detalles": "Peso: 2.4 GB | Multilenguaje",
+    "link": "https://tu-enlace-de-descarga.com"
+  },
+  {
+    "id": 2,
+    "titulo": "x twitter",
+    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
+    "detalles": "Peso: 1.8 GB | Español",
+    "link": "https://tu-enlace-de-descarga.com"
+  }
+]

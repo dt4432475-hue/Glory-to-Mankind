@@ -3,103 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glory To Mankind - Sección 1</title>
+    <title>Glory To Mankind</title>
+    <link rel="stylesheet" href="../estilos/index.css">
     <link rel="stylesheet" href="../estilos/secciones.css">
 </head>
-<body class="fondo-programas">
+<body>
 
-    <!-- 1. ANUNCIO TOP: Alta visibilidad inmediata -->
-    <div class="ad-slot ad-top">
-        <!-- Aquí pegarás el código de tu banner de AdSense / Red publicitaria -->
-        [ ESPACIO PUBLICITARIO SUPERIOR ]
-    </div>
-    <div class="banner-inicio-limpio">
-        <div class="banner-title-wrapper">
-            <!-- Tu GIF de Título Principal -->
-            <img src="https://i.postimg.cc/K8f7wZFZ/output-onlinegiftools-com-(3).gif" class="banner-main-title-gif" alt="GLORY TO MANKIND">
-            <!-- GIF Derecha -->
-            <!-- Cambia el GIF de la derecha para darle un control de tamaño único -->
-            <img src="https://i.postimg.cc/zG2DVqQH/gif-busqueda.gif" class="banner-decor-2b" alt="2B bailando">
+    <!-- ANUNCIO SUPERIOR -->
+    <div class="banner">Espacio Publicitario (Superior)</div>
 
-        </div>
-    </div>
+    <!-- ENCABEZADO DE LA SECCIÓN -->
+    <header>
+        <h1 class="titulo">PROGRAMAS PC</h1>
+    </header>
+
+    <!-- NUEVO: BARRA DE BÚSQUEDA GAMER -->
+    <div class="contenedor-buscador">
+        <input type="text" id="buscador-gamer" placeholder="Buscar publicación por iniciales...">
     </div>
 
-    <!-- 🚀 RECUADRO DE SEGURIDAD GAMER (AHORA QUEDA COMPLETAMENTE AFUERA) -->
-    <div class="safety-badge">
-        <span class="shield-icon">🛡️</span>
-        <p><strong>Contenido 99.99% Seguro:</strong> Todo el material subido aquí ha sido verificado contra malware y amenazas. ¡Descarga con confianza oe!</p>
+    <!-- CONTENEDOR LIMITADO CON SCROLL: Albergará las filas de 5 -->
+    <div class="zona-scroll-publicaciones">
+        <main class="cuadrula-publicaciones" id="lista-programas-pc"></main>
     </div>
 
+    <!-- ANUNCIO INFERIOR -->
+    <div class="ad-slot ad-middle">Espacio Publicitario (Contenido Inferior)</div>
 
-
-    <!-- ÁREA PRINCIPAL: BUSCADOR -->
-    <div class="search-wrapper">
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="Buscar publicaciones...">
-            <span class="search-icon">🔍</span>
-        </div>
-    </div>
-
-    <!-- CONTENEDOR DE PUBLICACIONES MEJORADO -->
-<main class="carrusel-wrapper">
-    
-    <!-- Flecha izquierda -->
-    <button id="btn-carrusel-izq" class="flecha-carrusel">❮</button>
-
-    <!-- Contenedor limpio sin la clase posts-grid -->
-    <div id="posts-seccion1" class="posts-container">
-        <!-- Las publicaciones se inyectan solas desde script.js -->
-    </div>
-
-    <!-- Flecha derecha -->
-    <button id="btn-carrusel-der" class="flecha-carrusel">❯</button>
-
-</main>
-
-
-    <!-- 2. ANUNCIO INFERIOR: Al finalizar la navegación -->
-    <div class="ad-slot ad-bottom">
-        [ ESPACIO PUBLICITARIO INFERIOR ]
-    </div>
-
-    <!-- FOOTER DE SECCIÓN -->
-    <footer class="gamer-footer">
-        <p>&copy; 2026 Glory To Mankind. Todos los derechos reservados.</p>
+    <!-- FOOTER SIMPLE PERO GAMER -->
+    <footer>
+        <img src="https://postimg.cc" alt="Gamer GIF" class="footer-gif">
+        <p>© 2026 Glory to Mankind - Todos los derechos reservados.</p>
     </footer>
 
-    <!-- PANTALLA INTERMEDIA / ACORTADOR DE 5 SEGUNDOS -->
-    <div id="download-modal" class="modal-overlay">
-        <div class="modal-content">
-            <h2>Generando Enlace Directo...</h2>
-            <div class="modal-ad">
-    <!-- El script de Adsterra va aquí solito, sin textos escritos a mano -->
-    <script type="text/javascript">
-        atOptions = {
-            'key' : '928003b1bbd77fcd6676f274acbec6bf',
-            'format' : 'iframe',
-            'height' : 50,
-            'width' : 320,
-            'params' : {}
-        };
-    </script>
-    <script type="text/javascript" src="https://highperformanceformat.com"></script>
-</div>
-
-
-            <div class="counter-box">
-                <p id="counter-text">Tu descarga comenzará en <strong id="seconds">5</strong> segundos...</p>
-                <a href="#" id="final-download-btn" class="download-trigger-btn hidden" target="_blank" rel="noopener noreferrer">🚀 ¡DESCARGAR AHORA!</a>
-            </div>
+      <!-- VENTANA FLOTANTE (MODAL DE ESPERA DE DESCARGA) -->
+    <div id="modal-descarga-gamer" class="modal-overlay">
+        <div class="modal-contenedor">
+            <span class="cerrar-modal" onclick="cerrarModalGamer()">&times;</span>
             
-            <button id="close-modal-btn" class="close-btn">Cancelar</button>
+            <h2 class="modal-titulo-espera">PREPARANDO DESCARGA...</h2>
+            
+            <!-- ANUNCIO PUBLICITARIO DENTRO DEL CONTADOR -->
+            <div class="anuncio-modal">
+                <p>[ Aquí pegas el código del Anuncio que verán mientras esperan ]</p>
+            </div>
+
+            <!-- CONTADOR DE TIEMPO / BOTÓN FINAL -->
+            <div id="zona-contador-boton">
+                <p class="texto-contador">Tu archivo comenzará a descargarse en <span id="segundos-restantes">5</span> segundos...</p>
+            </div>
         </div>
     </div>
 
-       
     <script src="../script.js"></script>
-</body>
-</html>
-
 </body>
 </html>

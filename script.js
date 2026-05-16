@@ -1,219 +1,113 @@
-// ==========================================================================
-// 1. BASE DE DATOS DE PUBLICACIONES
-// ==========================================================================
-const publicaciones = [
-    // 💻 SECCIÓN 1: PROGRAMAS
-    {
-        seccion: 1,
-        titulo: "inicio",
-        imagen: "img/win.gif", 
-        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 1,
-        titulo: "Wise Disk Cleaner",
-        imagen: "img/win.gif", 
-        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 1,
-        titulo: "Wise Disk Cleaner",
-        imagen: "img/win.gif", 
-        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 1,
-        titulo: "Wise Disk Cleaner",
-        imagen: "img/win.gif", 
-        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 1,
-        titulo: "Wise Disk Cleaner",
-        imagen: "img/win.gif", 
-        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 1,
-        titulo: "Wise Disk Cleaner",
-        imagen: "img/win.gif", 
-        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 1,
-        titulo: "Wise Disk Cleaner",
-        imagen: "img/win.gif", 
-        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
-        urlDescarga: "https://archive.org"
-    },
-    {
-        seccion: 1,
-        titulo: "fin",
-        imagen: "img/win.gif", 
-        funcion: "Compresor de archivos definitivo con activación permanente incluida.",
-        urlDescarga: "https://archive.org"
-    },
+let publicacionesGlobales = [];
+let urlDescargaActiva = ""; 
+let intervaloContador;
 
-    // 🎮 SECCIÓN 2: JUEGOS PC
-    {
-        seccion: 2,
-        titulo: "Counter Strike 1.6 No Steam",
-        imagen: "https://postimg.cc",
-        funcion: "El clásico juego de disparos táctico listo para jugar en servidores de comunidad.",
-        urlDescarga: "https://archive.org"
-    },
+async function cargarPublicaciones() {
+    try {
+        // 1. Detectamos cuál de las 4 grillas existe en la pantalla actual
+        const contenedorProgramas = document.getElementById('lista-programas-pc');
+        const contenedorJuegos = document.getElementById('lista-juegos-pc');
+        const contenedorApps = document.getElementById('lista-apps-apk');
+        const contenedorIsos = document.getElementById('lista-isos-gamer');
 
-    // 📱 SECCIÓN 3: APPS Y JUEGOS APK
-    {
-        seccion: 3,
-        titulo: "Minecraft 1.21.20",
-        imagen: "img/banner.gif",
-        funcion: "Ultima version we",
-        urlDescarga: "https://archive.org"
-    },
+        let archivoJSON = "";
 
-    // 💿 SECCIÓN 4: ISOS
-    {
-        seccion: 4,
-        titulo: "Windows 10 Gaming ISO Lite",
-        imagen: "img/footer.gif",
-        funcion: "Sistema operativo modificado sin telemetría ni basura para ganar más FPS.",
-        urlDescarga: "https://archive.org"
-    }
-];
+        // 2. Apuntamos al JSON correcto dependiendo de la página abierta
+        if (contenedorProgramas) archivoJSON = "../programas.json";
+        else if (contenedorJuegos) archivoJSON = "../juegos.json";
+        else if (contenedorApps) archivoJSON = "../apps.json";
+        else if (contenedorIsos) archivoJSON = "../isos.json";
 
-let activeSection = null;
-let currentSearchQuery = "";
+        // Si no encuentra ninguna de las listas (por ejemplo, en la portada index.html), frena el script
+        if (!archivoJSON) return;
 
-// ==========================================================================
-// 2. LOGÍSTICA DEL CARRUSEL Y SECCIONES
-// ==========================================================================
-function inicializarSecciones() {
-    // Detecta la sección activa mediante el ID en el HTML
-    for (let i = 1; i <= 4; i++) {
-        if (document.getElementById(`posts-seccion${i}`)) {
-            activeSection = i;
-            break;
+        // 3. Hacemos la petición exclusivamente al archivo que necesitamos
+        const respuesta = await fetch(archivoJSON);
+        publicacionesGlobales = await respuesta.json();
+
+        // Renderizamos e inicializamos el buscador en tiempo real
+        filtrarYRenderizar();
+
+        const inputBuscador = document.getElementById('buscador-gamer');
+        if (inputBuscador) {
+            inputBuscador.addEventListener('input', filtrarYRenderizar);
         }
-    }
 
-    if (!activeSection) return;
-
-    renderizarPosts();
-
-    // Vinculación del buscador en tiempo real
-    const buscador = document.getElementById('search-input');
-    if (buscador) {
-        buscador.addEventListener('input', (e) => {
-            currentSearchQuery = e.target.value.toLowerCase();
-            renderizarPosts();
-        });
-    }
-
-    // CONTROL DE LAS FLECHAS PARA LAS CASILLAS
-    const flechaIzquierda = document.getElementById('btn-carrusel-izq');
-    const flechaDerecha = document.getElementById('btn-carrusel-der');
-    const contenedorPublicaciones = document.getElementById(`posts-seccion${activeSection}`);
-
-    if (flechaDerecha && contenedorPublicaciones) {
-        flechaDerecha.addEventListener('click', () => {
-            const tarjeta = contenedorPublicaciones.querySelector('.post-card');
-            if (tarjeta) {
-                const anchoCasilla = tarjeta.clientWidth + 20; 
-                contenedorPublicaciones.scrollLeft += (anchoCasilla * 4); // Avanza 4 de golpe
-            }
-        });
-    }
-
-    if (flechaIzquierda && contenedorPublicaciones) {
-        flechaIzquierda.addEventListener('click', () => {
-            contenedorPublicaciones.scrollLeft = 0; // Resetea al inicio
-        });
+    } catch (error) {
+        console.error("Error al cargar la base de datos independiente, mi king:", error);
     }
 }
 
-function renderizarPosts() {
-    const contenedor = document.getElementById(`posts-seccion${activeSection}`);
-    if (!contenedor) return;
+function filtrarYRenderizar() {
+    // Detectamos nuevamente el contenedor de la página actual
+    const idContenedorActivo = 
+        document.getElementById('lista-programas-pc') || 
+        document.getElementById('lista-juegos-pc') || 
+        document.getElementById('lista-apps-apk') || 
+        document.getElementById('lista-isos-gamer');
 
-    const postsFiltrados = publicaciones.filter(post => {
-        const perteneceSeccion = post.seccion === activeSection;
-        const coincideBuscador = post.titulo.toLowerCase().includes(currentSearchQuery) || 
-                                 post.funcion.toLowerCase().includes(currentSearchQuery);
-        return perteneceSeccion && coincideBuscador;
+    if (!idContenedorActivo) return;
+    idContenedorActivo.innerHTML = ''; // Limpiamos la grilla antes de pintar
+
+    const inputBuscador = document.getElementById('buscador-gamer');
+    const textoBusqueda = inputBuscador ? inputBuscador.value.toLowerCase().trim() : '';
+
+    publicacionesGlobales.forEach(pub => {
+        // Validamos la búsqueda por iniciales
+        const coincideBusqueda = pub.titulo.toLowerCase().startsWith(textoBusqueda);
+
+        if (coincideBusqueda) {
+            const tarjetaHTML = `
+                <div class="tarjeta-publicacion-gamer">
+                    <div class="tarjeta-img-contenedor">
+                        <img src="${pub.imagen}" alt="${pub.titulo}">
+                    </div>
+                    <div class="tarjeta-info">
+                        <h3 class="tarjeta-titulo-post">${pub.titulo}</h3>
+                        <p class="tarjeta-detalles">${pub.detalles || 'Versión Estable | Full'}</p>
+                    </div>
+                    <button onclick="iniciarEsperaDescarga('${pub.link}')" class="tarjeta-btn-descarga" style="width:100%; border:none; cursor:pointer;">
+                        <span>DESCARGAR</span>
+                    </button>
+                </div>
+            `;
+            idContenedorActivo.innerHTML += tarjetaHTML;
+        }
     });
-
-    if (postsFiltrados.length === 0) {
-        contenedor.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 40px; font-family: inherit;">No se encontraron aportes con ese nombre.</p>`;
-        return;
-    }
-
-    contenedor.innerHTML = postsFiltrados.map(post => {
-        const urlFinalImagen = post.imagen.startsWith('http') ? post.imagen : `../${post.imagen}`;
-
-        return `
-            <div class="post-card">
-                <h3>${post.titulo}</h3>
-                <img src="${urlFinalImagen}" alt="${post.titulo}" class="post-image" onerror="this.src='../img/win.gif'">
-                <p class="post-function">${post.funcion}</p>
-                <button class="download-btn" onclick="abrirAcortadorPublicitario('${post.urlDescarga}')">⚡ Descarga Directa</button>
-            </div>
-        `;
-    }).join('');
 }
 
-// ==========================================================================
-// 3. CONTROL DEL MODAL ADSTERRA
-// ==========================================================================
-let timerInterval = null;
-
-function abrirAcortadorPublicitario(urlFinal) {
-    const modal = document.getElementById('download-modal');
-    const secondsSpan = document.getElementById('seconds');
-    const counterText = document.getElementById('counter-text');
-    const finalBtn = document.getElementById('final-download-btn');
-
-    if (!modal) return;
-
-    clearInterval(timerInterval);
+// SISTEMA DEL CONTADOR DE MONETIZACIÓN (Mismo comportamiento premium)
+function iniciarEsperaDescarga(linkInternetArchive) {
+    urlDescargaActiva = linkInternetArchive;
     let tiempoRestante = 5;
     
-    secondsSpan.textContent = tiempoRestante;
-    counterText.classList.remove('hidden');
-    finalBtn.classList.add('hidden');
-    finalBtn.href = urlFinal;
+    const modal = document.getElementById('modal-descarga-gamer');
+    const zonaContadorBoton = document.getElementById('zona-contador-boton');
+    
+    zonaContadorBoton.innerHTML = `<p class="texto-contador">Tu archivo comenzará a descargarse en <span id="segundos-restantes">${tiempoRestante}</span> segundos...</p>`;
+    modal.style.display = "flex";
 
-    modal.classList.add('active');
-
-    timerInterval = setInterval(() => {
+    clearInterval(intervaloContador);
+    
+    intervaloContador = setInterval(() => {
         tiempoRestante--;
-        secondsSpan.textContent = tiempoRestante;
+        const txtSegundos = document.getElementById('segundos-restantes');
+        if (txtSegundos) txtSegundos.textContent = tiempoRestante;
 
         if (tiempoRestante <= 0) {
-            clearInterval(timerInterval);
-            counterText.classList.add('hidden');
-            finalBtn.classList.remove('hidden');
+            clearInterval(intervaloContador);
+            zonaContadorBoton.innerHTML = `
+                <a href="${urlDescargaActiva}" download class="btn-descarga-final" onclick="cerrarModalGamer()">
+                    ¡DESCARGAR AHORA DIRECTO!
+                </a>
+            `;
         }
     }, 1000);
 }
 
-// Inicialización de eventos al cargar el documento
-document.addEventListener('DOMContentLoaded', () => {
-    inicializarSecciones();
+function cerrarModalGamer() {
+    clearInterval(intervaloContador);
+    document.getElementById('modal-descarga-gamer').style.display = "none";
+}
 
-    const closeBtn = document.getElementById('close-modal-btn');
-    const modal = document.getElementById('download-modal');
-    
-    if (closeBtn && modal) {
-        closeBtn.addEventListener('click', () => {
-            clearInterval(timerInterval);
-            modal.classList.remove('active');
-        });
-    }
-});
+document.addEventListener('DOMContentLoaded', cargarPublicaciones);

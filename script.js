@@ -30,8 +30,32 @@ const publicaciones = [
         titulo: "Minecraft 1.21.111",
         imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_DLXb7rd3qS7aCagDrv0sDSNGuEFbCNkuaw&s",
         funcion: "Ultima version we",
-        urlDescarga: "https://archive.org/download/base_20260516/base.apk"
+        urlDescarga: "https://archive.org/download/minecraft-1.21.111/Minecraft%201.21.111.apk"
     },
+      {
+        seccion: 3,
+        titulo: "ePSXe v2.0.17",
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn0KgEtH6zDbyjEMb94vs20kaFRCs0O-Iwiw&s",
+        funcion: "El mejor emulador de ps1 😪",
+        urlDescarga: "https://archive.org/download/e-psxe-v-2.0.17/ePSXe%20v2.0.17%20.apk"
+    },
+
+     {
+        seccion: 3,
+        titulo: "AetherSX2",
+        imagen: "https://img.utdstc.com/icon/499/a3d/499a3dd14d609ecc134f2784e3e9ef468583771ea7692c26ff79acf0f6957946:600",
+        funcion: "Mejor emulador de ps2 👾",
+        urlDescarga: "https://archive.org/download/aether-sx-2_202605/AetherSX2.apk"
+    },
+
+     {
+        seccion: 3,
+        titulo: "InShot v2.Pro",
+        imagen: "https://i.postimg.cc/sf6k8WKg/image.png",
+        funcion: "Tiene 1 falso positivo, no te alarmes 😝",
+        urlDescarga: "#"
+    },
+
 
     // 💿 SECCIÓN 4: ISOS
     {

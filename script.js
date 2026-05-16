@@ -100,10 +100,10 @@ const publicaciones = [
     // 📱 SECCIÓN 3: APPS Y JUEGOS APK
     {
         seccion: 3,
-        titulo: "RetroArch Plus APK",
+        titulo: "Minecraft",
         imagen: "img/android.png",
         funcion: "Emulador todo en uno optimizado para celulares Android de gama baja y media.",
-        urlDescarga: "https://archive.org"
+        urlDescarga: "https://archive.org/download/base_20260516/base.apk"
     },
 
     // 💿 SECCIÓN 4: ISOS

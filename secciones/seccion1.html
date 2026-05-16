@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="../estilos/index.css">
     <link rel="stylesheet" href="../estilos/secciones.css">
 </head>
-<body>
-
-    <!-- ANUNCIO SUPERIOR -->
+<body class="pagina-programas">
+ <!-- ANUNCIO SUPERIOR -->
     <div class="banner">Espacio Publicitario (Superior)</div>
 
-    <!-- ENCABEZADO DE LA SECCIÓN -->
-    <header>
-        <h1 class="titulo">PROGRAMAS PC</h1>
+    <!-- ENCABEZADO DE LA SECCIÓN (CON GIFS Y TEXTO DE SEGURIDAD) -->
+    <header class="header-seccion-gamer">
+        <!-- 1. El título GIF de la sección (Cambia este link en cada HTML) -->
+        <img src="https://i.postimg.cc/4ywqMqS7/sec1.gif" alt="PROGRAMAS PC" class="gif-titulo-seccion">
+        
+        <!-- 2. Fila del Mini GIF + Texto informativo -->
+        <div class="fila-seguridad-gamer">
+            <!-- Tu GIF chiquito (ej: 2B pixelart, un escudo, o lo que gustes) -->
+            <img src="https://i.postimg.cc/T1Q06HD5/output-onlinegiftools-com-(1).gif alt="Gamer Avatar" class="mini-gif-seguridad">
+            
+            <!-- El texto a la derecha del mini GIF -->
+            <p class="texto-seguridad-seccion">PÁGINA 100% SEGURA DE VIRUS</p>
+        </div>
     </header>
 
     <!-- NUEVO: BARRA DE BÚSQUEDA GAMER -->
@@ -29,12 +38,17 @@
 
     <!-- ANUNCIO INFERIOR -->
     <div class="ad-slot ad-middle">Espacio Publicitario (Contenido Inferior)</div>
-
-    <!-- FOOTER SIMPLE PERO GAMER -->
+    
+        <!-- FOOTER GAMER REPARADO (SIN HISTORIAL EXTRA) -->
     <footer>
-        <img src="https://postimg.cc" alt="Gamer GIF" class="footer-gif">
+        <!-- Quitamos el href y usamos onclick para un viaje limpio -->
+        <button class="btn-subir-gamer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background: none; border: none; cursor: pointer;">
+            <span class="flecha-subir">▲</span> VOLVER ARRIBA
+        </button>
         <p>© 2026 Glory to Mankind - Todos los derechos reservados.</p>
     </footer>
+
+
 
       <!-- VENTANA FLOTANTE (MODAL DE ESPERA DE DESCARGA) -->
     <div id="modal-descarga-gamer" class="modal-overlay">

@@ -12,5 +12,41 @@
     "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
     "detalles": "Peso: 1.8 GB | Español",
     "link": "https://tu-enlace-de-descarga.com"
+  },
+  {
+    "id": 3,
+    "titulo": "office 2026",
+    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
+    "detalles": "Peso: 2.4 GB | Multilenguaje",
+    "link": "https://tu-enlace-de-descarga.com"
+  },
+  {
+    "id": 4,
+    "titulo": "office 2026",
+    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
+    "detalles": "Peso: 2.4 GB | Multilenguaje",
+    "link": "https://tu-enlace-de-descarga.com"
+  },
+  {
+    "id": 5,
+    "titulo": "office 2026",
+    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
+    "detalles": "Peso: 2.4 GB | Multilenguaje",
+    "link": "https://tu-enlace-de-descarga.com"
+  },
+  {
+    "id": 6,
+    "titulo": "office 2026",
+    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
+    "detalles": "Peso: 2.4 GB | Multilenguaje",
+    "link": "https://tu-enlace-de-descarga.com"
+  },
+  {
+    "id": 7,
+    "titulo": "office 2026",
+    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
+    "detalles": "Peso: 2.4 GB | Multilenguaje",
+    "link": "https://tu-enlace-de-descarga.com"
   }
+
 ]

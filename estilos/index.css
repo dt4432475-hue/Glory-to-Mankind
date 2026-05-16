@@ -4,6 +4,31 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* ==========================================================================
+   MOVIMIENTO FLUIDO GLOBAL - PORTADA PRINCIPAL
+   ========================================================================== */
+
+/* Hace que cualquier cambio visual en cualquier elemento se deslice suavemente */
+*, *::before, *::after {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Animación de entrada suave para toda la página al cargar */
+body {
+    animation: entradaSuave 0.6s ease-out forwards;
+}
+
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Sube ligeramente desde abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 body {
     background-image: url('https://i.postimg.cc/fRqm8CTR/image.jpg'); /* Deja tu link completo aquí */
@@ -244,6 +269,31 @@ header, h1 {
     text-align: center;
     width: 100%;
 }
+/* 1. Agranda el texto del título principal */
+header h1, .titulo {
+    font-size: 3.5rem !important; /* Estaba más chico, con 3.5rem o 4rem se verá imponente */
+    display: inline-block;
+    vertical-align: middle;       /* Lo alinea verticalmente con el GIF */
+    margin: 0 20px 0 0 !important; /* Separa el texto de la 2B chiquita */
+}
+
+/* 2. Controla el tamaño de la 2B chiquita para que crezca junto al texto */
+header img {
+    height: 65px !important;      /* Sube este número si quieres que el GIF sea más grande */
+    width: auto !important;
+    display: inline-block;
+    vertical-align: middle;       /* Alineación perfecta al centro con las letras */
+}
+
+/* 3. El contenedor para que no se rompa nada al crecer */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 !important;
+    width: 100%;
+}
+
 
 
 /* Ajustes automáticos para pantallas de celulares */
@@ -263,4 +313,5 @@ header, h1 {
         height: 50px;           /* Hace a 2B un poquito más pequeña para que encaje mejor en celular */
     }
 }
+
 

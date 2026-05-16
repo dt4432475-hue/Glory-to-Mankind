@@ -1,10 +1,74 @@
-/* ==================================================
-   DISEÑO EXCLUSIVO COMPARTIDO PARA LAS SECCIONES 
-   ================================================== */
+/* ==========================================================================
+   MOVIMIENTO FLUIDO GLOBAL - PORTADA PRINCIPAL
+   ========================================================================== */
 
-/* Heredar look gamer del body de la portada */
+/* Hace que cualquier cambio visual en cualquier elemento se deslice suavemente */
+*, *::before, *::after {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Animación de entrada suave para toda la página al cargar */
+body {
+    animation: entradaSuave 0.6s ease-out forwards;
+}
+
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Sube ligeramente desde abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 1. SECCIÓN: PROGRAMAS PC (Estilo Rosa Neón / 2B) */
+body.pagina-programas {
+    --color-neon: #ff0055;
+    --color-neon-sutil: rgba(255, 0, 85, 0.15);
+    --color-neon-hover: rgba(255, 0, 85, 0.4);
+    --btn-degradado: linear-gradient(90deg, #ff0055, #990033);
+    background-image: url('https://i.postimg.cc/BvZ6VYCL/2.jpg'); /* Reemplaza por tu fondo de programas */
+}
+
+/* 2. SECCIÓN: JUEGOS PC (Estilo Azul Cyberpunk) */
+body.pagina-juegos {
+    --color-neon: #00f0ff;
+    --color-neon-sutil: rgba(0, 240, 255, 0.15);
+    --color-neon-hover: rgba(0, 240, 255, 0.4);
+    --btn-degradado: linear-gradient(90deg, #00f0ff, #006699);
+    background-image: url('https://i.postimg.cc/HW8LR7bj/1.jpg'); /* Reemplaza por tu fondo de juegos */
+}
+
+/* 3. SECCIÓN: APPS & JUEGOS APK (Estilo Verde Matrix / Android) */
+body.pagina-apps {
+    --color-neon: #00ff66;
+    --color-neon-sutil: rgba(0, 255, 102, 0.15);
+    --color-neon-hover: rgba(0, 255, 102, 0.4);
+    --btn-degradado: linear-gradient(90deg, #00ff66, #006622);
+    background-image: url('https://i.postimg.cc/2Sr81cM8/www.jpg'); /* Reemplaza por tu fondo de apps */
+}
+
+/* 4. SECCIÓN: ISOS GAMER (Estilo Morado Némesis) */
+body.pagina-isos {
+    --color-neon: #b026ff;
+    --color-neon-sutil: rgba(176, 38, 255, 0.15);
+    --color-neon-hover: rgba(176, 38, 255, 0.4);
+    --btn-degradado: linear-gradient(90deg, #b026ff, #550099);
+    background-image: url('https://i.postimg.cc/sXQ3ktQK/zxc-(2).jpg'); /* Reemplaza por tu fondo de isos */
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES E INTERFAZ BASE
+   ========================================================================== */
 body {
     background-color: #0b0b11;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -14,9 +78,10 @@ body {
     gap: 0;
     margin: 0;
     padding: 0;
+    backdrop-filter: brightness(0.4); /* Aplica el filtro oscuro para que se lea el texto */
 }
 
-/* Espaciados idénticos para los anuncios de las secciones */
+/* Zonas de publicidad superior e inferior */
 .banner {
     margin-top: 20px;
     margin-bottom: 25px !important;
@@ -24,7 +89,7 @@ body {
     width: 100%;
 }
 
-.ad-middle {
+.ad-slot.ad-middle {
     margin-top: 35px !important;
     margin-bottom: 35px !important;
     text-align: center;
@@ -35,9 +100,14 @@ header {
     margin-bottom: 25px !important;
 }
 
-/* ==================================================
-   NUEVO: INTERFAZ DEL BUSCADOR GAMER 
-   ================================================== */
+.titulo {
+    text-shadow: 0 0 10px var(--color-neon) !important;
+    transition: text-shadow 0.3s ease;
+}
+
+/* ==========================================================================
+   BARRA DE BÚSQUEDA FUTURISTA
+   ========================================================================== */
 .contenedor-buscador {
     width: 100%;
     max-width: 450px;
@@ -48,8 +118,8 @@ header {
 
 #buscador-gamer {
     width: 100%;
-    background: rgba(11, 11, 17, 0.7);
-    border: 2px solid rgba(255, 0, 85, 0.3);
+    background: rgba(11, 11, 17, 0.85);
+    border: 2px solid var(--color-neon-sutil);
     border-radius: 6px;
     padding: 12px 16px;
     color: #ffffff;
@@ -61,23 +131,22 @@ header {
 }
 
 #buscador-gamer:focus {
-    border-color: #ff0055;
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    border-color: var(--color-neon);
+    box-shadow: 0 0 15px var(--color-neon-hover);
 }
 
-/* ==================================================
-   SISTEMA DE CONTROL DE 4 FILAS MAX (SCROLL LATERAL)
-   ================================================== */
+/* ==========================================================================
+   SISTEMA DE CONTROL DE MAX 4 FILAS (SCROLL)
+   ========================================================================== */
 .zona-scroll-publicaciones {
     width: 100%;
     max-width: 1400px;
-    /* Altura máxima calculada para contener exactamente 4 filas de tarjetas de ~290px */
-    max-height: 1220px; 
-    overflow-y: auto; /* Activa la barra vertical si excede las 4 filas */
+    max-height: 1240px; /* Altura máxima exacta para contener 4 filas perfectas */
+    overflow-y: auto; 
     padding-right: 5px;
 }
 
-/* Personalización de la barra de desplazamiento (Scroll) estilo Cyberpunk */
+/* Personalización de la barra de scroll estilo Cyberpunk */
 .zona-scroll-publicaciones::-webkit-scrollbar {
     width: 8px;
 }
@@ -86,12 +155,12 @@ header {
     border-radius: 4px;
 }
 .zona-scroll-publicaciones::-webkit-scrollbar-thumb {
-    background: #ff0055;
+    background: var(--color-neon);
     border-radius: 4px;
-    box-shadow: 0 0 8px #ff0055;
+    box-shadow: 0 0 8px var(--color-neon);
 }
 
-/* Grilla en filas de 5 */
+/* Grilla estructurada en filas de 5 */
 .cuadrula-publicaciones {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -102,10 +171,12 @@ header {
     box-sizing: border-box;
 }
 
-/* Tarjeta Gamer */
+/* ==========================================================================
+   DISEÑO DE LA TARJETA GAMER INDIVIDUAL
+   ========================================================================== */
 .tarjeta-publicacion-gamer {
     background-color: #0b0b11;
-    border: 2px solid rgba(255, 0, 85, 0.2);
+    border: 2px solid var(--color-neon-sutil);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -113,14 +184,14 @@ header {
     justify-content: space-between;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    height: 285px; /* Altura fija para que la matemática del scroll calce perfecto */
+    height: 285px; /* Altura fija para que la matemática de las 4 filas calce exacto */
 }
 
 .tarjeta-img-contenedor {
     width: 100%;
     height: 140px;
     overflow: hidden;
-    border-bottom: 2px solid rgba(255, 0, 85, 0.1);
+    border-bottom: 2px solid var(--color-neon-sutil);
 }
 
 .tarjeta-img-contenedor img {
@@ -154,23 +225,24 @@ header {
     margin: 0;
 }
 
+/* El botón dinámico que activa el modal contador */
 .tarjeta-btn-descarga {
     display: block;
     text-align: center;
-    background: linear-gradient(90deg, #ff0055, #990033);
+    background: var(--btn-degradado);
     color: #ffffff !important;
     text-decoration: none !important;
     font-family: Arial, sans-serif;
     font-size: 12px;
     font-weight: bold;
-    padding: 8px 0;
+    padding: 10px 0;
     transition: all 0.3s ease;
 }
 
-/* Efectos Hover */
+/* Interacción Hover sobre la tarjeta */
 .tarjeta-publicacion-gamer:hover {
-    border-color: #ff0055;
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    border-color: var(--color-neon);
+    box-shadow: 0 0 15px var(--color-neon-hover);
     transform: translateY(-4px);
 }
 
@@ -179,34 +251,31 @@ header {
 }
 
 .tarjeta-publicacion-gamer:hover .tarjeta-btn-descarga {
-    background: #ff0055;
-    box-shadow: 0 -4px 10px rgba(255, 0, 85, 0.4);
+    background: var(--color-neon);
+    box-shadow: 0 -4px 10px var(--color-neon-hover);
 }
 
-/* ==================================================
-   INTERFAZ DE MODAL DE DESCARGA PREMIUM CON CONTADOR
-   ================================================== */
-
-/* Fondo oscuro translúcido que tapa toda la pantalla */
+/* ==========================================================================
+   VENTANA MODAL INTERNA (CONTADOR DE MONETIZACIÓN)
+   ========================================================================== */
 .modal-overlay {
-    display: none; /* Se mantiene oculto hasta que den clic en descargar */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(6, 6, 9, 0.85);
-    backdrop-filter: blur(8px); /* Desenfoca el fondo de atrás */
-    z-index: 10000; /* Asegura que se pinte por encima de todo */
+    background-color: rgba(6, 6, 9, 0.88);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
     justify-content: center;
     align-items: center;
 }
 
-/* La tarjeta central flotante */
 .modal-contenedor {
     background-color: #0b0b11;
-    border: 2px solid #ff0055;
-    box-shadow: 0 0 30px rgba(255, 0, 85, 0.4);
+    border: 2px solid var(--color-neon);
+    box-shadow: 0 0 30px var(--color-neon-hover);
     border-radius: 8px;
     width: 90%;
     max-width: 550px;
@@ -221,7 +290,6 @@ header {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* Botón 'X' para cerrar */
 .cerrar-modal {
     position: absolute;
     top: 12px;
@@ -231,20 +299,19 @@ header {
     cursor: pointer;
     transition: color 0.2s;
 }
-.cerrar-modal:hover { color: #ff0055; }
+.cerrar-modal:hover { color: var(--color-neon); }
 
 .modal-titulo-espera {
     color: #ffffff;
     font-family: 'Press Start 2P', monospace;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 20px;
-    text-shadow: 0 0 8px #ff0055;
+    text-shadow: 0 0 8px var(--color-neon);
 }
 
-/* Zona reservada exclusivamente para tus banners monetizados */
 .anuncio-modal {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px dashed rgba(255, 0, 85, 0.3);
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px dashed var(--color-neon-sutil);
     min-height: 200px;
     margin: 15px 0 25px 0;
     display: flex;
@@ -255,20 +322,19 @@ header {
     font-size: 13px;
 }
 
-/* Texto de la cuenta regresiva */
 .texto-contador {
     color: #cccccc;
     font-family: Arial, sans-serif;
     font-size: 14px;
 }
+
 #segundos-restantes {
-    color: #ff0055;
+    color: var(--color-neon);
     font-weight: bold;
     font-size: 18px;
-    text-shadow: 0 0 5px #ff0055;
+    text-shadow: 0 0 5px var(--color-neon);
 }
 
-/* El botón final que regala el archivo directo */
 .btn-descarga-final {
     display: inline-block;
     background: linear-gradient(90deg, #00ff66, #009933);
@@ -290,7 +356,191 @@ header {
     transform: scale(1.04);
 }
 
+/* ==========================================================================
+   FOOTER SEMIPRE GAMER UNIFICADO
+   ========================================================================== */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    background-color: #0b0b11 !important;
+    border-top: 2px solid var(--color-neon);
+    box-shadow: 0px -10px 20px var(--color-neon-sutil);
+    position: relative;
+    z-index: 10;
+    margin-top: auto; /* Empuja el footer al fondo si hay pocos elementos */
+}
 
-/* Responsivo */
-@media (max-width: 1200px) { .cuadrula-publicaciones { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 768px) { .cuadrula-publicaciones { grid-template-columns: repeat(1, 1fr); } }
+.footer-gif {
+    height: 70px !important;
+    width: auto !important;
+    margin-bottom: 12px;
+    display: block;
+    filter: drop-shadow(0 0 10px var(--color-neon));
+}
+
+footer p {
+    margin: 4px 0;
+    font-family: Arial, sans-serif;
+    font-size: 11px !important;
+    color: #a0a0aa !important;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   ESTILOS PARA EL ENCABEZADO PERSONALIZADO POR SECCIÓN
+   ========================================================================== */
+
+/* Contenedor principal del encabezado */
+.header-seccion-gamer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 25px !important;
+    gap: 15px; /* Espacio vertical entre el título GIF y la fila de abajo */
+}
+
+
+.gif-titulo-seccion {
+    height: 42px !important;
+    width: auto !important;
+    display: block;
+    /* Forzamos el uso exclusivo de la variable de la sección (Cyan, Verde, Morado o Rosa) */
+    filter: drop-shadow(0 0 12px var(--color-neon)) !important; 
+    transition: filter 0.3s ease;
+}
+
+
+/* Contenedor horizontal para el mini GIF y el texto (SIN CASILLA) */
+
+/* Contenedor vertical para el mini GIF y el texto abajo */
+.fila-seguridad-gamer {
+    display: flex;
+    flex-direction: column; /* 🚀 CAMBIO MAESTRO: Manda el texto abajo del GIF */
+    align-items: center;    /* Centra todo horizontalmente uno bajo el otro */
+    justify-content: center;
+    gap: 8px;               /* Controla la distancia de separación entre el GIF y el texto */
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    width: 100%;
+}
+
+.mini-gif-seguridad {
+    height: 180px !important; /* Lo agrandamos un poquito más para que se note el personaje real */
+    width: auto !important;
+    display: block;
+    /* Resalta el avatar con el color de neón idéntico de su respectivo menú */
+    filter: drop-shadow(0 0 8px var(--color-neon)) !important;
+    transition: filter 0.3s ease;
+}
+
+/* Estilo para el texto "PÁGINA SEGURA DE VIRUS" */
+.texto-seguridad-seccion {
+    margin: 0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+/* Efecto opcional: resalta aún más cuando pases el mouse encima */
+.gif-titulo-seccion:hover,
+.mini-gif-seguridad:hover {
+    filter: drop-shadow(0 0 18px var(--color-neon)) !important;
+}
+/* ==========================================================================
+   SISTEMA DE DESLIZAMIENTO SUAVE Y BOTÓN VOLVER ARRIBA
+   ========================================================================== */
+
+/* 1. Fuerza al navegador a deslizarse suavemente al presionar enlaces internos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Diseño base del botón en el footer */
+.btn-subir-gamer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(11, 11, 17, 0.8) !important;
+    color: #cccccc !important;
+    text-decoration: none !important;
+    font-family: 'Press Start 2P', monospace; /* Si quieres la fuente pixel */
+    font-size: 11px !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid var(--color-neon-sutil) !important;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* La flechita interna */
+.flecha-subir {
+    font-size: 14px;
+    text-shadow: 0 0 5px var(--color-neon);
+}
+
+/* ==========================================================================
+   EFECTO INTERACTIVO (HOVER) - Enciende según el color de la sección
+   ========================================================================== */
+.btn-subir-gamer:hover {
+    color: #ffffff !important;
+    border-color: var(--color-neon) !important; /* Enciende en Cyan, Verde, Morado o Rosa */
+    box-shadow: 0 0 15px var(--color-neon-hover) !important;
+    transform: translateY(-3px); /* Pequeño salto gamer hacia arriba */
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO POTENCIADO (ORGANIZACIÓN DE 2 EN 2)
+   ========================================================================== */
+
+/* Pantallas medianas (Laptops pequeñas o Tablets de lado) */
+@media (max-width: 1200px) { 
+    .cuadrula-publicaciones { 
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+    .zona-scroll-publicaciones { 
+        max-height: none; 
+    } 
+}
+
+/* Pantallas pequeñas (Celulares y ventanas muy achicadas) */
+@media (max-width: 850px) { 
+    .cuadrula-publicaciones { 
+        grid-template-columns: repeat(2, 1fr) !important; /* CORRECCIÓN: Fuerza las filas de 2 en 2 */
+        gap: 12px; /* Achicamos un poco el espacio entre tarjetas para que quepan bien */
+        padding: 0 10px; /* Menos margen a los lados */
+    }
+
+    /* Ajuste fino para que los textos no se pisen al encoger las tarjetas */
+    .tarjeta-publicacion-gamer {
+        height: auto; /* Permite que la tarjeta se adapte si el título es largo */
+        min-height: 260px;
+    }
+    .tarjeta-img-contenedor {
+        height: 110px; /* Reducimos la altura de la imagen para equilibrar el espacio */
+    }
+    .tarjeta-titulo-post {
+        font-size: 11px; /* Letra un poquito más chica para que quepa bien el nombre */
+    }
+    .tarjeta-detalles {
+        font-size: 10px;
+    }
+}
+
+/* Para celulares ultra pequeños (Menos de 400px de ancho) */
+@media (max-width: 400px) {
+    .cuadrula-publicaciones { 
+        grid-template-columns: repeat(1, 1fr) !important; /* Solo si la pantalla es un llavero baja a 1 */
+    }
+}

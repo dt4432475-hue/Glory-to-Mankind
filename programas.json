@@ -47,6 +47,13 @@
     "imagen": "https://www.profesionalreview.com/wp-content/uploads/2019/07/ooshutup10-12.png",
     "detalles": "Sirve para desactivar fácilmente la telemetría, el rastreo y el envío de datos a Microsoft.",
     "link": "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe"
+  },
+  {
+    "id": 8,
+    "titulo": "Rave Uninstaller",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjWB7Aznp11cXsFiAx7pFvrGJ_mqyEBeIUtA&s",
+    "detalles": "Eliminación eficaz de cualquier programa de tu PC.",
+    "link": "https://revouninstaller.b-cdn.net/ruf270/revosetup.exe"
   }
 
 ]

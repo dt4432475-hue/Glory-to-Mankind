@@ -556,11 +556,41 @@ html {
         height: auto;
     }
 }
+/* Para celulares de todo tamaño (Mantiene la organización de 2 en 2) */
+@media (max-width: 850px) {
+    .cuadrula-publicaciones {
+        grid-template-columns: repeat(2, 1fr) !important; /* Fuerza las filas de 2 en 2 en cualquier celular */
+        gap: 12px; 
+        padding: 0 10px; 
+    }
 
-/* Para celulares ultra pequeños (Menos de 400px de ancho) */
-@media (max-width: 400px) {
-    .cuadrula-publicaciones { 
-        grid-template-columns: repeat(1, 1fr) !important; /* Solo si la pantalla es un llavero baja a 1 */
+    /* Modificaciones para que las tarjetas se vean largas y perfectas */
+    .tarjeta-publicacion-gamer {
+        height: 340px !important;       /* Les damos una altura fija alta para estilizarlas */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .tarjeta-img-contenedor {
+        height: 150px !important;       /* Hacemos la caja de la imagen más alta y alargada */
+    }
+
+    .tarjeta-img-contenedor img {
+        object-fit: cover !important;   /* Evita que la foto se deforme al estirarse */
     }
 }
 
+/* 🚀 BORRA O COMENTA EL BLOQUE DE @media (max-width: 400px) PARA QUE NO TE ACTIVE LA COLUMNA ÚNICA */
+
+
+
+@media (max-width: 480px) {
+    .cuadrula-publications {
+        /* Cambia el 1 por un 2 para forzar las dos columnas */
+        grid-template-columns: repeat(2, 1fr) !important; 
+        
+        /* Reduce un poco el espacio entre tarjetas si quedan muy pegadas */
+        gap: 10px !important; 
+    }
+}

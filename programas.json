@@ -1,52 +1,52 @@
 [
   {
     "id": 1,
-    "titulo": "office 2026",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 2.4 GB | Multilenguaje",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "Dism++",
+    "imagen": "https://sc.filehippo.net/images/t_app-icon-l/p/35384a8a-ba2a-4afe-b6e0-c708f48eb884/190218214/dism-icon.png",
+    "detalles": "Optimiza tu Windows en segundos.",
+    "link": "https://archive.org/download/dismplusplus-10-1-1002-2/dismplusplus-10-1-1002-2.rar"
   },
   {
     "id": 2,
-    "titulo": "Premiere Pro 2026 Portable",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 1.8 GB | Español",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "Geek Uninstaller",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvbFD6SPabO86pQvNmA8pzAZilKpzxXbuH3w&s",
+    "detalles": "Un desinstalador básico, aunque potente y rapidísimo.",
+    "link": "https://geekuninstaller.com/geek.zip"
   },
   {
     "id": 3,
-    "titulo": "office 2026",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 2.4 GB | Multilenguaje",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "Wise Memory Optimizer",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj6y7XwSGYCjiS76sIpOf8npbFOWQBwsY3zQ&s",
+    "detalles": "Con un solo clic, puedes liberar memoria, desfragmentar la RAM y borrar la memoria en espera mejorando el rendimiento en mi pc.",
+    "link": "https://downloads.wisecleaner.com/soft/WMOSetup_4.2.4.132.exe"
   },
   {
     "id": 4,
-    "titulo": "office 2026",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 2.4 GB | Multilenguaje",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "Wise Game Booster",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxueBgco5mVHyVVj1tE9wZha3YRv52ZaVq2A&s",
+    "detalles": "Cierra los programas que se inician automáticamente, libera memoria y optimiza la red para mantener tu PC en el máximo rendimiento en los juegos.",
+    "link": "https://downloads.wisecleaner.com/soft/WGBSetup_1.5.7.81.exe"
   },
   {
     "id": 5,
-    "titulo": "office 2026",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 2.4 GB | Multilenguaje",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "Wise Disk Cleaner",
+    "imagen": "https://osbsoftware.com.br/upload/produto/Wisediskcleaner.png",
+    "detalles": "Elimina archivos basura, rastros del navegador, cookies e historial. Libera espacio en disco, protege tu privacidad y acelera tu PC.",
+    "link": "https://downloads.wisecleaner.com/soft/WDCFree_11.3.5.855.exe"
   },
   {
     "id": 6,
-    "titulo": "office 2026",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 2.4 GB | Multilenguaje",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "IObit Unlocker",
+    "imagen": "https://img.utdstc.com/icon/447/0a6/4470a6461f157c03bdcece870353c8edb56c4c15cc6c4269ab84c350495a1314:600",
+    "detalles": "Es una aplicación que nos permitirá eliminar aquellos archivos que por cualquier motivo se encuentran bloqueados en nuestro ordenador.",
+    "link": "https://cdn.iobit.com/dl/unlocker-setup.exe"
   },
   {
     "id": 7,
-    "titulo": "office 2026",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 2.4 GB | Multilenguaje",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "O&O ShutUp 10",
+    "imagen": "https://www.profesionalreview.com/wp-content/uploads/2019/07/ooshutup10-12.png",
+    "detalles": "Sirve para desactivar fácilmente la telemetría, el rastreo y el envío de datos a Microsoft.",
+    "link": "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe"
   }
 
 ]

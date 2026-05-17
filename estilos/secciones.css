@@ -405,15 +405,30 @@ footer p {
     gap: 15px; /* Espacio vertical entre el título GIF y la fila de abajo */
 }
 
-
 .gif-titulo-seccion {
-    height: 42px !important;
-    width: auto !important;
+    width: 100% !important;    /* Permite que se encoja en celulares */
+    height: auto !important;   /* Mantiene la proporción al achicarse */
+    max-height: 42px !important; /* Evita que los GIFs se hagan gigantes en PC */
+    object-fit: contain;       /* Evita que las imágenes se deformen */
     display: block;
-    /* Forzamos el uso exclusivo de la variable de la sección (Cyan, Verde, Morado o Rosa) */
-    filter: drop-shadow(0 0 12px var(--color-neon)) !important; 
+    margin: 0 auto;            /* Centra los títulos */
+    
+    /* Tus estilos de brillo intactos */
+    filter: drop-shadow(0 0 12px var(--color-neon)) !important;
     transition: filter 0.3s ease;
 }
+
+/* Tamaño ideal en PC para la sección Gamer / APK */
+.header-seccion-gamer .gif-titulo-seccion {
+    max-width: 750px !important; 
+}
+
+/* Tamaño ideal en PC para la sección de Juegos PC (Ajusta este número si queda muy grande) */
+.header-seccion-pc .gif-titulo-seccion {
+    max-width: 450px !important; 
+}
+
+
 
 
 /* Contenedor horizontal para el mini GIF y el texto (SIN CASILLA) */
@@ -536,6 +551,10 @@ html {
     .tarjeta-detalles {
         font-size: 10px;
     }
+    .header-seccion-gamer {
+        max-width: 90%;         /* Achica las letras automáticamente para que nunca se salgan de la pantalla */
+        height: auto;
+    }
 }
 
 /* Para celulares ultra pequeños (Menos de 400px de ancho) */
@@ -544,3 +563,4 @@ html {
         grid-template-columns: repeat(1, 1fr) !important; /* Solo si la pantalla es un llavero baja a 1 */
     }
 }
+

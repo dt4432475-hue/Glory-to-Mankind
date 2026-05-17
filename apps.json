@@ -1,16 +1,62 @@
 [
   {
     "id": 1,
-    "titulo": "minecraft",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 2.4 GB | Multilenguaje",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "InShot Pro",
+    "imagen": "https://i.postimg.cc/k4S8sYcF/image.png",
+    "detalles": "Es una aplicación de edición de vídeo y creación de contenido diseñada para ser accesible, potente y altamente intuitiva.",
+    "link": "https://archive.org/download/inshot.-apk-pro/INSHOT.APK_pro.rar"
   },
   {
     "id": 2,
-    "titulo": "x twitter",
-    "imagen": "https://i.postimg.cc/RhZFt55B/isosgamer.png",
-    "detalles": "Peso: 1.8 GB | Español",
-    "link": "https://tu-enlace-de-descarga.com"
+    "titulo": "Minecraft 1.21",
+    "imagen": "https://i.postimg.cc/0j8QSVH7/image.png",
+    "detalles": "Sumérgete en un mundo abierto de construcción, creación y supervivencia en Minecraft: el mejor juego sandbox simulador de construcción.",
+    "link": "https://archive.org/download/minecraft-1.21.111/Minecraft%201.21.111.apk"
+  },
+   {
+    "id": 3,
+    "titulo": "ePSXe ",
+    "imagen": "https://img.apponic.com/217/31/1ac31b6868c79304fe5fbe50d8c104d4.png",
+    "detalles": "Popular emulador de la consola PlayStation 1 que te permite jugar tus videojuegos clásicos favoritos.",
+    "link": "https://archive.org/download/e-psxe-v-2.0.17-espacioapk.com_202605/ePSXe%20v2.0.17%20-%20espacioapk.com.apk"
+  },
+  {
+    "id": 4,
+    "titulo": "Aethersx2 ",
+    "imagen": "https://i.postimg.cc/Qd0dLgCF/image.png",
+    "detalles": "Un excelente emulador de Playstation 2 para Android, que nos permitirá disfrutar de cientos y cientos de videojuegos.",
+    "link": "https://archive.org/download/aether-sx-2_202605/AetherSX2.apk"
+  },
+  {
+    "id": 5,
+    "titulo": "NetherSX2",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgWFNGlbthjDmUm2VOTv-x5DwRG6fQKObyjg&s",
+    "detalles": "Un emulador avanzado , está diseñado para ejecutar y jugar juegos de PS2 en el sistema operativo Android, brindando una experiencia PlayStation llena de aventuras.",
+    "link": "https://archive.org/download/nether-sx-2_202605/NetherSX2.apk"
+  },
+   {
+    "id": 6,
+    "titulo": "Mupen64Plus Pro",
+    "imagen": "https://play-lh.googleusercontent.com/c4jB-gRw9Ck97cU7bANWuvpiqjlxScoEGBn7GWYkT1m7N2ZAxmh9fLBn69S9knFz1OI",
+    "detalles": "Es un emulador de N64 multiplataforma basado en plugins, capaz de ejecutar con precisión muchos juegos..",
+    "link": "https://archive.org/download/mupen-64-pro/mupen64%20pro.apk"
+  },
+   {
+    "id": 7,
+    "titulo": "Monopoly Unlocked",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQncvbJWtPggj8cBNrVpWUPAeDBlJcbnKUWA&s",
+    "detalles": "Es una versión para Android del clásico juego de mesa Monopoly. Permite a los jugadores disfrutar de toda la diversión y la emoción.",
+    "link": "https://archive.org/download/monopoly_202605/Monopoly.apk"
+  },
+   
+   {
+    "id": 8,
+    "titulo": "Nes Emulator",
+    "imagen": "https://play-lh.googleusercontent.com/QdOB7YVnKLjQQ4O_z82iiiAEMx0dl2Jg382xS-ovsG3lsgyJnVN6Vci179i2Q3-y4fo",
+    "detalles": "Es una aplicación diseñada para ejecutar juegos clásicos de NES en dispositivos Android.",
+    "link": "https://archive.org/download/nether-sx-2_202605/NetherSX2.apk"
   }
+  
+
+
 ]

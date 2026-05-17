@@ -58,10 +58,21 @@
   {
     "id": 9,
     "titulo": "StartIsBack",
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY8j-85Apjp3ffiW_C-JqU61zb_IsI6d6IaQ&s",
-    "detalles": "Eliminación eficaz de cualquier programa de tu PC.",
+    "imagen": "https://i.postimg.cc/Y0VPnxT8/image.png",
+    "detalles": "Restaura el diseño clásico, el botón y el menú de inicio al estilo de Windows 7 en sistemas operativos más modernos como Windows 10 y Windows 8.",
     "link": "https://archive.org/download/start-is-back-v-2.9.20/StartIsBack%2B%2B_v2.9.20_patched.exe"
+  },
+  {
+    "id": 10,
+    "titulo": "Everything",
+    "imagen" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjExfrgR-aXREk4qUZJjU8Hq_W3kfJMXDFPQ&s",
+    "detalles": "Busca por nombre archivos y carpetas al instante.",
+    "link": "https://www.voidtools.com/Everything-1.4.1.1032.x64.zip"
+
   }
+
+
+
 
 
 

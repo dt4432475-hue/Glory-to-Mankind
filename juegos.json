@@ -1,10 +1,24 @@
 [
   {
     "id": 1,
-    "titulo": "#",
-    "imagen": "#",
-    "detalles": "Peso: 343mb | Español ",
+    "titulo": "Half-Life 25 aniversario edition GTM",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQErbP835cSGebxrOo4srRsNka0eun8Nh2EBQ&s",
+    "detalles": "# ",
     "link": "#"
-  }
- 
+  },
+ { 
+   "id": 2,
+   "titulo": "#",
+   "imagen": "#",
+   "detalles": "# ",
+   "link": "#"    
+ },
+ {
+   "id": 3,
+   "titulo": "#",
+   "imagen": "#",
+  "detalles": "# ",
+   "link": "#"    
+ }
+
 ]

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesando Descarga | Glory to Mankind</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body style="display: block !important; padding: 0 !important; background-color: #07090e !important;">
+
+
+    <header class="main-navbar">
+        <div class="nav-logo">
+            <img src="logo-nier.png" alt="Logo" class="logo-img" onerror="this.style.display='none'"> Glory to <span>Mankind</span>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <main class="content-section" style="max-width: 800px; margin: 0 auto; width: 100%;">
+            
+            <!-- Bloque Dinámico del Juego -->
+            <div class="paste-container">
+                <div class="paste-header">
+                    <div class="paste-thumb">
+                        <img id="game-img" src="" alt="Portada">
+                    </div>
+                    <div class="paste-title-side">
+                        <h1 id="game-title">Cargando aporte...</h1>
+                        <p id="game-server" class="meta-tag m-status">Verificando servidor...</p>
+                    </div>
+                </div>
+
+                <div class="paste-body">
+                    <h3><i class="fa-solid fa-file-lines"></i> Descripción e Instrucciones</h3>
+                    <p id="game-desc" class="instructions-text">Cargando detalles del archivo...</p>
+                    
+                    <div class="alert-box">
+                        <i class="fa-solid fa-triangle-exclamation"></i> 
+                        <strong>Importante:</strong> Si tu explorador bloquea el enlace, haz clic derecho y selecciona "Conservar archivo". Es 100% seguro.
+                    </div>
+                </div>
+
+                <!-- ZONA INTERACTIVA DEL CONTADOR Y CAPTCHA -->
+<div class="paste-actions">
+    
+    <!-- NUEVO: Casilla para tu Anuncio o Banner Publicitario -->
+    <div class="paste-ad-slot">
+        <span class="ad-badge">Anuncio Publicitario</span>
+        <div class="ad-content">
+            <!-- REEMPLAZA ESTA FOTO POR EL BANNER DE TU PUBLICIDAD (Tamaño recomendado: 728x90 o similar) -->
+            <a href="https://discord.gg" target="_blank">
+                <img src="https://unsplash.com" alt="Publicidad Oficial">
+            </a>
+        </div>
+    </div>
+    
+    <!-- PASO 1: El cartel de espera -->
+    <div id="step-countdown" class="action-box">
+        <div class="spinner-loader"></div>
+        <h2>Por favor, espera <span id="timer-num">5</span> segundos...</h2>
+        <p>Estamos verificando que los enlaces de descarga estén online de forma segura.</p>
+    </div>
+
+    <!-- PASO 2: El captcha simulado (Aparece al terminar los 5s) -->
+    <div id="step-captcha" class="action-box hidden">
+        <div class="blizz-captcha">
+            <label class="captcha-checkbox-container">
+                <input type="checkbox" id="captcha-check">
+                <span class="checkmark"></span>
+                <div class="captcha-text">
+                    <strong>No soy un robot</strong>
+                    <small>Glory Enterprise Security Protection</small>
+                </div>
+            </label>
+            <img src="https://wikimedia.org" alt="reCAPTCHA" class="recaptcha-logo">
+        </div>
+        <button id="btn-continue" class="btn-paste-continue" disabled>Continuar</button>
+    </div>
+
+    <!-- PASO 3: Los Enlaces Finales Libres -->
+    <div id="step-links" class="action-box hidden">
+        <h2 class="success-title"><i class="fa-solid fa-circle-check"></i> ¡Enlaces Desbloqueados!</h2>
+        <div class="final-links-container">
+            <a id="final-download-url" href="#" class="btn-final-link" target="_blank">
+                <i class="fa-solid fa-cloud-arrow-down"></i> Obtener Archivo Directo
+            </a>
+        </div>
+    </div>
+
+</div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Script exclusivo de la página de descargas -->
+    <script src="descarga.js"></script>
+</body>
+</html>

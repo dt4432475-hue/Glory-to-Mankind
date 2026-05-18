@@ -7,119 +7,115 @@
     <!-- Tu hoja de estilos en la raíz -->
     <link rel="stylesheet" href="index.css">
     <!-- Librería de iconos Pro (FontAwesome) -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
 
     <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
     <header class="main-navbar">
         <div class="nav-logo">
-            <i class="fa-solid fa-ghost"></i> GLORY<span>MANKIND</span>
-        </div>
+    <div class="nav-logo">
+    <img src="https://i.postimg.cc/yYLsFyws/image.png" alt="Logo" class="logo-img"> Glory to <span>Mankind</span>
+</div>
         <div class="nav-search">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" id="search-input" placeholder="Buscar parches, juegos o herramientas...">
         </div>
-        <nav class="nav-menu">
-            <a href="#" class="filter-btn active" data-filter="todos">Inicio</a>
-            <a href="#" class="filter-btn" data-filter="juegos-pc">Juegos PC</a>
-            <a href="#" class="filter-btn" data-filter="juegos-android">Juegos Android</a>
-            <a href="#" class="filter-btn" data-filter="apps">Apps / Programas</a>
-            <a href="#" class="filter-btn" data-filter="isos">ISOs Windows</a>
-        </nav>
+        <!-- Menú interactivo con iconos oficiales integrados -->
+<!-- Menú interactivo con tus iconos personalizados -->
+<nav class="nav-menu">
+    <a href="#" class="filter-btn active" data-filter="todos"><i class="fa-solid fa-house"></i> Inicio</a>
+    
+    <!-- Gabinete + Monitor (Usando el icono de PC de escritorio Pro) -->
+    <a href="#" class="filter-btn" data-filter="juegos-pc"><i class="fa-solid fa-desktop"></i> Juegos PC</a>
+    
+    <!-- Mascota de Android completa (No solo la cabeza, el cuerpo entero) -->
+    <a href="#" class="filter-btn" data-filter="juegos-android"><i class="fa-brands fa-android"></i> Juegos Android</a>
+    
+    <!-- El cubo de bolitas juntas (Icono oficial "cubes" o bloque de aplicaciones) -->
+    <a href="#" class="filter-btn" data-filter="apps"><i class="fa-solid fa-cubes"></i> Apps / Programas</a>
+    
+    <!-- El ISO que te gustó se queda intacto -->
+    <a href="#" class="filter-btn" data-filter="isos"><i class="fa-solid fa-compact-disc"></i> ISOs Windows</a>
+</nav>
+
+
     </header>
 
     <!-- CONTENEDOR PRINCIPAL QUE LLENA LA PÁGINA -->
     <div class="page-layout">
         
-        <!-- BANNER DESTACADO DE BIENVENIDA (HERO BANNER) -->
-        <section class="hero-banner">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <span class="hero-badge"><i class="fa-solid fa-fire"></i> Actualizado hoy</span>
-                <h1>Glory to Mankind</h1>
-                <p>Accede de forma directa a los instaladores oficiales, modificaciones críticas de rendimiento, complementos globales y las últimas actualizaciones de la comunidad sin publicidad intrusiva.</p>
-            </div>
-        </section>
+     <!-- BANNER DESTACADO CON FONDO DINÁMICO INTERACTIVO -->
+<section class="hero-banner" id="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content-flex">
+        
+        <!-- Contenido Izquierdo -->
+        <div class="hero-text-side">
+            <span class="hero-badge"><i class="fa-solid fa-fire"></i> Actualizado hoy</span>
+            <h1>Glory to Mankind</h1>
+            <p>Accede de forma directa a los instaladores oficiales, modificaciones críticas de rendimiento, complementos globales y las últimas actualizaciones de la comunidad sin publicidad intrusiva.</p>
+            
+            <button id="open-gallery-btn" class="btn-screenshots">
+                <i class="fa-solid fa-images"></i> Ver capturas de pantalla
+            </button>
+        </div>
 
-        <!-- SECCIÓN DE CONTENIDO EN FORMATO GRILLA PRO -->
-        <main class="content-section">
-            <div class="section-header-flex">
-                <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Explorar Aportes</h2>
-                <div class="stats-counter">
-                    <span id="counted-items">0</span> aportes disponibles
+        <!-- Contenido Derecho -->
+        <div class="hero-stats-side">
+            <div class="live-stat-box">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-info">
+                    <span id="live-views">Cargando...</span>
+                    <small>Visitas Globales</small>
                 </div>
             </div>
             
-            <div class="downloads-grid">
-                
-                <!-- EJEMPLO CATEGORÍA: JUEGOS PC (Enlace MediaFire) -->
-                <a href="https://mediafire.com" class="card-download" data-category="juegos-pc" target="_blank">
-                    <div class="card-icon bg-juegos-pc"><i class="fa-solid fa-gamepad"></i></div>
-                    <div class="card-info">
-                        <h3>Glory to Mankind (Base)</h3>
-                        <p>Servidor Oficial Extremo (MediaFire)</p>
-                        <div class="card-meta">
-                            <span class="meta-tag tag-pc">PC Gamer</span>
-                            <span class="meta-tag m-status">Online</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- EJEMPLO CATEGORÍA: JUEGOS PC (Enlace MEGA) -->
-                <a href="https://mega.nz" class="card-download" data-category="juegos-pc" target="_blank">
-                    <div class="card-icon bg-juegos-pc"><i class="fa-solid fa-gamepad"></i></div>
-                    <div class="card-info">
-                        <h3>Glory to Mankind (Espejo)</h3>
-                        <p>Servidor Oficial Rápido (MEGA)</p>
-                        <div class="card-meta">
-                            <span class="meta-tag tag-pc">PC Gamer</span>
-                            <span class="meta-tag m-status">Online</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- EJEMPLO CATEGORÍA: JUEGOS ANDROID -->
-                <a href="#" class="card-download" data-category="juegos-android" target="_blank">
-                    <div class="card-icon bg-juegos-android"><i class="fa-solid fa-robot"></i></div>
-                    <div class="card-info">
-                        <h3>Sample Game Mod APK</h3>
-                        <p>Juego Premium Android con todo desbloqueado</p>
-                        <div class="card-meta">
-                            <span class="meta-tag tag-android">Android</span>
-                            <span class="meta-tag m-status">v1.0.2</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- EJEMPLO CATEGORÍA: APPS / PROGRAMAS -->
-                <a href="https://mediafire.com" class="card-download" data-category="apps" target="_blank">
-                    <div class="card-icon bg-apps"><i class="fa-solid fa-laptop-code"></i></div>
-                    <div class="card-info">
-                        <h3>Parche de Rendimiento v1.2</h3>
-                        <p>Corrección de texturas, optimizador de shaders y bugs</p>
-                        <div class="card-meta">
-                            <span class="meta-tag tag-apps">Programas</span>
-                            <span class="meta-tag m-status">Estable</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- EJEMPLO CATEGORÍA: ISOs WINDOWS -->
-                <a href="#" class="card-download" data-category="isos" target="_blank">
-                    <div class="card-icon bg-isos"><i class="fa-solid fa-compact-disc"></i></div>
-                    <div class="card-info">
-                        <h3>Windows 11 LTSC Light</h3>
-                        <p>Sistema operativo optimizado para máximo rendimiento</p>
-                        <div class="card-meta">
-                            <span class="meta-tag tag-iso">Windows</span>
-                            <span class="meta-tag m-status">Bootable</span>
-                        </div>
-                    </div>
-                </a>
-
+            <div class="live-stat-box">
+                <div class="stat-icon pulse-blue"><i class="fa-solid fa-circle-down"></i></div>
+                <div class="stat-info">
+                    <span id="live-downloads">Cargando...</span>
+                    <small>Descargas Totales</small>
+                </div>
             </div>
-        </main>
+        </div>
+
+    </div>
+</section>
+
+<!-- MODAL DE GALERÍA INTERACTIVA -->
+<div id="gallery-modal" class="gallery-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-wrapper">
+        <button id="close-gallery-btn" class="modal-close-btn">&times;</button>
+        <h3 class="modal-title"><i class="fa-solid fa-images"></i> Haz clic en una captura para cambiar el fondo</h3>
+        
+        <div class="modal-grid">
+            <!-- REEMPLAZA ESTOS LINKS POR LAS PORTADAS O CAPTURAS QUE DESEES -->
+            <div class="screenshot-item"><img src="https://i.postimg.cc/26N72vPk/1.jpg" alt="Captura 1" class="clickable-thumb"></div>
+            <div class="screenshot-item"><img src="https://unsplash.com" alt="Captura 2" class="clickable-thumb"></div>
+            <div class="screenshot-item"><img src="https://unsplash.com" alt="Captura 3" class="clickable-thumb"></div>
+            <div class="screenshot-item"><img src="https://unsplash.com" alt="Captura 4" class="clickable-thumb"></div>
+        </div>
+    </div>
+</div>
+
+
+
+       <!-- SECCIÓN DE CONTENIDO (Ahora automatizada) -->
+<main class="content-section">
+    <div class="section-header-flex">
+        <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Explorar Aportes</h2>
+        <div class="stats-counter">
+            <span id="counted-items">0</span> aportes disponibles
+        </div>
+    </div>
+    
+    <!-- Debe quedar totalmente vacío para que funcione el buscador dinámico -->
+    <div class="downloads-grid" id="downloads-container"></div>
+</main>
+
     </div>
 
     <!-- PIE DE PÁGINA -->
@@ -128,9 +124,9 @@
     </footer>
 
     <!-- Botón flotante para volver arriba -->
-    <button id="scroll-top-btn" class="scroll-top-btn" title="Volver arriba">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+<button id="scroll-top-btn" class="scroll-top-btn" title="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
 
     <!-- Tu script en la raíz -->
     <script src="filtro.js"></script>

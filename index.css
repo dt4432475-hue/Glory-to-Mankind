@@ -1,15 +1,15 @@
 /* ==========================================================================
-   DISEÑO DE INTERFAZ EXPANDIDA (Ancho Completo Premium)
+   DISEÑO DE INTERFAZ PREMIUM - COMPLETO (Estilo EspacioAPK / Steam)
    ========================================================================== */
 :root {
-    --bg-deep: #07090e;         
-    --bg-surface: #0f131c;      
-    --bg-card: #161c28;         
-    --accent: #00ff87;          
-    --accent-blue: #0072ff;     
+    --bg-deep: #07090e;         /* Fondo místico ultra oscuro */
+    --bg-surface: #0f131c;      /* Capa base para barras y menús */
+    --bg-card: #161c28;         /* Color base de las tarjetas */
+    --accent: #00ff87;          /* Verde neón icónico */
+    --accent-blue: #0072ff;     /* Detalles en azul */
     --text-white: #ffffff;
     --text-dim: #798ba4;
-    --border-glow: rgba(0, 255, 135, 0.15);
+    --border-glow: rgba(0, 255, 135, 0.2);
 }
 
 * {
@@ -27,30 +27,70 @@ body {
     flex-direction: column;
 }
 
-/* BARRA DE NAVEGACIÓN COMPLETA */
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN TRANSPARENTE PREMIUM
+   ========================================================================== */
 .main-navbar {
-    background-color: var(--bg-surface);
+    background-color: rgba(15, 19, 28, 0.8); 
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 4%;
+    padding: 0 4%; 
+    height: 70px; /* Forzamos una altura exacta de 70px */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
-
 .nav-logo {
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 1px;
+    font-size: 19px; /* Tamaño ideal para que quepan las tres palabras completas */
+    font-weight: 800;
+    letter-spacing: -0.3px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px; /* Separa la cabecita del robot de la palabra Glory */
+    white-space: nowrap; /* Evita que el título se parta en dos renglones */
+    color: var(--text-white);
 }
 
-.nav-logo span { color: var(--accent); }
-.nav-logo i { color: var(--accent); }
+/* Color neón exclusivo para la última palabra (Mankind) */
+.nav-logo span { 
+    color: var(--accent); 
+    font-weight: 900;
+}
+
+/* Animación y color para la cabecita del robot de NieR */
+.nav-logo i { 
+    color: var(--accent); 
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto divertido: cuando pasas el mouse por encima de tu marca, el robot rota un poquito */
+.nav-logo:hover i {
+    transform: rotate(10deg) scale(1.1);
+}
+/* Le da el toque circular y pulido al logo de YoRHa */
+.nav-logo img {
+    width: 28px;        /* Tamaño ideal para que combine con el texto */
+    height: 28px;
+    object-fit: cover;  /* Evita que el emblema se deforme */
+    
+    /* ESTAS TRES LÍNEAS HACEN LA MAGIA DEL CÍRCULO */
+    border-radius: 50%; 
+    border: 1px solid rgba(0, 255, 135, 0.3); /* Un borde sutil verde neón */
+    box-shadow: 0 0 8px rgba(0, 255, 135, 0.2); /* Un leve resplandor a los lados */
+    
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover: cuando pasas el mouse por encima, el círculo gira sutilmente */
+.nav-logo:hover img {
+    transform: rotate(15deg) scale(1.05);
+}
+
 
 .nav-search {
     background-color: rgba(255, 255, 255, 0.04);
@@ -60,16 +100,25 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 35%;
-    transition: all 0.3s;
+    
+    /* TRUCO DE SEPARACIÓN: Añade margen izquierdo para despegarlo del logo */
+    margin-left: 40px; 
+    margin-right: auto; /* Empuja el menú de categorías hacia la derecha de forma elegante */
+    
+    width: 28%; /* Tamaño ideal para que no sature la navbar */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+
+/* MEJORA 1: Efecto de brillo neón expansivo en la caja de búsqueda */
 .nav-search:focus-within {
     border-color: var(--accent);
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(0, 255, 135, 0.03);
+    box-shadow: 0 0 15px rgba(0, 255, 135, 0.15);
 }
+.nav-search i { color: var(--text-dim); transition: color 0.3s; }
+.nav-search:focus-within i { color: var(--accent); }
 
-.nav-search i { color: var(--text-dim); font-size: 14px; }
 .nav-search input {
     background: none;
     border: none;
@@ -79,18 +128,68 @@ body {
     font-size: 14px;
 }
 
+.nav-menu {
+    display: flex;
+    height: 100%; /* CLAVE: Estira el contenedor al 100% de la altura de la barra */
+    align-items: center;
+}
+
 .nav-menu a {
     color: var(--text-dim);
     text-decoration: none;
     font-weight: 600;
-    margin-left: 25px;
+    margin-left: 12px; 
     font-size: 15px;
-    transition: color 0.3s;
+    height: 100%; /* CLAVE: Hace que el botón ocupe todo el alto para empujar la línea al borde inferior */
+    display: flex;
+    align-items: center;
+    padding: 0 20px; 
+    position: relative;
+    transition: all 0.25s ease;
 }
 
-.nav-menu a:hover, .nav-menu a.active { color: var(--text-white); }
+/* MEJORA 1: Línea gris flotante al pasar el mouse sobre botones inactivos */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    border-radius: 2px 2px 0 0;
+}
+.nav-menu a:hover::after {
+    transform: scaleX(1);
+}
+.nav-menu a:hover {
+    color: var(--text-white);
+    background-color: rgba(255, 255, 255, 0.03);
+}
 
-/* CONTENEDOR DE DISEÑO EXPANSIBLE */
+/* Estado de sección seleccionada */
+.nav-menu a.active {
+    color: var(--accent) !important;
+    font-weight: 700;
+     background-color: rgba(0, 255, 135, 0.05); 
+}
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; 
+    left: 0;
+    width: 100%;
+    height: 3px; 
+    background-color: var(--accent); 
+    transform: scaleX(1) !important;
+    box-shadow: 0 -2px 10px rgba(0, 255, 135, 0.8), 0 0 4px rgba(0, 255, 135, 0.5);
+}
+
+/* ==========================================================================
+   CONTENEDOR GENERAL Y HERO BANNER
+   ========================================================================== */
 .page-layout {
     width: 100%;
     max-width: 1400px; 
@@ -102,18 +201,21 @@ body {
     gap: 30px;
 }
 
-/* BANNER HERO INMERSIVO */
 .hero-banner {
     position: relative;
-    background: linear-gradient(rgba(7, 9, 14, 0.4), rgba(7, 9, 14, 0.85)), 
+    /* Tu imagen de 2B se conserva intacta */
+    background: linear-gradient(rgba(7, 9, 14, 0.25), rgba(7, 9, 14, 0.85)), 
                 url('https://unsplash.com') no-repeat center center/cover;
     border-radius: 16px;
     padding: 60px 40px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    
+    /* SOLUCIÓN: Eliminamos el border sólido y añadimos un degradado negro suave en el perímetro */
+    border: none; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(7, 9, 14, 0.8);
+    
+    transition: background-image 0.5s ease-in-out, transform 0.3s ease;
 }
-
 .hero-content { position: relative; z-index: 2; max-width: 750px; }
 .hero-badge {
     background-color: var(--accent);
@@ -128,7 +230,6 @@ body {
     gap: 4px;
     margin-bottom: 15px;
 }
-
 .hero-content h1 {
     font-size: 3rem;
     font-weight: 900;
@@ -138,10 +239,11 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .hero-content p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.6; }
 
-/* SECCIÓN Y CUADRÍCULA DE TARJETAS */
+/* ==========================================================================
+   SECCIÓN DE CONTENIDO Y TARJETAS CON EFECTO GLOW
+   ========================================================================== */
 .content-section { width: 100%; }
 
 .section-header-flex {
@@ -152,22 +254,14 @@ body {
     gap: 15px;
     margin-bottom: 25px;
 }
-
-.section-title {
-    font-size: 22px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+.section-title { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
 .section-title i { color: var(--accent); }
 
-/* Caja de estadísticas */
 .stats-counter {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 8px 16px;
-    border-radius: 30px;
+    border-radius: 30px; 
     font-size: 14px;
     color: var(--text-dim);
     display: inline-flex;
@@ -198,14 +292,32 @@ body {
 }
 
 .card-icon {
-    width: 50px;
-    height: 50px;
+    width: 85px;
+    height: 85px;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
+    overflow: hidden; /* Corta la imagen para que se adapte perfectamente al marco */
     flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Forzamos a la miniatura a llenar todo el espacio del recuadro de forma pro */
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto se estire o se deforme feo */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover premium: la foto se acerca un poco cuando pasas el mouse */
+.card-download:hover .card-icon img {
+    transform: scale(1.08);
+}
+
+/* Estilo para la nueva etiqueta flotante del peso (MB/GB) */
+.meta-tag.m-weight {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .card-info h3 { color: var(--text-white); font-size: 16px; font-weight: 700; margin-bottom: 4px; transition: color 0.3s; }
@@ -222,12 +334,12 @@ body {
 }
 .meta-tag.m-status { background-color: rgba(0, 255, 135, 0.08); color: var(--accent); }
 
-/* HOVER ANIMACIÓN */
+/* MEJORA 2: Efecto hover con resplandor perimetral neón de las tarjetas */
 .card-download:hover {
     transform: translateY(-5px);
     background-color: #1e2637;
-    border-color: rgba(255,255,255,0.08);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border-color: rgba(0, 255, 135, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 255, 135, 0.12);
 }
 .card-download:hover .card-info h3 { color: var(--accent); }
 
@@ -242,7 +354,9 @@ body {
 .meta-tag.tag-apps { background-color: rgba(0, 114, 255, 0.08); color: #0072ff; }
 .meta-tag.tag-iso { background-color: rgba(234, 179, 8, 0.08); color: #eab308; }
 
-/* BOTÓN VOLVER ARRIBA */
+/* ==========================================================================
+   BOTÓN VOLVER ARRIBA Y PIE DE PÁGINA
+   ========================================================================== */
 .scroll-top-btn {
     position: fixed;
     bottom: 30px;
@@ -250,23 +364,30 @@ body {
     width: 48px;
     height: 48px;
     background-color: var(--bg-card);
-    color: var(--text-white);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--accent);       
+    border: 1px solid rgba(0, 255, 135, 0.3);
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 135, 0.1);
     z-index: 999;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(15px);
+    
+    /* MODIFICACIÓN: Forzamos a que se muestre siempre para probarlo */
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
 }
 
-.scroll-top-btn.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+/* Cuando el script le mete la clase .show al bajar scroll */
+.scroll-top-btn.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
 .scroll-top-btn:hover {
     background-color: var(--accent);
     color: var(--bg-deep);
@@ -275,7 +396,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* PIE DE PÁGINA */
 .main-footer {
     background-color: var(--bg-surface);
     padding: 20px 4%;
@@ -285,17 +405,561 @@ body {
 }
 .main-footer p { font-size: 13px; color: var(--text-dim); margin-bottom: 0; }
 
-/* RESPONSIVE DESIGN */
+/* ==========================================================================
+   RESPONSIVE DESIGN INTERACTIVO (Optimizando al 100% para Celulares APK)
+   ========================================================================== */
+
+/* Ajustes para Tablets y Pantallas Medianas */
 @media (max-width: 900px) {
-    .nav-search { display: none; }
+    .nav-search { width: 45%; }
     .hero-content h1 { font-size: 2.2rem; }
 }
+
+/* El cambio radical para Celulares (Pantallas de 600px o menos) */
 @media (max-width: 600px) {
-    .main-navbar { padding: 15px 6%; }
-    .nav-menu { display: none; }
-    .hero-banner { padding: 30px 20px; }
-    .hero-content h1 { font-size: 1.8rem; }
-    .downloads-grid { grid-template-columns: 1fr; }
-    .section-header-flex { flex-direction: column; align-items: flex-start; }
-    .scroll-top-btn { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+    /* 1. Expandimos la Navbar verticalmente para que quepa todo */
+    .main-navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 5%;
+        gap: 12px;
+        align-items: stretch; /* Hace que los elementos usen todo el ancho */
+    }
+
+    .nav-logo {
+        justify-content: center; /* Centra tu logotipo en el celular */
+    }
+
+    /* 2. Hacemos que el Buscador SIEMPRE se vea, ocupando todo el ancho */
+    .nav-search {
+        display: flex !important;
+        width: 100%;
+        padding: 10px 16px;
+    }
+
+    /* 3. ¡LA MAGIA! Convertimos el menú en una barra deslizable horizontal con el dedo */
+    .nav-menu {
+        display: flex !important;
+        width: 100%;
+        overflow-x: auto; /* Permite el arrastre lateral */
+        scroll-behavior: smooth;
+        white-space: nowrap; /* Evita que los botones se vayan para abajo */
+        padding: 8px 0;
+        gap: 5px;
+        
+        /* Ocultamos la barra de scroll fea de los navegadores para que se vea limpio */
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-menu::-webkit-scrollbar {
+        display: none; /* Oculta la barra en Chrome/Safari de celulares */
+    }
+
+    .nav-menu a {
+        margin-left: 0;
+        margin-right: 15px; /* Separa los botones en la fila horizontal */
+        padding: 6px 12px;
+        font-size: 14px;
+        height: auto; /* Libera la altura fija de la PC */
+        background-color: rgba(255, 255, 255, 0.03); /* Les da forma de botones individuales */
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Ajuste de la línea brillante en celular: la cambiamos por un borde completo para que combine con el botón burbuja */
+    .nav-menu a.active {
+        background-color: rgba(0, 255, 135, 0.1);
+        border-color: var(--accent);
+        box-shadow: 0 0 10px rgba(0, 255, 135, 0.2);
+    }
+    .nav-menu a.active::after {
+        display: none; /* Quitamos la línea fija de PC que se descuadra en botones móviles */
+    }
+
+    /* 4. Ajustes del Banner y Grilla */
+    .hero-banner { 
+        padding: 30px 20px; 
+    }
+    .hero-content h1 { 
+        font-size: 1.8rem; 
+    }
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+    
+    .downloads-grid { 
+        grid-template-columns: 1fr; /* Mantiene la fila única vertical que ya tenías */
+    }
+    
+    .section-header-flex { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 8px;
+    }
+    
+    .scroll-top-btn { 
+        bottom: 20px; 
+        right: 20px; 
+        width: 42px; 
+        height: 42px; 
+    }
+}
+/* Espaciado perfecto para tus nuevos iconos del menú */
+.nav-menu a i {
+    margin-right: 8px; /* Separa el gabinete, el androide y los cubos del texto */
+    font-size: 16px;   /* Tamaño ideal para que se aprecien los detalles */
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Efecto hover: cuando pasas el mouse, el icono flota un poquito hacia arriba */
+.nav-menu a:hover i {
+    transform: translateY(-2px) scale(1.1);
+}
+/* ==========================================================================
+   ESTILOS PARA CONTADOR DE VISITAS Y DESCARGAS REALES
+   ========================================================================== */
+
+/* Hace que el banner divida su contenido a los extremos */
+.hero-content-flex {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.hero-text-side {
+    max-width: 60%;
+}
+
+/* Contenedor de estadísticas derecho */
+.hero-stats-side {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 260px;
+}
+
+/* Cajas de datos en tiempo real */
+.live-stat-box {
+    background: rgba(15, 19, 28, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.live-stat-box:hover {
+    transform: translateX(-5px);
+    border-color: rgba(0, 255, 135, 0.3);
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 255, 135, 0.1);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.stat-icon.pulse-blue {
+    background: rgba(0, 114, 255, 0.1);
+    color: var(--accent-blue);
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-info span {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-white);
+    line-height: 1.2;
+}
+
+.stat-info small {
+    color: var(--text-dim);
+    font-size: 12px;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive para celulares: pasa las estadísticas abajo del texto */
+@media (max-width: 850px) {
+    .hero-content-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+    }
+    .hero-text-side {
+        max-width: 100%;
+    }
+    .hero-stats-side {
+        flex-direction: row;
+        gap: 15px;
+    }
+    .live-stat-box {
+        flex: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-stats-side {
+        flex-direction: column;
+    }
+}
+/* ==========================================================================
+   ESTILOS DE BOTÓN Y VENTANA FLOTANTE DE CAPTURAS
+   ========================================================================== */
+
+/* Botón premium de capturas */
+.btn-screenshots {
+    background-color: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-screenshots:hover {
+    background-color: var(--accent);
+    color: #07090e;
+    box-shadow: 0 0 15px rgba(0, 255, 135, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Contenedor de la ventana oculta */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000; /* Pasa por encima del menú sticky */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Cuando se le añade la clase .open con JS */
+.gallery-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 9, 14, 0.9);
+    backdrop-filter: blur(8px);
+}
+
+/* Caja contenedora interna */
+.modal-wrapper {
+    position: relative;
+    background-color: var(--bg-card);
+    width: 90%;
+    max-width: 900px;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.gallery-modal.open .modal-wrapper {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.modal-close-btn:hover { color: var(--text-white); }
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.modal-title i { color: var(--accent); }
+
+/* Grilla de 2x2 para las fotos */
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.screenshot-item {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 220px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.screenshot-item:hover img { transform: scale(1.04); }
+
+/* Adaptación para celulares */
+@media (max-width: 650px) {
+    .modal-grid { grid-template-columns: 1fr; } /* Pone las fotos en hilera vertical */
+    .screenshot-item { height: 160px; }
+    .modal-wrapper { padding: 25px 15px; }
+}
+
+/* ==========================================================================
+   ESTILOS ESTILO BLIZZPASTE (Páginas de Redirección Avanzadas)
+   ========================================================================== */
+.paste-container {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+}
+
+.paste-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.paste-thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.paste-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.paste-title-side h1 { font-size: 24px; font-weight: 800; margin-bottom: 5px; background: none; -webkit-text-fill-color: initial; }
+
+.paste-body { padding: 25px; text-align: left; }
+.paste-body h3 { font-size: 16px; margin-bottom: 10px; color: var(--accent); }
+.instructions-text { font-size: 14px; color: var(--text-dim); line-height: 1.6; margin-bottom: 20px; }
+
+.alert-box {
+    background-color: rgba(234, 179, 8, 0.05);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #eab308;
+}
+
+/* Cajas de pasos de acción */
+.paste-actions { padding: 0 25px 30px 25px; }
+.action-box {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hidden { display: none !important; }
+
+/* Animación de carga circular */
+.spinner-loader {
+    width: 35px;
+    height: 35px;
+    border: 3px solid rgba(0, 255, 135, 0.1);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Cuadro del Captcha simulado BlizzPaste */
+.blizz-captcha {
+    background: #111622;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 320px;
+    margin: 0 auto 20px auto;
+    padding: 15px 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.captcha-checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.captcha-text { display: flex; flex-direction: column; text-align: left; }
+.captcha-text small { font-size: 10px; color: var(--text-dim); }
+
+/* Botones de acción final */
+.btn-paste-continue {
+    background-color: #2d3748;
+    color: rgba(255,255,255,0.4);
+    border: none;
+    padding: 12px 40px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: not-allowed;
+    transition: all 0.3s;
+}
+.btn-paste-continue.active-btn {
+    background-color: var(--accent);
+    color: #000;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,255,135,0.3);
+}
+
+.btn-final-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0072ff;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 35px;
+    font-weight: 700;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+    transition: transform 0.2s;
+}
+.btn-final-link:hover { transform: translateY(-2px); }
+
+/* ==========================================================================
+   PARCHE DE COMPATIBILIDAD PARA DESCARGA.HTML
+   ========================================================================== */
+
+/* Anulamos el flex centrado del body original solo cuando estemos en la página de descargas */
+body:has(.paste-container),
+body:has(#timer-num) {
+    display: block !important;
+    padding: 0 !important;
+    background-color: var(--bg-deep) !important;
+}
+
+/* Caja de contenido BlizzPaste centrada y espaciada */
+.paste-container {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+    margin-top: 40px; /* La despega elegantemente de tu navbar */
+}
+/* ==========================================================================
+   CASILLA DE ANUNCIOS PREMIUM EN LA PASARELA DE DESCARGA
+   ========================================================================== */
+.paste-ad-slot {
+    background-color: rgba(7, 9, 14, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px; /* Separa el anuncio de la zona del contador */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Etiqueta flotante que avisa que es publicidad */
+.ad-badge {
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Marco del contenido del banner publicitario */
+.ad-content {
+    width: 100%;
+    max-height: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 135, 0.08); /* Sutil toque neón perimetral */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adapta cualquier banner de internet al tamaño de la caja */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Efecto hover interactivo al pasar el mouse por encima del anuncio */
+.paste-ad-slot:hover .ad-content {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(0, 255, 135, 0.1);
+}
+
+.paste-ad-slot:hover .ad-content img {
+    transform: scale(1.02); /* Pequeño zoom pro para atraer el clic */
+}
+
+/* Optimización móvil para que la publicidad sea responsiva */
+@media (max-width: 600px) {
+    .paste-ad-slot {
+        padding: 8px;
+    }
+    .ad-content {
+        max-height: 90px;
+    }
 }

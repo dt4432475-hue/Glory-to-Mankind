@@ -38,8 +38,15 @@ body {
     justify-content: center;
     margin-bottom: 25px; /* Separa el anuncio de las 4 casillas */
 }
-
-
+/* Centrado perfecto para tu nuevo banner inferior */
+.banner-movil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;    /* Separa el anuncio de tus casillas de arriba */
+    margin-bottom: 20px; /* Separa el anuncio del footer y tu GIF */
+}
 
 .banner-principal {
     width: 100%;

@@ -4,7 +4,7 @@
     "titulo": "Dism++",
     "imagen": "https://sc.filehippo.net/images/t_app-icon-l/p/35384a8a-ba2a-4afe-b6e0-c708f48eb884/190218214/dism-icon.png",
     "detalles": "Optimiza tu Windows en segundos.",
-    "link": "https://archive.org/download/dismplusplus-10-1-1002-2/dismplusplus-10-1-1002-2.rar"
+    "link": "https://release-assets.githubusercontent.com/github-production-release-asset/74809720/338f6dd6-a21c-4510-a134-b590740a4f1d?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-17T23%3A57%3A23Z&rscd=attachment%3B+filename%3DDism%2B%2B10.1.1002.1B.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-17T22%3A57%3A00Z&ske=2026-05-17T23%3A57%3A23Z&sks=b&skv=2018-11-09&sig=N2FIiH4WyckmV1iXTJ5sstcKWFHnnCsh%2FLDMEbiFUuU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3OTA1OTQ2NCwibmJmIjoxNzc5MDU5MTY0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.I1g-2wSYWApDSrvbW1x2286NcHAXT8aYOaK1PxBSyBY&response-content-disposition=attachment%3B%20filename%3DDism%2B%2B10.1.1002.1B.zip&response-content-type=application%2Foctet-stream"
   },
   {
     "id": 2,
@@ -36,10 +36,10 @@
   },
   {
     "id": 6,
-    "titulo": "IObit Unlocker",
-    "imagen": "https://img.utdstc.com/icon/447/0a6/4470a6461f157c03bdcece870353c8edb56c4c15cc6c4269ab84c350495a1314:600",
-    "detalles": "Es una aplicación que nos permitirá eliminar aquellos archivos que por cualquier motivo se encuentran bloqueados en nuestro ordenador.",
-    "link": "https://cdn.iobit.com/dl/unlocker-setup.exe"
+    "titulo": "LockHunter",
+    "imagen": "https://i.postimg.cc/D0BTbW6D/image.png",
+    "detalles": "Es útil para combatir el malware y otros programas que bloquean archivos sin motivo aparente.",
+    "link": "https://lockhunter.com/assets/exe/lockhuntersetup_3-4-3.exe"
   },
   {
     "id": 7,
@@ -50,7 +50,7 @@
   },
   {
     "id": 8,
-    "titulo": "Rave Uninstaller",
+    "titulo": "Revo Uninstaller",
     "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjWB7Aznp11cXsFiAx7pFvrGJ_mqyEBeIUtA&s",
     "detalles": "Eliminación eficaz de cualquier programa de tu PC.",
     "link": "https://revouninstaller.b-cdn.net/ruf270/revosetup.exe"
@@ -60,7 +60,7 @@
     "titulo": "StartIsBack",
     "imagen": "https://i.postimg.cc/Y0VPnxT8/image.png",
     "detalles": "Restaura el diseño clásico, el botón y el menú de inicio al estilo de Windows 7 en sistemas operativos más modernos como Windows 10 y Windows 8.",
-    "link": "https://archive.org/download/start-is-back-v-2.9.20/StartIsBack%2B%2B_v2.9.20_patched.exe"
+    "link": "https://startisback.sfo3.cdn.digitaloceanspaces.com/StartIsBackPlusPlus_setup.exe"
   },
   {
     "id": 10,
@@ -69,8 +69,113 @@
     "detalles": "Busca por nombre archivos y carpetas al instante.",
     "link": "https://www.voidtools.com/Everything-1.4.1.1032.x64.zip"
 
-  }
+  },
+  {
+    "id": 11,
+    "titulo": "CrystalDiskInfo Portable",
+    "imagen": "https://i.postimg.cc/Z5RZ8Rzt/image.png",
+    "detalles": "Analiza el disco duro y muestra información sobre el uso del espacio en disco, el tamaño de los archivos, la actividad del sistema y más.",
+    "link": "hhttps://flylife.dl.sourceforge.net/project/crystaldiskinfo/9.8.0/CrystalDiskInfo9_8_0.zip?viasf=1&fid=6193d05b4e640892"
+  },
+  {
+    "id": 12,
+    "titulo": "7-Zip",
+    "imagen": "https://www.7-zip.org/7ziplogo.png",
+    "detalles": "Comprime y descomprime archivos en múltiples formatos con la mayor velocidad y el mejor cifrado de seguridad.",
+    "link": "https://release-assets.githubusercontent.com/github-production-release-asset/466446150/daf05d0d-b9b7-4aa7-99e6-5e7afbb980fd?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-17T22%3A37%3A37Z&rscd=attachment%3B+filename%3D7z2601-x64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-17T21%3A37%3A16Z&ske=2026-05-17T22%3A37%3A37Z&sks=b&skv=2018-11-09&sig=ZOv9%2FLCZto4NqWigZk6DAs1WI6SQnW%2B1wVtk%2BPTD3Dg%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3OTA1NDQ1NiwibmJmIjoxNzc5MDU0MTU2LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.ba87OanvvHTGPj-WInjOypGWA496tgQDhb4mTHeQgz4&response-content-disposition=attachment%3B%20filename%3D7z2601-x64.exe&response-content-type=application%2Foctet-stream"
+  },
+  {
+    "id": 13,
+    "titulo": "BleachBit",
+    "imagen": "https://raw.githubusercontent.com/bleachbit/bleachbit-misc/refs/heads/master/logo.svg",
+    "detalles": "Es una herramienta gratuita y de código abierto para liberar espacio en el disco y proteger tu privacidad.",
+    "link": "https://download.bleachbit.org/BleachBit-6.0.0-setup.exe"
+  },
+  {
+    "id": 14,
+    "titulo": "CrystalDiskMark Portable",
+    "imagen": "https://a.fsdn.com/allura/p/crystaldiskmark/icon?05c994782fbbb625e5b90f5aa6fda7f6c520010d6d8acbaba6b5225c5a0894e7?&w=90",
+    "detalles": "Mide la velocidad exacta de lectura y escritura de tus discos duros, SSDs y unidades USB en segundos.",
+    "link": "https://flylife.dl.sourceforge.net/project/crystaldiskmark/9.0.2/CrystalDiskMark9_0_2.zip?viasf=1&fid=93a40be95d921608"
+  },
+  {
+    "id": 15,
+    "titulo": "HWMonitor Portable",
+    "imagen": "https://www.cpuid.com/medias/images/softwares/hwmonitor.svg",
+    "detalles": "Es un programa de monitorización de hardware que lee los principales sensores de estado de los sistemas de PC.",
+    "link": "https://download.cpuid.com/hwmonitor/hwmonitor_1.63.zip"
 
+  },
+  {
+    "id": 16,
+    "titulo": "AIDA64 Extreme Edition",
+    "imagen": "https://tpucdn.com/download/images/95_icon-v1777380421.png",
+    "detalles": "Es un software de diagnóstico y evaluación comparativa optimizado para Windows, dirigido a usuarios domésticos.",
+    "link": "https://us2-dl.techpowerup.com/files/UT8HL--F8IycGifVn_bTEw/1779098840/aida64extreme830.exe"
+  },
+  {
+    "id": 17,    
+    "titulo": "Rufus Portable",
+    "imagen": "https://rufus.ie/pics/rufus-128.png",
+    "detalles": "Cree unidades USB arrancables fácilmente.",
+    "link": "https://release-assets.githubusercontent.com/github-production-release-asset/2810292/6453b88b-9fa9-4b5f-892c-44450d7b451b?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-17T22%3A51%3A27Z&rscd=attachment%3B+filename%3Drufus-4.14p.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-17T21%3A51%3A04Z&ske=2026-05-17T22%3A51%3A27Z&sks=b&skv=2018-11-09&sig=kk5T1P4kCbFXLTWox2g8Pb4%2B7XuXNS2mBYyhKd47lu0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3OTA1NjU5MSwibmJmIjoxNzc5MDU2MjkxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.q4UzZNyH4R4VFPnrboJEs5Oz8ki2Eai-kA-Xq0Ui4Yo&response-content-disposition=attachment%3B%20filename%3Drufus-4.14p.exe&response-content-type=application%2Foctet-stream"
+  },
+  {
+    "id": 18,
+    "titulo": "VLC Portable",
+    "imagen": "https://i.postimg.cc/QdhP1Nwt/image.png",
+    "detalles": "El reproductor multimedia definitivo que lee absolutamente cualquier formato de video y audio sin instalar códecs.",
+    "link": "https://edgeuno-bog2.mm.fcix.net/videolan-ftp/vlc/3.0.23/win64/vlc-3.0.23-win64.7z"
+  },
+  {
+    "id": 19,
+    "titulo": "Malwarebytes AdwCleaner",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShAkSGCkRoiAWh5FghPr-xo8qLPQlcQyTWmA&s",
+    "detalles": "Es una herramienta ligera pensada para detectar y eliminar adware, programas potencialmente no deseados.",    
+    "link": "https://adwcleaner.malwarebytes.com/adwcleaner?channel=release"
+  },
+  {
+    "id": 20,
+    "titulo": "QUICK CPU",    
+    "imagen": "https://coderbag.com/assets/img/QC5-logo-min.png",
+    "detalles": "Creado para monitorear el funcionamiento de la CPU, ajustando parámetros como el rendimiento, la temperatura, la potencia, la corriente, el escalado de frecuencia, el estacionamiento del núcleo, la memoria del sistema.",    
+    "link": "https://coderbag.com/assets/downloads/cpm/currentversion/QuickCpuSetup.msi"
+  },
+  {
+    "id": 21,
+    "titulo": "WizTree Portable",
+    "imagen": "https://antibodysoftware-17031.kxcdn.com/images/wiztree445x.png",
+    "detalles": "¡Encuentra rápidamente los archivos y carpetas que ocupan más espacio en tu disco duro!.",    
+    "link": "https://antibodysoftware-17031.kxcdn.com/files/wiztree_4_31_portable.zip"
+  },
+  {
+    "id": 22,
+    "titulo": "CPU-Z",
+    "imagen": "https://cpuid.com/medias/images/softwares/cpu-z.svg",
+    "detalles": "Es un software gratuito que recopila información sobre algunos de los principales dispositivos de su sistema.",    
+    "link": "https://download.cpuid.com/cpu-z/cpu-z_2.20-en.zip"
+  },
+  {
+    "id": 23,
+    "titulo": "ESET Online Scanner",
+    "imagen": "https://malwaretips.com/blogs/wp-content/uploads/2022/10/ESET-Online-Scanner.jpg",
+    "detalles": "Análisis puntual de tu ordenador · Comprueba si has recibido ataques de virus y amenazas.",    
+    "link": "https://download.eset.com/com/eset/tools/online_scanner/latest/esetonlinescanner.exe?utm_campaign=ESET+Online+Scanner+-+1_instalador&utm_source=EOS+-+Email+con+instalador&utm_medium=Email"
+  },
+  {
+    "id": 24,
+    "titulo": "TeraCopy",
+    "imagen": "https://sc.filehippo.net/images/t_app-icon-l/p/3a1971f2-96d3-11e6-9603-00163ec9f5fa/1429433708/teracopy-logo",
+    "detalles": "Optimice sus tareas de gestión de archivos mejorando las funciones de copiar y mover archivos de Windows.",
+    "link": "https://codesector.nyc3.cdn.digitaloceanspaces.com/teracopy.exe"    
+  },
+  {
+    "id": 25,
+    "titulo": "SpaceSniffer",
+    "imagen": "https://a.fsdn.com/allura/p/spacesniffer/icon?3ea596b02d41e5facbfe57fa431fda301d48edae57e39cb00edd4a6cf0bce0a0?&w=90",
+    "detalles": "Encuentra espacio en disco perdido de forma sencilla y rápida.",
+    "link": "https://flylife.dl.sourceforge.net/project/spacesniffer/spacesniffer_1_3_0_2.zip?viasf=1&fid=af20497731b45fbf"    
+  }
 
 
 

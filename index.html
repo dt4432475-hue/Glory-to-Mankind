@@ -3,94 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glory To Mankind</title>
-    <link rel="stylesheet" href="estilos/index.css">
+    <title>Glory to Mankind | Premium Hub</title>
+    <!-- Tu hoja de estilos en la raíz -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Librería de iconos Pro (FontAwesome) -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
-        <!-- 1. Título arriba como Banner Principal -->
-    <header class="banner-principal">
-        <div class="contenedor-titulo">
-            <!-- Letras animadas principales -->
-            <img class="logo-animado" src="https://i.postimg.cc/3xq73nyG/baner.gif" alt="Glory to Mankind">
-            <!-- Personaje 2B decorativo -->
-            <img class="gif-decorativo" src="https://i.postimg.cc/XN9SfDNw/gifla.gif" alt="2B Decoración">
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+    <header class="main-navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-ghost"></i> GLORY<span>MANKIND</span>
         </div>
+        <div class="nav-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-input" placeholder="Buscar parches, juegos o herramientas...">
+        </div>
+        <nav class="nav-menu">
+            <a href="#" class="filter-btn active" data-filter="todos">Inicio</a>
+            <a href="#" class="filter-btn" data-filter="juegos-pc">Juegos PC</a>
+            <a href="#" class="filter-btn" data-filter="juegos-android">Juegos Android</a>
+            <a href="#" class="filter-btn" data-filter="apps">Apps / Programas</a>
+            <a href="#" class="filter-btn" data-filter="isos">ISOs Windows</a>
+        </nav>
     </header>
 
-    <!-- 2. Anuncio abajo del título -->
-    <div class="banner ad-placeholder"></div>
-
-             <!-- Contenedor principal de las 4 casillas/botones -->
-    <main class="contenedor-secciones">
-
-        <!-- Casilla 1: Programas PC -->
-        <a href="secciones/seccion1.html" class="tarjeta-boton">
-            <!-- Título reemplazado por GIF -->
-            <img src="https://i.postimg.cc/4ywqMqS7/sec1.gif" alt="PROGRAMAS PC" class="tarjeta-gif-titulo">
-            <div class="tarjeta-imagen-wrapper">
-                <img src="https://i.postimg.cc/BQLPsVDy/win.gif" alt="Programas PC" class="tarjeta-img">
+    <!-- CONTENEDOR PRINCIPAL QUE LLENA LA PÁGINA -->
+    <div class="page-layout">
+        
+        <!-- BANNER DESTACADO DE BIENVENIDA (HERO BANNER) -->
+        <section class="hero-banner">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fa-solid fa-fire"></i> Actualizado hoy</span>
+                <h1>Glory to Mankind</h1>
+                <p>Accede de forma directa a los instaladores oficiales, modificaciones críticas de rendimiento, complementos globales y las últimas actualizaciones de la comunidad sin publicidad intrusiva.</p>
             </div>
-        </a>
+        </section>
 
-        <!-- Casilla 2: Juegos PC -->
-        <a href="secciones/seccion2.html" class="tarjeta-boton">
-            <!-- Título reemplazado por GIF -->
-            <img src="https://i.postimg.cc/bJp6hLbQ/sec2.gif" alt="JUEGOS PC" class="tarjeta-gif-titulo">
-            <div class="tarjeta-imagen-wrapper">
-                <img src="https://i.postimg.cc/mZH6xc0g/juegospc.png." alt="Juegos PC" class="tarjeta-img">
+        <!-- SECCIÓN DE CONTENIDO EN FORMATO GRILLA PRO -->
+        <main class="content-section">
+            <div class="section-header-flex">
+                <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Explorar Aportes</h2>
+                <div class="stats-counter">
+                    <span id="counted-items">0</span> aportes disponibles
+                </div>
             </div>
-        </a>
+            
+            <div class="downloads-grid">
+                
+                <!-- EJEMPLO CATEGORÍA: JUEGOS PC (Enlace MediaFire) -->
+                <a href="https://mediafire.com" class="card-download" data-category="juegos-pc" target="_blank">
+                    <div class="card-icon bg-juegos-pc"><i class="fa-solid fa-gamepad"></i></div>
+                    <div class="card-info">
+                        <h3>Glory to Mankind (Base)</h3>
+                        <p>Servidor Oficial Extremo (MediaFire)</p>
+                        <div class="card-meta">
+                            <span class="meta-tag tag-pc">PC Gamer</span>
+                            <span class="meta-tag m-status">Online</span>
+                        </div>
+                    </div>
+                </a>
 
-        <!-- Casilla 3: Apps & Juegos APK -->
-        <a href=secciones/seccion3.html class="tarjeta-boton">
-            <!-- Título reemplazado por GIF -->
-            <img src="https://i.postimg.cc/ZKCw4WBm/sec3.gif" alt="APPS & JUEGOS APK" class="tarjeta-gif-titulo">
-            <div class="tarjeta-imagen-wrapper">
-                <img src="https://i.postimg.cc/SN2fHH3b/android.png alt="Apps y Juegos APK" class="tarjeta-img">
+                <!-- EJEMPLO CATEGORÍA: JUEGOS PC (Enlace MEGA) -->
+                <a href="https://mega.nz" class="card-download" data-category="juegos-pc" target="_blank">
+                    <div class="card-icon bg-juegos-pc"><i class="fa-solid fa-gamepad"></i></div>
+                    <div class="card-info">
+                        <h3>Glory to Mankind (Espejo)</h3>
+                        <p>Servidor Oficial Rápido (MEGA)</p>
+                        <div class="card-meta">
+                            <span class="meta-tag tag-pc">PC Gamer</span>
+                            <span class="meta-tag m-status">Online</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- EJEMPLO CATEGORÍA: JUEGOS ANDROID -->
+                <a href="#" class="card-download" data-category="juegos-android" target="_blank">
+                    <div class="card-icon bg-juegos-android"><i class="fa-solid fa-robot"></i></div>
+                    <div class="card-info">
+                        <h3>Sample Game Mod APK</h3>
+                        <p>Juego Premium Android con todo desbloqueado</p>
+                        <div class="card-meta">
+                            <span class="meta-tag tag-android">Android</span>
+                            <span class="meta-tag m-status">v1.0.2</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- EJEMPLO CATEGORÍA: APPS / PROGRAMAS -->
+                <a href="https://mediafire.com" class="card-download" data-category="apps" target="_blank">
+                    <div class="card-icon bg-apps"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="card-info">
+                        <h3>Parche de Rendimiento v1.2</h3>
+                        <p>Corrección de texturas, optimizador de shaders y bugs</p>
+                        <div class="card-meta">
+                            <span class="meta-tag tag-apps">Programas</span>
+                            <span class="meta-tag m-status">Estable</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- EJEMPLO CATEGORÍA: ISOs WINDOWS -->
+                <a href="#" class="card-download" data-category="isos" target="_blank">
+                    <div class="card-icon bg-isos"><i class="fa-solid fa-compact-disc"></i></div>
+                    <div class="card-info">
+                        <h3>Windows 11 LTSC Light</h3>
+                        <p>Sistema operativo optimizado para máximo rendimiento</p>
+                        <div class="card-meta">
+                            <span class="meta-tag tag-iso">Windows</span>
+                            <span class="meta-tag m-status">Bootable</span>
+                        </div>
+                    </div>
+                </a>
+
             </div>
-        </a>
+        </main>
+    </div>
 
-        <!-- Casilla 4: Isos Gamer -->
-        <a href="secciones/seccion4.html" class="tarjeta-boton">
-            <!-- Título reemplazado por GIF -->
-            <img src="https://i.postimg.cc/jSfvnB4m/sec4.gif" alt="ISOS GAMER" class="tarjeta-gif-titulo">
-            <div class="tarjeta-imagen-wrapper">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPN0rhrXm9IsaCUmq7URiOVgxhB4VLvDAX9Q&s" alt="Isos Gamer" class="tarjeta-img">
-            </div>
-        </a>
+    <!-- PIE DE PÁGINA -->
+    <footer class="main-footer">
+        <p>© 2026 Glory to Mankind Project. Diseñado de forma original para la distribución de software libre y seguro.</p>
+    </footer>
 
-    </main>
-    <div class="banner-movil ad-placeholder"></div>
-<!-- CONFIGURACIÓN DEL ANUNCIO SUPERIOR (728x90) -->
-<script type="text/javascript">
-      atOptions = {
-    'key' : '152a8110026518e318c441b40b67888e',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/152a8110026518e318c441b40b67888e/invoke.js"></script>
+    <!-- Botón flotante para volver arriba -->
+    <button id="scroll-top-btn" class="scroll-top-btn" title="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-<!-- CONFIGURACIÓN DEL ANUNCIO INFERIOR (320x50) -->
-<script type="text/javascript">
-     atOptions = {
-    'key' : '928003b1bbd77fcd6676f274acbec6bf',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/928003b1bbd77fcd6676f274acbec6bf/invoke.js"></script>
-
-
-<footer>
-    <!-- Añade tu GIF aquí arriba del texto -->
-    <img src="https://i.postimg.cc/1zmH7BFX/footer.gif" alt="Gamer GIF" class="footer-gif">
-    
-    <p>© 2026 Glory to Mankind - Subdominio Registrado.</p>
-
+    <!-- Tu script en la raíz -->
+    <script src="filtro.js"></script>
 </body>
 </html>

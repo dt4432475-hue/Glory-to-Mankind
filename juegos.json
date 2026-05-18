@@ -8,10 +8,10 @@
   },
  { 
    "id": 2,
-   "titulo": "#",
-   "imagen": "#",
-   "detalles": "# ",
-   "link": "#"    
+   "titulo": "Squirrel Stapler",
+   "imagen": "https://i.postimg.cc/02V7Nq6W/image.png",
+   "detalles": "Squirrel Stapler es un perturbador juego de terror y caza surrealista que requiere un PC básico.",
+   "link": "https://archive.org/download/squirrel-stapler/Squirrel%20Stapler.rar"    
  },
  {
    "id": 3,

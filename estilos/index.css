@@ -27,13 +27,18 @@ body {
     gap: 0;    
 }
 
-/* Banner Superior que ahora se pega completamente a los bordes */
 .banner {
     width: 100%;
-    max-width: 1200px; /* Ajusta este ancho al máximo que desees para tus bloques */
+    max-width: 1200px;
     text-align: center;
     margin: 0 auto;
+    
+    /* 👇 AGREGA ESTAS 3 LÍNEAS AQUÍ ABAJO 👇 */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px; /* Separa el anuncio de las 4 casillas */
 }
+
 
 
 .banner-principal {

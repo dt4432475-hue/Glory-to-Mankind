@@ -175,8 +175,14 @@
     "imagen": "https://a.fsdn.com/allura/p/spacesniffer/icon?3ea596b02d41e5facbfe57fa431fda301d48edae57e39cb00edd4a6cf0bce0a0?&w=90",
     "detalles": "Encuentra espacio en disco perdido de forma sencilla y rápida.",
     "link": "https://flylife.dl.sourceforge.net/project/spacesniffer/spacesniffer_1_3_0_2.zip?viasf=1&fid=af20497731b45fbf"    
+  },
+  {
+    "id": 26,
+    "titulo": "AIMP Portable",
+    "imagen": "https://i.postimg.cc/R0556yy1/image.png",        
+    "detalles": "Es un reproductor de audio gratuito y ligero.",        
+    "link": "https://archive.org/download/aimp-portable/AIMP%20Portable.rar"
   }
-
 
 
 

@@ -93,3 +93,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Agrega esto al final de tu archivo descarga.js (fuera del DOMContentLoaded)
+function captchaResuelto() {
+    const btnContinuar = document.getElementById('btn-continue');
+    if (btnContinuar) {
+        btnContinuar.removeAttribute('disabled');
+        btnContinuar.classList.add('active-btn'); // Mantiene tu estilo CSS de botón activo
+    }
+}
+
+function captchaExpirado() {
+    const btnContinuar = document.getElementById('btn-continue');
+    if (btnContinuar) {
+        btnContinuar.setAttribute('disabled', 'true');
+        btnContinuar.classList.remove('active-btn');
+    }
+}
+

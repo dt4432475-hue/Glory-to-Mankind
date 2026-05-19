@@ -1,7 +1,7 @@
 [
     {
         "titulo": "Minecraft 1.21.111",
-        "servidor": "Servidor Oficial Rápido (Internet Archive)",
+        "servidor": "Up-4ever (Servidor Gratuito)",
         "tag": "Aventura",
         "status": "Liberado",
         "peso": "  303.8 mb",
@@ -9,17 +9,19 @@
     },
     {
         "titulo": "Mupen64Plus",
-        "servidor": "Servidor Oficial Rápido (Internet Archive)",
+        "servidor": "Up-4ever (Servidor Gratuito)",
         "tag": "Emulador",
         "status": "Pro",
+        "url": "https://www.up-4ever.net/3n6quicq6f7u",
         "peso": " 22.1 mb",
         "imagen": "https://i.postimg.cc/4NVx5kvW/image.png"
     },
     {
         "titulo": "Monopoly",
-        "servidor": "Servidor Oficial Rápido (Internet Archive)",
+        "servidor": "Up-4ever (Servidor Gratuito)",
         "tag": "Estrategia",
         "status": "Liberado",
+        "url": "https://www.up-4ever.net/2n6s6c6q6f7u",
         "peso": "   541.5 mb",
         "imagen": "https://i.postimg.cc/D0hM3XD6/image.png"
     }

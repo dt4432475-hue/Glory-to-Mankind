@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procesando Descarga | Glory to Mankind</title>
+    <script src="https://google.com" async defer></script>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
@@ -62,21 +63,17 @@
         <p>Estamos verificando que los enlaces de descarga estén online de forma segura.</p>
     </div>
 
-    <!-- PASO 2: El captcha simulado (Aparece al terminar los 5s) -->
-    <div id="step-captcha" class="action-box hidden">
-        <div class="blizz-captcha">
-            <label class="captcha-checkbox-container">
-                <input type="checkbox" id="captcha-check">
-                <span class="checkmark"></span>
-                <div class="captcha-text">
-                    <strong>No soy un robot</strong>
-                    <small>Glory Enterprise Security Protection</small>
-                </div>
-            </label>
-            <img src="https://wikimedia.org" alt="reCAPTCHA" class="recaptcha-logo">
-        </div>
-        <button id="btn-continue" class="btn-paste-continue" disabled>Continuar</button>
+    <!-- PASO 2: El captcha Real de Google (Aparece al terminar los 5s) -->
+<div id="step-captcha" class="action-box hidden">
+    <div class="blizz-captcha">
+        
+        <!-- ESTA ES LA LÍNEA NUEVA DE GOOGLE (Reemplaza tu Site Key aquí) -->
+       <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqy08hGCwZq2XWY8A78cyVk" data-callback="captchaResuelto"></div>
+
+        
     </div>
+    <button id="btn-continue" class="btn-paste-continue" disabled>Continuar</button>
+</div>
 
     <!-- PASO 3: Los Enlaces Finales Libres -->
     <div id="step-links" class="action-box hidden">

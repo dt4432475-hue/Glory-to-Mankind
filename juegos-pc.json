@@ -1,7 +1,7 @@
 [
     {
         "titulo": "Half life 25th Anniversary",
-        "servidor": "Servidor Oficial Rapido (Internet Archive)",
+        "servidor": "Up-4ever (Servidor Gratuito)",
         "tag": "Shooter",
         "status": "Seguro",
         "peso": " 1.24 gb",
@@ -9,10 +9,12 @@
     },
     {
         "titulo": "Squirrel Stapler",
-        "servidor": "Servidor Oficial Rápido (Internet Archive)",
+        "servidor": "Up-4ever (Servidor Gratuito)",
+        "url": "https://mediafire.com",
         "tag": "Terror",
         "status": "Seguro",
         "peso": " 143 mb",
         "imagen": "https://i.postimg.cc/90rGsNMf/image.png"
+    
     }
 ]

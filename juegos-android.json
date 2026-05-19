@@ -1,9 +1,26 @@
 [
     {
-        "titulo": "Sample Game Mod APK",
-        "servidor": "Juego Premium Android con todo desbloqueado",
-        "url": "#",
-        "tag": "Android",
-        "status": "v1.0.2"
+        "titulo": "Minecraft 1.21.111",
+        "servidor": "Servidor Oficial Rápido (Internet Archive)",
+        "tag": "Aventura",
+        "status": "Liberado",
+        "peso": "  303.8 mb",
+        "imagen": "https://i.postimg.cc/Dw1nqrT9/image.png"
+    },
+    {
+        "titulo": "Mupen64Plus",
+        "servidor": "Servidor Oficial Rápido (Internet Archive)",
+        "tag": "Emulador",
+        "status": "Pro",
+        "peso": " 22.1 mb",
+        "imagen": "https://i.postimg.cc/4NVx5kvW/image.png"
+    },
+    {
+        "titulo": "Monopoly",
+        "servidor": "Servidor Oficial Rápido (Internet Archive)",
+        "tag": "Estrategia",
+        "status": "Liberado",
+        "peso": "   541.5 mb",
+        "imagen": "https://i.postimg.cc/D0hM3XD6/image.png"
     }
 ]

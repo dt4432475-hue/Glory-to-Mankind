@@ -1,9 +1,20 @@
 [
     {
-        "titulo": "Parche de Rendimiento v1.2",
-        "servidor": "Corrección de texturas, optimizador de shaders y bugs",
-        "url": "https://mediafire.com",
-        "tag": "Programas",
-        "status": "Estable"
+        "titulo": "InShot",
+        "servidor": "Servidor Oficial Rapido (Internet Archive)",
+        "tag": "Edicion",
+        "status": "Pro",
+        "peso": "  75.3 mb",
+        "imagen": "https://i.postimg.cc/xdVBYhWj/image.png"
+    },
+    {
+        "titulo": "Dismplusplus",
+        "servidor": "Servidor Oficial Rápido (Internet Archive)",
+        "tag": "Windows",
+        "status": "Rendimiento",
+        "peso": "  3.3 mb",
+        "imagen": "https://i.postimg.cc/pLVyXc83/image.png"
     }
+    
 ]
+

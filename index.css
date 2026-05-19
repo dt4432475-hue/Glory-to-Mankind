@@ -222,12 +222,12 @@ body {
     max-width: 750px;
     padding-left: 45px;
     
-    /* SOLUCIÓN: Distribución vertical con espacio */
+    /* LA SOLUCIÓN REAL: Forzar la separación */
     display: flex;
     flex-direction: column;
-    min-height: 280px; /* Le da una altura fija interna para que puedan separarse */
-    justify-content: space-between; /* Distribuye los 4 elementos usando todo el alto disponible */
+    gap: 30px; /* Esto va a empujar y separar los 4 elementos sí o sí */
 }
+
 
 .hero-badge {
     background-color: var(--accent);

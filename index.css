@@ -205,7 +205,7 @@ body {
     position: relative;
     /* Tu imagen de 2B se conserva intacta */
     background: linear-gradient(rgba(7, 9, 14, 0.25), rgba(7, 9, 14, 0.85)), 
-                url('https://i.postimg.cc/6qKcRJN0/h3mrgzani2j71.png') no-repeat center center/cover;
+                url('https://i.postimg.cc/6qKcRJN0/h3mrgzani2j71.png') no-repeat center 20%/cover;
     border-radius: 16px;
     padding: 60px 40px;
     overflow: hidden;
@@ -216,7 +216,19 @@ body {
     
     transition: background-image 0.5s ease-in-out, transform 0.3s ease;
 }
-.hero-content { position: relative; z-index: 2; max-width: 750px; }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    padding-left: 45px;
+    
+    /* SOLUCIÓN: Distribución vertical con espacio */
+    display: flex;
+    flex-direction: column;
+    min-height: 280px; /* Le da una altura fija interna para que puedan separarse */
+    justify-content: space-between; /* Distribuye los 4 elementos usando todo el alto disponible */
+}
+
 .hero-badge {
     background-color: var(--accent);
     color: #000;
@@ -228,15 +240,15 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    margin-bottom: 15px;
+    margin-top: -20px; /* Sube la casilla */
 }
 .hero-content h1 {
     font-size: 3rem;
     font-weight: 900;
     letter-spacing: -1px;
-    margin-bottom: 15px;
     background: linear-gradient(to right, #fff, #b9cce3);
     -webkit-background-clip: text;
+     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .hero-content p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.6; }

@@ -1127,3 +1127,27 @@ body:has(#timer-num) {
         gap: 20px !important;
     }
 }
+/* Centrar perfectamente el bloque de Google */
+.g-recaptcha {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* Estilo para el botón Continuar cuando está bloqueado (gris) */
+.btn-paste-continue:disabled {
+    background-color: #1e2530 !important;
+    color: #4a5568 !important;
+    opacity: 0.6;
+    cursor: not-allowed;
+    border: 1px solid #2d3748;
+}
+
+/* Estilo para el botón Continuar cuando el reCAPTCHA se completa (activo) */
+.btn-paste-continue:not(:disabled) {
+    background-color: #2563eb !important; /* Cambia este color por el azul/verde de tu web */
+    color: #ffffff !important;
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+}

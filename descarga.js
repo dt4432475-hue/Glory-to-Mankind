@@ -52,44 +52,75 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('game-server').innerHTML += ` | <i class="fa-solid fa-file-zipper"></i> ${juego.peso}`;
         }
     }
+function iniciarContador(finalUrl) {
+    let tiempo = 5;
+    const timerNum = document.getElementById('timer-num');
+    const contenedorContador = document.getElementById('step-countdown');
+    const contenedorCaptcha = document.getElementById('step-captcha');
+    const btnContinuar = document.getElementById('btn-continue');
+    const contenedorLinks = document.getElementById('step-links');
+    const linkFinal = document.getElementById('final-download-url');
 
-    function iniciarContador(finalUrl) {
-        let tiempo = 5;
-        const timerNum = document.getElementById('timer-num');
-        const contenedorContador = document.getElementById('step-countdown');
-        const contenedorCaptcha = document.getElementById('step-captcha');
-        const checkboxCaptcha = document.getElementById('captcha-check');
-        const btnContinuar = document.getElementById('btn-continue');
-        const contenedorLinks = document.getElementById('step-links');
-        const linkFinal = document.getElementById('final-download-url');
+    if (!timerNum) return;
 
-        if (!timerNum) return;
+    const reloj = setInterval(() => {
+        tiempo--;
+        timerNum.textContent = tiempo;
+        if (tiempo <= 0) {
+            clearInterval(reloj);
+            contenedorContador.classList.add('hidden');
+            contenedorCaptcha.classList.remove('hidden');
+        }
+    }, 1000);
 
-        const reloj = setInterval(() => {
-            tiempo--;
-            timerNum.textContent = tiempo;
+    // Funciones globales para reCAPTCHA
+    window.captchaCompletado = function() {
+        btnContinuar.removeAttribute('disabled');
+        btnContinuar.classList.add('active-btn');
+    };
 
-            if (tiempo <= 0) {
-                clearInterval(reloj);
-                contenedorContador.classList.add('hidden');
-                contenedorCaptcha.classList.remove('hidden');
-            }
-        }, 1000);
+    window.captchaExpirado = function() {
+        btnContinuar.setAttribute('disabled', 'true');
+        btnContinuar.classList.remove('active-btn');
+    };
 
-        checkboxCaptcha.addEventListener('change', () => {
-            if (checkboxCaptcha.checked) {
-                btnContinuar.removeAttribute('disabled');
-                btnContinuar.classList.add('active-btn');
+    // Validación segura en Vercel al presionar Continuar
+    btnContinuar.addEventListener('click', async () => {
+        const token = grecaptcha.getResponse();
+
+        if (!token) {
+            alert("Por favor, completa la casilla 'No soy un robot'.");
+            return;
+        }
+
+        btnContinuar.innerText = "Verificando...";
+        btnContinuar.setAttribute('disabled', 'true');
+
+        try {
+            const respuesta = await fetch('/api/validar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token: token })
+            });
+
+            const resultado = await respuesta.json();
+
+            if (resultado.success) {
+                contenedorCaptcha.classList.add('hidden');
+                contenedorLinks.classList.remove('hidden');
+                linkFinal.href = finalUrl || "#";
             } else {
-                btnContinuar.setAttribute('disabled', 'true');
-                btnContinuar.classList.remove('active-btn');
+                alert("Error: " + (resultado.error || "Verificación incorrecta. Inténtalo de nuevo."));
+                grecaptcha.reset();
+                window.captchaExpirado();
+                btnContinuar.innerText = "Continuar";
             }
-        });
+        } catch (error) {
+            console.error("Error al conectar con la API de Vercel:", error);
+            alert("Error de red al procesar la seguridad.");
+            btnContinuar.innerText = "Continuar";
+        }
+    });
+} // Cierre de iniciarContador
 
-        btnContinuar.addEventListener('click', () => {
-            contenedorCaptcha.classList.add('hidden');
-            contenedorLinks.classList.remove('hidden');
-            linkFinal.href = finalUrl || "#";
-        });
-    }
-});
+}); // Cierre definitivo de DOMContentLoaded (última línea del archivo)

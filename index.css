@@ -460,38 +460,66 @@ body {
 
     /* 2. Hacemos que el Buscador SIEMPRE se vea, ocupando todo el ancho */
     .nav-search {
+        width: 85% !important;       /* Controla qué tan ancho se verá en la pantalla */
+        max-width: 340px !important;  /* Límite ideal para que no se estire de más */
+        margin: 0 auto 15px !important; /* El 'auto' lo centra perfecto; el '15px' separa los botones */
         display: flex !important;
-        width: 100%;
-        padding: 10px 16px;
+        align-items: center;
+        justify-content: center;
+        position: relative;          /* Necesario para posicionar bien la lupa */
     }
 
     /* 3. ¡LA MAGIA! Convertimos el menú en una barra deslizable horizontal con el dedo */
     .nav-menu {
         display: flex !important;
         width: 100%;
-        overflow-x: auto; /* Permite el arrastre lateral */
-        scroll-behavior: smooth;
-        white-space: nowrap; /* Evita que los botones se vayan para abajo */
-        padding: 8px 0;
-        gap: 5px;
-        
-        /* Ocultamos la barra de scroll fea de los navegadores para que se vea limpio */
-        -webkit-overflow-scrolling: touch;
+        justify-content: center; /* ¡AQUÍ ESTÁ LA MAGIA! Centra todos los botones */
+        align-items: center;
+        flex-wrap: wrap;         /* Si la pantalla es muy chica, bajan ordenados sin romperse */
+        padding: 6px 0;
+        gap: 8px;                /* Espaciado perfecto y controlado entre los botones */
     }
     
     .nav-menu::-webkit-scrollbar {
         display: none; /* Oculta la barra en Chrome/Safari de celulares */
     }
 
-    .nav-menu a {
+    /* Los botones se centran en el centro de la pantalla */ 
+   .nav-menu a {
         margin-left: 0;
-        margin-right: 15px; /* Separa los botones en la fila horizontal */
-        padding: 6px 12px;
-        font-size: 14px;
-        height: auto; /* Libera la altura fija de la PC */
-        background-color: rgba(255, 255, 255, 0.03); /* Les da forma de botones individuales */
-        border-radius: 20px;
+        margin-right: 0;         /* Eliminamos márgenes viejos que descentraban */
+        padding: 5px 12px;       /* Reducimos el padding vertical para encogerlos */
+        font-size: 12px;         /* Letra un poco más chica y estética para móvil */
+        height: auto; 
+        background-color: rgba(255, 255, 255, 0.03); 
+        border-radius: 15px;     /* Bordes redondeados más finos acorde al tamaño */
         border: 1px solid rgba(255, 255, 255, 0.05);
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Reducimos también un toque los iconos para que vayan a juego */
+    .nav-menu a i {
+        margin-right: 5px;       /* Menos espacio entre icono y texto */
+        font-size: 13px;         /* Icono sutilmente más pequeño */
+    }
+
+    /* 2. Ajustamos el cuadro de texto para que llene su contenedor compacto */
+    .nav-search .search-input {
+        width: 100% !important;
+        padding: 8px 12px 8px 35px !important; /* Espacio extra a la izquierda para la lupa */
+        font-size: 13px !important;   /* Letra más estética para celulares */
+        border-radius: 20px !important; /* Bordes redondeados finos */
+    }
+
+    /* 3. Fijamos la lupa en su lugar correcto dentro del buscador */
+    .nav-search i {
+        position: absolute !important;
+        left: 12px !important;         /* Alineada perfectamente al inicio del texto */
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        font-size: 13px !important;
+        opacity: 0.6;                 /* Un toque sutil para que no brille tanto */
     }
 
     /* Ajuste de la línea brillante en celular: la cambiamos por un borde completo para que combine con el botón burbuja */
@@ -530,6 +558,16 @@ body {
         right: 20px; 
         width: 42px; 
         height: 42px; 
+    }
+    /* Ajusta aquí la clase real de tu contenedor del buscador */
+    .search-box { 
+        max-width: 85%;       /* Impide que se estire a los bordes */
+        margin: 0 auto 12px;   /* Centra horizontalmente y da espacio abajo */
+    }
+
+    .search-box input {
+        padding: 8px 12px;     /* Hace la barra un toque más delgada y estética */
+        font-size: 13px;       /* Ajusta el texto interno para pantallas chicas */
     }
 }
 /* Espaciado perfecto para tus nuevos iconos del menú */

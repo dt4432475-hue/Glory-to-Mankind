@@ -52,75 +52,61 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('game-server').innerHTML += ` | <i class="fa-solid fa-file-zipper"></i> ${juego.peso}`;
         }
     }
-function iniciarContador(finalUrl) {
-    let tiempo = 5;
-    const timerNum = document.getElementById('timer-num');
-    const contenedorContador = document.getElementById('step-countdown');
-    const contenedorCaptcha = document.getElementById('step-captcha');
+
+    function iniciarContador(finalUrl) {
+        let tiempo = 5;
+        const timerNum = document.getElementById('timer-num');
+        const contenedorContador = document.getElementById('step-countdown');
+        const contenedorCaptcha = document.getElementById('step-captcha');
+        const checkboxCaptcha = document.getElementById('captcha-check');
+        const btnContinuar = document.getElementById('btn-continue');
+        const contenedorLinks = document.getElementById('step-links');
+        const linkFinal = document.getElementById('final-download-url');
+
+        if (!timerNum) return;
+
+        const reloj = setInterval(() => {
+            tiempo--;
+            timerNum.textContent = tiempo;
+
+            if (tiempo <= 0) {
+                clearInterval(reloj);
+                contenedorContador.classList.add('hidden');
+                contenedorCaptcha.classList.remove('hidden');
+            }
+        }, 1000);
+
+        checkboxCaptcha.addEventListener('change', () => {
+            if (checkboxCaptcha.checked) {
+                btnContinuar.removeAttribute('disabled');
+                btnContinuar.classList.add('active-btn');
+            } else {
+                btnContinuar.setAttribute('disabled', 'true');
+                btnContinuar.classList.remove('active-btn');
+            }
+        });
+
+        btnContinuar.addEventListener('click', () => {
+            contenedorCaptcha.classList.add('hidden');
+            contenedorLinks.classList.remove('hidden');
+            linkFinal.href = finalUrl || "#";
+        });
+    }
+});
+// Agrega esto al final de tu archivo descarga.js (fuera del DOMContentLoaded)
+function captchaResuelto() {
     const btnContinuar = document.getElementById('btn-continue');
-    const contenedorLinks = document.getElementById('step-links');
-    const linkFinal = document.getElementById('final-download-url');
-
-    if (!timerNum) return;
-
-    const reloj = setInterval(() => {
-        tiempo--;
-        timerNum.textContent = tiempo;
-        if (tiempo <= 0) {
-            clearInterval(reloj);
-            contenedorContador.classList.add('hidden');
-            contenedorCaptcha.classList.remove('hidden');
-        }
-    }, 1000);
-
-    // Funciones globales para reCAPTCHA
-    window.captchaCompletado = function() {
+    if (btnContinuar) {
         btnContinuar.removeAttribute('disabled');
-        btnContinuar.classList.add('active-btn');
-    };
+        btnContinuar.classList.add('active-btn'); // Mantiene tu estilo CSS de botón activo
+    }
+}
 
-    window.captchaExpirado = function() {
+function captchaExpirado() {
+    const btnContinuar = document.getElementById('btn-continue');
+    if (btnContinuar) {
         btnContinuar.setAttribute('disabled', 'true');
         btnContinuar.classList.remove('active-btn');
-    };
+    }
+}
 
-    // Validación segura en Vercel al presionar Continuar
-    btnContinuar.addEventListener('click', async () => {
-        const token = grecaptcha.getResponse();
-
-        if (!token) {
-            alert("Por favor, completa la casilla 'No soy un robot'.");
-            return;
-        }
-
-        btnContinuar.innerText = "Verificando...";
-        btnContinuar.setAttribute('disabled', 'true');
-
-        try {
-            const respuesta = await fetch('/api/validar', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token: token })
-            });
-
-            const resultado = await respuesta.json();
-
-            if (resultado.success) {
-                contenedorCaptcha.classList.add('hidden');
-                contenedorLinks.classList.remove('hidden');
-                linkFinal.href = finalUrl || "#";
-            } else {
-                alert("Error: " + (resultado.error || "Verificación incorrecta. Inténtalo de nuevo."));
-                grecaptcha.reset();
-                window.captchaExpirado();
-                btnContinuar.innerText = "Continuar";
-            }
-        } catch (error) {
-            console.error("Error al conectar con la API de Vercel:", error);
-            alert("Error de red al procesar la seguridad.");
-            btnContinuar.innerText = "Continuar";
-        }
-    });
-} // Cierre de iniciarContador
-
-}); // Cierre definitivo de DOMContentLoaded (última línea del archivo)

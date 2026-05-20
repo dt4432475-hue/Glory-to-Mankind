@@ -63,19 +63,21 @@
         <p>Estamos verificando que los enlaces de descarga estén online de forma segura.</p>
     </div>
 
-   <!-- PASO 2: El captcha oficial de Google -->
-<div id=" step-captcha" class=" action-box hidden">
-    <div style="display: flex; justify-content: center; margin-bottom: 15px;">
-        <!-- REEMPLAZA TU_CLAVE_DE_SITIO por la clave pública que te dio Google -->
-        <div class="g-recaptcha" 
-             data-sitekey="TU_CLAVE_DE_SITIO" 
-             data-callback="captchaCompletado" 
-             data-expired-callback="captchaExpirado">
+    <!-- PASO 2: El captcha simulado (Aparece al terminar los 5s) -->
+    <div id="step-captcha" class="action-box hidden">
+        <div class="blizz-captcha">
+            <label class="captcha-checkbox-container">
+                <input type="checkbox" id="captcha-check">
+                <span class="checkmark"></span>
+                <div class="captcha-text">
+                    <strong>No soy un robot</strong>
+                    <small>Glory Enterprise Security Protection</small>
+                </div>
+            </label>
+            <img src="https://wikimedia.org" alt="reCAPTCHA" class="recaptcha-logo">
         </div>
+        <button id="btn-continue" class="btn-paste-continue" disabled>Continuar</button>
     </div>
-    <button id="btn-continue" class="btn-paste-continue" disabled>Continuar</button>
-</div>
-
 
     <!-- PASO 3: Los Enlaces Finales Libres -->
     <div id="step-links" class="action-box hidden">

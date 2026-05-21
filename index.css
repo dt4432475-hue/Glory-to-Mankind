@@ -64,8 +64,29 @@ body {
     background-color: var(--bg-deep);
 }
 
+/* ==========================================================================
+   TEXTO DEL LOGO GAMER TRIDINÁMICO (EFECTO RGB CHROMA FLUIDO)
+   ========================================================================== */
+
 .nav-logo span {
-    color: var(--accent);
+    font-weight: 900; /* Le da más grosor a las letras para que el color luzca espectacular */
+    
+    /* El degradado RGB dinámico oficial de tu web */
+    background: linear-gradient(90deg, #00ff87, #0066ff, #00ff87, #00ffff);
+    background-size: 300% 100%; /* Espacio extra para que la ola de color fluya */
+    
+    /* EL TRUCO PRO: Recortamos el fondo con la silueta exacta del texto */
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important; /* Hace transparente el color base para que brille el RGB */
+    
+    /* Aura de iluminación neón que acompaña al texto en movimiento */
+    filter: drop-shadow(0 0 8px rgba(0, 255, 135, 0.4));
+    
+    /* Activamos la animación infinita Chroma en perfecta sincronía */
+    animation: rgb-chroma 4s linear infinite !important;
+    
+    display: inline-block; /* Necesario para que la animación de fondo calcule bien el ancho */
 }
 
 
@@ -129,22 +150,53 @@ body {
     background-color: rgba(255, 255, 255, 0.02);
 }
 
+/* ==========================================================================
+   ILUMINACIÓN Y LÍNEA GAMER ULTRADINÁMICA (EFECTO RGB + RESPIRACIÓN NEÓN)
+   ========================================================================== */
+
 .filter-btn.active {
-    color: var(--accent) !important;
-    background: linear-gradient(180deg, rgba(0, 255, 135, 0.02) 0%, rgba(0, 255, 135, 0.08) 100%);
-    text-shadow: 0 0 8px rgba(0, 255, 135, 0.4);
+    color: #00ff87 !important; /* Texto verde brillante */
+    background: rgba(6, 9, 17, 0.85) !important; /* Fondo oscuro sólido para que resalte el borde */
+    font-weight: 700;
+    position: relative;
+    border-radius: 20px !important; /* Mantiene las esquinas circulares perfectas */
+    
+    /* 💥 EL TRUCO: Creamos un borde transparente de 2px de grosor */
+    border: 2px solid transparent !important;
+    
+    /* Inyectamos el degradado dinámico directo en el fondo del borde */
+    background-image: linear-gradient(rgba(17, 23, 38, 0.95), rgba(17, 23, 38, 0.95)), 
+                      linear-gradient(90deg, #00ff87, #0066ff, #00ff87, #00ffff) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;
+    
+    /* Hacemos que el degradado del borde mida el triple para poder animarlo */
+    background-size: 100% 100%, 300% 100% !important;
+    
+    /* Doble sombra de aura neón que envuelve a toda la casilla completa */
+    box-shadow: 0 0 12px rgba(0, 255, 135, 0.3), 
+                inset 0 0 8px rgba(0, 102, 255, 0.2) !important;
+                
+    /* Activamos las animaciones infinitas de color y respiración */
+    animation: rgb-border-flow 4s linear infinite, gamer-pulse 3s infinite ease-in-out !important;
 }
 
+/* 🗑️ BORRAMOS LA LÍNEA SOLITARIA DE ABAJO PARA QUE NO SE COMPLETE DOBLE */
 .filter-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 10%;
-    width: 80%;
-    height: 3px;
-    background-color: var(--accent);
-    border-radius: 2px;
-    box-shadow: 0 0 10px var(--accent);
+    display: none !important;
+}
+
+/* 🔄 NUEVA ANIMACIÓN: Hace que la onda de colores gire y fluya por todo el contorno */
+@keyframes rgb-border-flow {
+    0% {
+        background-position: 0% 50%, 0% 50%;
+    }
+    50% {
+        background-position: 0% 50%, 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%, 0% 50%;
+    }
 }
 
 #hero-bg.hero-banner {
@@ -368,6 +420,23 @@ body {
     margin: 0;
 }
 
+/* ==========================================================================
+   EFECTO DE ILUMINACIÓN EN EL TÍTULO AL PASAR EL MOUSE (HOVER PREMIUM)
+   ========================================================================== */
+
+/* Cuando el mouse pasa sobre la tarjeta, el título cambia a verde neón y brilla */
+.card:hover .card-content h3 {
+    color: var(--accent) !important; /* Cambia el color del texto a tu verde neón oficial (#00ff87) */
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.6), 
+                 0 0 20px rgba(0, 255, 135, 0.3); /* Aura neón brillante alrededor de las letras */
+}
+
+/* Agregamos una transición suave al título original para que el brillo no sea brusco */
+.card-content h3 {
+    transition: color 0.25s ease, text-shadow 0.25s ease !important;
+}
+
+
 .card-footer {
     padding: 0 1.25rem 1.25rem 1.25rem !important;
     display: flex;
@@ -409,159 +478,104 @@ body {
     margin-bottom: 25px;
 }
 
-@media (min-width: 768px) {
-    .info-grid { grid-template-columns: 1fr 1fr; }
-}
-
-.btn-action {
-    padding: 14px 35px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-transform: uppercase;
-}
-
-.btn-generate { background-color: var(--accent); color: var(--bg-deep); }
-.btn-generate:hover { background-color: #00e074; box-shadow: 0 0 15px rgba(0, 255, 135, 0.35); }
-.btn-waiting { background-color: #1a2233; color: #52637a; cursor: not-allowed; }
-.btn-download { background-color: var(--accent-blue); color: var(--text-white); animation: pulseGlowBlue 2s infinite; }
-
-@keyframes pulseGlowBlue {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
-
-.main-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.02);
-    margin-top: 4rem;
-}
-
-.scroll-top-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 45px;
-    height: 45px;
-    background-color: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--accent);
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 90;
-}
-
-.gallery-modal {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-/* ==========================================================================
-   SOPORTE RESPONSIVO UNIVERSAL (ADAPTACIÓN AUTOMÁTICA EN CUALQUIER PANTALLA)
-   ========================================================================== */
-/* ==========================================================================
-   SOPORTE RESPONSIVO UNIVERSAL (BOTONES PEQUEÑOS Y REDONDEADOS ORIGINALES)
-   ========================================================================== */
-
-/* 💻 PARA PANTALLAS MEDIANAS (TABLETS / LAPTOPS PEQUEÑAS) */
-@media (max-width: 1024px) {
-    .main-navbar {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 1.25rem 2rem;
-        gap: 1.25rem;
-    }
-
-    .nav-logo {
-        justify-content: center;
-    }
-
-    .nav-search {
-        max-width: 100%;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .nav-menu {
-        display: flex; /* Cambiado a flex original para que no se estiren */
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .filter-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
-        width: auto !important; /* Evita que hereden anchos raros */
-    }
-}
-
-/* 📱 PARA PANTALLAS PEQUEÑAS (TODO TIPO DE CELULARES) */
+/* 📱 PARA PANTALLAS PEQUEÑAS (TODO TIPO DE CELULARES - CENTRADO ABSOLUTO) */
 @media (max-width: 768px) {
+    /* Forzamos a que la cabecera alinee absolutamente todo al centro */
+    .main-navbar {
+        flex-direction: column !important;
+        align-items: center !important; /* Centra logo, buscador y menú de forma vertical */
+        justify-content: center !important;
+        padding: 1.25rem 1rem;
+        gap: 1rem;
+        width: 100%;
+    }
+
     .page-layout {
         padding: 1rem;
+    }
+
+    /* 🔍 BUSCADOR CENTRADO */
+    .nav-search {
+        max-width: 100%;
+        width: 90%; /* Le damos un ligero margen a los lados para que respire */
+        margin: 0 auto !important; /* Centrado matemático */
     }
 
     .search-input {
         padding: 0.65rem 1.25rem;
         font-size: 0.85rem;
-        text-align: center;
+        text-align: center; /* Texto de búsqueda al medio */
     }
 
-    /* 🟢 MENÚ ORIGINAL: Fluido, centrado y sin estirarse */
+    /* 🟢 MENÚ DE SECCIONES PERFECTAMENTE CENTRADO */
     .nav-menu {
-        display: flex;          /* Forzamos Flexbox tradicional */
-        flex-direction: row;    /* Líneas horizontales */
-        flex-wrap: wrap;        /* Si no caben, bajan de forma natural */
-        justify-content: center;/* Siempre alineados al centro */
-        gap: 0.5rem;            /* Separación perfecta entre burbujas */
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important; /* Alinea los botones flotantes justo al medio */
+        align-items: center !important;
+        gap: 0.5rem;
         width: 100%;
-        order: 2;
+        margin: 0 auto;
     }
 
     /* Botones pequeños, compactos y con esquinas circulares de la primera versión */
     .filter-btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 0.4rem;
-        width: auto !important;   /* Bloquea que el botón se estire a lo ancho */
-        padding: 0.5rem 0.9rem;   /* Tamaño compacto exacto */
+        width: auto !important;
+        padding: 0.5rem 0.9rem;
         font-size: 0.8rem;
-        border-radius: 20px;      /* Esquinitas bien circulares tipo cápsula */
+        border-radius: 20px;
         background-color: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.04);
         transition: var(--transition-fast);
     }
 
-    /* Corrección de la línea neón para el botón activo en celular */
-    .filter-btn.active::after {
-        bottom: -2px;
-        width: 60%;
-        left: 20%;
-        height: 2px;
-    }
+    /* 🟢 LA LÍNEA INFERIOR RGB CHROMA CORREGIDA (SE ADAPTA AL ANCHO DE CUALQUIER TEXTO) */
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Pegado perfecto al borde inferior */
+    
+    /* Reemplazamos los porcentajes por coordenadas fijas de esquina a esquina */
+    left: 0;
+    right: 0;
+    width: 100%; /* Ahora obliga a la barra a medir exactamente lo mismo que el botón */
+    height: 3px;
+    
+    /* Tu degradado RGB Gamer intacto */
+    background: linear-gradient(90deg, #00ff87, #0066ff, #00ff87, #00ffff);
+    background-size: 300% 100%;
+    border-radius: 4px;
+    
+    /* Sombras neón premium */
+    box-shadow: 0 0 10px rgba(0, 255, 135, 0.8), 
+                0 0 20px rgba(0, 102, 255, 0.6);
+                
+    /* Tu animación de flujo Razer Chroma activa */
+    animation: rgb-chroma 4s linear infinite; 
+}
 
-    /* 🌋 Ajustes del Banner Principal */
+
+    /* 🌋 Ajustes del Banner Principal Centrado */
     #hero-bg.hero-banner {
         padding: 1.5rem 1rem;
         background-position: center center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-text-side {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el título y el párrafo dentro del banner */
+        justify-content: center;
     }
 
     .hero-text-side h1 {
@@ -587,3 +601,117 @@ body {
         gap: 1.25rem;
     }
 }
+/* ==========================================================================
+   ARREGLO EXCLUSIVO PARA EL FOOTER Y EL BOTÓN DE VOLVER ARRIBA
+   ========================================================================== */
+
+.main-footer {
+    width: 100%;
+    text-align: center !important; /* Fuerza el centrado horizontal del texto */
+    padding: 2rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center !important; /* Asegura el centrado absoluto */
+    align-items: center;
+}
+
+/* ⬆️ BOTÓN DE VOLVER ARRIBA ESTILIZADO DE TU PRIMERA VERSION */
+.scroll-top-btn {
+    position: fixed !important; /* Se queda flotando fijo en la pantalla */
+    bottom: 2rem !important;    /* Distancia desde abajo */
+    right: 2rem !important;     /* Distancia desde la derecha */
+    width: 46px !important;     /* Tamaño redondo perfecto */
+    height: 46px !important;
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: var(--accent) !important; /* Flecha verde neón */
+    border-radius: 50% !important;   /* Círculo perfecto */
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: var(--transition-fast);
+    z-index: 999 !important; /* Por encima de cualquier otra capa */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra con estilo */
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--accent) !important;
+    color: var(--bg-deep) !important;
+    box-shadow: 0 0 15px var(--accent);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        bottom: 1.5rem !important;
+        right: 1.5rem !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS PREMIUM INTEGRADOS PARA EL BOTÓN DE DESCARGAS (descarga.html)
+   ========================================================================== */
+
+/* 1. Estilo base para todos los estados del botón */
+.btn-action {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 14px 36px !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 30px !important; /* Bordes redondeados premium */
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 🟢 ESTADO 1: Botón Inicial para Generar Enlace */
+.btn-generate {
+    background-color: var(--accent) !important; /* Tu verde neón oficial */
+    color: var(--bg-deep) !important;
+}
+.btn-generate:hover {
+    background-color: #00e074 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 135, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ⏳ ESTADO 2: Bloqueado esperando los 10 segundos */
+.btn-waiting {
+    background-color: #1e2637 !important;
+    color: #52637a !important;
+    cursor: not-allowed !important;
+    border: 1px solid rgba(255, 255, 255, 0.02) !important;
+    box-shadow: none !important;
+}
+
+/* 🔵 ESTADO 3: Botón Final listo para Descargar Ahora */
+.btn-download {
+    background-color: var(--accent-blue) !important; /* Azul oficial de descargas */
+    color: var(--text-white) !important;
+    animation: pulseGlowBlue 2s infinite !important; /* Efecto de pulso para llamar la atención */
+}
+.btn-download:hover {
+    background-color: #1d4ed8 !important;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Animación de pulso azul para el botón de descarga final */
+@keyframes pulseGlowBlue {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(37, 99, 235, 0.4); }
+    50% { transform: scale(1.03); box-shadow: 0 0 25px rgba(37, 99, 235, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(37, 99, 235, 0.4); }
+}
+

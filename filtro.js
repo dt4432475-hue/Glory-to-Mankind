@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("downloads-container"); 
     const counter = document.getElementById("counted-items"); 
     const filterButtons = document.querySelectorAll(".filter-btn");
+    
+    // CAPTURAMOS EL BANNER PRINCIPAL PARA CONTROLARLO
+    const heroBanner = document.querySelector(".hero-banner");
 
     let allItems = [];
     let currentCategory = "todos";
@@ -46,13 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("div");
             card.className = "card";
 
-            // Procesar las etiquetas del JSON. Si vienen separadas por comas, creamos un botón por cada una
             let tagsHTML = "";
             const tagsString = aporte.tag || aporte.tags || "General";
             const tagsArray = tagsString.split(",").map(t => t.trim());
 
             tagsArray.forEach(tag => {
-                // Filtramos para NO renderizar si por error viene un número o peso (como "gb" o "mb")
                 if (!tag.toLowerCase().includes("gb") && !tag.toLowerCase().includes("mb") && isNaN(tag)) {
                     tagsHTML += `
                         <span class="tag tag-clickable" data-tag="${tag}" style="cursor: pointer; background: rgba(0, 255, 135, 0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; color: #00ff87; border: 1px solid rgba(0, 255, 135, 0.2); transition: all 0.2s;">
@@ -72,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
                         </div>
                     </a>
-                    <!-- Contenedor exclusivo de palabras clave filtrables -->
                     <div class="card-footer" style="padding: 0 15px 15px 15px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; z-index: 10;">
                         ${tagsHTML}
                     </div>
@@ -81,14 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
             container.appendChild(card);
         });
 
-        // 3. Evento para que al hacer clic en cualquier palabra clave, busque de forma automática
         document.querySelectorAll(".tag-clickable").forEach(tagSpan => {
             tagSpan.addEventListener("click", (e) => {
                 e.preventDefault();
                 const selectedTag = e.target.getAttribute("data-tag");
                 if (searchInput) {
-                    searchInput.value = selectedTag; // Pone la palabra en el buscador superior
-                    filterItems(); // Ejecuta el filtro
+                    searchInput.value = selectedTag;
+                    filterItems(); 
                 }
             });
         });
@@ -97,9 +96,33 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCounter(count) {
         if (counter) counter.innerText = count;
     }
+ function manageBannerVisibility(query) {
+        if (!heroBanner) return;
+
+        if (query.length > 0 || currentCategory !== "todos") {
+            heroBanner.style.opacity = "0";
+            heroBanner.style.transform = "translateY(-10px)";
+            // Espera un instante a que termine la animación de CSS antes de ocultarlo por completo
+            setTimeout(() => {
+                if(searchInput.value.trim().length > 0 || currentCategory !== "todos") {
+                    heroBanner.style.display = "none";
+                }
+            }, 300);
+        } else {
+            heroBanner.style.display = "block";
+            // Forzar un reflujo en el navegador para activar la animación de entrada
+            setTimeout(() => {
+                heroBanner.style.opacity = "1";
+                heroBanner.style.transform = "translateY(0)";
+            }, 10);
+        }
+    }
 
     function filterItems() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+        // Controlamos el banner antes de filtrar
+        manageBannerVisibility(query);
 
         const filtered = allItems.filter(item => {
             const matchesCategory = (currentCategory === "todos" || item.categoria === currentCategory);
@@ -125,8 +148,20 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             filterButtons.forEach(btn => btn.classList.remove("active"));
             button.classList.add("active");
+            
             currentCategory = button.getAttribute("data-filter");
-            filterItems();
+            filterItems(); // Ejecuta el filtro completo y analiza el banner
         });
     });
 });
+    // 📌 CONTROLADOR SENSOR DE SCROLL PARA HACER LA NAVBAR TRANSPARENTE
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".main-navbar");
+        if (navbar) {
+            if (window.scrollY > 20) {
+                navbar.classList.add("scrolled"); // Activa el cristal transparente si bajó más de 20px
+            } else {
+                navbar.classList.remove("scrolled"); // Vuelve a sólido si regresó arriba del todo
+            }
+        }
+    });

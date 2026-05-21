@@ -52,3 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("app-title").innerText = "Error al cargar detalles";
         });
 });
+    // 📌 CONTROLADOR SENSOR DE SCROLL PARA DESCARGA.HTML
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".main-navbar");
+        if (navbar) {
+            if (window.scrollY > 20) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        }
+    });
+

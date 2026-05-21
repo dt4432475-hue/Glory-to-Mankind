@@ -13,14 +13,15 @@
     <!-- Contenedor Principal de Descargas -->
     <div class="download-container">
         
-        <!-- Detalle de Cabecera del Aporte -->
-        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px;">
-            <img id="app-icon" src="" alt="Icono" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover;">
-            <div>
-                <h1 id="app-title" style="margin: 0; font-size: 1.8rem; color: #fff;">Cargando aporte...</h1>
-                <p id="app-server" style="margin: 5px 0 0 0; color: #64748b; font-size: 0.9rem;"></p>
-            </div>
-        </div>
+        <!-- Detalle de Cabecera del Aporte Corregido y Alineado -->
+<div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px; width: 100%;">
+    <img id="app-icon" src="" alt="Icono" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover; flex-shrink: 0;">
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+        <h1 id="app-title" style="margin: 0; font-size: 1.8rem; color: #fff; line-height: 1.2;">Cargando aporte...</h1>
+        <p id="app-server" style="margin: 6px 0 0 0; color: #64748b; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"></p>
+    </div>
+</div>
+
 
         <!-- 1. Imagen de Gameplay en Horizontal (Abarca buen ancho) -->
         <div class="gameplay-banner">
@@ -88,18 +89,38 @@
                     btn.className = "btn-action btn-download";
                     btn.innerHTML = `<i class="fa-solid fa-circle-down"></i> Descargar Ahora`;
                     
-                    // Al hacer clic, abre el enlace real en una pestaña nueva
+                                        // Al hacer clic en Descargar Ahora
                     btn.onclick = () => { 
                         if(downloadUrl !== "#") {
+                            // 1. Abre el enlace en una pestaña nueva o inicia la descarga automática
                             window.open(downloadUrl, '_blank'); 
+                            
+                            // 2. Muestra inmediatamente la ventana emergente premium de agradecimiento
+                            document.getElementById("thanks-modal").style.display = "flex";
                         } else {
                             alert("El enlace aún no está listo o es inválido.");
                         }
                     };
+
                 }
             }, 1000);
         }
     </script>
+
+    <!-- VENTANA FLOTANTE DE AGRADECIMIENTO -->
+    <div id="thanks-modal" class="modal-thanks-overlay">
+        <div class="modal-thanks-box">
+            <h2>¡Gracias por <span>descargar</span> en nuestra página!</h2>
+            
+            <!-- 🖼️ CAMBIA ESTE LINK POR EL DE TU GIF BONITO -->
+            <img class="modal-thanks-gif" src="https://i.postimg.cc/qR5j1N89/sear.gif" alt="Gracias">
+            
+            <!-- Botón interactivo para regresar a la página principal -->
+            <button class="btn-back-home" onclick="window.location.href='index.html'">
+                <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+            </button>
+        </div>
+    </div>
 
     <!-- Tus scripts externos oficiales cargados al final -->
     <script src="descarga.js"></script>

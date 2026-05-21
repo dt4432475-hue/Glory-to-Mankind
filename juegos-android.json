@@ -1,12 +1,13 @@
 [
-    {
-        "titulo": "Minecraft 1.21.111",
-        "servidor": "Up-4ever (Servidor Gratuito)",
-        "tag": "Aventura",
-        "status": "Liberado",
-        "peso": "  303.8 mb",
-        "url": "https://www.up-4ever.net/kbsu8za9eqrj",
-        "imagen": "https://i.postimg.cc/Dw1nqrT9/image.png"
+   {"id": 1,
+    "titulo": "Minecraft PE",
+    "icono": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Minecraft-creeper-face.jpg/250px-Minecraft-creeper-face.jpg",
+    "servidor": "Up-4ever (Servidor Gratuito)",
+    "tag": "Shooter, FPS, Acción, PC",
+    "url": "https://enlace-de-descarga-real-aqui.com",
+    "gameplay": "https://postimg.cc",
+    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
     },
     {
         "titulo": "Mupen64Plus",

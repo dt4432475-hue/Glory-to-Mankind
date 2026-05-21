@@ -1,112 +1,54 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Obtener el ID de la URL
+document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
-    const juegoId = params.get('id');
+    const aporteId = parseInt(params.get("id")); 
+    const tipoAporte = params.get("tipo") || "juegos-pc"; 
 
-    // 2. Intentar cargar los 4 JSONs de forma segura
-    Promise.all([
-        fetch('juegos-pc.json').then(res => res.json()).catch(() => []),
-        fetch('juegos-android.json').then(res => res.json()).catch(() => []),
-        fetch('apps.json').then(res => res.json()).catch(() => []),
-        fetch('isos.json').then(res => res.json()).catch(() => [])
-    ])
-    .then(resultados => {
-        const todosLosAportes = [].concat(...resultados);
-        
-        // Buscar coincidencia limpando el texto
-        const juegoEncontrado = todosLosAportes.find(item => {
-            return item.titulo && generateSlug(item.titulo) === juegoId;
-        });
-
-        if (juegoEncontrado) {
-            inyectarDatosJuego(juegoEncontrado);
-            iniciarContador(juegoEncontrado.url);
-        } else {
-            // SALVAVIDAS: Si el JSON no cargó en tu PC local, genera un aporte de prueba dinámico
-            inyectarDatosJuego({
-                titulo: "Glory to Mankind (Base)",
-                tag: "PC Gamer",
-                status: "Online",
-                imagen: "https://unsplash.com",
-                url: "https://mediafire.com"
-            });
-            iniciarContador("https://mediafire.com");
-        }
-    })
-    .catch(() => {
-        // Segundo respaldo por si colapsa la lectura de red
-        iniciarContador("https://mediafire.com");
-    });
-
-    function generateSlug(text) {
-        if (!text) return '';
-        return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    if (isNaN(aporteId)) {
+        document.getElementById("app-title").innerText = "Aporte no encontrado";
+        return;
     }
 
-    function inyectarDatosJuego(juego) {
-        document.getElementById('game-title').textContent = juego.titulo || "Aporte Desconocido";
-        document.getElementById('game-img').src = juego.imagen || 'https://unsplash.com';
-        document.getElementById('game-server').textContent = `Servidor: ${juego.tag || 'Global'} | ${juego.status || 'Online'}`;
-        
-        if (juego.peso) {
-            document.getElementById('game-server').innerHTML += ` | <i class="fa-solid fa-file-zipper"></i> ${juego.peso}`;
-        }
-    }
+    let jsonFile = "juegos-pc.json";
+    if (tipoAporte === "juegos-android") jsonFile = "juegos-android.json";
+    if (tipoAporte === "apps") jsonFile = "apps.json";
+    if (tipoAporte === "isos") jsonFile = "isos.json";
 
-    function iniciarContador(finalUrl) {
-        let tiempo = 5;
-        const timerNum = document.getElementById('timer-num');
-        const contenedorContador = document.getElementById('step-countdown');
-        const contenedorCaptcha = document.getElementById('step-captcha');
-        const checkboxCaptcha = document.getElementById('captcha-check');
-        const btnContinuar = document.getElementById('btn-continue');
-        const contenedorLinks = document.getElementById('step-links');
-        const linkFinal = document.getElementById('final-download-url');
+    fetch(jsonFile)
+        .then(response => {
+            if (!response.ok) throw new Error("Error en base de datos");
+            return response.json();
+        })
+        .then(data => {
+            // Comparación estricta de números enteros
+            const aporte = data.find(item => parseInt(item.id) === aporteId);
 
-        if (!timerNum) return;
+            if (aporte) {
+                document.getElementById("app-title").innerText = aporte.titulo || aporte.name || "Sin título";
+                document.getElementById("app-icon").src = aporte.icono || aporte.image || "https://placeholder.com";
+                document.getElementById("app-server").innerHTML = `<i class="fa-solid fa-server"></i> Servidor: ${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}`;
+                
+                document.getElementById("app-description").innerText = aporte.descripcion || 
+                    "Este aporte ha sido verificado y está listo para ser descargado de forma segura e inmediata.";
 
-        const reloj = setInterval(() => {
-            tiempo--;
-            timerNum.textContent = tiempo;
+                document.getElementById("app-requirements").innerHTML = aporte.requisitos ? 
+                    aporte.requisitos.replace(/\n/g, "<br>") : 
+                    "<strong>Sistema Operativo:</strong> Windows 10/11 (64-bit)<br><strong>Memoria RAM:</strong> 4 GB mínimo<br><strong>Gráficos:</strong> Integrados o Dedicados.";
 
-            if (tiempo <= 0) {
-                clearInterval(reloj);
-                contenedorContador.classList.add('hidden');
-                contenedorCaptcha.classList.remove('hidden');
-            }
-        }, 1000);
+                if (aporte.gameplay) {
+                    document.getElementById("app-gameplay").src = aporte.gameplay;
+                } else if (aporte.banner) {
+                    document.getElementById("app-gameplay").src = aporte.banner;
+                } else {
+                    document.getElementById("app-gameplay").src = aporte.icono || aporte.image;
+                }
 
-        checkboxCaptcha.addEventListener('change', () => {
-            if (checkboxCaptcha.checked) {
-                btnContinuar.removeAttribute('disabled');
-                btnContinuar.classList.add('active-btn');
+                downloadUrl = aporte.url || aporte.download_link || "#";
             } else {
-                btnContinuar.setAttribute('disabled', 'true');
-                btnContinuar.classList.remove('active-btn');
+                document.getElementById("app-title").innerText = "El aporte no existe";
             }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            document.getElementById("app-title").innerText = "Error al cargar detalles";
         });
-
-        btnContinuar.addEventListener('click', () => {
-            contenedorCaptcha.classList.add('hidden');
-            contenedorLinks.classList.remove('hidden');
-            linkFinal.href = finalUrl || "#";
-        });
-    }
 });
-// Agrega esto al final de tu archivo descarga.js (fuera del DOMContentLoaded)
-function captchaResuelto() {
-    const btnContinuar = document.getElementById('btn-continue');
-    if (btnContinuar) {
-        btnContinuar.removeAttribute('disabled');
-        btnContinuar.classList.add('active-btn'); // Mantiene tu estilo CSS de botón activo
-    }
-}
-
-function captchaExpirado() {
-    const btnContinuar = document.getElementById('btn-continue');
-    if (btnContinuar) {
-        btnContinuar.setAttribute('disabled', 'true');
-        btnContinuar.classList.remove('active-btn');
-    }
-}
-

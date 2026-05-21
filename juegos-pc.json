@@ -1,21 +1,18 @@
 [
-    {
-        "titulo": "Half life 25th Anniversary",
-        "servidor": "Up-4ever (Servidor Gratuito)",
-        "tag": "Shooter",
-        "status": "Seguro",
-        "peso": " 1.24 gb",
-        "url": "https://www.google.com/search?q=alguna+manera+de+ver+si+un+un+archivo+tiene+malware+por+su+link+de+descarga&sourceid=chrome&ie=UTF-8&aep=48&cud=0&qsubts=1779252699035&source=chrome.crn.obic&mstk=AUtExfB39MRfdn_29n8UeYHJY5fVjGbni4DWZpy9kdZ0vVU-Gl7p0T1GLSWyFxvepuby1f6BJT_2dWflt2ah2Smae5UlDQAswBjuUG4_Ir-FEDG96TYHMlm4c1EPYDnY26hJowMMU4zoQwCCkVvF69jG9IjQjMbM000668y6POSq5BRBG4I8mGr_uknXSXMpqf63K6W6oEt3zQUKh_golLZfdbKPsWb6I7eaighUGRP1vY49APt-f6sde7VyrW9MKVyxTIR9MQbeYGwSfDnMqrk6F6W6vv3rtp46b5r-sXDkio4bc_aOb-GKX5HJhT3DgHqFZZdyn83hyUwhbOMnDfUjUwlL1w7nnySswQ&csuir=1&mtid=AT4NaqisFuuOwbkPlpOOyA0&lns_mode=cvst&udm=50",
-        "imagen": "https://i.postimg.cc/Pf3yK1xT/image.png"
-    },
-    {
-        "titulo": "Squirrel Stapler",
-        "servidor": "Up-4ever (Servidor Gratuito)",
-        "url": "https://mediafire.com",
-        "tag": "Terror",
-        "status": "Seguro",
-        "peso": " 143 mb",
-        "imagen": "https://i.postimg.cc/90rGsNMf/image.png"
-    
-    }
+
+  {
+    "id": 1,
+    "titulo": "Half life 25th Anniversary",
+    "icono": "https://postimg.cc",
+    "servidor": "Up-4ever (Servidor Gratuito)",
+    "tag": "Shooter",
+    "status": "Seguro",
+    "peso": "1.24 gb",
+    "url": "https://enlace-de-descarga-real-aqui.com",
+    "gameplay": "https://postimg.cc",
+    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+  }
+
+
 ]

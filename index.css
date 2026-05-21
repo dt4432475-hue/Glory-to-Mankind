@@ -50,23 +50,25 @@ body {
     font-weight: 800;
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* Un poco más de espacio entre el logo circular y el texto */
+    gap: 0.75rem;
     letter-spacing: 0.5px;
     flex-shrink: 0;
+}
+
+.logo-img {
+    width: 44px;         /* Crecido para que luzca con fuerza */
+    height: 44px;        /* Cuadrado perfecto para que no se deforme */
+    object-fit: cover;   /* Centra el icono perfectamente */
+    border-radius: 50%;  /* Forzado a círculo perfecto */
+    border: 1px solid rgba(0, 255, 135, 0.25); /* Bordecito neón brillante */
+    background-color: var(--bg-deep);
 }
 
 .nav-logo span {
     color: var(--accent);
 }
 
-.logo-img {
-    width: 42px;         /* Aumentado de 32px a 42px para que resalte más */
-    height: 42px;        /* Misma altura para que no se deforme */
-    object-fit: cover;   /* Asegura que el icono llene el círculo perfectamente */
-    border-radius: 50%;  /* Hace el logo completamente redondo */
-    border: 1px solid rgba(0, 255, 135, 0.2); /* Un sutil borde verde neón para darle estilo */
-    background-color: var(--bg-deep); /* Fondo oscuro por si el logo tiene transparencias */
-}
+
 
 /* 🔍 BUSCADOR LIMPIO (SIN LUPA REBELDE) */
 .nav-search {
@@ -145,17 +147,17 @@ body {
     box-shadow: 0 0 10px var(--accent);
 }
 
-/* ==========================================================================
-   HERO BANNER COMPACTO (ACHICADO PARA MOSTRAR PUBLICACIONES)
-   ========================================================================== */
-.hero-banner {
+#hero-bg.hero-banner {
     position: relative;
-    background: linear-gradient(135deg, #161f33 0%, #0d1321 100%);
+    /* Cambiamos el "center center" por "center 35%" o "center 40%" para empujar la imagen hacia abajo */
+    background: linear-gradient(135deg, rgba(13, 19, 33, 0.45) 0%, rgba(6, 9, 17, 0.65) 100%), 
+                url('https://i.postimg.cc/13mFLWCB/h3mrgzani2j71.png') no-repeat center 35% !important;
+    background-size: cover !important;
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-md);
-    padding: 1.75rem 2.5rem; /* Reducido a la mitad para achicar la casilla */
+    padding: 1.75rem 2.5rem;
     overflow: hidden;
-    margin-bottom: 1.5rem; /* Menos espacio abajo para que suban las tarjetas */
+    margin-bottom: 1.5rem;
 }
 
 .hero-text-side h1 {
@@ -469,4 +471,119 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+}
+/* ==========================================================================
+   SOPORTE RESPONSIVO UNIVERSAL (ADAPTACIÓN AUTOMÁTICA EN CUALQUIER PANTALLA)
+   ========================================================================== */
+/* ==========================================================================
+   SOPORTE RESPONSIVO UNIVERSAL (BOTONES PEQUEÑOS Y REDONDEADOS ORIGINALES)
+   ========================================================================== */
+
+/* 💻 PARA PANTALLAS MEDIANAS (TABLETS / LAPTOPS PEQUEÑAS) */
+@media (max-width: 1024px) {
+    .main-navbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.25rem 2rem;
+        gap: 1.25rem;
+    }
+
+    .nav-logo {
+        justify-content: center;
+    }
+
+    .nav-search {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .nav-menu {
+        display: flex; /* Cambiado a flex original para que no se estiren */
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        width: auto !important; /* Evita que hereden anchos raros */
+    }
+}
+
+/* 📱 PARA PANTALLAS PEQUEÑAS (TODO TIPO DE CELULARES) */
+@media (max-width: 768px) {
+    .page-layout {
+        padding: 1rem;
+    }
+
+    .search-input {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    /* 🟢 MENÚ ORIGINAL: Fluido, centrado y sin estirarse */
+    .nav-menu {
+        display: flex;          /* Forzamos Flexbox tradicional */
+        flex-direction: row;    /* Líneas horizontales */
+        flex-wrap: wrap;        /* Si no caben, bajan de forma natural */
+        justify-content: center;/* Siempre alineados al centro */
+        gap: 0.5rem;            /* Separación perfecta entre burbujas */
+        width: 100%;
+        order: 2;
+    }
+
+    /* Botones pequeños, compactos y con esquinas circulares de la primera versión */
+    .filter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        width: auto !important;   /* Bloquea que el botón se estire a lo ancho */
+        padding: 0.5rem 0.9rem;   /* Tamaño compacto exacto */
+        font-size: 0.8rem;
+        border-radius: 20px;      /* Esquinitas bien circulares tipo cápsula */
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        transition: var(--transition-fast);
+    }
+
+    /* Corrección de la línea neón para el botón activo en celular */
+    .filter-btn.active::after {
+        bottom: -2px;
+        width: 60%;
+        left: 20%;
+        height: 2px;
+    }
+
+    /* 🌋 Ajustes del Banner Principal */
+    #hero-bg.hero-banner {
+        padding: 1.5rem 1rem;
+        background-position: center center !important;
+    }
+
+    .hero-text-side h1 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .hero-text-side p {
+        font-size: 0.85rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .hero-badge {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 0.75rem auto;
+    }
+
+    /* Rejilla de juegos en formato móvil */
+    .downloads-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
 }

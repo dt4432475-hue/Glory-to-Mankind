@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // LLAMAMOS A LOS IDS REALES DE TU INDEX.HTML
     const searchInput = document.getElementById("search-input");
-    const container = document.getElementById("downloads-container"); // ID real de tu HTML
-    const counter = document.getElementById("counted-items"); // ID real de tu HTML
+    const container = document.getElementById("downloads-container"); 
+    const counter = document.getElementById("counted-items"); 
     const filterButtons = document.querySelectorAll(".filter-btn");
 
     let allItems = [];
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("isos.json").then(res => res.json()).catch(() => [])
     ])
     .then(([juegosPc, juegosAndroid, apps, isos]) => {
-        // Aseguramos que sean arreglos válidos e inyectamos categorías
         const pcList = Array.isArray(juegosPc) ? juegosPc : [];
         const androidList = Array.isArray(juegosAndroid) ? juegosAndroid : [];
         const appsList = Array.isArray(apps) ? apps : [];
@@ -34,13 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error al cargar datos:", error));
 
-    // 2. Función para renderizar las tarjetas
+    // 2. Función para renderizar las tarjetas con solo palabras clave interactivas
     function renderCards(items) {
         if (!container) return; 
         container.innerHTML = "";
 
         if (items.length === 0) {
-            container.innerHTML = `<p class="no-results" style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 40px 0;">No se encontraron aportes que coincidan con tu búsqueda.</p>`;
+            container.innerHTML = `<p class="no-results" style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 40px 0;">No se encontraron aportes.</p>`;
             return;
         }
 
@@ -48,35 +46,58 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("div");
             card.className = "card";
 
-            // Enlace optimizado usando ID numérico puro
+            // Procesar las etiquetas del JSON. Si vienen separadas por comas, creamos un botón por cada una
+            let tagsHTML = "";
+            const tagsString = aporte.tag || aporte.tags || "General";
+            const tagsArray = tagsString.split(",").map(t => t.trim());
+
+            tagsArray.forEach(tag => {
+                // Filtramos para NO renderizar si por error viene un número o peso (como "gb" o "mb")
+                if (!tag.toLowerCase().includes("gb") && !tag.toLowerCase().includes("mb") && isNaN(tag)) {
+                    tagsHTML += `
+                        <span class="tag tag-clickable" data-tag="${tag}" style="cursor: pointer; background: rgba(0, 255, 135, 0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; color: #00ff87; border: 1px solid rgba(0, 255, 135, 0.2); transition: all 0.2s;">
+                            ${tag}
+                        </span>`;
+                }
+            });
+
             card.innerHTML = `
-                <a href="descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}">
-                    <div class="card-image">
-                        <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}">
-                    </div>
-                    <div class="card-content">
-                        <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
-                        <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
-                        <div class="card-footer">
-                            <span class="tag tag-genre">${aporte.tag || 'General'}</span>
-                            <span class="tag tag-status">${aporte.status || 'Seguro'}</span>
-                            <span class="tag tag-size">${aporte.peso || 'N/A'}</span>
+                <div class="card-link-wrapper" style="position: relative; display: block;">
+                    <a href="descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}" style="text-decoration: none; color: inherit;">
+                        <div class="card-image">
+                            <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}">
                         </div>
+                        <div class="card-content">
+                            <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
+                            <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
+                        </div>
+                    </a>
+                    <!-- Contenedor exclusivo de palabras clave filtrables -->
+                    <div class="card-footer" style="padding: 0 15px 15px 15px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; z-index: 10;">
+                        ${tagsHTML}
                     </div>
-                </a>
+                </div>
             `;
             container.appendChild(card);
         });
+
+        // 3. Evento para que al hacer clic en cualquier palabra clave, busque de forma automática
+        document.querySelectorAll(".tag-clickable").forEach(tagSpan => {
+            tagSpan.addEventListener("click", (e) => {
+                e.preventDefault();
+                const selectedTag = e.target.getAttribute("data-tag");
+                if (searchInput) {
+                    searchInput.value = selectedTag; // Pone la palabra en el buscador superior
+                    filterItems(); // Ejecuta el filtro
+                }
+            });
+        });
     }
 
-    // 3. Actualizar el contador de aportes
     function updateCounter(count) {
-        if (counter) {
-            counter.innerText = count;
-        }
+        if (counter) counter.innerText = count;
     }
 
-    // 4. Lógica de Filtrado Combinado (Buscador + Filtro de Menú Nav)
     function filterItems() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
 
@@ -84,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const matchesCategory = (currentCategory === "todos" || item.categoria === currentCategory);
             
             const title = (item.titulo || item.name || "").toLowerCase();
-            const tag = (item.tag || "").toLowerCase();
+            const tag = (item.tag || item.tags || "").toLowerCase();
             const server = (item.servidor || "").toLowerCase();
             
             const matchesSearch = title.includes(query) || tag.includes(query) || server.includes(query);

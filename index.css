@@ -18,20 +18,12 @@
     --transition-premium: cubic-bezier(0.25, 0.8, 0.25, 1);
     --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
-/* Reset Básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* Cualquier cambio de color, tamaño o sombra en la web se moverá con suavidad física */
-    transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-                border-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-                opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-                transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 
 body {
     /* Forzamos el uso de la fuente "Inter" cargada desde Google Fonts para evitar que se pierda */
@@ -53,22 +45,30 @@ body {
 /* ==========================================================================
    CABECERA CORREGIDA SIN LUPA Y CON TEXTO COMPLETO
    ========================================================================= */
- .main-navbar {
-    background-color: var(--bg-card); /* Color sólido al inicio arriba del todo */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-    /* Transición suave para cuando se active el modo transparente al bajar */
-    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease !important;
+.main-navbar {
+  background-color: var(--bg-card); /* Color sólido al inicio arriba del todo */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-sizing: border-box; /* Asegura que el padding no rompa el ancho total */
+  
+  /* Posicionamiento fijo arriba sin scroll */
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  
+  /* ⚡ Eliminamos la animación para que sea 100% estática e instantánea */
+  transition: none !important;
 }
 
-.nav-logo {
+
+   .nav-logo {
     font-size: 1.4rem;
     font-weight: 800;
     display: flex;
@@ -87,29 +87,26 @@ body {
     background-color: var(--bg-deep);
 }
 
-/* ==========================================================================
-   TEXTO DEL LOGO GAMER TRIDINÁMICO (EFECTO RGB CHROMA FLUIDO)
-   ========================================================================== */
 
 .nav-logo span {
-    font-weight: 900; /* Le da más grosor a las letras para que el color luzca espectacular */
-    
-    /* El degradado RGB dinámico oficial de tu web */
-    background: linear-gradient(90deg, #00ff87, #0066ff, #00ff87, #00ffff);
-    background-size: 300% 100%; /* Espacio extra para que la ola de color fluya */
-    
-    /* EL TRUCO PRO: Recortamos el fondo con la silueta exacta del texto */
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent !important; /* Hace transparente el color base para que brille el RGB */
-    
-    /* Aura de iluminación neón que acompaña al texto en movimiento */
-    filter: drop-shadow(0 0 8px rgba(0, 255, 135, 0.4));
-    
-    /* Activamos la animación infinita Chroma en perfecta sincronía */
-    animation: rgb-chroma 4s linear infinite !important;
-    
-    display: inline-block; /* Necesario para que la animación de fondo calcule bien el ancho */
+  font-weight: 900; /* Le da más grosor a las letras para que el color luzca espectacular */
+
+  /* 🎨 NUEVO: Degradado estático gamer (Cyan Neón a Verde Eléctrico) */
+  background: linear-gradient(135deg, #00ffff, #00ff87);
+  background-size: 100% 100%; /* Ajustado al tamaño normal sin excesos */
+
+  /* Recortamos el fondo con la silueta exacta del texto */
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important; /* Hace transparente el color base */
+
+  /* ✨ Brillo neón estático y limpio que no laguea al hacer scroll */
+  filter: drop-shadow(0 0 8px rgba(0, 255, 135, 0.4));
+
+  /* ⚡ OPTIMIZACIÓN: Eliminamos por completo la animación infinita */
+  animation: none !important;
+
+  display: inline-block;
 }
 
 
@@ -276,6 +273,8 @@ body {
     padding: 3.5rem 3rem;
     overflow: hidden;
     margin-bottom: 2.5rem;
+     will-change: transform;
+       margin-top: 80px;
 }
 
 .hero-text-side {
@@ -375,12 +374,20 @@ body {
     font-weight: 700;
 }
 
-.downloads-grid {
-    display: grid;
-    /* Reducimos el ancho mínimo de 320px a 260px para obligar a que entren 4 columnas en PC */
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem; /* Separación perfecta entre cada tarjeta */
-}
+ /* 5. Ajuste del Grid para que entren 2 tarjetas por fila en celular */
+  .downloads-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    
+    /* 🎯 CAMBIO MAESTRO: Forza exactamente 2 columnas iguales en móviles */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
+    
+    justify-content: center !important;
+    align-content: center !important;
+    gap: 0.8rem !important; /* Separación más compacta ideal para pantallas chicas */
+    padding: 0 !important;
+  }
 /* Estructura vertical unificada para las tarjetas */
 .card {
     background-color: var(--bg-card);
@@ -394,6 +401,7 @@ body {
     /* Animación fluida de entrada y de hover */
     transition: transform 0.3s var(--transition-premium), border-color 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium) !important;
     animation: fadeInUpCard 0.4s var(--transition-premium) backwards;
+     will-change: transform;
 }
 
 /* Generamos un retraso para que las tarjetas no aparezcan toscas de golpe */
@@ -431,25 +439,28 @@ body {
     flex-grow: 1;
 }
 
-/* Evita que las imágenes colapsen o crezcan de más */
 .card-image {
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-    background-color: var(--bg-deep);
+  width: 100% !important;
+  /* 🎯 FIJAMOS EL TAMAÑO: Forzamos un ratio exacto de pantalla de cine */
+  aspect-ratio: 16 / 9 !important; 
+  overflow: hidden !important;
+  position: relative !important;
+  background-color: var(--bg-deep);
+  
+  /* ⚡ IMPORTANTE: Evita que el texto de abajo empuje o estire la zona de la imagen */
+  flex-shrink: 0 !important; 
 }
 
-/* Controla cómo se adaptan las portadas dentro de su recuadro */
+
 .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover !important;
-    object-position: center !important;
-    background-color: #0d1321;
-    
-    /* Transición premium para el zoom al pasar el mouse */
-    transition: transform 0.4s var(--transition-premium) !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Corta la imagen sobrante limpiamente en vez de estirarla */
+  display: block !important;
 }
+
+
+
 
 .card:hover .card-image img {
     transform: scale(1.05); /* Zoom sutil y elegante de la portada */
@@ -564,13 +575,12 @@ body {
 @media (max-width: 768px) {
     /* Forzamos a que la cabecera alinee absolutamente todo al centro */
     .main-navbar {
-        flex-direction: column !important;
-        align-items: center !important; /* Centra logo, buscador y menú de forma vertical */
-        justify-content: center !important;
-        padding: 1.25rem 1rem;
-        gap: 1rem;
-        width: 100%;
-    }
+    position: relative !important; /* Deja de flotar solo en pantallas chicas para no tapar el texto */
+    flex-direction: column;        /* Alinea el logo, buscador y botones en fila vertical */
+    gap: 1rem;
+    padding: 1rem;
+    height: auto !important;       /* Deja que crezca de forma natural */
+  }
 
     .page-layout {
         padding: 1rem;
@@ -591,15 +601,13 @@ body {
 
     /* 🟢 MENÚ DE SECCIONES PERFECTAMENTE CENTRADO */
     .nav-menu {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important; /* Alinea los botones flotantes justo al medio */
-        align-items: center !important;
-        gap: 0.5rem;
-        width: 100%;
-        margin: 0 auto;
-    }
+    display: flex;
+    flex-wrap: wrap;               /* Permite que los botones bajen ordenados */
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
 
     /* Botones pequeños, compactos y con esquinas circulares de la primera versión */
     .filter-btn {
@@ -641,16 +649,15 @@ body {
     animation: rgb-chroma 4s linear infinite; 
 }
 
-
-    /* 🌋 Ajustes del Banner Principal Centrado */
-    #hero-bg.hero-banner {
-        padding: 1.5rem 1rem;
-        background-position: center center !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+#hero-bg.hero-banner {
+  padding: 1.5rem 1rem;
+  background-position: center center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0 !important; /* 👈 Forzamos a que por defecto empiece en 0 */
+}
 
     .hero-text-side {
         width: 100%;
@@ -904,4 +911,246 @@ body {
 @keyframes zoomInGamer {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+
+  /* 1. Eliminamos los márgenes del body que causan los huecos grises */
+  html, body, .page-layout {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* Evita que la pantalla baile hacia los lados */
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Centrado y estirado completo de la barra */
+  .main-navbar {
+    position: relative !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: auto !important;
+    gap: 1rem !important;
+    padding: 1.2rem 1rem !important;
+    
+    /* Forzamos a cubrir de borde a borde */
+    width: 100% !important; 
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  
+
+  .nav-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .nav-search {
+    width: 100% !important;
+    max-width: 320px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .nav-search input {
+    width: 100% !important; /* Ajusta la caja de texto al contenedor */
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+    width: 100% !important;
+  }
+
+  /* 3. Centrado del Banner Principal */
+  #hero-bg.hero-banner {
+    margin-top: 0 !important;
+    padding: 2rem 1rem !important;
+    width: 100% !important;
+    text-align: center !important; /* Centra los textos del banner */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-content-flex, .hero-text-side {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* 4. Centrado de la Sección de Aportes */
+  .section-header-flex {
+    display: flex !important;
+    flex-direction: column !important; /* Apila el título y el contador en móvil */
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.8rem !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+    /* 5. Ajuste del Grid para que entren 2 tarjetas por fila en celular */
+  .downloads-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    
+    /* 🎯 CAMBIO MAESTRO: Forza exactamente 2 columnas iguales en móviles */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
+    
+    justify-content: center !important;
+    align-content: center !important;
+    gap: 0.8rem !important; /* Separación más compacta ideal para pantallas chicas */
+    padding: 0 !important;
+  }
+
+
+    /* Evitamos que la zona de la imagen se estire por culpa del texto largo */
+  .card-image {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important; /* Fuerza el formato panorámico exacto */
+    height: auto !important;
+    flex-shrink: 0 !important; /* 🎯 ESTO EVITA QUE CAMBIE DE TAMAÑO */
+    overflow: hidden !important;
+  }
+
+  /* Asegura que la foto real llene ese espacio perfectamente */
+  .card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Recorta los bordes de la foto para que no se deforme */
+  }
+
+  .card h3, .card .card-title {
+    font-size: 0.9rem !important; /* Letra un poco más chica para que quepa bien el título */
+    line-height: 1.2 !important;
+  }
+
+  .card-content {
+    padding: 0.8rem !important; /* Menos espacio interno para ganar área visible */
+  }
+
+    /* 🎮 AJUSTES PARA LA PÁGINA DE DESCARGA EN CELULARES */
+  
+  /* Evita que el contenedor se pegue a los bordes del teléfono */
+  .download-container {
+    width: 100% !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reducimos el tamaño del icono principal en móviles para ganar espacio */
+  #app-icon {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 10px !important;
+  }
+
+  #app-title {
+    font-size: 1.4rem !important; /* Letra un poco más compacta */
+  }
+
+  /* 🖼️ Corrección del Banner de Gameplay (Formato horizontal perfecto) */
+  .gameplay-banner {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important; /* Fuerza la proporción panorámica sin estirar */
+    height: auto !important;
+    margin-bottom: 15px !important;
+    overflow: hidden !important;
+  }
+
+  .gameplay-banner img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Corta los bordes sobrantes limpiamente */
+  }
+
+  /* Convierte la cuadrícula de Descripción y Requisitos en una sola columna */
+  .info-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+    /* 📱 Reducción extra para la página de descarga en celulares */
+  #app-icon {
+    width: 60px !important;  /* Achica el icono de 80px a 60px */
+    height: 60px !important;
+  }
+  
+  #app-title {
+    font-size: 1.4rem !important; /* Texto del título más compacto */
+  }
+
+  .gameplay-banner {
+    aspect-ratio: 2.35 / 1 !important; /* Se hace todavía más delgada en pantallas de celular */
+    margin-bottom: 15px !important;
+  }
+
+
+}
+
+/* 💻 ESTO FUERZA LAS 5 COLUMNAS EN PC */
+@media (min-width: 769px) {
+  .downloads-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 1.2rem !important;
+  }
+}
+/* 🎮 PARCHE DEFINITIVO PARA LA PÁGINA DE DESCARGAS (PC) */
+@media (min-width: 769px) {
+  
+  /* Forzamos las dos columnas en la cuadrícula */
+  .info-grid {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important; /* Columna izquierda más ancha */
+    gap: 20px !important;
+    align-items: stretch !important; /* Hace que los requisitos midan igual de alto que la foto */
+    width: 100% !important;
+  }
+
+  /* 📐 ACHICAMOS LA IMAGEN: Forzamos la altura compacta que querías */
+  .gameplay-banner {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important; /* Formato panorámico perfecto */
+    max-height: 280px !important;    /* 🎯 ALTURA MÁXIMA CONTROLADA: No crecerá más de esto */
+    overflow: hidden !important;
+    border-radius: 8px !important;
+  }
+
+  .gameplay-banner img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Centra y recorta la foto limpiamente */
+  }
+
+  /* Fijamos los Requisitos arriba a la derecha */
+  .box-requisitos {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+  }
+
+  /* Mandamos la Descripción abajo del todo */
+  .box-descripcion {
+    grid-column: 1 / span 2 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+  }
 }

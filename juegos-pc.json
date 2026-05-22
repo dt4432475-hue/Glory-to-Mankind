@@ -7,11 +7,24 @@
     "servidor": "Up-4ever (Servidor Gratuito)",
     "tag": "Shooter, FPS, Acción, PC",
     "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://postimg.cc",
+    "gameplay": "https://i.postimg.cc/g0X8nQb1/image.png",
     "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
-  }
+  },
+  {
+    
+  "id": 2,
+  "titulo": "Captain Claw",
+  "icono": "https://i.postimg.cc/T1vm1LB8/image.png",
+  "servidor": "Up-4forever (Servidor Gratuito)",
+  "tag": "Plataformas, 2D, Acción, Retro, PC",
+  "url": "https://enlace-de-descarga-real-aqui.com",
+  "gameplay": "https://i.postimg.cc/43XjFcRx/image.png",
+  "descripcion": "Lanzado originalmente en 1997 por Monolith Productions, Captain Claw es uno de los juegos de plataformas en 2D más icónicos y desafiantes de la historia de PC. Encarna al legendario capitán gato pirata Nathaniel J. Claw en su épica misión para escapar de la prisión armada de los Cocker-Spaniards y reunir las gemas ocultas del Amuleto de las Nueve Vidas. El título destaca por sus fluidas mecánicas de combate con espada, pistolas y dinamita, así como por sus cinemáticas animadas de alta calidad y un diseño de niveles sumamente exigente.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 10 o superior (compatible mediante parches modernos como dgVoodoo o CrazyHook)<br>• Procesador: Intel Pentium 75 MHz o equivalente<br>• Memoria RAM: 16 MB o superior<br>• Gráficos: Tarjeta de video compatible con DirectX 5 o superior"
+}
 
+  
 
 
 ]

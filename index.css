@@ -1139,7 +1139,6 @@ body {
     height: 100% !important;
     object-fit: cover !important; /* Centra y recorta la foto limpiamente */
   }
-
   /* Fijamos los Requisitos arriba a la derecha */
   .box-requisitos {
     grid-column: 2 !important;

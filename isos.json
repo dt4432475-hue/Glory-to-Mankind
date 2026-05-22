@@ -1,20 +1,24 @@
 [
     {
-        "titulo": "Win 10 XLite Resurrection",
-        "servidor": "Servidor Oficial Rápido (Internet Archive)",
-        "tag": "Windows",
-        "status": "Modificado",
-        "peso": "   2.5 gb",
-        "imagen": "https://i.postimg.cc/tgT5P50S/image.png"
-    },
-  
-    {
-        "titulo": "eliteOS 10 PRO 22H2 INSIDER",
-        "servidor": "Servidor Oficial Rápido (Internet Archive)",
-        "tag": "Windows",
-        "status": "Modificado",
-        "peso": "  2.35 gb",
-        "imagen": "https://i.postimg.cc/SQr3N3VG/image.png"
-    }
-
+    "id": 1,
+    "titulo": "Win 10 lite Resurrection",
+    "icono": "https://i.postimg.cc/sD2548Cx/image.png",
+    "servidor": "Up-4ever (Servidor Gratuito)",
+    "tag": "Shooter, FPS, Acción, PC",
+    "url": "https://enlace-de-descarga-real-aqui.com",
+    "gameplay": "https://i.postimg.cc/g0X8nQb1/image.png",
+    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+  },
+  {
+    "id": 2,
+    "titulo": "Win 10 Elite Os 22h2 Insider",
+    "icono": "https://i.postimg.cc/FRmLdCxp/image.png",
+    "servidor": "Up-4ever (Servidor Gratuito)",
+    "tag": "Shooter, FPS, Acción, PC",
+    "url": "https://enlace-de-descarga-real-aqui.com",
+    "gameplay": "https://i.postimg.cc/g0X8nQb1/image.png",
+    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+  }
 ] 

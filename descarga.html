@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descarga - Glory to Mankind</title>
-    <!-- Tus hojas de estilos oficiales -->
+    <title>Descarga de Glory to Mankind</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cloudflare.com">
     <script src="https://quge5.com/88/tag.min.js" data-zone="242439" async data-cfasync="false"></script>
 </head>
 <body>
 
-    <!-- Contenedor Principal de Descargas -->
     <div class="download-container">
         
-        <!-- Detalle de Cabecera del Aporte Corregido y Alineado -->
         <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 25px; width: 100%;">
             <img id="app-icon" src="" alt="Icono" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover; flex-shrink: 0;">
             <div style="display: flex; flex-direction: column; justify-content: center;">
@@ -23,21 +20,17 @@
             </div>
         </div>
 
-        <!-- Cuadrícula de Información Organizada -->
         <div class="info-grid">
 
-            <!-- 1. Imagen de Gameplay (A la izquierda en PC) -->
             <div class="gameplay-banner">
                 <img id="app-gameplay" src="https://placeholder.com" alt="Gameplay del juego" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
             </div>
             
-            <!-- 2. Bloque Requisitos (A la derecha en PC) -->
             <div class="box-requisitos" style="background-color: rgba(255,255,255,0.01); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.02);">
                 <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-cpu"></i> Requisitos del Sistema</h3>
                 <p id="app-requirements" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando requisitos mínimos y recomendados...</p>
             </div>
 
-            <!-- 3. Bloque Descripción (Abajo de todo ocupando el ancho completo) -->
             <div class="box-descripcion" style="background-color: rgba(255,255,255,0.01); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.02);">
                 <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-file-lines"></i> Descripción</h3>
                 <p id="app-description" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando detalles e instrucciones del archivo...</p>
@@ -45,12 +38,10 @@
 
         </div>
 
-        <!-- Nota de Advertencia Importante -->
         <div style="background: rgba(234, 179, 8, 0.1); border: 1px solid #eab308; padding: 15px; border-radius: 8px; color: #facc15; font-size: 0.9rem; margin-top: 25px; margin-bottom: 25px;">
             <strong>Importante:</strong> Todo archivo subido en esta pagina ha sido escaneado y verificado como 100% seguro por VIRUSTOTAL a EXCEPCION de POSIBLES FALSOS POSITIVOS que por ser software muy antiguo o tener posibles problemas de fabrica con los Sistemas Operativos suelen ser marcados como malware cuando estos son archivos legitimos y seguros.
         </div>
         
-        <!-- Botón Centralizador con Cuenta Regresiva -->
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 30px 0; min-height: 80px;">
             <button id="action-btn" class="btn-action btn-generate" onclick="startCountdown()">
                 <i class="fa-solid fa-key"></i> Generar enlace de descarga
@@ -59,7 +50,6 @@
 
     </div>
 
-    <!-- Script de Lógica Interna de la Cuenta Regresiva -->
     <script>
         let downloadUrl = "#";
 
@@ -94,7 +84,6 @@
         }
     </script>
 
-    <!-- VENTANA FLOTANTE DE AGRADECIMIENTO -->
     <div id="thanks-modal" class="modal-thanks-overlay">
         <div class="modal-thanks-box">
             <h2>¡Gracias por <span>descargar</span> en nuestra página!</h2>
@@ -105,7 +94,6 @@
         </div>
     </div>
 
-    <!-- Tus scripts externos oficiales cargados al final -->
     <script src="descarga.js"></script>
     <script async="async" data-cfasync="false" src="//://highrateprofit.com"></script>
 

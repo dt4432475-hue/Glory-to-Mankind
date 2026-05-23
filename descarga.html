@@ -51,38 +51,47 @@
     </div>
 
     <script>
-        let downloadUrl = "#";
-
-        function startCountdown() {
-            const btn = document.getElementById('action-btn');
-            let seconds = 5;
-
-            btn.disabled = true;
-            btn.className = "btn-action btn-waiting";
-            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Generando enlace en ${seconds}s...`;
-
-            const interval = setInterval(() => {
-                seconds--;
-                if (seconds > 0) {
-                    btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Generando enlace en ${seconds}s...`;
+    function startCountdown() {
+        let tiempoRestante = 5; // Segundos de espera estándar
+        const counterElement = document.getElementById("countdown-number");
+        const btnElement = document.getElementById("download-btn");
+        
+        const interval = setInterval(() => {
+            tiempoRestante--;
+            
+            // Actualiza el texto del marcador si existe el elemento en el DOM
+            if (counterElement) {
+                counterElement.innerText = tiempoRestante;
+            }
+            
+            if (tiempoRestante <= 0) {
+                clearInterval(interval);
+                
+                // 🚀 MONETIZACIÓN INSANA: Abre tu Crazy tag (Direct Link) en pestaña nueva al terminar el tiempo
+                window.open('https://omg10.com/4/11048314', '_blank');
+                
+                // Redirige automáticamente la pestaña principal de Glory to Mankind al servidor del juego
+                if (typeof downloadUrl !== 'undefined' && downloadUrl !== "#") {
+                    window.location.href = downloadUrl;
                 } else {
-                    clearInterval(interval);
-                    btn.disabled = false;
-                    btn.className = "btn-action btn-download";
-                    btn.innerHTML = `<i class="fa-solid fa-circle-down"></i> Descargar Ahora`;
-                    
-                    btn.onclick = () => { 
-                        if(downloadUrl !== "#") {
-                            window.open(downloadUrl, '_blank'); 
-                            document.getElementById("thanks-modal").style.display = "flex";
-                        } else {
-                            alert("El enlace aún no está listo o es inválido.");
-                        }
-                    };
+                    console.log("Error: La variable 'downloadUrl' no está definida o está vacía.");
                 }
-            }, 1000);
-        }
-    </script>
+                
+                // Modifica el estado del botón visual para dejarlo activo si el usuario quiere recargar
+                if (btnElement) {
+                    btnElement.classList.remove("disabled");
+                    btnElement.innerText = "DESCARGAR AHORA";
+                }
+            }
+        }, 1000);
+    }
+
+    // Ejecuta de forma automática el contador al cargar completamente la interfaz del archivo
+    document.addEventListener("DOMContentLoaded", () => {
+        startCountdown();
+    });
+</script>
+
 
     <div id="thanks-modal" class="modal-thanks-overlay">
         <div class="modal-thanks-box">

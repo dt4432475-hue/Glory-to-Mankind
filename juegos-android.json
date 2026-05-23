@@ -1,11 +1,11 @@
 [
     {
     "id": 1,
-    "titulo": "Minecraft 1.21.111",
+    "titulo": "Minecraft",
     "icono": "https://i.postimg.cc/hv1MQ7mw/image.png",
-    "servidor": "Up-4ever (Servidor Gratuito)",
+    "servidor": "Internet Archive (Servidor Gratuito)",
     "tag": "Sandbox, Supervivencia, Construcción, Android",
-    "url": "https://archive.org",
+    "url": "https://cdn5.ccpchost.com/minecraft-mod-menu-1.26.30.31.apk",
     "gameplay": "https://i.postimg.cc/N0WtfLR3/image.png",
     "descripcion": "Minecraft es el aclamado juego de mundo abierto donde puedes explorar mundos generados aleatoriamente y construir todo lo que puedas imaginar. En esta versión oficial para Android, disfruta de la experiencia completa de supervivencia o creatividad, recolecta recursos, fabrica herramientas, enfréntate a criaturas nocturnas y juega con amigos en cualquier lugar.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: Arquitectura ARMv7 o ARM64 (64 bits) equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 1 GB de espacio libre disponible"
@@ -16,8 +16,8 @@
     "titulo": "M64 Plus FZ",
     "icono": "https://i.postimg.cc/kMsHTBB3/image.png",
     "servidor": "Up-4forever (Servidor Gratuito)",
-    "tag": "Emulador, Nintendo 64, Herramientas, Android",
-    "url": "https://up-4ever.net",
+    "tag": "Emulador, Nintendo 64, Herramientas, Pro, Android",
+    "url": "https://www.up-4ever.net/2x1zfn54ulsi",
     "gameplay": "https://i.postimg.cc/FRg65KpT/image.png",
     "descripcion": "M64Plus FZ es un potente y completo emulador de Nintendo 64 para dispositivos Android basado en Mupen64Plus. Te permite revivir los grandes clásicos de la consola de 64 bits directamente en tu móvil o tablet, ofreciendo una alta compatibilidad con ROMs, excelentes opciones de personalización de controles táctiles o mandos físicos, y múltiples ajustes gráficos para mejorar la resolución original.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: Quad-Core de 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: Espacio disponible según el tamaño de las ROMs externas"
@@ -26,9 +26,9 @@
     "id": 3,
     "titulo": "Monopoly",
     "icono": "https://i.postimg.cc/MKhm5S03/image.png",
-    "servidor": "Up-4forever (Servidor Gratuito)",
+    "servidor": "Internet Archive (Servidor Gratuito)",
     "tag": "Estrategia, Tablero, Familiar, Multijugador, Android",
-    "url": "https://enlace-de-descarga-real-aqui.com",
+    "url": "https://archive.org/download/monopoly_202605/Monopoly.apk",
     "gameplay": "https://i.postimg.cc/ZRgdqY0N/image.png",
     "descripcion": "Monopoly es la adaptación oficial para dispositivos móviles del clásico juego de mesa de Hasbro. Compra, vende y planea tu estrategia para dominar el mercado inmobiliario desde tu teléfono o tablet. El juego incluye tableros interactivos animados en 3D, modos de juego rápidos y multijugador local o en línea para competir de forma segura con amigos y jugadores de todo el mundo.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 6.0 (Marshmallow) o superior<br>• Procesador: Quad-Core de 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 500 MB de espacio libre disponible"
@@ -38,10 +38,9 @@
     "id": 4,
     "titulo": "ePSXe",
     "icono": "https://i.postimg.cc/z3mHCJmR/image.png",
-    "servidor": "Up-4forever (Servidor Gratuito)",
-    "tag": "Emulador, PlayStation, Herramientas, Android",
-    "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://i.postimg.cc/gk6vn79K/image.png",
+    "servidor": "Internet Archive (Servidor Gratuito)",
+    "tag": "Emulador, PlayStation, Herramientas, Pro, Android",
+    "url": "https://archive.org/download/e-psxe-v-2.0.17_202605/ePSXe%20v2.0.17%20-%20espacioapk.com.apk",
     "descripcion": "ePSXe para Android es un potente emulador de PlayStation (PSX y PSOne) diseñado específicamente para smartphones y tablets. Ofrece una altísima compatibilidad con el catálogo de juegos, excelente velocidad y un sonido preciso. Cuenta con soporte para controles táctiles en pantalla, mapeo de mandos físicos por hardware, modos de pantalla dividida para dos jugadores y mejoras gráficas mediante plugins OpenGL.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 2.3 (Gingerbread) o superior<br>• Procesador: ARMv7 o Cortex-A9 a 1.0 GHz o equivalente<br>• Memoria RAM: 512 MB o superior<br>• Almacenamiento: Espacio disponible según el tamaño de los juegos (ISOs/BIN)"
     },
@@ -50,24 +49,73 @@
     "id": 5,
     "titulo": "Nethersx2",
     "icono": "https://i.postimg.cc/GtFktBVb/image.png",
-    "servidor": "Up-4ever (Servidor Gratuito)",
+    "servidor": "Internet Archive (Servidor Gratuito)",
     "tag": "Emulador, PlayStation 2, Herramientas, Android",
-    "url": "https://enlace-de-descarga-real-aqui.com",
+    "url": "https://archive.org/download/nether-sx-2-v-2.2n-3668/NetherSX2-v2.2n-3668.apk",
     "gameplay": "https://i.postimg.cc/B6sZsXTm/image.png",
     "descripcion": "NetherSX2 es una versión modificada y optimizada de AetherSX2, el aclamado emulador de PlayStation 2 para dispositivos Android. Esta versión comunitaria elimina anuncios, corrige problemas de interfaz, restablece la compatibilidad con shaders personalizados y mejora el rendimiento general en una amplia gama de procesadores móviles, permitiéndote disfrutar de los grandes clásicos de PS2 con una fluidez excelente.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 8.0 (Oreo) o superior (Recomendado 64-bit)<br>• Procesador: Snapdragon 845 / Cortex-A75 equivalente o superior<br>• Memoria RAM: 4 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 3.0 o Vulkan"
     },
     {
     "id": 6,
-    "titulo": "NES",
+    "titulo": "NES.emu",
     "icono": "https://i.postimg.cc/cJVKyxHk/image.png",
-    "servidor": "Up-4forever (Servidor Gratuito)",
-    "tag": "Emulador, Retro, Nintendo, Clásico, Android",
-    "url": "#",
-    "gameplay": "https://i.postimg.cc/rpt1tYt4/image.png",
+    "servidor": "Internet Archive (Servidor Gratuito)",
+    "tag": "Emulador, Retro, Nintendo, Clásico, Pro, Android",
+    "url": "https://download2278.mediafire.com/n3vck4tn3gogMMw4PKbs_kwgfWNt_CM1bsRRDhPvUC1W86LruPvCGME-ZR5gm6Yyn-ThsK8I5C2CCuujmNLckHydLBnbTbl8ZMbArXfZocAv6lS9dPLfQqZuO_RuamZtRh7uWwG4T6DBt3PfEHr35Gw-KR1DCUl1Di4Zur013Jeeo4tN/gbf9k1393zas5v4/NES.emu+PRO+v1.5.85_%28AndroidApkData.org%29.apk",
+    "gameplay": "https://i.postimg.cc/Sx8rNYng/image.png",
     "descripcion": "Revive la época dorada de los videojuegos de 8 bits con este potente emulador del sistema NES (Nintendo Entertainment System) para Android. Diseñado para ofrecer una experiencia retro fluida y nostálgica, cuenta con alta compatibilidad para cargar tus juegos clásicos favoritos, soporte para guardar partidas en cualquier momento (Save States), trucos integrados y un mapeo cómodo de controles táctiles en pantalla o mandos bluetooth externos.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.4 (KitKat) o superior<br>• Procesador: CPU Single-Core a 1.0 GHz o equivalente<br>• Memoria RAM: 512 MB o superior<br>• Almacenamiento: Espacio mínimo disponible según la colección de ROMs"
-    }
+    },
+    
+ {
+  "id": 7,
+  "titulo": "Geometry Dash",
+  "icono": "https://i.postimg.cc/zX59T5rz/image.png",
+  "servidor": "Internet Archive (Servidor Gratuito)",
+  "tag": "Plataformas, Ritmo, Arcade, Pro, Android",
+  "url": "https://archive.org/download/geometry-dash-mod_2.2.144/geometry-dash-mod_2.2.144_working.apk",
+  "gameplay": "https://i.postimg.cc/dtYKnrGS/image.png",
+  "descripcion": "Geometry Dash es un adictivo y frenético juego de plataformas en 2D basado en el ritmo y desarrollado por RobTop Games. Prepárate para un desafío casi imposible mientras saltas, vuelas y esquivas obstáculos puntiagudos a través de peligrosos pasajes musicales. Cuenta con una increíble banda sonora interactiva, un potente editor para crear tus propios niveles personalizados y una enorme cantidad de skins para desbloquear.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: CPU de 1.0 GHz o superior<br>• Memoria RAM: 1 GB o superior<br>• Almacenamiento: 200 MB de espacio libre disponible"
+},
+
+ {
+  "id": 8,
+  "titulo": "PPSSPP Gold",
+  "icono": "https://i.postimg.cc/cJYmDg7Z/image.png",
+  "servidor": "Internet Archive (Servidor Gratuito)",
+  "tag": "Emulador, PSP, Herramientas, Pro, Android",
+  "url": "https://archive.org/download/ppsspp-gold-v-1.19.1/PPSSPP%20Gold%20v1.19.1%20-%20espacioapk.com.apk",
+  "gameplay": "https://i.postimg.cc/L5z5wSC6/image.png",
+  "descripcion": "PPSSPP Gold es la versión premium del emulador de PlayStation Portable (PSP) más famoso para Android. Te permite jugar tus títulos favoritos de la consola portátil de Sony directamente en tu dispositivo móvil a máxima velocidad y en alta definición. Ofrece funciones avanzadas como el guardado de estados en cualquier momento, personalización de controles táctiles en pantalla, soporte para mandos externos y un rendimiento gráfico optimizado.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.4 (KitKat) o superior<br>• Procesador: CPU compatible con ARMv7 o superior<br>• Memoria RAM: 1 GB o superior<br>• Almacenamiento: Espacio disponible según el tamaño de las ISOs de los juegos"
+},
+{
+  "id": 9,
+  "titulo": "Snes9x EX+",
+  "icono": "https://i.postimg.cc/wTZ40pKs/image.png",
+  "servidor": "Internet Archive (Servidor Gratuito)",
+  "tag": "Emulador, Retro, Super Nintendo, Android",
+  "url": "https://archive.org/download/snesx9/snesx9.apk",
+  "gameplay": "https://i.postimg.cc/rpSHDYP0/image.png",
+  "descripcion": "Snes9x EX+ es un avanzado emulador de Super Nintendo (SNES) de código abierto para dispositivos Android, basado en el famoso motor de Snes9x. Ofrece una altísima compatibilidad con casi todo el catálogo de juegos de la mítica consola de 16 bits, permitiendo guardar partidas en tiempo real, personalizar los controles táctiles en pantalla y conectar mandos físicos vía Bluetooth para disfrutar de la experiencia retro más fluida.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.1 o superior<br>• Procesador: CPU a 1.0 GHz o superior<br>• Memoria RAM: 512 MB o superior<br>• Almacenamiento: Espacio mínimo disponible según la colección de ROMs"
+},
+{
+  "id": 10,
+  "titulo": "Aethersx2",
+  "icono": "https://i.postimg.cc/hPNgx6pk/image.png",
+  "servidor": "Internet Archive (Servidor Gratuito)",
+  "tag": "Emulador, PlayStation 2, Herramientas, Android",
+  "url": "https://archive.org/download/aether-sx-2-13930-v-1.5-3668/AetherSX2-13930-v1.5-3668.apk",
+  "gameplay": "https://i.postimg.cc/SQMp4DyN/image.png",
+  "descripcion": "AetherSX2 es el aclamado emulador de la consola PlayStation 2 (PS2) para dispositivos Android de alta gama. Basado en el código de PCSX2, te permite revivir los mejores títulos en 3D de la mítica consola de Sony con un rendimiento y fidelidad gráfica asombrosos directamente en tu smartphone. Cuenta con soporte completo para pantallas táctiles, configuración avanzada de controles y escalado de resolución en alta definición.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 8.0 (Oreo) de 64 bits o superior<br>• Procesador: Snapdragon 845 o equivalente de gama media-alta (Recomendado con núcleos grandes)<br>• Memoria RAM: 4 GB o superior<br>• Gráficos: GPU compatible con Vulkan o OpenGL ES 3.0"
+}
+
+
+
 
     
     

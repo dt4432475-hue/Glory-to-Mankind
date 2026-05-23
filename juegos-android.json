@@ -1,53 +1,74 @@
 [
-   {"id": 1,
-    "titulo": "Minecraft PE",
+    {
+    "id": 1,
+    "titulo": "Minecraft 1.21.111",
     "icono": "https://i.postimg.cc/hv1MQ7mw/image.png",
     "servidor": "Up-4ever (Servidor Gratuito)",
-    "tag": "Shooter, FPS, Acción, PC",
-    "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://postimg.cc",
-    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+    "tag": "Sandbox, Supervivencia, Construcción, Android",
+    "url": "https://archive.org",
+    "gameplay": "https://i.postimg.cc/N0WtfLR3/image.png",
+    "descripcion": "Minecraft es el aclamado juego de mundo abierto donde puedes explorar mundos generados aleatoriamente y construir todo lo que puedas imaginar. En esta versión oficial para Android, disfruta de la experiencia completa de supervivencia o creatividad, recolecta recursos, fabrica herramientas, enfréntate a criaturas nocturnas y juega con amigos en cualquier lugar.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: Arquitectura ARMv7 o ARM64 (64 bits) equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 1 GB de espacio libre disponible"
     },
-    {"id": 2,
+
+    {
+    "id": 2,
     "titulo": "M64 Plus FZ",
-    "icono": "https://i.postimg.cc/P5YJWzJY/image.png",
-    "servidor": "Up-4ever (Servidor Gratuito)",
-    "tag": "Shooter, FPS, Acción, PC",
-    "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://postimg.cc",
-    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+    "icono": "https://i.postimg.cc/kMsHTBB3/image.png",
+    "servidor": "Up-4forever (Servidor Gratuito)",
+    "tag": "Emulador, Nintendo 64, Herramientas, Android",
+    "url": "https://up-4ever.net",
+    "gameplay": "https://i.postimg.cc/FRg65KpT/image.png",
+    "descripcion": "M64Plus FZ es un potente y completo emulador de Nintendo 64 para dispositivos Android basado en Mupen64Plus. Te permite revivir los grandes clásicos de la consola de 64 bits directamente en tu móvil o tablet, ofreciendo una alta compatibilidad con ROMs, excelentes opciones de personalización de controles táctiles o mandos físicos, y múltiples ajustes gráficos para mejorar la resolución original.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: Quad-Core de 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: Espacio disponible según el tamaño de las ROMs externas"
     },
-    {"id": 3,
+     {
+    "id": 3,
     "titulo": "Monopoly",
-    "icono": "https://i.postimg.cc/k5RcFH8y/image.png",
-    "servidor": "Up-4ever (Servidor Gratuito)",
-    "tag": "Shooter, FPS, Acción, PC",
+    "icono": "https://i.postimg.cc/MKhm5S03/image.png",
+    "servidor": "Up-4forever (Servidor Gratuito)",
+    "tag": "Estrategia, Tablero, Familiar, Multijugador, Android",
     "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://postimg.cc",
-    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+    "gameplay": "https://i.postimg.cc/ZRgdqY0N/image.png",
+    "descripcion": "Monopoly es la adaptación oficial para dispositivos móviles del clásico juego de mesa de Hasbro. Compra, vende y planea tu estrategia para dominar el mercado inmobiliario desde tu teléfono o tablet. El juego incluye tableros interactivos animados en 3D, modos de juego rápidos y multijugador local o en línea para competir de forma segura con amigos y jugadores de todo el mundo.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 6.0 (Marshmallow) o superior<br>• Procesador: Quad-Core de 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 500 MB de espacio libre disponible"
     },
-    {"id": 4,
+
+        {
+    "id": 4,
     "titulo": "ePSXe",
-    "icono": "https://i.postimg.cc/x8Ljv9TM/image.png",
-    "servidor": "Up-4ever (Servidor Gratuito)",
-    "tag": "Shooter, FPS, Acción, PC",
+    "icono": "https://i.postimg.cc/z3mHCJmR/image.png",
+    "servidor": "Up-4forever (Servidor Gratuito)",
+    "tag": "Emulador, PlayStation, Herramientas, Android",
     "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://postimg.cc",
-    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+    "gameplay": "https://i.postimg.cc/gk6vn79K/image.png",
+    "descripcion": "ePSXe para Android es un potente emulador de PlayStation (PSX y PSOne) diseñado específicamente para smartphones y tablets. Ofrece una altísima compatibilidad con el catálogo de juegos, excelente velocidad y un sonido preciso. Cuenta con soporte para controles táctiles en pantalla, mapeo de mandos físicos por hardware, modos de pantalla dividida para dos jugadores y mejoras gráficas mediante plugins OpenGL.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 2.3 (Gingerbread) o superior<br>• Procesador: ARMv7 o Cortex-A9 a 1.0 GHz o equivalente<br>• Memoria RAM: 512 MB o superior<br>• Almacenamiento: Espacio disponible según el tamaño de los juegos (ISOs/BIN)"
     },
-    {"id": 5,
+
+    {
+    "id": 5,
     "titulo": "Nethersx2",
-    "icono": "https://i.postimg.cc/x8Ljv9TM/image.png",
+    "icono": "https://i.postimg.cc/GtFktBVb/image.png",
     "servidor": "Up-4ever (Servidor Gratuito)",
-    "tag": "Shooter, FPS, Acción, PC",
+    "tag": "Emulador, PlayStation 2, Herramientas, Android",
     "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://postimg.cc",
-    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+    "gameplay": "https://i.postimg.cc/B6sZsXTm/image.png",
+    "descripcion": "NetherSX2 es una versión modificada y optimizada de AetherSX2, el aclamado emulador de PlayStation 2 para dispositivos Android. Esta versión comunitaria elimina anuncios, corrige problemas de interfaz, restablece la compatibilidad con shaders personalizados y mejora el rendimiento general en una amplia gama de procesadores móviles, permitiéndote disfrutar de los grandes clásicos de PS2 con una fluidez excelente.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 8.0 (Oreo) o superior (Recomendado 64-bit)<br>• Procesador: Snapdragon 845 / Cortex-A75 equivalente o superior<br>• Memoria RAM: 4 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 3.0 o Vulkan"
+    },
+    {
+    "id": 6,
+    "titulo": "NES",
+    "icono": "https://i.postimg.cc/cJVKyxHk/image.png",
+    "servidor": "Up-4forever (Servidor Gratuito)",
+    "tag": "Emulador, Retro, Nintendo, Clásico, Android",
+    "url": "#",
+    "gameplay": "https://i.postimg.cc/rpt1tYt4/image.png",
+    "descripcion": "Revive la época dorada de los videojuegos de 8 bits con este potente emulador del sistema NES (Nintendo Entertainment System) para Android. Diseñado para ofrecer una experiencia retro fluida y nostálgica, cuenta con alta compatibilidad para cargar tus juegos clásicos favoritos, soporte para guardar partidas en cualquier momento (Save States), trucos integrados y un mapeo cómodo de controles táctiles en pantalla o mandos bluetooth externos.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.4 (KitKat) o superior<br>• Procesador: CPU Single-Core a 1.0 GHz o equivalente<br>• Memoria RAM: 512 MB o superior<br>• Almacenamiento: Espacio mínimo disponible según la colección de ROMs"
     }
+
+    
     
 ]

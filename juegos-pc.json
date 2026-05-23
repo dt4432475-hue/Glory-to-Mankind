@@ -24,16 +24,39 @@
   "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 10 o superior (compatible mediante parches modernos como dgVoodoo o CrazyHook)<br>• Procesador: Intel Pentium 75 MHz o equivalente<br>• Memoria RAM: 16 MB o superior<br>• Gráficos: Tarjeta de video compatible con DirectX 5 o superior"
 },
 {
-    
   "id": 3,
   "titulo": "Warcraft 3 Original",
   "icono": "https://i.postimg.cc/G2HHy0y8/image.png",
   "servidor": "Up-4forever (Servidor Gratuito)",
-  "tag": "Plataformas, 2D, Acción, Retro, PC",
-  "url": "https://www.up-4ever.net/r053bq6n93r0",
-  "gameplay": "https://i.postimg.cc/43XjFcRx/image.png",
-  "descripcion": "Lanzado originalmente en 1997 por Monolith Productions, Captain Claw es uno de los juegos de plataformas en 2D más icónicos y desafiantes de la historia de PC. Encarna al legendario capitán gato pirata Nathaniel J. Claw en su épica misión para escapar de la prisión armada de los Cocker-Spaniards y reunir las gemas ocultas del Amuleto de las Nueve Vidas. El título destaca por sus fluidas mecánicas de combate con espada, pistolas y dinamita, así como por sus cinemáticas animadas de alta calidad y un diseño de niveles sumamente exigente.",
-  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 10 o superior (compatible mediante parches modernos como dgVoodoo o CrazyHook)<br>• Procesador: Intel Pentium 75 MHz o equivalente<br>• Memoria RAM: 16 MB o superior<br>• Gráficos: Tarjeta de video compatible con DirectX 5 o superior"
+  "tag": "Estrategia, RTS, Fantasía, Clásico, PC",
+  "url": "https://www.up-4ever.net/59r6i2ika5r9",
+  "gameplay": "https://i.postimg.cc/sX0pZ9HK/image.png",
+  "descripcion": "Warcraft III: Reign of Chaos es un aclamado videojuego de estrategia en tiempo real creado por Blizzard Entertainment. El juego te sumerge en el mundo de Azeroth, donde deberás comandar a cuatro poderosas facciones: los Humanos, los Orcos, los Muertos Vivientes y los Elfos Nocturnos en una épica campaña narrativa. Destaca por introducir héroes con mecánicas de rol (RPG), subida de niveles y un revolucionario motor gráfico en 3D para su época.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 98, ME, 2000 o XP<br>• Procesador: Intel Pentium II 400 MHz o AMD Athlon equivalente<br>• Memoria RAM: 128 MB o superior<br>• Gráficos: Tarjeta de video 3D de 8 MB compatible con DirectX 8.1"
+},
+
+{
+  "id": 4,
+  "titulo": "Squirrel Stapler",
+  "icono": "https://i.postimg.cc/sfWXSCXm/image.png",
+  "servidor": "Up-4forever (Servidor Gratuito)",
+  "tag": "Horror, Indie, Surrealista, Caza, PC",
+  "url": "https://archive.org",
+  "gameplay": "https://i.postimg.cc/2S9mM06s/image.png",
+  "descripcion": "Squirrel Stapler es un perturbador videojuego de terror psicológico e indie creado por David Szymanski. En esta surrealista aventura en primera persona, te adentras en un bosque con un objetivo tan bizarro como oscuro: cazar ardillas y graparlas al cadáver de tu esposa fallecida, todo esto mientras te preparas para un perturbador encuentro donde conocerás a Dios en cinco días.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 10 (Requiere procesador y sistema operativo de 64 bits)<br>• Procesador: Compatibilidad con el conjunto de instrucciones SSE2<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: Tarjeta gráfica compatible con DirectX 10 (Shader Model 4.0)"
+},
+
+{
+  "id": 5,
+  "titulo": "Counter-Strike 1.6",
+  "icono": "https://i.postimg.cc/9fSmRLHK/image.png",
+  "servidor": "Up-4forever (Servidor Gratuito)",
+  "tag": "Shooter, FPS, Acción, Clásico, PC",
+  "url": "https://up-4ever.net",
+  "gameplay": "https://i.postimg.cc/4xzbFcnC/image.png",
+  "descripcion": "Counter-Strike 1.6 es el legendario videojuego de disparos en primera persona táctico desarrollado por Valve Corporation. El juego enfrenta a dos equipos, los Terroristas y los Antiterroristas, en intensas rondas basadas en objetivos como plantar o desactivar bombas, o rescatar rehenes. Es considerado uno de los pilares fundamentales de los deportes electrónicos y uno de los juegos competitivos más influyentes de la historia de PC.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows XP, Vista, 7 o superior<br>• Procesador: Procesador de 800 MHz o equivalente<br>• Memoria RAM: 128 MB o superior<br>• Gráficos: Tarjeta de video de 32 MB o superior"
 }
 
   

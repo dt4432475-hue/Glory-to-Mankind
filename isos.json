@@ -1,24 +1,27 @@
 [
-    {
+    
+  {
     "id": 1,
     "titulo": "Win 10 lite Resurrection",
     "icono": "https://i.postimg.cc/sD2548Cx/image.png",
     "servidor": "Up-4ever (Servidor Gratuito)",
-    "tag": "Shooter, FPS, Acción, PC",
+    "tag": "SO, Windows, OS, Lite, PC",
     "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://i.postimg.cc/g0X8nQb1/image.png",
-    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+    "gameplay": "https://i.postimg.cc/5NTjF95Y/image.png",
+    "descripcion": "Windows 10 Lite Resurrection es una de las modificaciones más populares y extremas del sistema operativo de Microsoft. Está optimizada meticulosamente para revivir PCs de muy bajos recursos o laptops antiguas. Esta versión elimina la telemetría, Cortana, aplicaciones nativas innecesarias y desactiva servicios secundarios pesados, reduciendo drásticamente el consumo de memoria RAM y uso de disco al arrancar.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>• Procesador: 1 GHz o más rápido (32 o 64 bits)<br>• Memoria RAM: 1 GB (Se recomiendan 2 GB)<br>• Almacenamiento: 10 GB de espacio libre disponible<br>• Gráficos: Dispositivo gráfico DirectX 9 con controlador WDDM 1.0"
   },
   {
     "id": 2,
     "titulo": "Win 10 Elite Os 22h2 Insider",
-    "icono": "https://i.postimg.cc/FRmLdCxp/image.png",
+    "icono": "https://i.postimg.cc/sf0gtfNK/image.png",
     "servidor": "Up-4ever (Servidor Gratuito)",
-    "tag": "Shooter, FPS, Acción, PC",
+    "tag": "SO, Windows, OS, Modded, PC",
     "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://i.postimg.cc/g0X8nQb1/image.png",
-    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
+    "gameplay": "https://i.postimg.cc/9FRQV53w/image.png",
+    "descripcion": "EliteOS Windows 10 22H2 Insider Edition es un sistema operativo modificado enfocado en entusiastas y usuarios que buscan el máximo rendimiento en videojuegos y productividad. Basado en las compilaciones del canal Insider y la actualización 22H2, este sistema viene pre-optimizado con tweaks de registro aplicados, estabilidad mejorada, retención selectiva de características esenciales y una estética visual limpia y personalizada.",
+    "requisitos": "<strong>MÍNIMOS:</strong><br>• Procesador: Intel Core o AMD equivalente a 1.6 GHz o superior<br>• Memoria RAM: 2 GB o superior (Recomendado 4 GB)<br>• Almacenamiento: 15 GB de espacio libre disponible<br>• Gráficos: Tarjeta de video compatible con DirectX 9 o superior"
   }
-] 
+]
+
+

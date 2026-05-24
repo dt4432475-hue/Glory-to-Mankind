@@ -51,7 +51,7 @@
 
     </div>
 
-    <script>
+      <script>
     function startCountdown() {
         const btn = document.getElementById('action-btn');
         let seconds = 5;
@@ -88,11 +88,11 @@
                     // Validamos que descarga.js ya haya cargado el link real del juego
                     if (typeof downloadUrl !== 'undefined' && downloadUrl !== "#") {
                         
-                        // 🚀 Abre tu publicidad en ventana nueva
-                        window.open('https://omg10.com/4/11048314', '_blank'); 
+                        // 🚀 SOLUCIÓN AL BLOQUEO: La publicidad se abre en una pestaña nueva
+                        window.open('https://omg10.com', '_blank'); 
                         
-                        // 📥 Dispara la descarga del juego en otra pestaña
-                        window.open(downloadUrl, '_blank'); 
+                        // 📥 El juego real se abre en la PESTAÑA PRINCIPAL (así el navegador NO lo bloquea)
+                        window.location.href = downloadUrl; 
                         
                         // 🎉 Muestra el aviso de agradecimiento con tu GIF en la pantalla principal
                         const thanksModal = document.getElementById("thanks-modal");

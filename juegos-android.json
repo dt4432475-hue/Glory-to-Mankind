@@ -112,7 +112,87 @@
   "gameplay": "https://i.postimg.cc/SQMp4DyN/image.png",
   "descripcion": "AetherSX2 es el aclamado emulador de la consola PlayStation 2 (PS2) para dispositivos Android de alta gama. Basado en el código de PCSX2, te permite revivir los mejores títulos en 3D de la mítica consola de Sony con un rendimiento y fidelidad gráfica asombrosos directamente en tu smartphone. Cuenta con soporte completo para pantallas táctiles, configuración avanzada de controles y escalado de resolución en alta definición.",
   "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 8.0 (Oreo) de 64 bits o superior<br>• Procesador: Snapdragon 845 o equivalente de gama media-alta (Recomendado con núcleos grandes)<br>• Memoria RAM: 4 GB o superior<br>• Gráficos: GPU compatible con Vulkan o OpenGL ES 3.0"
+},
+{
+  "id": 11,
+  "titulo": "CITRA",
+  "icono": "https://i.postimg.cc/T3DtNmw2/image.png",
+  "servidor": "GitHub / Archivos Comunitarios",
+  "tag": "Emulador, Nintendo 3DS, Herramientas, Android",
+  "url": "https://github.com/weihuoya/citra/releases/download/20251112/Citra_MMJ_20251112.apk",
+  "gameplay": "https://i.postimg.cc/RC2s7XSP/image.png",
+  "descripcion": "Citra es el aclamado emulador de código abierto de la consola portátil Nintendo 3DS para dispositivos Android. Permite revivir el catálogo completo en 3D de la portátil de Nintendo directamente en tu smartphone, ofreciendo escalado de resolución en alta definición, soporte completo para mandos físicos y personalización avanzada de la pantalla táctil dual.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 8.0 (Oreo) de 64 bits o superior<br>• Procesador: Snapdragon 835 / 845 o equivalente de gama media-alta<br>• Memoria RAM: 4 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 3.2 o Vulkan"
+},
+{
+  "id": 12,
+  "titulo": "J2ME Loader",
+  "icono": "https://i.postimg.cc/Hk8TSSXp/image.png",
+  "servidor": "GitHub / Google Play Store",
+  "tag": "Emulador, Java, J2ME, Retro, Android",
+  "url": "https://f-droid.org/repo/ru.playsoftware.j2meloader_101.apk",
+  "gameplay": "https://i.postimg.cc/NfScr1Ss/image.png",
+  "descripcion": "J2ME Loader es un excelente emulador de entornos Java (J2ME) para dispositivos Android. Te permite ejecutar la gran mayoría de juegos en 2D y 3D diseñados originalmente para los teléfonos móviles antiguos (archivos .JAR y .JAD), ofreciendo soporte para teclado virtual personalizable, escalado de pantalla y aceleración gráfica por hardware.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.0 (Ice Cream Sandwich) o superior<br>• Procesador: Cualquier procesador moderno (Bajo consumo de recursos)<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: Compatible con cualquier GPU estándar"
+},
+{
+  "id": 13,
+  "titulo": "Dolphin Emulator",
+  "icono": "https://i.postimg.cc/vZvD72s9/image.png",
+  "servidor": "GitHub / Sitio Oficial",
+  "tag": "Emulador, GameCube, Wii, Nintendo, Android",
+  "url": "https://dl.dolphin-emu.org/releases/2603a/dolphin-2603a.apk",
+  "gameplay": "https://i.postimg.cc/FKDmz24t/image.png",
+  "descripcion": "Dolphin Emulator es el aclamado emulador de código abierto para las consolas Nintendo GameCube y Wii en dispositivos Android. Permite revivir obras maestras en 3D con mejoras asombrosas que superan a las consolas originales, incluyendo escalado de resolución hasta 4K, guardado rápido de partidas, optimización de shaders y compatibilidad total con mandos bluetooth.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) de 64 bits o superior<br>• Procesador: Snapdragon 720G / 835 o equivalente (Se requiere CPU de 64 bits de forma obligatoria)<br>• Memoria RAM: 3 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 3.0 o Vulkan de última generación"
+},
+{
+  "id": 14,
+  "titulo": "DuckStation",
+  "icono": "https://i.postimg.cc/YCLbhgKX/image.png",
+  "servidor": "GitHub / Google Play Store",
+  "tag": "Emulador, PlayStation 1, PSX, Retro, Android",
+  "url": "https://archive.org/download/duck-station_20260524/DuckStation.apk",
+  "gameplay": "https://i.postimg.cc/PxyMBQYf/image.png",
+  "descripcion": "DuckStation es un espectacular emulador de la consola PlayStation 1 (PSX/PS1) enfocado en la jugabilidad, la velocidad y la máxima fidelidad gráfica a largo plazo. Te permite reescalar los juegos clásicos en 3D a resoluciones internas altísimas (HD y 4K) eliminando el clásico parpadeo de texturas, además de contar con guardado rápido, soporte para trucos y configuración avanzada de mandos físicos.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 7.0 (Nougat) de 64 bits o superior<br>• Procesador: CPU compatible con ARMv8 de 64 bits (Gama baja-media moderna lo corre al 100%)<br>• Memoria RAM: 2 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 3.1 o Vulkan"
+},
+{
+  "id": 15,
+  "titulo": "PPSSPP",
+  "icono": "https://i.postimg.cc/D0dmCxXH/image.png",
+  "servidor": "GitHub / Google Play Store",
+  "tag": "Emulador, PlayStation Portable, PSP, Retro, Android",
+  "url": "https://www.ppsspp.org/files/1_20_4/ppsspp.apk",
+  "gameplay": "https://i.postimg.cc/28k5kFWg/image.png",
+  "descripcion": "PPSSPP es el mejor y original emulador de la consola PlayStation Portable (PSP) para dispositivos Android. Te permite ejecutar el catálogo completo de la mítica portátil de Sony con un rendimiento extraordinario, permitiendo reescalar gráficos en alta definición, habilitar texturas personalizadas, guardar partidas en cualquier momento y configurar controles táctiles o mandos físicos externos.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: Cualquier CPU estándar de gama baja o media (Altamente optimizado)<br>• Memoria RAM: 2 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 2.0 o Vulkan para mejor rendimiento"
+},
+{
+  "id": 16,
+  "titulo": "Vita3K Android",
+  "icono": "https://i.postimg.cc/cJyyH0j8/image.png",
+  "servidor": "GitHub Oficial",
+  "tag": "Emulador, PlayStation Vita, PS Vita, Moderno, Android",
+  "url": "https://archive.org/download/android-latest_202605/android-latest.apk",
+  "gameplay": "https://i.postimg.cc/Z56sw37r/image.png",
+  "descripcion": "Vita3K es el primer y más avanzado emulador de la consola PlayStation Vita (PS Vita) para dispositivos Android. Este proyecto de código abierto permite ejecutar una gran cantidad de juegos comerciales y homebrew de la portátil de Sony con soporte para renderizado por Vulkan, mapeo de controles táctiles, giroscopio y escalado de resolución interna.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 7.0 (Nougat) de 64 bits o superior<br>• Procesador: Snapdragon 845 / 730G o equivalente (Se recomiendan procesadores con buen rendimiento gráfico)<br>• Memoria RAM: 4 GB o superior<br>• Gráficos: GPU compatible obligatoriamente con Vulkan 1.1 o superior"
+},
+{
+  "id": 17,
+  "titulo": "My Boy!",
+  "icono": "https://i.postimg.cc/jjpzmkDJ/image.png",
+  "servidor": "Google Play Store / Archivo Seguro",
+  "tag": "Emulador, Game Boy Advance, GBA, Retro, Android",
+  "url": "https://archive.org/download/my-boy-v-2.0.6_202605/My%20Boy%20v2.0.6%20-%20espacioapk.com.apk",
+  "gameplay": "https://i.postimg.cc/Gt79wHXD/image.png",
+  "descripcion": "My Boy! es un emulador súper rápido y completo para ejecutar juegos de Game Boy Advance en la más amplia gama de dispositivos Android, desde teléfonos de gama muy baja hasta tabletas modernas. Emula con precisión casi todos los aspectos del hardware real, ofreciendo soporte para cable link virtual (multijugador), códigos de trucos, guardado rápido y un excelente motor de renderizado de shaders.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.0 (Ice Cream Sandwich) o superior<br>• Procesador: Cualquier CPU monocúcleo o multinúcleo estándar (Bajísimo consumo)<br>• Memoria RAM: 512 MB o superior<br>• Gráficos: Compatible con cualquier GPU estándar o renderizado por software"
 }
+
+
+
 
 
 

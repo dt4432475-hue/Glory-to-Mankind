@@ -222,7 +222,7 @@ body {
 #hero-bg.hero-banner {
     position: relative;
     background: linear-gradient(135deg, rgba(13, 19, 33, 0.45) 0%, rgba(6, 9, 17, 0.65) 100%), 
-                url('img/1.jpg') no-repeat center 35% !important;
+                url('img/3.jpg') no-repeat center 27% !important;
     background-size: cover !important;
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-md);
@@ -239,14 +239,21 @@ body {
     font-weight: 800;
     margin-bottom: 0.5rem;
     line-height: 1.2;
+     color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text-side h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text-side p {
-    color: #94a3b8;
-    font-size: 0.95rem; /* Más compacto */
-    margin-bottom: 0; /* Eliminado el margen inferior */
-    line-height: 1.6;
+    color: #c7cbe2 !important; /* Forzamos el blanco puro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 8px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
+    font-weight: 350; /* 🎯 CORREGIDO: Le da el grosor ideal para que resalte */
 }
+
 
 /* Eliminamos el botón de capturas por completo */
 .btn-screenshots, #open-gallery-btn {
@@ -1152,4 +1159,16 @@ body {
     grid-row: 2 !important;
     width: 100% !important;
   }
+}
+/* Estilo base para que la transición de la luz se vea suave */
+.link-antivirus {
+    transition: all 0.3s ease;
+}
+
+/* 🎯 LA MAGIA DEL CURSOR: Aplica el brillo neón rojo al pasar el mouse */
+.link-antivirus:hover {
+    color: #ff4d4d !important; /* Aclara un toque el color rojo del texto */
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.9), 
+                 0 0 20px rgba(239, 68, 68, 0.4); /* Crea la luz difuminada */
+    transform: scale(1.02); /* Le da un micro-efecto de aumento facherito */
 }

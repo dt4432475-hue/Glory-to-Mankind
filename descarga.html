@@ -38,11 +38,16 @@
                 <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-file-lines"></i> Descripción</h3>
                 <p id="app-description" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando detalles...</p>
 
-                <!-- 🟡 AQUÍ ESTÁ TU CUADRITO DINÁMICO REPETIBLE -->
-                <div id="contenedor-seguridad" style="display: none; border-radius: 8px; padding: 15px; font-size: 0.9rem; margin-top: 25px; margin-bottom: 5px;">
-                    <p id="texto-seguridad" style="margin: 0; line-height: 1.5;"></p>
-                </div>
-            </div>
+                        <!-- 🟡 CUADRITO DINÁMICO CORREGIDO (Añadido el tag del enlace) -->
+        <!-- 🚀 CUADRITO DINÁMICO CENTRADO Y FACHERITO -->
+<div id="contenedor-seguridad" style="display: none; border-radius: 8px; padding: 15px; font-size: 0.9rem; margin-top: 25px; margin-bottom: 5px;">
+    <p id="texto-seguridad" style="margin: 0; line-height: 1.5; text-align: left;"></p>
+    <a id="antivirus-link" class="link-antivirus" href="#" style="display: none; font-weight: bold; text-decoration: underline; text-align: center; margin: 12px auto 0 auto;">[Ver Reporte / Antivirus]</a>
+
+</div>
+
+
+                    </div>
 
         </div>
 
@@ -106,7 +111,7 @@
     <div id="thanks-modal" class="modal-thanks-overlay" style="display: none;">
         <div class="modal-thanks-box">
             <h2>¡Gracias por <span>descargar</span> en nuestra página!</h2>
-            <img class="modal-thanks-gif" src="img/grax.gif" alt="Gracias">
+            <img class="modal-thanks-gif" src="img/grax2.gif" alt="Gracias">
             <button class="btn-back-home" onclick="window.location.href='index.html'">
                 <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
             </button>

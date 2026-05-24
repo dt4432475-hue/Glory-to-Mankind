@@ -127,7 +127,7 @@
 {
   "id": 12,
   "titulo": "J2ME Loader",
-  "icono": "https://i.postimg.cc/Hk8TSSXp/image.png",
+  "icono": "https://i.postimg.cc/jjTXjS6T/image.png",
   "servidor": "GitHub / Google Play Store",
   "tag": "Emulador, Java, J2ME, Retro, Android",
   "url": "https://f-droid.org/repo/ru.playsoftware.j2meloader_101.apk",
@@ -189,7 +189,43 @@
   "gameplay": "https://i.postimg.cc/Gt79wHXD/image.png",
   "descripcion": "My Boy! es un emulador súper rápido y completo para ejecutar juegos de Game Boy Advance en la más amplia gama de dispositivos Android, desde teléfonos de gama muy baja hasta tabletas modernas. Emula con precisión casi todos los aspectos del hardware real, ofreciendo soporte para cable link virtual (multijugador), códigos de trucos, guardado rápido y un excelente motor de renderizado de shaders.",
   "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.0 (Ice Cream Sandwich) o superior<br>• Procesador: Cualquier CPU monocúcleo o multinúcleo estándar (Bajísimo consumo)<br>• Memoria RAM: 512 MB o superior<br>• Gráficos: Compatible con cualquier GPU estándar o renderizado por software"
+},
+{
+  "id": 18,
+  "titulo": "Pizza Boy GBA",
+  "icono": "https://i.postimg.cc/zGxmC6xQ/image.png",
+  "servidor": "Google Play Store / Archivo Seguro",
+  "tag": "Emulador, Game Boy Advance, GBA, Pro, Android",
+  "url": "blob:https://github.com/8162c979-11e0-4ee8-a5ce-d8eafa178912",
+  "gameplay": "https://i.postimg.cc/c4cPWPGw/image.png",
+  "descripcion": "Pizza Boy GBA Pro es uno de los emuladores de Game Boy Advance más modernos, estéticos y precisos para Android. Destaca por su increíble interfaz personalizable que simula una consola real, sincronización de partidas en la nube, soporte para skins personalizadas, funciones de rebobinado en tiempo real, trucos y un rendimiento impecable a 60 FPS.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: CPU multinúcleo estándar de gama baja-media<br>• Memoria RAM: 1.5 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 3.0 para Shaders avanzados"
+},
+{
+  "id": 19,
+  "titulo": "MOBOX",
+  "icono": "https://i.postimg.cc/ZKT468Td/image.png",
+  "servidor": "GitHub Oficial",
+  "tag": "Emulador, Windows, Termux, PC, Android",
+  "url": "https://s-04.filesincloud.com/storage/18/875/444/875444/arm64_v8a-armeabi_v7a/128a079f2397ca69e36233cc8a95a1fd/MOBOX-1.6.2.apk?s=2jy3uUtxlasllrpSCgVgrg&e=1779688991&lang=es&apk_id=686893&premium_speed=0",
+  "gameplay": "https://i.postimg.cc/kgHCrLWw/image.png",
+  "descripcion": "MOBOX es un proyecto de emulación de alto rendimiento diseñado para ejecutar de manera avanzada juegos y aplicaciones de Windows (x86_64) en dispositivos Android. A diferencia de otros emuladores, se ejecuta dentro del entorno de Termux utilizando Box64 y Wine, logrando tasas de cuadros por segundo (FPS) increíblemente altas y una optimización brutal en procesadores Snapdragon.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 10.0 o superior (Se requiere instalar Termux y Termux:X11)<br>• Procesador: Snapdragon 845 o superior (Altamente recomendado chipsets con GPU Adreno para usar drivers Turnip)<br>• Memoria RAM: 4 GB o superior (Recomendado 8 GB para títulos AAA de PC)<br>• Gráficos: GPU compatible con Vulkan y soporte para emulación de API gráfica DXVK"
+},
+{
+  "id": 20,
+  "titulo": "RetroArch",
+  "icono": "https://i.postimg.cc/VNP7bRw1/image.png",
+  "servidor": "Libretro Buildbot / Sitio Oficial",
+  "tag": "Multi-Emulador, Arcade, Retro, Todo-en-Uno, Android",
+  "url": "https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk",
+  "gameplay": "https://i.postimg.cc/c48MMnXv/image.png",
+  "descripcion": "RetroArch es la suite de emulación de código abierto definitiva que funciona como un frontend modular para el ecosistema Libretro. En lugar de instalar aplicaciones individuales, te permite descargar 'núcleos' (cores) desde su propio menú para emular decenas de consolas clásicas como NES, SNES, Sega Genesis, PlayStation y Arcade, ofreciendo guardado en la nube, shaders retro avanzados y netplay para jugar multijugador online.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.1 (Jelly Bean) o superior<br>• Procesador: Cualquier CPU ARMv7 o ARMv8 estándar (Soporte nativo para 32 y 64 bits)<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 2.0, 3.0 o Vulkan para núcleos modernos"
 }
+
+
+
 
 
 

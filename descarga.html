@@ -53,55 +53,59 @@
 
     <script>
     function startCountdown() {
-        let tiempoRestante = 5; 
-        const btnElement = document.getElementById("action-btn");
-        
-        // Deshabilitamos el botón inmediatamente para que no le den doble clic continuo
-        if (btnElement) {
-            btnElement.disabled = true;
-            btnElement.style.opacity = "0.7";
-            btnElement.style.cursor = "not-allowed";
-            btnElement.innerHTML = `<i class="fa-solid fa-clock"></i> Espera <span id="countdown-number">${tiempoRestante}</span>s...`;
-        }
+        const btn = document.getElementById('action-btn');
+        let seconds = 5;
+
+        // Deshabilitamos el botón y pasamos al estado gris de espera (btn-waiting)
+        btn.disabled = true;
+        btn.className = "btn-action btn-waiting";
+        btn.innerHTML = `<i class="fa-solid fa-clock"></i> Espera <span id="countdown-number">${seconds}</span> segundos...`;
 
         const interval = setInterval(() => {
-            tiempoRestante--;
-            
-            const counterElement = document.getElementById("countdown-number");
-            if (counterElement) {
-                counterElement.innerText = tiempoRestante;
-            }
-            
-            if (tiempoRestante <= 0) {
+            seconds--;
+            if (seconds > 0) {
+                const counterElement = document.getElementById("countdown-number");
+                if (counterElement) {
+                    counterElement.innerText = seconds;
+                } else {
+                    btn.innerHTML = `<i class="fa-solid fa-clock"></i> Espera <span id="countdown-number">${seconds}</span> segundos...`;
+                }
+            } else {
                 clearInterval(interval);
                 
-                // 🚀 MONETIZACIÓN INSANA + DESCARGA SIMULTÁNEA AL FINALIZAR EL TIEMPO
-                window.open('https://omg10.com/4/11048314', '_blank');
+                // El tiempo terminó: quitamos el bloqueo y cambiamos al color azul brillante (btn-download)
+                btn.disabled = false;
+                btn.className = "btn-action btn-download";
+                btn.innerHTML = `<i class="fa-solid fa-circle-down"></i> DESCARGAR AHORA`;
                 
-                if (typeof downloadUrl !== 'undefined' && downloadUrl !== "#") {
-                    window.location.href = downloadUrl;
-                } else {
-                    console.log("Error: La variable 'downloadUrl' no está definida en descarga.js.");
-                }
+                // Quitamos el onclick inicial para evitar bucles si vuelven a pulsar rápido
+                btn.removeAttribute('onclick');
                 
-                // Rehabilitamos el botón transformándolo en el botón de descarga final
-                if (btnElement) {
-                    btnElement.disabled = false;
-                    btnElement.style.opacity = "1";
-                    btnElement.style.cursor = "pointer";
-                    btnElement.className = "btn-action btn-download"; // Cambia la clase si tienes estilos CSS para la descarga
-                    btnElement.innerHTML = `<i class="fa-solid fa-download"></i> DESCARGAR AHORA`;
-                    
-                    // Si vuelven a cliquear el botón por si la descarga no inició
-                    btnElement.onclick = () => {
-                        window.open('https://omg10.com/4/11048314', '_blank');
-                        if (typeof downloadUrl !== 'undefined') window.location.href = downloadUrl;
-                    };
-                }
+                // LA MAGIA: Espera obligatoriamente el clic del usuario en el botón azul
+                btn.onclick = (e) => { 
+                    e.preventDefault();
+
+                    // Validamos que descarga.js ya haya cargado el link real del juego
+                    if (typeof downloadUrl !== 'undefined' && downloadUrl !== "#") {
+                        
+                        // 🚀 Abre tu publicidad en ventana nueva
+                        window.open('https://omg10.com/4/11048314', '_blank'); 
+                        
+                        // 📥 Dispara la descarga del juego en otra pestaña
+                        window.open(downloadUrl, '_blank'); 
+                        
+                        // 🎉 Muestra el aviso de agradecimiento con tu GIF en la pantalla principal
+                        const thanksModal = document.getElementById("thanks-modal");
+                        if (thanksModal) {
+                            thanksModal.style.display = "flex";
+                        }
+                    } else {
+                        alert("El enlace aún no está listo. Por favor, espera un momento o recarga la página.");
+                    }
+                };
             }
         }, 1000);
     }
-    // NOTA: Se eliminó el DOMContentLoaded automático para evitar que se descargue solo al entrar.
     </script>
 
     <div id="thanks-modal" class="modal-thanks-overlay">

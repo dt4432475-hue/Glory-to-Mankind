@@ -3,17 +3,16 @@
   
   <!-- Página Principal -->
   <url>
-    <loc>https://glorytomankind.qzz.io/</loc>
+    <loc>https://qzz.io</loc>
     <lastmod>2026-05-24</lastmod>
     <priority>1.0</priority>
   </url>
 
-  <!-- Página de Descargas -->
+  <!-- Página Base de Descargas -->
   <url>
-    <loc>https://qzz.io</loc>
+    <loc>https://qzz.iodescarga.html</loc>
     <lastmod>2026-05-24</lastmod>
     <priority>0.8</priority>
   </url>
 
 </urlset>
-

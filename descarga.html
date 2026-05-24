@@ -42,6 +42,7 @@
             <strong>Importante:</strong> Todo archivo subido en esta pagina ha sido escaneado y verificado como 100% seguro por VIRUSTOTAL a EXCEPCION de POSIBLES FALSOS POSITIVOS que por ser software muy antiguo o tener posibles problemas de fabrica con los Sistemas Operativos suelen ser marcados como malware cuando estos son archivos legitimos y seguros.
         </div>
         
+        <!-- Contenedor del botón -->
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 30px 0; min-height: 80px;">
             <button id="action-btn" class="btn-action btn-generate" onclick="startCountdown()">
                 <i class="fa-solid fa-key"></i> Generar enlace de descarga
@@ -52,14 +53,21 @@
 
     <script>
     function startCountdown() {
-        let tiempoRestante = 5; // Segundos de espera estándar
-        const counterElement = document.getElementById("countdown-number");
-        const btnElement = document.getElementById("download-btn");
+        let tiempoRestante = 5; 
+        const btnElement = document.getElementById("action-btn");
         
+        // Deshabilitamos el botón inmediatamente para que no le den doble clic continuo
+        if (btnElement) {
+            btnElement.disabled = true;
+            btnElement.style.opacity = "0.7";
+            btnElement.style.cursor = "not-allowed";
+            btnElement.innerHTML = `<i class="fa-solid fa-clock"></i> Espera <span id="countdown-number">${tiempoRestante}</span>s...`;
+        }
+
         const interval = setInterval(() => {
             tiempoRestante--;
             
-            // Actualiza el texto del marcador si existe el elemento en el DOM
+            const counterElement = document.getElementById("countdown-number");
             if (counterElement) {
                 counterElement.innerText = tiempoRestante;
             }
@@ -67,31 +75,34 @@
             if (tiempoRestante <= 0) {
                 clearInterval(interval);
                 
-                // 🚀 MONETIZACIÓN INSANA: Abre tu Crazy tag (Direct Link) en pestaña nueva al terminar el tiempo
+                // 🚀 MONETIZACIÓN INSANA + DESCARGA SIMULTÁNEA AL FINALIZAR EL TIEMPO
                 window.open('https://omg10.com/4/11048314', '_blank');
                 
-                // Redirige automáticamente la pestaña principal de Glory to Mankind al servidor del juego
                 if (typeof downloadUrl !== 'undefined' && downloadUrl !== "#") {
                     window.location.href = downloadUrl;
                 } else {
-                    console.log("Error: La variable 'downloadUrl' no está definida o está vacía.");
+                    console.log("Error: La variable 'downloadUrl' no está definida en descarga.js.");
                 }
                 
-                // Modifica el estado del botón visual para dejarlo activo si el usuario quiere recargar
+                // Rehabilitamos el botón transformándolo en el botón de descarga final
                 if (btnElement) {
-                    btnElement.classList.remove("disabled");
-                    btnElement.innerText = "DESCARGAR AHORA";
+                    btnElement.disabled = false;
+                    btnElement.style.opacity = "1";
+                    btnElement.style.cursor = "pointer";
+                    btnElement.className = "btn-action btn-download"; // Cambia la clase si tienes estilos CSS para la descarga
+                    btnElement.innerHTML = `<i class="fa-solid fa-download"></i> DESCARGAR AHORA`;
+                    
+                    // Si vuelven a cliquear el botón por si la descarga no inició
+                    btnElement.onclick = () => {
+                        window.open('https://omg10.com/4/11048314', '_blank');
+                        if (typeof downloadUrl !== 'undefined') window.location.href = downloadUrl;
+                    };
                 }
             }
         }, 1000);
     }
-
-    // Ejecuta de forma automática el contador al cargar completamente la interfaz del archivo
-    document.addEventListener("DOMContentLoaded", () => {
-        startCountdown();
-    });
-</script>
-
+    // NOTA: Se eliminó el DOMContentLoaded automático para evitar que se descargue solo al entrar.
+    </script>
 
     <div id="thanks-modal" class="modal-thanks-overlay">
         <div class="modal-thanks-box">
@@ -103,8 +114,9 @@
         </div>
     </div>
 
+    <!-- Tus scripts externos al final -->
     <script src="descarga.js"></script>
-    <script async="async" data-cfasync="false" src="//://highrateprofit.com"></script>
+    <script async="async" data-cfasync="false" src="https://highrateprofit.com"></script>
 
 </body>
 </html>

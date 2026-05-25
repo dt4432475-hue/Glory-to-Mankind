@@ -66,12 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
            card.innerHTML = `
     <div class="card-link-wrapper" style="position: relative; display: block;">
         <a href="/descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}" style="text-decoration: none; color: inherit;">
-            <div class="card-image">
-                <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}">
+            <div class="card-image">           
+            <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}" loading="lazy">
+
             </div>
             <div class="card-content">
                 <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
-                <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
             </div>
             <div class="card-footer" style="padding: 0 15px 15px 15px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; z-index: 10;">
                 ${tagsHTML}

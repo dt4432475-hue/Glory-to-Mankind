@@ -55,9 +55,7 @@
   "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 10 (Requiere procesador y sistema operativo de 64 bits)<br>• Procesador: Compatibilidad con el conjunto de instrucciones SSE2<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: Tarjeta gráfica compatible con DirectX 10 (Shader Model 4.0)",
   "estadoSeguro": "seguro",
 "mensajeSeguridad": "<strong>Verificado:</strong> Este archivo es 100% seguro. Ha sido testeado detalladamente y está completamente libre de malware."
-
 },
-
 {
   "id": 5,
   "titulo": "Counter-Strike 1.6",
@@ -71,6 +69,9 @@
   "estadoSeguro": "advertencia",
 "mensajeSeguridad": "<strong>Verificado:</strong> Este archivo es 100% seguro. Ha sido testeado detalladamente y está completamente libre de malware."
 }
+
+
+
 
   
 

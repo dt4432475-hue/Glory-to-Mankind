@@ -38,7 +38,7 @@
   "gameplay": "https://i.postimg.cc/QMHpPBp8/image.png",
   "descripcion": "Warcraft III: Reign of Chaos es un aclamado videojuego de estrategia en tiempo real creado por Blizzard Entertainment. El juego te sumerge en el mundo de Azeroth, donde deberás comandar a cuatro poderosas facciones: los Humanos, los Orcos, los Muertos Vivientes y los Elfos Nocturnos en una épica campaña narrativa. Destaca por introducir héroes con mecánicas de rol (RPG), subida de niveles y un revolucionario motor gráfico en 3D para su época.",
   "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 98, ME, 2000 o XP<br>• Procesador: Intel Pentium II 400 MHz o AMD Athlon equivalente<br>• Memoria RAM: 128 MB o superior<br>• Gráficos: Tarjeta de video 3D de 8 MB compatible con DirectX 8.1",
-   "estadoSeguro": "seguro",
+  "estadoSeguro": "seguro",
   "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
 
 },

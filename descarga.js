@@ -24,12 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let jsonFile = "";
     if (tipoAporte === "juegos-pc") jsonFile = "juegos-pc.json";
-    else if (tipoAporte === "juegos-android") jsonFile = "juegos-android.json";
-    else if (tipoAporte === "apps") jsonFile = "apps.json";
-    else {
-        window.location.href = "index.html";
-        return;
-    }
+   else if ( tipoAporte === "juegos-android") jsonFile = "juegos-android.json";
+else if ( tipoAporte === "apps") jsonFile = "apps.json";
+else if ( tipoAporte === "isos") jsonFile = "isos.json"; // 🔥 ¡AÑADIMOS LA CONDICIÓN PARA LAS ISOS!
+else {
+    window. location. href = "index.html";
+    return;
+}
 
     fetch(jsonFile)
     .then(response => response.json())
@@ -40,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
             // Inyección usando tus IDs originales exactos
             document.getElementById("app-icon").src = aporte.icono;
             document.getElementById("app-title").textContent = aporte.titulo;
-            document.getElementById("app-server").innerHTML = `<strong>Servidor:</strong> ${aporte.servidor}`;
             document.getElementById("app-gameplay").src = aporte.gameplay;
            document.getElementById("app-description").innerHTML = sanitizarHTML(aporte.descripcion);
             document.getElementById("app-requirements").innerHTML = sanitizarHTML(aporte.requisitos);

@@ -66,7 +66,7 @@ if (estado === "seguro") {
     contenedorSeguridad.style.border = "1px solid #38bdf8";
     contenedorSeguridad.style.backgroundColor = "rgba(56, 189, 248, 0.08)";
     textoSeguridad.style.color = "#bae6fd";
-    textoSeguridad.textContent = "Verificado: Este archivo es seguro. Ha sido testeado detalladamente y está completamente libre de malware.";
+    textoSeguridad.innerHTML = aporte.mensajeSeguridad || "Verificado: Este archivo es seguro.";
     
     if (enlace) enlace.style.display = "none";
 } 
@@ -75,7 +75,8 @@ else {
     contenedorSeguridad.style.border = "1px solid #ef4444";
     contenedorSeguridad.style.backgroundColor = "rgba(239, 68, 68, 0.08)";
     textoSeguridad.style.color = "#fca5a5";
-    textoSeguridad.textContent = "Advertencia: Este archivo puede contener falsos positivos debido a parches o cracks.";
+    textoSeguridad.innerHTML = aporte.mensajeSeguridad || "Advertencia: Este archivo puede contener falsos positivos.";
+
     
     if (enlace) {
         // 🎯 LA CLAVE: Forzamos a que sea un bloque completo para que el margen automático funcione

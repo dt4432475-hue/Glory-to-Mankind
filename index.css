@@ -251,7 +251,7 @@ body {
 .hero-text-side p {
     color: #c7cbe2 !important; /* Forzamos el blanco puro */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 8px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
-    font-weight: 350; /* 🎯 CORREGIDO: Le da el grosor ideal para que resalte */
+    font-weight: 300; /* 🎯 CORREGIDO: Le da el grosor ideal para que resalte */
 }
 
 

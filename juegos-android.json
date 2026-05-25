@@ -222,7 +222,23 @@
   "gameplay": "https://i.postimg.cc/c48MMnXv/image.png",
   "descripcion": "RetroArch es la suite de emulación de código abierto definitiva que funciona como un frontend modular para el ecosistema Libretro. En lugar de instalar aplicaciones individuales, te permite descargar 'núcleos' (cores) desde su propio menú para emular decenas de consolas clásicas como NES, SNES, Sega Genesis, PlayStation y Arcade, ofreciendo guardado en la nube, shaders retro avanzados y netplay para jugar multijugador online.",
   "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 4.1 (Jelly Bean) o superior<br>• Procesador: Cualquier CPU ARMv7 o ARMv8 estándar (Soporte nativo para 32 y 64 bits)<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 2.0, 3.0 o Vulkan para núcleos modernos"
+},
+{
+
+  "id": 21,
+  "titulo": "Winlator",
+  "icono": "https://i.postimg.cc/rp99S1V0/image.png",
+  "servidor": "GitHub / Sitio Oficial",
+  "tag": "Emulador, Windows, PC, Juegos, Android",
+  "url": "https://archive.org/download/winlator-11.0_202605/Winlator_11.0.apk",
+  "gameplay": "https://i.postimg.cc/1thf52hX/image.png",
+  "descripcion": "Winlator es una aplicación para Android que te permite emular y ejecutar aplicaciones y videojuegos de Windows (x86 y x64) utilizando Wine y Box86/Box64. Ofrece una gestión avanzada de contenedores, configuración de controladores de pantalla y mapeo de controles en pantalla para disfrutar de juegos clásicos de PC directamente en tu dispositivo móvil.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Android 10 o superior<br>• Procesador: Qualcomm Snapdragon con GPU Adreno (Recomendado para mejor compatibilidad con Turnip)<br>• Memoria RAM: 4 GB o superior<br>• Almacenamiento: Espacio libre suficiente para los juegos de PC instalados.",
+   "estadoSeguro": "advertencia",
+  "mensajeSeguridad":"Advertencia 🎃:  Este archivo ha sido escaneado y se ha encotrado 7 detecciones de malware. El archivo es 100% oficial pero no es muy seguro su descarga. Recomendamos descargarlo con precaucion. 🐱‍👤",
+   "linkAntivirus":"https://www.virustotal.com/gui/file/bf2f46cc3a7af0468b25be422ee9f8519be285f9e5e32ceee0184c3f4a76a128"
 }
+
 
 
 

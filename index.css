@@ -222,7 +222,7 @@ body {
 #hero-bg.hero-banner {
     position: relative;
     background: linear-gradient(135deg, rgba(13, 19, 33, 0.45) 0%, rgba(6, 9, 17, 0.65) 100%), 
-                url('img/3.jpg') no-repeat center 27% !important;
+                url('img/1.jpg') no-repeat center 35% !important;
     background-size: cover !important;
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-md);
@@ -239,21 +239,14 @@ body {
     font-weight: 800;
     margin-bottom: 0.5rem;
     line-height: 1.2;
-     color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero-text-side h1 {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text-side p {
-    color: #c7cbe2 !important; /* Forzamos el blanco puro */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 8px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
-    font-weight: 300; /* 🎯 CORREGIDO: Le da el grosor ideal para que resalte */
+    color: #94a3b8;
+    font-size: 0.95rem; /* Más compacto */
+    margin-bottom: 0; /* Eliminado el margen inferior */
+    line-height: 1.6;
 }
-
 
 /* Eliminamos el botón de capturas por completo */
 .btn-screenshots, #open-gallery-btn {
@@ -467,10 +460,7 @@ body {
 }
 
 
-.card:hover .tag {
-    border-color: var(--accent) !important; /* El borde del tag se enciende */
-    box-shadow: 0 0 8px rgba(0, 255, 135, 0.4) !important; /* Aura brillante en cada tag */
-}
+
 
 .card:hover .card-image img {
     transform: scale(1.05); /* Zoom sutil y elegante de la portada */
@@ -478,25 +468,20 @@ body {
 
 
 .card-content {
-    padding: 10px 14px 4px 14px !important; 
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     flex-grow: 1;
-    margin-top: 10px !important; 
 }
 
 .card-content h3 {
     font-size: 1.15rem;
     font-weight: 600;
     color: var(--text-white);
-     margin: 0 0 8px 0; /* Añade un margen abajo para separar de los tags */
+    margin: 0;
     line-height: 1.4;
-    transition: color 0.3s ease, text-shadow 0.3s ease !important;
-    height:  2.5rem;
-    overflow: hidden;
 }
-
 
 .card-content .server {
     font-size: 0.85rem;
@@ -507,27 +492,19 @@ body {
 /* ==========================================================================
    EFECTO DE ILUMINACIÓN EN EL TÍTULO AL PASAR EL MOUSE (HOVER PREMIUM)
    ========================================================================== */
-.card:hover {
-    transform: translateY(-6px) !important;
-    border-color: var(--accent) !important;
-    box-shadow: 0 12px 24px rgba(0, 255, 135, 0.2) !important;
 
-}
-.card-content h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text-white);
-    margin: 0;
-    line-height: 1.4;
-    transition: color 0.25s ease, text-shadow 0.25s ease !important;
-    height: 3.2rem;
-    overflow: hidden;
-}
-
+/* Cuando el mouse pasa sobre la tarjeta, el título cambia a verde neón y brilla */
 .card:hover .card-content h3 {
-    color: var(--accent) !important; /* El título se vuelve verde neón */
-    text-shadow: 0 0 10px rgba(0, 255, 135, 0.6) !important; /* Brillo neón en las letras */
+    color: var(--accent) !important; /* Cambia el color del texto a tu verde neón oficial (#00ff87) */
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.6), 
+                 0 0 20px rgba(0, 255, 135, 0.3); /* Aura neón brillante alrededor de las letras */
 }
+
+/* Agregamos una transición suave al título original para que el brillo no sea brusco */
+.card-content h3 {
+    transition: color 0.25s ease, text-shadow 0.25s ease !important;
+}
+
 
 .card-footer {
     padding: 0 1.25rem 1.25rem 1.25rem !important;
@@ -540,7 +517,6 @@ body {
 .tag-clickable:hover {
     background-color: rgba(0, 255, 135, 0.2) !important;
     transform: scale(1.04);
-    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s
 }
 
 /* 🔮 CLASE DINÁMICA: Se activará sola cuando el usuario baje con el mouse */
@@ -1051,13 +1027,12 @@ body {
     overflow: hidden !important;
   }
 
+  /* Asegura que la foto real llene ese espacio perfectamente */
   .card-image img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Recorta los bordes sobrantes limpiamente */
-    display: block !important;
-    transition: transform 0.3s var(--transition-premium) !important; /* Suaviza el zoom */
-}
+    object-fit: cover !important; /* Recorta los bordes de la foto para que no se deforme */
+  }
 
   .card h3, .card .card-title {
     font-size: 0.9rem !important; /* Letra un poco más chica para que quepa bien el título */
@@ -1177,16 +1152,4 @@ body {
     grid-row: 2 !important;
     width: 100% !important;
   }
-}
-/* Estilo base para que la transición de la luz se vea suave */
-.link-antivirus {
-    transition: all 0.3s ease;
-}
-
-/* 🎯 LA MAGIA DEL CURSOR: Aplica el brillo neón rojo al pasar el mouse */
-.link-antivirus:hover {
-    color: #ff4d4d !important; /* Aclara un toque el color rojo del texto */
-    text-shadow: 0 0 10px rgba(239, 68, 68, 0.9), 
-                 0 0 20px rgba(239, 68, 68, 0.4); /* Crea la luz difuminada */
-    transform: scale(1.02); /* Le da un micro-efecto de aumento facherito */
 }

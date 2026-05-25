@@ -17,12 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("apps.json").then(res => res.json()).catch(() => []),
         fetch("isos.json").then(res => res.json()).catch(() => [])
     ])
-     .then(([resPc, resAndroid, resApps, resIsos]) => {
-    const pcList = Array.isArray(resPc) ? resPc : [];
-    const androidList = Array.isArray(resAndroid) ? resAndroid : [];
-    const appsList = Array.isArray(resApps) ? resApps : [];
-    const isosList = Array.isArray(resIsos) ? resIsos : [];
-
+    .then(([juegosPc, juegosAndroid, apps, isos]) => {
+        const pcList = Array.isArray(juegosPc) ? juegosPc : [];
+        const androidList = Array.isArray(juegosAndroid) ? juegosAndroid : [];
+        const appsList = Array.isArray(apps) ? apps : [];
+        const isosList = Array.isArray(isos) ? isos : [];
 
         pcList.forEach(item => item.categoria = "juegos-pc");
         androidList.forEach(item => item.categoria = "juegos-android");
@@ -63,23 +62,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-           card.innerHTML = `
-    <div class="card-link-wrapper" style="position: relative; display: block;">
-        <a href="/descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}" style="text-decoration: none; color: inherit;">
-            <div class="card-image">           
-            <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}" loading="lazy">
-
-            </div>
-            <div class="card-content">
-                <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
-            </div>
-            <div class="card-footer" style="padding: 0 15px 15px 15px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; z-index: 10;">
-                ${tagsHTML}
-            </div>
-        </a> <!-- 🚀 EL ENLACE AHORA CIERRA AQUÍ, ABRAZANDO AL FOOTER -->
-    </div>
-`;
-
+            card.innerHTML = `
+                <div class="card-link-wrapper" style="position: relative; display: block;">
+                    <a href="descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}" style="text-decoration: none; color: inherit;">
+                        <div class="card-image">
+                            <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}">
+                        </div>
+                        <div class="card-content">
+                            <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
+                            <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
+                        </div>
+                    </a>
+                    <div class="card-footer" style="padding: 0 15px 15px 15px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; z-index: 10;">
+                        ${tagsHTML}
+                    </div>
+                </div>
+            `;
             container.appendChild(card);
         });
 

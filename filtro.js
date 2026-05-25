@@ -68,10 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="card-image">
                             <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}">
                         </div>
-                        <div class="card-content">
-                            <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
-                            <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
-                        </div>
+
+        <div class="card-content">
+            <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
+            <div class="tags-container">
+                ${(aporte.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+        </div>
+
                     </a>
                     <div class="card-footer" style="padding: 0 15px 15px 15px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; z-index: 10;">
                         ${tagsHTML}

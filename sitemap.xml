@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Página Principal -->
+    <url>
+        <loc>https://glorytomankind.qzz.io/</loc>
+        <lastmod>2026-05-24</lastmod>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Página Base de Descargas -->
+    <url>
+        <loc>https://glorytomankind.qzz.io/descarga.html</loc>
+        <lastmod>2026-05-24</lastmod>
+        <priority>0.8</priority>
+    </url>

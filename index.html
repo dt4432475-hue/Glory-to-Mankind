@@ -4,68 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glory to Mankind</title>
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/yYLsFyws/image.png">
+    <link rel="icon" type="image/png" href="img/logo titulo y web.png">
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+    
+    <!-- Estilos y Fuentes -->
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <link href="https://googleapis.com" rel="stylesheet">
 </head>
-
 <body>
-    <header class="main-navbar">
-    <div class="nav-logo">
-    <img src="https://i.postimg.cc/yYLsFyws/image.png" alt="Logo" class="logo-img"> Glory to <span>Mankind</span>
-</div>
-        <div class="nav-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="search-input" class="search-input" placeholder="Buscar herramientas, juegos, etc">
-        </div>
-    
-<nav class="nav-menu">
-    <a href="#" class="filter-btn active" data-filter="todos"><i class="fa-solid fa-house"></i> Inicio</a>
-    <a href="#" class="filter-btn" data-filter="juegos-pc"><i class="fa-solid fa-desktop"></i> Juegos PC</a>
-    <a href="#" class="filter-btn" data-filter="juegos-android"><i class="fa-brands fa-android"></i> Juegos Android</a>
-    <a href="#" class="filter-btn" data-filter="apps"><i class="fa-solid fa-cubes"></i> Apps / Programas</a>
-    
-    <a href="#" class="filter-btn" data-filter="isos"><i class="fa-solid fa-compact-disc"></i> ISOs Windows</a>
-</nav>
-    </header>
 
     <div class="page-layout">
-<!-- BANNER PRINCIPAL CORREGIDO Y LIBERADO -->
-<section class="hero-banner" id="hero-bg">
-    <div class="hero-content-flex">
-        <div class="hero-text-side">
-            <span class="hero-badge"><i class="fa-solid fa-fire"></i> Actualizado hoy</span>
-            <h1>Glory to Mankind</h1>
-            <p>Accede de forma directa a los instaladores oficiales, modificaciones críticas de rendimiento y complementos globales. Apóyanos completando las descargas gratuitas para mantener los servidores activos.</p>
-        </div>
+        
+        <!-- PANEL LATERAL DE NAVEGACIÓN -->
+        <aside class="sidebar-navigation">
+            <div class="sidebar-logo">
+                <img src="img/logo titulo y web.png" alt="Logo" class="logo-img">
+                <span>Glory to <span>Mankind</span></span>
+            </div>
+            
+            <nav class="nav-menu-vertical">
+                <a href="#" class="filter-btn active" data-filter="inicio"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="#" class="filter-btn" data-filter="juegos-pc"><i class="fa-solid fa-desktop"></i> Juegos de PC</a>
+                <a href="#" class="filter-btn" data-filter="juegos-android"><i class="fa-brands fa-android"></i> Juegos de Android</a>
+                <a href="#" class="filter-btn" data-filter="apps-android"><i class="fa-solid fa-cubes"></i> Aplicaciones de Android</a>
+                <a href="#" class="filter-btn" data-filter="isos-optimizadores"><i class="fa-solid fa-compact-disc"></i> ISOs y Optimizadores</a>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="content-section">
+            
+            <!-- BARRA DE BÚSQUEDA SUPERIOR -->
+            <header class="top-search-bar">
+                <div class="nav-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" class="search-input" placeholder="Buscar herramientas, juegos, etc...">
+                </div>
+            </header>
+
+            <!-- HERO BANNER (Solo visible en Inicio) -->
+            <section class="hero-banner" id="hero-bg">
+                <div class="hero-overlay"></div>
+                <div class="hero-content-flex">
+                    <span class="badge-updated"><i class="fa-solid fa-fire"></i> DESTACADO DE LA SEMANA</span>
+                    <h1 class="hero-title">Glory to Mankind</h1>
+                    <p class="hero-description">
+                        La mejor comunidad de descargas de juegos y herramientas de PC y Android.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#" class="btn-primary" onclick="event.preventDefault(); document.querySelector('[data-filter=\'juegos-pc\']').click();"><i class="fa-solid fa-gamepad"></i> Explorar Catálogo</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LOS MÁS DESCARGADOS (Muestra el TOP 4 inteligente de todos los JSON) -->
+            <section class="top-downloads-section" id="top-downloads-section">
+                <div class="section-header-flex">
+                    <h2><i class="fa-solid fa-star"></i> Los Más Descargados</h2>
+                </div>
+                <!-- El JS inyectará aquí exactamente las 4 apps con más descargas -->
+                <div class="downloads-grid top-four-grid" id="top-downloads-container"></div>
+            </section>
+
+            <!-- CATÁLOGO PRINCIPAL HORIZONTAL (Oculto en Inicio por defecto) -->
+            <section class="catalog-wrapper hidden-section" id="main-catalog-section">
+                <div class="section-header-flex">
+                    <h2><i class="fa-solid fa-layer-group"></i> Todos los Aportes</h2>
+                    <div class="stats-counter">
+                        <span id="counted-items">0</span> aportes disponibles
+                    </div>
+                </div>
+                <!-- JS inyectará aquí las tarjetas en formato ancho cuando navegues o busques -->
+                <div class="downloads-grid" id="downloads-container"></div>
+            </section>
+
+            <!-- PIE DE PÁGINA DMCA -->
+            <footer class="main-footer">
+                <div class="footer-legal">
+                    <p>© 2026 Glory to Mankind Project. Distribución de software libre y seguro.</p>
+                    <p class="dmca-text">
+                        <strong>DMCA Disclaimer:</strong> Este sitio web actúa únicamente como un motor de búsqueda indexador de enlaces públicos. No alojamos ningún archivo ejecutable en nuestros servidores. Si algún enlace infringe sus derechos, contáctenos directamente para removerlo en menos de 24 horas.
+                    </p>
+                </div>
+            </footer>
+        </main>
     </div>
-</section>
-
-<main class="content-section">
-    <div class="section-header-flex">
-        <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Explorar Aportes</h2>
-        <div class="stats-counter">
-            <span id="counted-items">0</span> aportes disponibles
-        </div>
-    </div>
-
-    <div class="downloads-grid" id="downloads-container"></div>
-</main>
-
-    </div>
-
-    <footer class="main-footer">
-        <p>© 2026 Glory to Mankind Project. Diseñado de forma original para la distribución de software libre y seguro.</p>
-    </footer>
-
-<!-- BOTÓN REACIVADO CON ACCIÓN DE SUBIDA SUAVE -->
-<button id="scroll-top-btn" class="scroll-top-btn" title="Volver arriba" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
 
     <script src="filtro.js"></script>
 </body>

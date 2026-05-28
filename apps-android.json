@@ -1,0 +1,69 @@
+[
+   {
+  "id": 1,
+  "titulo": "InShot",
+  "icono": "https://i.postimg.cc/rwn5D2nt/image.png",
+  "tag": "App, Editor, Pro, Android",
+  "url": "https://archive.org/download/inshot.-apk-pro/INSHOT.APK_pro.rar",
+  "gameplay": "https://i.postimg.cc/BbZPNhtp/image.png",
+  "descripcion": "InShot es un potente y popular editor de video y fotos profesional diseñado especialmente para dispositivos móviles. Con una interfaz intuitiva, permite recortar, cortar y fusionar clips, añadir música, efectos de transición, textos y stickers dinámicos. Es una herramienta ideal para creadores de contenido que buscan editar videos de alta calidad y optimizar formatos directamente para redes sociales.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 6.0 (Marshmallow) o superior<br>• Procesador: Quad-Core a 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 150 MB de espacio libre inicial (más espacio según los proyectos de video)",
+  "estadoSeguro": "seguro",
+  "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
+},
+ {
+  "id": "2",
+  "titulo": "Dism++",
+  "icono": "https://i.postimg.cc/ZRpqgZnw/image.png",
+  "tag": "Herramientas, Optimizador, Sistema, PC",
+  "url": "https://archive.org/download/dismplusplus-10-1-1002-2/dismplusplus-10-1-1002-2.rar",
+  "gameplay": "https://i.postimg.cc/R0nC6979/image.png",
+  "descripcion": "Dism++ (Dismplusplus) es una potente herramienta de optimización y mantenimiento de código abierto para sistemas operativos Windows. Actúa como una interfaz gráfica avanzada para la utilidad DISM de Microsoft, permitiendo a los usuarios limpiar archivos basura profundos, gestionar el inicio del sistema, desinstalar aplicaciones rebeldes, realizar copias de seguridad de drivers y aplicar tweaks de rendimiento que aceleran la PC drásticamente.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 8, 10 o 11 (32 o 64 bits)<br>• Procesador: Intel o AMD a 1.0 GHz o superior<br>• Memoria RAM: 512 MB o superior<br>• Almacenamiento: 50 MB de espacio libre disponible para la aplicación",
+  "estadoSeguro": "seguro",
+  "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
+},
+{
+  "id": "3",
+  "titulo": "Wise Memory Optimizer",
+  "icono": "https://i.postimg.cc/C1xQPj4G/image.png", 
+  "tag": "Herramientas, Optimizador, Sistema, PC",
+  "url": "https://downloads.wisecleaner.com/soft/WMOSetup_4.2.4.132.exe",
+  "gameplay": "https://i.postimg.cc/fbJHYwWq/image.png",
+  "descripcion": "Wise Memory Optimizer le ayuda a liberar y optimizar la memoria física ocupada por algunas aplicaciones inútiles para mejorar el rendimiento de la PC.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 8, 10 o 11 (32 o 64 bits)",
+  "estadoSeguro": "seguro",
+  "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
+},
+{
+  "id": "4",
+  "titulo": "Wise Game Booster",
+  "icono": "https://i.postimg.cc/nhYxNGvH/image.png",
+  "tag": "Herramientas, Optimizador, Sistema, PC",
+  "url": "https://downloads.wisecleaner.com/soft/WGBSetup_1.5.7.81.exe",
+  "gameplay": "https://i.postimg.cc/PfgPjK84/image.png",
+  "descripcion": "Wise Game Booster ayuda a mejorar el rendimiento de la PC optimizando la configuración del sistema, cerrando aplicaciones innecesarias y enfocando todos los recursos en tus videojuegos.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 8, 10 o 11 (32 o 64 bits)",
+  "estadoSeguro": "seguro",
+  "mensajeSeguridad": "Verificado 🛡️: Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
+},
+{
+  "id": "5",
+  "titulo": "Wise Disk Cleaner",
+  "icono": "https://i.postimg.cc/hv1FNSdZ/image.png",
+  "tag": "Herramientas, Optimizador, Sistema, PC",
+  "url": "https://downloads.wisecleaner.com/soft/WDCFree_11.3.5.855.exe",
+  "gameplay": "https://i.postimg.cc/zGPss2y5/image.png",
+  "descripcion": "Wise Disk Cleaner es una herramienta que ayuda a limpiar el disco duro y optimizar la configuración del sistema para mejorar el rendimiento de la PC.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 8, 10 o 11 (32 o 64 bits)",
+  "estadoSeguro": "seguro",
+  "mensajeSeguridad": "Verificado 🛡️: Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
+}
+
+
+
+
+
+
+]
+

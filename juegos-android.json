@@ -2,11 +2,11 @@
     {
     "id": 1,
     "titulo": "Minecraft",
-    "icono": "https://i.postimg.cc/hv1MQ7mw/image.png",
+    "icono": "https://i.postimg.cc/7h6H111R/image-(6).webp",
     "servidor": "Internet Archive (Servidor Gratuito)",
     "tag": "Sandbox, Supervivencia, Construcción, Android",
     "url": "https://cdn5.ccpchost.com/minecraft-mod-menu-1.26.30.31.apk",
-    "gameplay": "https://i.postimg.cc/N0WtfLR3/image.png",
+    "gameplay": "https://i.postimg.cc/Ls8mFBwm/minecraft.webp",
     "descripcion": "Minecraft es el aclamado juego de mundo abierto donde puedes explorar mundos generados aleatoriamente y construir todo lo que puedas imaginar. En esta versión oficial para Android, disfruta de la experiencia completa de supervivencia o creatividad, recolecta recursos, fabrica herramientas, enfréntate a criaturas nocturnas y juega con amigos en cualquier lugar.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: Arquitectura ARMv7 o ARM64 (64 bits) equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 1 GB de espacio libre disponible"
     },
@@ -14,22 +14,22 @@
     {
     "id": 2,
     "titulo": "M64 Plus FZ",
-    "icono": "https://i.postimg.cc/kMsHTBB3/image.png",
-    "servidor": "Up-4forever (Servidor Gratuito)",
+    "icono": "https://i.postimg.cc/6QJCHqmH/image-(8).webp",
+    "servidor": "Internet Archive (Servidor Gratuito)",
     "tag": "Emulador, Nintendo 64, Herramientas, Pro, Android",
     "url": "https://www.up-4ever.net/2x1zfn54ulsi",
-    "gameplay": "https://i.postimg.cc/FRg65KpT/image.png",
+    "gameplay": "https://i.postimg.cc/zBfwhMMN/mupen64plus-fz-edition-7-(1).webp",
     "descripcion": "M64Plus FZ es un potente y completo emulador de Nintendo 64 para dispositivos Android basado en Mupen64Plus. Te permite revivir los grandes clásicos de la consola de 64 bits directamente en tu móvil o tablet, ofreciendo una alta compatibilidad con ROMs, excelentes opciones de personalización de controles táctiles o mandos físicos, y múltiples ajustes gráficos para mejorar la resolución original.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 5.0 (Lollipop) o superior<br>• Procesador: Quad-Core de 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: Espacio disponible según el tamaño de las ROMs externas"
     },
      {
     "id": 3,
     "titulo": "Monopoly",
-    "icono": "https://i.postimg.cc/MKhm5S03/image.png",
+    "icono": "https://i.postimg.cc/05MDqp1w/75a33a19fe7a380d17aa1f2eb977f54d.webp",
     "servidor": "Internet Archive (Servidor Gratuito)",
     "tag": "Estrategia, Tablero, Familiar, Multijugador, Android",
     "url": "https://archive.org/download/monopoly_202605/Monopoly.apk",
-    "gameplay": "https://i.postimg.cc/ZRgdqY0N/image.png",
+    "gameplay": "https://i.postimg.cc/wvPqVywV/7162237cce917c7d1a05349e24e03f6e.webp",
     "descripcion": "Monopoly es la adaptación oficial para dispositivos móviles del clásico juego de mesa de Hasbro. Compra, vende y planea tu estrategia para dominar el mercado inmobiliario desde tu teléfono o tablet. El juego incluye tableros interactivos animados en 3D, modos de juego rápidos y multijugador local o en línea para competir de forma segura con amigos y jugadores de todo el mundo.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 6.0 (Marshmallow) o superior<br>• Procesador: Quad-Core de 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 500 MB de espacio libre disponible"
     },
@@ -37,10 +37,11 @@
         {
     "id": 4,
     "titulo": "ePSXe",
-    "icono": "https://i.postimg.cc/z3mHCJmR/image.png",
+    "icono": "https://i.postimg.cc/ydW9xRgs/image-(10).webp",
     "servidor": "Internet Archive (Servidor Gratuito)",
     "tag": "Emulador, PlayStation, Herramientas, Pro, Android",
     "url": "https://archive.org/download/e-psxe-v-2.0.17_202605/ePSXe%20v2.0.17%20-%20espacioapk.com.apk",
+    "gameplay": "https://i.postimg.cc/wvPqVywV/7162237cce917c7d1a05349e24e03f6e.webp",
     "descripcion": "ePSXe para Android es un potente emulador de PlayStation (PSX y PSOne) diseñado específicamente para smartphones y tablets. Ofrece una altísima compatibilidad con el catálogo de juegos, excelente velocidad y un sonido preciso. Cuenta con soporte para controles táctiles en pantalla, mapeo de mandos físicos por hardware, modos de pantalla dividida para dos jugadores y mejoras gráficas mediante plugins OpenGL.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 2.3 (Gingerbread) o superior<br>• Procesador: ARMv7 o Cortex-A9 a 1.0 GHz o equivalente<br>• Memoria RAM: 512 MB o superior<br>• Almacenamiento: Espacio disponible según el tamaño de los juegos (ISOs/BIN)"
     },
@@ -48,11 +49,11 @@
     {
     "id": 5,
     "titulo": "Nethersx2",
-    "icono": "https://i.postimg.cc/GtFktBVb/image.png",
+    "icono": "https://i.postimg.cc/x1ckVzZF/image-(11).webp",
     "servidor": "Internet Archive (Servidor Gratuito)",
     "tag": "Emulador, PlayStation 2, Herramientas, Android",
     "url": "https://archive.org/download/nether-sx-2-v-2.2n-3668/NetherSX2-v2.2n-3668.apk",
-    "gameplay": "https://i.postimg.cc/B6sZsXTm/image.png",
+    "gameplay": "https://i.postimg.cc/xj5qk5D6/image-(12).webp",
     "descripcion": "NetherSX2 es una versión modificada y optimizada de AetherSX2, el aclamado emulador de PlayStation 2 para dispositivos Android. Esta versión comunitaria elimina anuncios, corrige problemas de interfaz, restablece la compatibilidad con shaders personalizados y mejora el rendimiento general en una amplia gama de procesadores móviles, permitiéndote disfrutar de los grandes clásicos de PS2 con una fluidez excelente.",
     "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 8.0 (Oreo) o superior (Recomendado 64-bit)<br>• Procesador: Snapdragon 845 / Cortex-A75 equivalente o superior<br>• Memoria RAM: 4 GB o superior<br>• Gráficos: GPU compatible con OpenGL ES 3.0 o Vulkan"
     },

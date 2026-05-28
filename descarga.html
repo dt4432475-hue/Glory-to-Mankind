@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descarga de Glory to Mankind</title>
-    <link rel="icon" type="image/png" href="img/logo titulo y web.png">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cloudflare.com">
     <script src="https://quge5.com/88/tag.min.js" data-zone="242439" async data-cfasync="false"></script>
@@ -18,8 +17,6 @@
             <div style="display: flex; flex-direction: column; justify-content: center;">
                 <h1 id="app-title" style="margin: 0; font-size: 1.8rem; color: #fff; line-height: 1.2;">Cargando aporte...</h1>
                 <p id="app-server" style="margin: 6px 0 0 0; color: #64748b; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"></p>
-                <!-- Tag oculto para que el JS no de error -->
-                <p id="app-tag" style="display: none;"></p>
             </div>
         </div>
 
@@ -31,21 +28,21 @@
             
             <div class="box-requisitos" style="background-color: rgba(255,255,255,0.01); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.02);">
                 <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-cpu"></i> Requisitos del Sistema</h3>
-                <p id="app-requirements" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando requisitos...</p>
+                <p id="app-requirements" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando requisitos mínimos y recomendados...</p>
             </div>
 
             <div class="box-descripcion" style="background-color: rgba(255,255,255,0.01); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.02);">
                 <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-file-lines"></i> Descripción</h3>
-                <p id="app-description" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando detalles...</p>
-
-                <!-- 🟡 AQUÍ ESTÁ TU CUADRITO DINÁMICO REPETIBLE -->
-                <div id="contenedor-seguridad" style="display: none; border-radius: 8px; padding: 15px; font-size: 0.9rem; margin-top: 25px; margin-bottom: 5px;">
-                    <p id="texto-seguridad" style="margin: 0; line-height: 1.5;"></p>
-                </div>
+                <p id="app-description" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando detalles e instrucciones del archivo...</p>
             </div>
 
         </div>
 
+        <div style="background: rgba(234, 179, 8, 0.1); border: 1px solid #eab308; padding: 15px; border-radius: 8px; color: #facc15; font-size: 0.9rem; margin-top: 25px; margin-bottom: 25px;">
+            <strong>Importante:</strong> Todo archivo subido en esta pagina ha sido escaneado y verificado como 100% seguro por VIRUSTOTAL a EXCEPCION de POSIBLES FALSOS POSITIVOS que por ser software muy antiguo o tener posibles problemas de fabrica con los Sistemas Operativos suelen ser marcados como malware cuando estos son archivos legitimos y seguros.
+        </div>
+        
+        <!-- Contenedor del botón -->
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 30px 0; min-height: 80px;">
             <button id="action-btn" class="btn-action btn-generate" onclick="startCountdown()">
                 <i class="fa-solid fa-key"></i> Generar enlace de descarga
@@ -54,12 +51,12 @@
 
     </div>
 
-    <!-- ⏳ AQUÍ ES DONDE EDITAS LOS SEGUNDOS Y TUS ANUNCIOS COMO ANTES -->
-    <script>
+      <script>
     function startCountdown() {
         const btn = document.getElementById('action-btn');
-        let seconds = 5; // 👈 EDITABLE: Cambia este número por los segundos que quieras
+        let seconds = 5;
 
+        // Deshabilitamos el botón y pasamos al estado gris de espera (btn-waiting)
         btn.disabled = true;
         btn.className = "btn-action btn-waiting";
         btn.innerHTML = `<i class="fa-solid fa-clock"></i> Espera <span id="countdown-number">${seconds}</span> segundos...`;
@@ -76,26 +73,34 @@
             } else {
                 clearInterval(interval);
                 
+                // El tiempo terminó: quitamos el bloqueo y cambiamos al color azul brillante (btn-download)
                 btn.disabled = false;
-                btn.className = "btn-action btn-download"; // Se vuelve azul descargar ahora
+                btn.className = "btn-action btn-download";
                 btn.innerHTML = `<i class="fa-solid fa-circle-down"></i> DESCARGAR AHORA`;
                 
+                // Quitamos el onclick inicial para evitar bucles si vuelven a pulsar rápido
                 btn.removeAttribute('onclick');
                 
+                // LA MAGIA: Espera obligatoriamente el clic del usuario en el botón azul
                 btn.onclick = (e) => { 
                     e.preventDefault();
 
+                    // Validamos que descarga.js ya haya cargado el link real del juego
                     if (typeof downloadUrl !== 'undefined' && downloadUrl !== "#") {
-                        // 🚀 TUS ANUNCIOS
+                        
+                        // 🚀 SOLUCIÓN AL BLOQUEO: La publicidad se abre en una pestaña nueva
                         window.open('https://omg10.com', '_blank'); 
                         
-                        // 📥 ENLACE DEL JUEGO
+                        // 📥 El juego real se abre en la PESTAÑA PRINCIPAL (así el navegador NO lo bloquea)
                         window.location.href = downloadUrl; 
                         
+                        // 🎉 Muestra el aviso de agradecimiento con tu GIF en la pantalla principal
                         const thanksModal = document.getElementById("thanks-modal");
-                        if (thanksModal) thanksModal.style.display = "flex";
+                        if (thanksModal) {
+                            thanksModal.style.display = "flex";
+                        }
                     } else {
-                        alert("El enlace aún no está listo.");
+                        alert("El enlace aún no está listo. Por favor, espera un momento o recarga la página.");
                     }
                 };
             }
@@ -103,16 +108,17 @@
     }
     </script>
 
-    <div id="thanks-modal" class="modal-thanks-overlay" style="display: none;">
+    <div id="thanks-modal" class="modal-thanks-overlay">
         <div class="modal-thanks-box">
             <h2>¡Gracias por <span>descargar</span> en nuestra página!</h2>
-            <img class="modal-thanks-gif" src="img/grax.gif" alt="Gracias">
+            <img class="modal-thanks-gif" src="https://i.postimg.cc/qR5j1N89/sear.gif" alt="Gracias">
             <button class="btn-back-home" onclick="window.location.href='index.html'">
                 <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
             </button>
         </div>
     </div>
 
+    <!-- Tus scripts externos al final -->
     <script src="descarga.js"></script>
     <script async="async" data-cfasync="false" src="https://highrateprofit.com"></script>
 

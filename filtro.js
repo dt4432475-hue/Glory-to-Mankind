@@ -1,175 +1,167 @@
-const searchInput = document.getElementById('search-input');
-const heroBanner = document.getElementById('hero-bg');
-const topDownloadsSection = document.getElementById('top-downloads-section');
-const mainCatalogSection = document.getElementById('main-catalog-section');
-const mainCatalogTitle = document.querySelector('.catalog-wrapper h2');
-const countedItems = document.getElementById('counted-items');
-const downloadsContainer = document.getElementById('downloads-container');
-const topDownloadsContainer = document.getElementById('top-downloads-container');
-const filterButtons = document.querySelectorAll('.filter-btn');
-
-let todosLosAportes = [];
-let cacheTodosLosArchivos = []; 
-
-const jsonFiles = {
-    'juegos-pc': 'juegos-pc.json',
-    'juegos-android': 'juegos-android.json',
-    'apps-android': 'apps-android.json',
-    'isos-optimizadores': 'isos-optimizadores.json'
-};
-
-// 🛠️ DICCIONARIO DE ICONOS REVISADO CON FORMATO FontAwesome CORRECTO
-const stickersSecciones = {
-    'juegos-pc': '<span class="card-icon-circle"><i class="fa-solid fa-desktop"></i></span>',
-    'juegos-android': '<span class="card-icon-circle"><i class="fa-brands fa-android"></i></span>',
-    'apps-android': '<span class="card-icon-circle"><i class="fa-solid fa-cubes"></i></span>',
-    'isos-optimizadores': '<span class="card-icon-circle"><i class="fa-solid fa-compact-disc"></i></span>'
-};
-
-// FUNCIÓN MAESTRA CON ICONOS DENTRO DEL CÍRCULO
-function crearTarjetaAnchaEstandar(item, categoria) {
-    const descripcion = item.descripcion || "Explora este aporte de forma directa y completamente analizada por seguridad.";
-    const servidor = item.servidor || "Servidor Externo";
-    const clicks = item.descargas !== undefined ? item.descargas : 0;
-    const juegoId = encodeURIComponent(item.titulo.trim());
-
-    // Obtener el círculo con su respectivo icono según la procedencia
-    const circuloIcono = stickersSecciones[categoria] || '<span class="card-icon-circle"><i class="fa-solid fa-gamepad"></i></span>';
-
-    return `
-        <div class="download-card" onclick="window.location.href='descarga.html?categoria=${categoria}&id=${juegoId}'" style="cursor:pointer;">
-            <div class="card-info">
-                <div class="card-title-container">
-                    ${circuloIcono}
-                    <h3>${item.titulo}</h3>
-                </div>
-                <p class="card-description">${descripcion}</p>
-                <div class="card-details-row">
-                    <span class="detail-item"><i class="fa-solid fa-server"></i> Servidor: <span class="highlight">${servidor}</span></span>
-                    <span class="detail-item"><i class="fa-solid fa-circle-down"></i> <span class="highlight">${clicks}</span> descargas</span>
-                </div>
-            </div>
-            <img src="${item.imagen}" alt="${item.titulo}">
-        </div>
-    `;
-}
-
-async function inicializarSistemaGlobal() {
-    cacheTodosLosArchivos = [];
-    if (topDownloadsContainer) topDownloadsContainer.innerHTML = '';
-
-    for (const [key, value] of Object.entries(jsonFiles)) {
-        try {
-            const response = await fetch(value);
-            const datos = await response.json();
-            
-            datos.forEach(item => {
-                item.categoriaOrigen = key;
-                if (item.descargas === undefined) item.descargas = 0; 
-                cacheTodosLosArchivos.push(item);
-            });
-        } catch (e) {
-            console.error("Error cargando base de datos: " + value, e);
-        }
-    }
-
-    const catalogoOrdenado = [...cacheTodosLosArchivos].sort((a, b) => b.descargas - a.descargas);
-    const topCuatro = catalogoOrdenado.slice(0, 4);
-
-    if (topDownloadsContainer) {
-        if (topCuatro.length === 0) {
-            topDownloadsContainer.innerHTML = "<p style='color: var(--text-muted); text-align: center; width: 100%; padding: 2rem 0;'>No se registran aportes en la base de datos.</p>";
-        } else {
-            topCuatro.forEach(item => {
-                topDownloadsContainer.innerHTML += crearTarjetaAnchaEstandar(item, item.categoriaOrigen);
-            });
-        }
-    }
-}
-
-async function cambiarSeccion(categoria) {
-    if (categoria === 'inicio') {
-        if (heroBanner) heroBanner.classList.remove('hidden-section');
-        if (topDownloadsSection) topDownloadsSection.classList.remove('hidden-section');
-        if (mainCatalogSection) mainCatalogSection.classList.add('hidden-section');
-        downloadsContainer.innerHTML = '';
-        countedItems.textContent = "0";
-        return;
-    }
-
-    if (heroBanner) heroBanner.classList.add('hidden-section');
-    if (topDownloadsSection) topDownloadsSection.classList.add('hidden-section');
-    if (mainCatalogSection) mainCatalogSection.classList.remove('hidden-section');
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("search-input");
+    const container = document.getElementById("downloads-container"); 
+    const counter = document.getElementById("counted-items"); 
+    const filterButtons = document.querySelectorAll(".filter-btn");
     
-    const nombreFiltro = document.querySelector(`[data-filter="${categoria}"]`).textContent.trim();
-    mainCatalogTitle.innerHTML = `<i class="fa-solid fa-folder-open"></i> Aportes Disponibles: ${nombreFiltro}`;
+    // CAPTURAMOS EL BANNER PRINCIPAL PARA CONTROLARLO
+    const heroBanner = document.querySelector(".hero-banner");
 
-    const archivoJson = jsonFiles[categoria];
-    try {
-        const response = await fetch(archivoJson);
-        const datos = await response.json();
-        todosLosAportes = datos;
+    let allItems = [];
+    let currentCategory = "todos";
 
-        countedItems.textContent = datos.length;
-        downloadsContainer.innerHTML = '';
+    // 1. Cargar datos de múltiples archivos JSON de forma simultánea
+    Promise.all([
+        fetch("juegos-pc.json").then(res => res.json()).catch(() => []),
+        fetch("juegos-android.json").then(res => res.json()).catch(() => []),
+        fetch("apps.json").then(res => res.json()).catch(() => []),
+        fetch("isos.json").then(res => res.json()).catch(() => [])
+    ])
+    .then(([juegosPc, juegosAndroid, apps, isos]) => {
+        const pcList = Array.isArray(juegosPc) ? juegosPc : [];
+        const androidList = Array.isArray(juegosAndroid) ? juegosAndroid : [];
+        const appsList = Array.isArray(apps) ? apps : [];
+        const isosList = Array.isArray(isos) ? isos : [];
 
-        if (datos.length === 0) {
-            downloadsContainer.innerHTML = "<p style='color: var(--text-muted); padding: 1rem 0;'>No hay aportes disponibles en este momento.</p>";
+        pcList.forEach(item => item.categoria = "juegos-pc");
+        androidList.forEach(item => item.categoria = "juegos-android");
+        appsList.forEach(item => item.categoria = "apps");
+        isosList.forEach(item => item.categoria = "isos");
+
+        allItems = [...pcList, ...androidList, ...appsList, ...isosList];
+
+        renderCards(allItems);
+        updateCounter(allItems.length);
+    })
+    .catch(error => console.error("Error al cargar datos:", error));
+
+    // 2. Función para renderizar las tarjetas con solo palabras clave interactivas
+    function renderCards(items) {
+        if (!container) return; 
+        container.innerHTML = "";
+
+        if (items.length === 0) {
+            container.innerHTML = `<p class="no-results" style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 40px 0;">No se encontraron aportes.</p>`;
             return;
         }
 
-        datos.forEach(item => {
-            downloadsContainer.innerHTML += crearTarjetaAnchaEstandar(item, categoria);
+        items.forEach(aporte => {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            let tagsHTML = "";
+            const tagsString = aporte.tag || aporte.tags || "General";
+            const tagsArray = tagsString.split(",").map(t => t.trim());
+
+            tagsArray.forEach(tag => {
+                if (!tag.toLowerCase().includes("gb") && !tag.toLowerCase().includes("mb") && isNaN(tag)) {
+                    tagsHTML += `
+                        <span class="tag tag-clickable" data-tag="${tag}" style="cursor: pointer; background: rgba(0, 255, 135, 0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; color: #00ff87; border: 1px solid rgba(0, 255, 135, 0.2); transition: all 0.2s;">
+                            ${tag}
+                        </span>`;
+                }
+            });
+
+            card.innerHTML = `
+                <div class="card-link-wrapper" style="position: relative; display: block;">
+                    <a href="descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}" style="text-decoration: none; color: inherit;">
+                        <div class="card-image">
+                            <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}">
+                        </div>
+                        <div class="card-content">
+                            <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
+                            <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
+                        </div>
+                    </a>
+                    <div class="card-footer" style="padding: 0 15px 15px 15px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; z-index: 10;">
+                        ${tagsHTML}
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
         });
-    } catch (error) {
-        downloadsContainer.innerHTML = "<p style='color: var(--text-muted); padding: 1rem 0;'>Error crítico al conectar las tarjetas.</p>";
+
+        document.querySelectorAll(".tag-clickable").forEach(tagSpan => {
+            tagSpan.addEventListener("click", (e) => {
+                e.preventDefault();
+                const selectedTag = e.target.getAttribute("data-tag");
+                if (searchInput) {
+                    searchInput.value = selectedTag;
+                    filterItems(); 
+                }
+            });
+        });
     }
-}
 
-searchInput.addEventListener('input', (e) => {
-    const valor = e.target.value.toLowerCase().trim();
+    function updateCounter(count) {
+        if (counter) counter.innerText = count;
+    }
+ function manageBannerVisibility(query) {
+        if (!heroBanner) return;
 
-    if (valor !== '') {
-        if (heroBanner) heroBanner.classList.add('hidden-section');
-        if (topDownloadsSection) topDownloadsSection.classList.add('hidden-section');
-        if (mainCatalogSection) mainCatalogSection.classList.remove('hidden-section');
-        
-        mainCatalogTitle.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> Resultados de búsqueda global`;
-
-        const filtrados = cacheTodosLosArchivos.filter(item => 
-            item.titulo.toLowerCase().includes(valor) ||
-            (item.descripcion && item.descripcion.toLowerCase().includes(valor))
-        );
-
-        countedItems.textContent = filtrados.length;
-        downloadsContainer.innerHTML = '';
-
-        if (filtrados.length === 0) {
-            downloadsContainer.innerHTML = "<p style='color: var(--text-muted); padding: 1rem 0;'>No se encontraron coincidencias.</p>";
-            return;
+        if (query.length > 0 || currentCategory !== "todos") {
+            heroBanner.style.opacity = "0";
+            heroBanner.style.transform = "translateY(-10px)";
+            // Espera un instante a que termine la animación de CSS antes de ocultarlo por completo
+            setTimeout(() => {
+                if(searchInput.value.trim().length > 0 || currentCategory !== "todos") {
+                    heroBanner.style.display = "none";
+                }
+            }, 300);
+        } else {
+            heroBanner.style.display = "block";
+            // Forzar un reflujo en el navegador para activar la animación de entrada
+            setTimeout(() => {
+                heroBanner.style.opacity = "1";
+                heroBanner.style.transform = "translateY(0)";
+            }, 10);
         }
-
-        filtrados.forEach(item => {
-            downloadsContainer.innerHTML += crearTarjetaAnchaEstandar(item, item.categoriaOrigen);
-        });
-    } else {
-        const botonActivo = document.querySelector('.filter-btn.active');
-        cambiarSeccion(botonActivo.getAttribute('data-filter'));
     }
-});
 
-filterButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        searchInput.value = ''; 
-        cambiarSeccion(button.getAttribute('data-filter'));
+    function filterItems() {
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+        // Controlamos el banner antes de filtrar
+        manageBannerVisibility(query);
+
+        const filtered = allItems.filter(item => {
+            const matchesCategory = (currentCategory === "todos" || item.categoria === currentCategory);
+            
+            const title = (item.titulo || item.name || "").toLowerCase();
+            const tag = (item.tag || item.tags || "").toLowerCase();
+            const server = (item.servidor || "").toLowerCase();
+            
+            const matchesSearch = title.includes(query) || tag.includes(query) || server.includes(query);
+
+            return matchesCategory && matchesSearch;
+        });
+
+        renderCards(filtered);
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener("input", filterItems);
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+            
+            currentCategory = button.getAttribute("data-filter");
+            filterItems(); // Ejecuta el filtro completo y analiza el banner
+        });
     });
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    inicializarSistemaGlobal().then(() => {
-        cambiarSeccion('inicio');
+    // 📌 CONTROLADOR SENSOR DE SCROLL PARA HACER LA NAVBAR TRANSPARENTE
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".main-navbar");
+        if (navbar) {
+            if (window.scrollY > 20) {
+                navbar.classList.add("scrolled"); // Activa el cristal transparente si bajó más de 20px
+            } else {
+                navbar.classList.remove("scrolled"); // Vuelve a sólido si regresó arriba del todo
+            }
+        }
     });
-});

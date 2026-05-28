@@ -1,15 +1,28 @@
 [
    {
-    "id": 1,
-    "titulo": "InShot",
-    "icono": "https://i.postimg.cc/sXqrdDYj/image.png",
-    "servidor": "Up-4ever (Servidor Gratuito)",
-    "tag": "Shooter, FPS, Acción, PC",
-    "url": "https://enlace-de-descarga-real-aqui.com",
-    "gameplay": "https://postimg.cc",
-    "descripcion": "Celebra los 25 años del shooter más revolucionario de la historia. Esta edición incluye el juego base completamente actualizado, mapas clásicos restaurados, compatibilidad con pantallas modernas y mejoras críticas de rendimiento directamente integradas.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 7 o superior<br>• Procesador: 800 MHz<br>• Memoria RAM: 512 MB<br>• Gráficos: Tarjeta de 32 MB"
-  }
+  "id": 1,
+  "titulo": "InShot",
+  "icono": "https://i.postimg.cc/rwn5D2nt/image.png",
+  "servidor": "Internet Archive (Servidor Gratuito)",
+  "tag": "App, Editor, Pro, Android",
+  "url": "https://archive.org/download/inshot.-apk-pro/INSHOT.APK_pro.rar",
+  "gameplay": "https://i.postimg.cc/BbZPNhtp/image.png",
+  "descripcion": "InShot es un potente y popular editor de video y fotos profesional diseñado especialmente para dispositivos móviles. Con una interfaz intuitiva, permite recortar, cortar y fusionar clips, añadir música, efectos de transición, textos y stickers dinámicos. Es una herramienta ideal para creadores de contenido que buscan editar videos de alta calidad y optimizar formatos directamente para redes sociales.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 6.0 (Marshmallow) o superior<br>• Procesador: Quad-Core a 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 150 MB de espacio libre inicial (más espacio según los proyectos de video)"
+},
+ {
+  "id": "2",
+  "titulo": "Dism++",
+  "icono": "https://i.postimg.cc/ZRpqgZnw/image.png",
+  "servidor": "Internet Archive (Servidor Gratuito)",
+  "tag": "Herramientas, Optimizador, Sistema, PC",
+  "url": "https://archive.org/download/dismplusplus-10-1-1002-2/dismplusplus-10-1-1002-2.rar",
+  "gameplay": "https://i.postimg.cc/R0nC6979/image.png",
+  "descripcion": "Dism++ (Dismplusplus) es una potente herramienta de optimización y mantenimiento de código abierto para sistemas operativos Windows. Actúa como una interfaz gráfica avanzada para la utilidad DISM de Microsoft, permitiendo a los usuarios limpiar archivos basura profundos, gestionar el inicio del sistema, desinstalar aplicaciones rebeldes, realizar copias de seguridad de drivers y aplicar tweaks de rendimiento que aceleran la PC drásticamente.",
+  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 8, 10 o 11 (32 o 64 bits)<br>• Procesador: Intel o AMD a 1.0 GHz o superior<br>• Memoria RAM: 512 MB o superior<br>• Almacenamiento: 50 MB de espacio libre disponible para la aplicación"
+}
+
+
 
 ]
 

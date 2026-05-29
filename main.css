@@ -1,18 +1,37 @@
-@font-face {
-    font-family: 'InterGamer';
-    src: url('inter-latin-400-normal.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+/* 1. Importamos la fuente Inter con un rango completo de pesos (desde 400 hasta 700) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. Forzamos la tipografía Inter y le devolvemos su grosor original semi-robusto */
+html, body, div:not(.fa-solid):not(.fa-regular):not(.fa-brands), span, h1, h2, h3, h4, h5, h6, p, a, button, input, section, article {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 500 !important; /* 👈 Esto le devuelve el cuerpo compacto a las letras normales */
+    -webkit-font-smoothing: antialiased; /* Suavizado pro para pantallas de celular */
 }
 
-body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, div:not(.fa-solid):not(.fa-regular):not(.fa-brands) {
-    font-family: 'InterGamer', sans-serif !important;
+/* 3. Nos aseguramos de que los títulos mantengan su grosor fuerte e imponente */
+h1, h2, h3, strong {
+    font-weight: 700 !important;
 }
 
-.fa-solid, .fa-regular, .fa-brands, .fa, .fas, .fab {
+/* 4. Escudo protector de acero para Font Awesome (¡Tus iconos sanos y salvos!) */
+.fa-solid, .fa-regular, .fa-brands, .fa, .fas, .fab, i {
     font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
-    font-weight: 900 !important; /* Crítico para que carguen bien */
+    font-weight: 900 !important;
+}
+
+/* 4. Tus variables raíz intactas (Línea 18 en tu captura anterior) */
+:root {
+    --bg-main: #0a0e17;
+    --bg-card: #111726;
+    --bg-deep: #060911;
+    --accent: #00ff87;
+    --accent-blue: #0066ff;
+    --text-white: #ffffff;
+    --text-muted: #64748b;
+    --radius-md: 10px;
+    --radius-sm: 6px;
+    --transition-premium: cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :root {

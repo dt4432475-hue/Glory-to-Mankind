@@ -382,10 +382,10 @@ body {
 }
 
 .card-image img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; 
-  display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
 }
 
 .card:hover .card-image img {

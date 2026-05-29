@@ -70,16 +70,15 @@ body {
     background-color: var(--bg-deep);
 }
 
-.nav-logo span {
-  font-weight: 900; 
-  background: linear-gradient(135deg, #00ffff, #00ff87);
-  background-size: 100% 100%;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  filter: drop-shadow(0 0 8px rgba(0, 255, 135, 0.4));
-  animation: none !important;
-  display: inline-block;
+  .nav-logo span {
+    font-weight: 900;
+    color: #00ff87 !important; /* Quitamos el gradient y ponemos el verde de las etiquetas */
+    background: none !important; /* Limpia el degradado antiguo */
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important; /* Permite que el color sólido funcione */
+    filter: drop-shadow(0 0 8px rgba(0, 255, 135, 0.4));
+    display: inline-block;
 }
 
 .nav-search {
@@ -138,25 +137,33 @@ body {
     background-color: rgba(255, 255, 255, 0.02);
 }
 
-
-.filter-btn.active {
-    color: #00ff87 !important;
-    background: rgba(6, 9, 17, 0.85) !important; 
+  .filter-btn.active {
+    color: #00ff87 !important; /* Texto en verde neón puro */
     font-weight: 700;
     position: relative;
-    border-radius: 20px !important; 
-    border: 2px solid transparent !important;
+    border-radius: 20px !important;
+    
+    /* Grosor del borde idéntico al original */
+    border: 2px solid transparent !important; 
+    
+    /* EL TRUCO MÁGICO: El primer gradient pinta el fondo negro mate interno, 
+       y el segundo pinta el borde plano con tu verde neón puro */
     background-image: linear-gradient(rgba(17, 23, 38, 0.95), rgba(17, 23, 38, 0.95)), 
-                      linear-gradient(90deg, #00ff87, #0066ff, #00ff87, #00ffff) !important;
+                      linear-gradient(90deg, #00ff87, #00ff87) !important;
+    
+    /* Mantiene las cajas recortadas para que el borde no invada el fondo oscuro */
     background-origin: border-box !important;
     background-clip: padding-box, border-box !important;
-    background-size: 100% 100%, 300% 100% !important;
-    box-shadow: 0 0 12px rgba(0, 255, 135, 0.3), 
-                inset 0 0 8px rgba(0, 102, 255, 0.2) !important;
-                
-    animation: rgb-border-flow 4s linear infinite, gamer-pulse 3s infinite ease-in-out !important;
+    background-size: 100% 100% !important;
+    
+    /* Sombra exterior verde neón unificada sin rastros de azul */
+    box-shadow: 0 0 12px rgba(0, 255, 135, 0.4) !important;
+    
+    /* Limpiamos la animación vieja para que se quede estático y limpio */
+    animation: none !important;
 }
 
+/* Por si acaso, nos aseguramos que el pseudo-elemento siga oculto */
 .filter-btn.active::after {
     display: none !important;
 }

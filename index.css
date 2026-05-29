@@ -174,17 +174,25 @@ body {
 }
 
 #hero-bg.hero-banner {
-    position: relative;
-    background: linear-gradient(135deg, rgba(13, 19, 33, 0.45) 0%, rgba(6, 9, 17, 0.65) 100%), 
-                url('https://i.postimg.cc/MpccJwQX/h3mrgzani2j71.webp') no-repeat center 35% !important;
-    background-size: cover !important;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius-md);
-    padding: 1.75rem 2.5rem;
+   transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                padding 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    max-height: 500px;
     overflow: hidden;
-    margin-bottom: 1.5rem;
-    transition: opacity 0.4s var(--transition-premium), transform 0.4s var(--transition-premium) !important;
-    animation: fadeInBanner 0.6s var(--transition-premium);
+    opacity: 1;
+    transform: translateY(0);
+
+    /* --- NUEVOS AJUSTES VISUALES --- */
+    /* Capa negra con 50% de opacidad sobre la imagen para resaltar los textos */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.postimg.cc/tRntWTtz/www.webp'); 
+    background-size: cover;
+    
+    /* Bautizamos la posición: 'center 35%' empuja la imagen hacia abajo para revelar rostros */
+    background-position: center 20%; 
+    
+    position: relative;
+    border-radius: 12px; /* Si quieres que mantenga las esquinas estéticas */
 }
 .hero-text-side h1 {
     font-size: 2.2rem;
@@ -1008,4 +1016,144 @@ body {
     grid-row: 2 !important;
     width: 100% !important;
   }
+}
+
+.social-section-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-header {
+    margin-bottom: 35px;
+}
+
+.social-title {
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    color: var(--text-white);
+    font-size: 2rem;
+    font-weight: bold !important;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.social-container {
+    display: flex;
+    gap: 30px; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Transforma la caja en un círculo perfecto */
+    background-color: var(--bg-card, #151a26); /* Toma el color de tus tarjetas */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-white);
+    font-size: 32px; /* Ajuste para que los iconos de Font Awesome resalten */
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.social-circle:hover {
+    transform: translateY(-6px);
+    color: var(--text-white) !important;
+}
+
+.circle-discord:hover {
+    background-color: #5865F2 !important;
+    border-color: #5865F2;
+    box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
+}
+
+.circle-youtube:hover {
+    background-color: #FF0000 !important;
+    border-color: #FF0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.circle-tiktok:hover {
+    background-color: #010101 !important;
+    border-color: #00f2fe;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+}
+
+@media (max-width: 480px) {
+    .social-section-layout {
+        padding: 40px 15px;
+    }
+    .social-title {
+        font-size: 1.5rem;
+    }
+    .social-circle {
+        width: 65px;
+        height: 65px;
+        font-size: 26px;
+    }
+}
+.display-none {
+    display: none !important;
+}
+
+.hero-banner {
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                padding 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    max-height: 500px; 
+    overflow: hidden;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-banner.banner-fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    pointer-events: none;
+}
+
+#social-section, #games-section {
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-entrance-effect {
+    animation: slideUpFade 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

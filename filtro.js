@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("downloads-container"); 
     const counter = document.getElementById("counted-items"); 
     const filterButtons = document.querySelectorAll(".filter-btn");
-    
-    // CAPTURAMOS EL BANNER PRINCIPAL PARA CONTROLARLO
-    const heroBanner = document.querySelector(".hero-banner");
+        const heroBanner = document.querySelector(".hero-banner");
+    const seccionRedes = document.getElementById("social-section");
+    const seccionJuegos = document.getElementById("games-section");
 
     let allItems = [];
     let currentCategory = "todos";
 
-    // 1. Cargar datos de múltiples archivos JSON de forma simultánea
     Promise.all([
         fetch("juegos-pc.json").then(res => res.json()).catch(() => []),
         fetch("juegos-android.json").then(res => res.json()).catch(() => []),
@@ -30,12 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         allItems = [...pcList, ...androidList, ...appsList, ...isosList];
 
-        renderCards(allItems);
-        updateCounter(allItems.length);
+        filterItems();
     })
     .catch(error => console.error("Error al cargar datos:", error));
 
-    // 2. Función para renderizar las tarjetas con solo palabras clave interactivas
+    // 2. Función para renderizar las tarjetas
     function renderCards(items) {
         if (!container) return; 
         container.innerHTML = "";
@@ -100,33 +98,49 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCounter(count) {
         if (counter) counter.innerText = count;
     }
+
  function manageBannerVisibility(query) {
         if (!heroBanner) return;
 
         if (query.length > 0 || currentCategory !== "todos") {
-            heroBanner.style.opacity = "0";
-            heroBanner.style.transform = "translateY(-10px)";
-            // Espera un instante a que termine la animación de CSS antes de ocultarlo por completo
+            heroBanner.classList.add("banner-fade-out");
             setTimeout(() => {
                 if(searchInput.value.trim().length > 0 || currentCategory !== "todos") {
                     heroBanner.style.display = "none";
                 }
-            }, 300);
+            }, 400); 
         } else {
             heroBanner.style.display = "block";
-            // Forzar un reflujo en el navegador para activar la animación de entrada
             setTimeout(() => {
-                heroBanner.style.opacity = "1";
-                heroBanner.style.transform = "translateY(0)";
+                heroBanner.classList.remove("banner-fade-out");
             }, 10);
+        }
+    }
+
+    function manageSectionsVisibility(query) {
+        if (!seccionRedes || !seccionJuegos) return;
+
+        if (query.length > 0 || currentCategory !== "todos") {
+            seccionRedes.classList.add("display-none");
+            seccionJuegos.classList.remove("display-none");
+            seccionJuegos.classList.remove("section-entrance-effect");
+            void seccionJuegos.offsetWidth; 
+            seccionJuegos.classList.add("section-entrance-effect");
+        } else {
+            seccionRedes.classList.remove("display-none");
+            seccionJuegos.classList.add("display-none");
+
+            seccionRedes.classList.remove("section-entrance-effect");
+            void seccionRedes.offsetWidth;
+            seccionRedes.classList.add("section-entrance-effect");
         }
     }
 
     function filterItems() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
 
-        // Controlamos el banner antes de filtrar
         manageBannerVisibility(query);
+        manageSectionsVisibility(query);
 
         const filtered = allItems.filter(item => {
             const matchesCategory = (currentCategory === "todos" || item.categoria === currentCategory);
@@ -141,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         renderCards(filtered);
+        updateCounter(filtered.length);
     }
 
     if (searchInput) {
@@ -154,18 +169,18 @@ document.addEventListener("DOMContentLoaded", () => {
             button.classList.add("active");
             
             currentCategory = button.getAttribute("data-filter");
-            filterItems(); // Ejecuta el filtro completo y analiza el banner
+            filterItems(); 
         });
     });
 });
-    // 📌 CONTROLADOR SENSOR DE SCROLL PARA HACER LA NAVBAR TRANSPARENTE
-    window.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".main-navbar");
-        if (navbar) {
-            if (window.scrollY > 20) {
-                navbar.classList.add("scrolled"); // Activa el cristal transparente si bajó más de 20px
-            } else {
-                navbar.classList.remove("scrolled"); // Vuelve a sólido si regresó arriba del todo
-            }
+
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".main-navbar");
+    if (navbar) {
+        if (window.scrollY > 20) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
         }
-    });
+    }
+});

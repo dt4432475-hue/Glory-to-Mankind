@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'InterGamer';
+    src: url('inter-latin-400-normal.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, span, button, input, div:not(.fa-solid):not(.fa-regular):not(.fa-brands) {
+    font-family: 'InterGamer', sans-serif !important;
+}
+
+.fa-solid, .fa-regular, .fa-brands, .fa, .fas, .fab {
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+    font-weight: 900 !important; /* Crítico para que carguen bien */
+}
+
 :root {
     --bg-main: #0a0e17;
     --bg-card: #111726;

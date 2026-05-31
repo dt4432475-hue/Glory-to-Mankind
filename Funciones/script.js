@@ -42,3 +42,43 @@ window.addEventListener('resize', () => {
     track.style.transform = `translateX(0px)`;
 });
 
+// ==========================================================================
+// CONTROL DE BOTONES PARA LA CASILLA DESTACADA PANORÁMICA
+// ==========================================================================
+const featSlider = document.getElementById('featuredSlider');
+const featPrevBtn = document.getElementById('featPrevBtn');
+const featNextBtn = document.getElementById('featNextBtn');
+
+if (featSlider && featPrevBtn && featNextBtn) {
+    let featPosition = 0;
+
+    featNextBtn.addEventListener('click', () => {
+        const slideWidth = featSlider.clientWidth;
+        const maxScroll = featSlider.scrollWidth - slideWidth;
+
+        if (featPosition < maxScroll) {
+            featPosition += slideWidth;
+        } else {
+            featPosition = 0; // Si llega al final, regresa a la primera imagen
+        }
+        featSlider.scrollTo({ left: featPosition, behavior: 'smooth' });
+    });
+
+    featPrevBtn.addEventListener('click', () => {
+        const slideWidth = featSlider.clientWidth;
+        const maxScroll = featSlider.scrollWidth - slideWidth;
+
+        if (featPosition > 0) {
+            featPosition -= slideWidth;
+        } else {
+            featPosition = maxScroll; // Si está al principio y da atrás, va a la última
+        }
+        featSlider.scrollTo({ left: featPosition, behavior: 'smooth' });
+    });
+
+    // Resetear posición si se cambia el tamaño de la pantalla
+    window.addEventListener('resize', () => {
+        featPosition = 0;
+        featSlider.scrollLeft = 0;
+    });
+}

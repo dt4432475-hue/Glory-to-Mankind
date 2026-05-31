@@ -19,8 +19,9 @@ body {
    ========================================================================== */
 
 .main-banner {
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('/img/banner-fondo.webp') center/cover;
-    height: 140px !important; /* Altura ideal para el header */
+    /* El "../" sale de la carpeta Estilos para poder entrar a la carpeta img */
+    background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.95)), url('/img/banner-fondo.webp') center/cover;
+    height: 150px !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,9 +31,9 @@ body {
 }
 
 .banner-gif {
-    width: 85% !important;      /* En vez de fijar la altura, limitamos el ancho para que quepa en la pantalla */
-    max-width: 600px !important; /* No dejará que se haga gigante en monitores grandes */
-    height: auto !important;     /* La altura se calcula sola de forma proporcional */
+    width: 85% !important;
+    max-width: 550px !important;
+    height: auto !important;
     object-fit: contain;
 }
 
@@ -50,17 +51,75 @@ body {
 }
 
 /* ==========================================================================
-   2. GRAN CASILLA DESTACADA
+   2. GRAN CASILLA DESTACADA (PANORÁMICA COMPLETA Y BOTONES)
    ========================================================================== */
 .featured-container {
-    display: flex;
-    justify-content: center;
-    margin: 30px auto;
-    padding: 0 20px;
-    max-width: 1200px;
+    position: relative; /* Necesario para clavar los botones abajo */
     width: 100%;
-    overflow: hidden; /* Oculta las imágenes secundarias */
-    border-radius: 12px;
+    max-width: 100%; /* Rompe el límite y agarra todo el ancho de la página */
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+}
+
+.featured-slider {
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Buena altura panorámica para las capturas */
+    overflow-x: hidden; /* Ocultamos la barra de scroll por completo */
+    scroll-behavior: smooth;
+}
+
+.featured-img {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Se adapta sin deformarse */
+}
+
+/* ESTILO DE LOS BOTONES GAMER INFERIORES */
+.feat-btn {
+    position: absolute;
+    bottom: 20px; /* Los clavamos a 20px del borde inferior */
+    background: rgba(0, 0, 0, 0.75); /* Fondo oscuro transparente */
+    color: #00ffcc; /* Texto neón a juego con el banner */
+    border: 2px solid #00ffcc;
+    padding: 10px 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Posición para cada botón */
+.feat-btn.prev {
+    left: 30px; /* Esquina inferior izquierda */
+}
+
+.feat-btn.next {
+    right: 30px; /* Esquina inferior derecha */
+}
+
+/* Efecto Hover al pasar el mouse */
+.feat-btn:hover {
+    background: #00ffcc;
+    color: #000;
+    box-shadow: 0 0 15px #00ffcc;
+    transform: scale(1.05);
+}
+
+/* Ajuste responsivo para celulares */
+@media (max-width: 768px) {
+    .featured-slider { max-height: 250px; }
+    .feat-btn { bottom: 10px; padding: 6px 12px; font-size: 11px; }
+    .feat-btn.prev { left: 15px; }
+    .feat-btn.next { right: 15px; }
 }
 
 .featured-box {
@@ -73,29 +132,13 @@ body {
     box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
 }
 
-.featured-img {
-    min-width: 100%; /* Cada imagen toma el 100% del contenedor */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none; /* Evita conflictos del mouse con la imagen */
-}
-
 .featured-slider {
-    display: flex;
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    border: 2px solid #ff0055;
-    box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: grab; /* Cambia el cursor a una manita para indicar que se arrastra */
-    user-select: none;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 
 .featured-slider:active {
-    cursor: grabbing; /* Manita cerrada al arrastrar */
+    cursor: grabbing;
 }
 
 /* Ajuste responsive para celulares */
@@ -319,4 +362,59 @@ body {
         height: 45px;
         font-size: 1.3rem;
     }
+}
+/* ==========================================================================
+   2. GRAN CASILLA DESTACADA (SLIDER MAGNÉTICO)
+   ========================================================================== */
+.featured-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    padding: 0 20px;
+    max-width: 1200px;
+    width: 100%;
+    overflow: hidden; 
+    border-radius: 12px;
+}
+
+.featured-slider {
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-height: 420px; 
+    border: 2px solid #ff0055;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
+    border-radius: 12px;
+    overflow-x: scroll; 
+    scroll-behavior: smooth;
+    cursor: grab;
+    user-select: none;
+
+    /* 🔥 NUEVO: Activa el magnetismo horizontal obligatorio */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth; 
+}
+
+/* Oculta la barra de scroll */
+.featured-slider::-webkit-scrollbar {
+    display: none;
+}
+.featured-slider {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.featured-slider:active {
+    cursor: grabbing;
+}
+
+.featured-img {
+    min-width: 100%; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; 
+
+    /* 🔥 NUEVO: Obliga a cada imagen a alinearse perfectamente en el centro al soltar */
+    scroll-snap-align: center; 
 }

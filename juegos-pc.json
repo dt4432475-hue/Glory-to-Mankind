@@ -1,59 +1,50 @@
 [
 
   {
-    "id": 1,
-    "servidor": "Internet Archive (Servidor Gratuito)",
-    "titulo": "Half life 25th Anniversary",
-    "icono": "https://i.postimg.cc/N00FdGNR/image.png",
-    "url": "https://archive.org/download/half-life-25-aniversario-edition-gtm/Half-Life%2025%20aniversario%20edition%20GTM.rar",
-    "gameplay": "https://i.postimg.cc/GmVV5qKk/image.png",
-    "gameplay2": "https://i.postimg.cc/7LZqZ7t2/image.png",
-    "descripcion": "Celebra los 25 años del shooter en primera persona que cambió la historia de los videojuegos. Esta versión definitiva de Valve recupera el contenido clásico de 1998, añade la campaña de demostración Uplink, introduce nuevos mapas multijugador y optimiza por completo el motor gráfico para resoluciones modernas y soporte de mandos.",
-    "requisitos": "<strong> Recomendados:</strong><br>Sistema Operativo: Windows 10 (Requiere procesador y sistema operativo de 64 bits)<br>• Procesador: Compatibilidad con el conjunto de instrucciones SSE2<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: Tarjeta gráfica compatible con DirectX 10 (Shader Model 4.0)" 
-  },
-  {
-    
+  "id": 1,
+  "titulo": "Half-Life 25th Anniversary",
+  "icono": "https://postimg.cc",
+  "servidor": "Internet Archive (Servidor Gratuito)",
+  "url": "https://archive.org",
+  "gameplay": "https://i.postimg.cc/GmVV5qKk/image.png",
+  "gameplay2": "https://i.postimg.cc/7LZqZ7t2/image.png",
+  "descripcion": "Celebra los 25 años del shooter en primera persona que cambió la historia de los videojuegos. Esta versión definitiva de Valve recupera el contenido clásico de 1998, añade la campaña de demostración Uplink, introduce nuevos mapas multijugador y optimiza por completo el motor gráfico para resoluciones modernas y soporte de mandos.",
+  "requisitos": "<strong>Recomendados:</strong><br>• Sistema Operativo: Windows 7 / 8 / 10 / 11 (64-bits)<br>• Procesador: CPU con compatibilidad SSE2 o superior<br>• Memoria RAM: 512 MB o superior<br>• Gráficos: Tarjeta gráfica compatible con OpenGL (Cualquier integrada moderna)"
+},
+
+{
   "id": 2,
   "titulo": "Captain Claw",
-  "icono": "https://i.postimg.cc/T1vm1LB8/image.png",
+  "icono": "https://postimg.cc",
   "servidor": "Internet Archive (Servidor Gratuito)",
-  "tag": "Plataformas, 2D, Acción, Retro, PC",
-  "url": "https://archive.org/download/claw_20260524/Claw.rar",
-  "gameplay": "https://i.postimg.cc/zfD7pWYr/image.png",
-  "gameplay2": "https://i.postimg.cc/ncPfq5jq/image.png",
+  "url": "https://archive.org",
+  "gameplay": "https://postimg.cc",
+  "gameplay2": "https://postimg.cc",
   "descripcion": "Lanzado originalmente en 1997 por Monolith Productions, Captain Claw es uno de los juegos de plataformas en 2D más icónicos y desafiantes de la historia de PC. Encarna al legendario capitán gato pirata Nathaniel J. Claw en su épica misión para escapar de la prisión armada de los Cocker-Spaniards y reunir las gemas ocultas del Amuleto de las Nueve Vidas. El título destaca por sus fluidas mecánicas de combate con espada, pistolas y dinamita, así como por sus cinemáticas animadas de alta calidad y un diseño de niveles sumamente exigente.",
-  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 10 o superior (compatible mediante parches modernos como dgVoodoo o CrazyHook)<br>• Procesador: Intel Pentium 75 MHz o equivalente<br>• Memoria RAM: 16 MB o superior<br>• Gráficos: Tarjeta de video compatible con DirectX 5 o superior",
- "estadoSeguro": "seguro",
-  "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
-
+  "requisitos": "<strong>Recomendados:</strong><br>• Sistema Operativo: Windows 7 / 8 / 10 / 11 (64-bits)<br>• Procesador: CPU con compatibilidad SSE2 o superior<br>• Memoria RAM: 512 MB o superior<br>• Gráficos: Tarjeta gráfica compatible con OpenGL (Cualquier integrada moderna)"
 },
+
 {
   "id": 3,
   "titulo": "Warcraft III: Gold Edition",
-  "icono": "https://i.postimg.cc/ZRvx99R3/image.png",
+  "icono": "https://postimg.cc",
   "servidor": "Internet Archive (Servidor Gratuito)",
-  "tag": "Estrategia, RTS, Fantasía, Clásico, PC",
-  "url": "https://archive.org/download/warcraft-iii-1.30/Warcraft%20III%201.30.zip",
-  "gameplay": "https://i.postimg.cc/QMHpPBp8/image.png",
-  "descripcion": "Warcraft III: Reign of Chaos es un aclamado videojuego de estrategia en tiempo real creado por Blizzard Entertainment. El juego te sumerge en el mundo de Azeroth, donde deberás comandar a cuatro poderosas facciones: los Humanos, los Orcos, los Muertos Vivientes y los Elfos Nocturnos en una épica campaña narrativa. Destaca por introducir héroes con mecánicas de rol (RPG), subida de niveles y un revolucionario motor gráfico en 3D para su época.",
-  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 98, ME, 2000 o XP<br>• Procesador: Intel Pentium II 400 MHz o AMD Athlon equivalente<br>• Memoria RAM: 128 MB o superior<br>• Gráficos: Tarjeta de video 3D de 8 MB compatible con DirectX 8.1",
-  "estadoSeguro": "seguro",
-  "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
-
+  "url": "https://archive.org",
+  "gameplay": "https://postimg.cc",
+  "descripcion": "Warcraft III: Gold Edition incluye el aclamado juego base Reign of Chaos y su mítica expansión The Frozen Throne. Este título de estrategia en tiempo real creado por Blizzard Entertainment te sumerge en el mundo de Azeroth, donde deberás comandar a cuatro poderosas facciones: los Humanos, los Orcos, los Muertos Vivientes y los Elfos Nocturnos en una épica campaña narrativa. Destaca por introducir héroes con mecánicas de rol (RPG), subida de niveles y un revolucionario motor gráfico en 3D para su época.",
+  "requisitos": "<strong>Recomendados:</strong><br>• Sistema Operativo: Windows 7 / 10 / 11 (64-bits)<br>• Procesador: Intel Pentium D o AMD Athlon 64 X2<br>• Memoria RAM: 2 GB o superior<br>• Gráficos: NVIDIA GeForce 6800 o ATI Radeon X1600 (256 MB)"
 },
+
 
 {
   "id": 4,
   "titulo": "Squirrel Stapler",
   "icono": "https://i.postimg.cc/sfWXSCXm/image.png",
   "servidor": "Internet Archive (Servidor Gratuito)",
-  "tag": "Horror, Indie, Surrealista, Caza, PC",
   "url": "https://archive.org/download/squirrel-stapler/Squirrel%20Stapler.rar",
   "gameplay": "https://i.postimg.cc/7YMSc6N9/image.png",
   "descripcion": "Squirrel Stapler es un perturbador videojuego de terror psicológico e indie creado por David Szymanski. En esta surrealista aventura en primera persona, te adentras en un bosque con un objetivo tan bizarro como oscuro: cazar ardillas y graparlas al cadáver de tu esposa fallecida, todo esto mientras te preparas para un perturbador encuentro donde conocerás a Dios en cinco días.",
-  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 10 (Requiere procesador y sistema operativo de 64 bits)<br>• Procesador: Compatibilidad con el conjunto de instrucciones SSE2<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: Tarjeta gráfica compatible con DirectX 10 (Shader Model 4.0)",
-  "estadoSeguro": "seguro",
-  "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
+  "requisitos": "<strong>Recomendados:</strong><br>Sistema Operativo: Windows 10 (Requiere procesador y sistema operativo de 64 bits)<br>• Procesador: Compatibilidad con el conjunto de instrucciones SSE2<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: Tarjeta gráfica compatible con DirectX 10 (Shader Model 4.0)"
 
 },
 {
@@ -65,10 +56,7 @@
   "url": "https://www.up-4ever.net/jot3m5y5mv7u",
   "gameplay": "https://i.postimg.cc/4xzbFcnC/image.png",
   "descripcion": "Counter-Strike 1.6 es el legendario videojuego de disparos en primera persona táctico desarrollado por Valve Corporation. El juego enfrenta a dos equipos, los Terroristas y los Antiterroristas, en intensas rondas basadas en objetivos como plantar o desactivar bombas, o rescatar rehenes. Es considerado uno de los pilares fundamentales de los deportes electrónicos y uno de los juegos competitivos más influyentes de la historia de PC.",
-  "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows XP, Vista, 7 o superior<br>• Procesador: Procesador de 800 MHz o equivalente<br>• Memoria RAM: 128 MB o superior<br>• Gráficos: Tarjeta de video de 32 MB o superior",
-  "estadoSeguro": "seguro",
-  "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
-   
+  "requisitos": "<strong>Recomendados:</strong><br>Sistema Operativo: Windows XP, Vista, 7 o superior<br>• Procesador: Procesador de 800 MHz o equivalente<br>• Memoria RAM: 128 MB o superior<br>• Gráficos: Tarjeta de video de 32 MB o superior"
 }
 
 

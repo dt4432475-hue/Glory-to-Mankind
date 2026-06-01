@@ -4,101 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glory to Mankind</title>
-    <link rel="stylesheet" href="Estilos/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="google-site-verification" content="zrFtqPRc4WTSMe9kgQGucfO8Vb257knNITP8XGACHwE" />
+    <link rel="icon" type="image/png" href="img/logo titulo y web.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
 </head>
-<body>
 
-    <header class="main-banner">
-        <img src="/img/baner-titulo.gif" alt="Portal Gamer" class="banner-gif">
+<body>
+    <header class="main-navbar">
+    <div class="nav-logo">
+    <img src="img/logo titulo y web.png" alt="Logo" class="logo-img"> Glory to <span>Mankind</span>
+</div>
+        <div class="nav-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-input" class="search-input" placeholder="Buscar herramientas, juegos, etc">
+        </div>
+    
+<nav class="nav-menu">
+    <a href="#" class="filter-btn active" data-filter="todos"><i class="fa-solid fa-house"></i> Inicio</a>
+    <a href="#" class="filter-btn" data-filter="juegos-pc"><i class="fa-solid fa-desktop"></i> Juegos PC</a>
+    <a href="#" class="filter-btn" data-filter="juegos-android"><i class="fa-brands fa-android"></i> Juegos Android</a>
+    <a href="#" class="filter-btn" data-filter="apps"><i class="fa-solid fa-cubes"></i> Apps / Programas</a>
+    
+    <a href="#" class="filter-btn" data-filter="isos"><i class="fa-solid fa-compact-disc"></i> ISOs Windows</a>
+</nav>
     </header>
 
-<section class="featured-container">
-    <div class="featured-slider" id="featuredSlider">
-        <img src="https://i.postimg.cc/7LHFB13m/pcio.jpg" alt="Captura 1" class="featured-img" draggable="false">
-        <img src="https://i.postimg.cc/Fz5G6Ntv/cds.jpg" alt="Captura 2" class="featured-img" draggable="false">
+    <div class="page-layout">
+<!-- BANNER PRINCIPAL CORREGIDO Y LIBERADO -->
+<section class="hero-banner" id="hero-bg">
+    <div class="hero-content-flex">
+        <div class="hero-text-side">
+            <span class="hero-badge"><i class="fa-solid fa-fire"></i>CONTENIDO ACTUALIZADO</span>
+            <h1>Glory to Mankind</h1>
+            <p>Bienvenido o bienvenida a nuestro portal de juegos, programas, etc. Todos nuestros archivos han sido previamente analizados antes de su lanzamiento por nuestros antivirus, asi que sientete tranquilo mientras navegas por aqui. Esperamos que encuentres lo que estas buscando...</p>
+        </div>
     </div>
-
-    <button class="feat-btn prev" id="featPrevBtn">Anterior</button>
-    <button class="feat-btn next" id="featNextBtn">Siguiente</button>
 </section>
 
-    <section class="carousel-section">
-        <h2>Explora nuestro contenido</h2>
-        
-        <div class="carousel-wrapper">
-            <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
-            
-            <div class="carousel-track-container">
-                <div class="carousel-track" id="carouselTrack">
-                    
-                    <a href="juegos.html" class="card-link">
-                        <div class="game-card">
-                            <img src="juegos-icon.jpg" alt="Juegos">
-                            <h3>Zona Juegos</h3>
-                        </div>
-                    </a>
-
-                    <a href="programas.html" class="card-link">
-                        <div class="game-card">
-                            <img src="programas-icon.jpg" alt="Programas">
-                            <h3>Programas</h3>
-                        </div>
-                    </a>
-
-                    <a href="emuladores.html" class="card-link">
-                        <div class="game-card">
-                            <img src="emuladores-icon.jpg" alt="Emuladores">
-                            <h3>Emuladores</h3>
-                        </div>
-                    </a>
-
-                    <a href="guias.html" class="card-link">
-                        <div class="game-card">
-                            <img src="guias-icon.jpg" alt="Guias">
-                            <h3>Guías y Más</h3>
-                        </div>
-                    </a>
-
-                    <a href="otros.html" class="card-link">
-                        <div class="game-card">
-                            <img src="otros-icon.jpg" alt="Otros">
-                            <h3>Otros</h3>
-                        </div>
-                    </a>
-
-                    <a href="noticias.html" class="card-link">
-                        <div class="game-card">
-                            <img src="noticias-icon.jpg" alt="Noticias">
-                            <h3>Noticias</h3>
-                        </div>
-                    </a>
-
-                    </div>
-            </div>
-            
-            <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
+<main class="content-section">
+    <div class="section-header-flex">
+        <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Explorar Aportes</h2>
+        <div class="stats-counter">
+            <span id="counted-items">0</span> aportes disponibles
         </div>
-    </section>
+    </div>
+
+    <div class="downloads-grid" id="downloads-container"></div>
+</main>
+
+    </div>
 
     <footer class="main-footer">
-        <div class="social-container">
-            <a href="https://discord.gg/tu-enlace" target="_blank" class="social-icon discord">
-                <i class="fa-brands : fa-discord"></i>
-            </a>
-            <a href="https://t.me/tu-enlace" target="_blank" class="social-icon telegram">
-                <i class="fa-brands fa-telegram"></i>
-            </a>
-            <a href="https://facebook.com/tu-enlace" target="_blank" class="social-icon facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            </div>
-        
-        <div class="watermark">
-            <p>&copy; 2026 Portal Gamer. Todos los derechos reservados. Diseñado por Bro.</p>
-        </div>
+        <p>© 2026 Glory to Mankind Project. Diseñado de forma original para la distribución de software libre y seguro.</p>
     </footer>
 
-    <script src="Funciones/script.js"></script>
+<!-- BOTÓN REACIVADO CON ACCIÓN DE SUBIDA SUAVE -->
+<button id="scroll-top-btn" class="scroll-top-btn" title="Volver arriba" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+    <script src="filtro.js"></script>
 </body>
 </html>

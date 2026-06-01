@@ -394,14 +394,13 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-md);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    position: relative; /* Esencial para que el texto se posicione encima */
+    aspect-ratio: 16 / 10; /* Le da una proporción excelente a la casilla */
+    height: auto;
     
-    /* Animación fluida de entrada y de hover */
     transition: transform 0.3s var(--transition-premium), border-color 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium) !important;
     animation: fadeInUpCard 0.4s var(--transition-premium) backwards;
-     will-change: transform;
+    will-change: transform;
 }
 
 /* Generamos un retraso para que las tarjetas no aparezcan toscas de golpe */
@@ -426,67 +425,69 @@ body {
     border-color: rgba(255, 255, 255, 0.08);
 }
 
-.card-link-wrapper {
-    display: flex;
-    flex-direction: column;
+.card-link-wrapper, .card-download {
+    width: 100%;
     height: 100%;
-    flex-grow: 1;
-}
-
-.card-download {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    position: relative;
+    display: block;
 }
 
 .card-image {
-  width: 100% !important;
-  /* 🎯 FIJAMOS EL TAMAÑO: Forzamos un ratio exacto de pantalla de cine */
-  aspect-ratio: 16 / 9 !important; 
-  overflow: hidden !important;
-  position: relative !important;
-  background-color: var(--bg-deep);
-  
-  /* ⚡ IMPORTANTE: Evita que el texto de abajo empuje o estire la zona de la imagen */
-  flex-shrink: 0 !important; 
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1; /* Queda abajo */
+    overflow: hidden;
 }
-
 
 .card-image img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* Corta la imagen sobrante limpiamente en vez de estirarla */
-  display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.4s var(--transition-premium), filter 0.4s var(--transition-premium) !important;
 }
-
-
-
 
 .card:hover .card-image img {
-    transform: scale(1.05); /* Zoom sutil y elegante de la portada */
+    transform: scale(1.08); /* Zoom dinámico de la imagen */
+    filter: blur(2px) brightness(0.8); /* Un ligero desenfoque gamer para resaltar más el texto */
 }
 
-
 .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupa todo el alto para aplicar el degradado */
+    z-index: 2; /* Queda por encima de la imagen */
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    flex-grow: 1;
+    justify-content: flex-end; /* Empuja el texto hacia la parte inferior */
+    gap: 0.3rem;
+    
+    /* 🎨 DEGRADADO MAESTRO: Oscurece la base para que el texto blanco sea 100% legible */
+    background: linear-gradient(to top, 
+                rgba(10, 14, 23, 0.95) 0%, 
+                rgba(10, 14, 23, 0.6) 40%, 
+                rgba(10, 14, 23, 0) 100%) !important;
 }
 
 .card-content h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--text-white);
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.3;
+    z-index: 3;
 }
 
 .card-content .server {
-    font-size: 0.85rem;
-    color: var(--text-muted);
+    font-size: 0.8rem;
+    color: #94a3b8; /* Un gris un poco más claro para que resalte en el fondo oscuro */
     margin: 0;
+    z-index: 3;
 }
 
 /* ==========================================================================
@@ -505,13 +506,13 @@ body {
     transition: color 0.25s ease, text-shadow 0.25s ease !important;
 }
 
-
 .card-footer {
-    padding: 0 1.25rem 1.25rem 1.25rem !important;
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-top: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 4; /* Flotan en la esquina superior derecha */
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .tag-clickable:hover {
@@ -695,11 +696,10 @@ body {
        ========================================================================== */
     
     /* 1. Reducimos el ancho máximo de la tarjeta en móvil para que no flote gigante */
-    .card {
-        max-width: 360px; /* Tamaño perfecto para que la tarjeta se vea compacta en la mano */
-        margin: 0 auto;   /* La mantiene perfectamente centrada en la pantalla */
+   .card {
+        max-width: 100% !important; 
+        aspect-ratio: 16 / 11; /* Un toque más vertical en celulares */
     }
-
     /* 2. Achicamos la altura de la imagen en celular para que no ocupe tanta pantalla */
     .card-image {
         height: 140px !important; /* Bajado de 180px a 140px para que sea una tira elegante */
@@ -707,12 +707,14 @@ body {
 
     /* 3. Compactamos los textos internos para ahorrar espacio vertical */
     .card-content {
-        padding: 1rem !important; /* Espaciado más ajustado */
-        gap: 0.25rem !important;
+        padding: 0.75rem !important;
+    }
+    .card-content h3 {
+        font-size: 0.9rem !important;
     }
 
-    .card-content h3 {
-        font-size: 1.05rem !important; /* Título un poquito más pequeño en celular */
+    .card-content .server {
+        font-size: 0.75rem !important;
     }
 
 }

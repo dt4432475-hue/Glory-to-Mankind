@@ -3,11 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descarga de Glory to Mankind</title>
+    <title>Generador de Descargas</title>
     <link rel="icon" type="image/png" href="img/logo titulo y web.png">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://quge5.com/88/tag.min.js" data-zone="242439" async data-cfasync="false"></script>
+    <style>
+        /* Contenedores para asegurar distribución en paralelo */
+        .bloque-paralelo {
+            display: flex !important;
+            gap: 20px !important;
+            width: 100% !important;
+            margin-bottom: 20px !important;
+        }
+
+        .columna-mitad {
+            flex: 1 !important;
+            width: 50% !important;
+            min-width: 0 !important; /* Evita desbordamiento de elementos internos */
+        }
+
+        .img-proporcional {
+            width: 100% !important;
+            height: 260px !important;
+            object-fit: cover !important;
+            border-radius: 8px !important;
+            display: block !important;
+        }
+
+        /* Forzado de estilos para anular propiedades restrictivas de index.css */
+        .caja-limpia {
+            background-color: rgba(255,255,255,0.01) !important;
+            padding: 20px !important;
+            border-radius: 8px !important;
+            border: 1px solid rgba(255,255,255,0.02) !important;
+            margin: 0 !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Ajuste responsivo para pantallas móviles */
+        @media (max-width: 768px) {
+            .bloque-paralelo {
+                flex-direction: column !important;
+            }
+            .columna-mitad {
+                width: 100% !important;
+            }
+            .img-proporcional {
+                height: 200px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -17,30 +64,39 @@
             <img id="app-icon" src="" alt="Icono" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover; flex-shrink: 0;">
             <div style="display: flex; flex-direction: column; justify-content: center;">
                 <h1 id="app-title" style="margin: 0; font-size: 1.8rem; color: #fff; line-height: 1.2;">Cargando aporte...</h1>
-                <p id="app-server" style="margin: 6px 0 0 0; color: #64748b; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;"></p>
-                <!-- Tag oculto para que el JS no de error -->
+                <p id="app-server" style="margin: 6px 0 0 0; color: #64748b; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-server"></i> <span id="server-text">Cargando servidor...</span>
+                </p>
                 <p id="app-tag" style="display: none;"></p>
             </div>
         </div>
 
-        <div class="info-grid">
-
-            <div class="gameplay-banner">
-                <img id="app-gameplay" src="https://placeholder.com" alt="Gameplay del juego" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        <div class="bloque-paralelo">
+            <div class="columna-mitad">
+                <img id="app-gameplay" src="" alt="Gameplay 1" class="img-proporcional">
             </div>
+            <div class="columna-mitad">
+                <img id="app-gameplay2" src="" alt="Gameplay 2" class="img-proporcional">
+            </div>
+        </div>
+
+        <div class="bloque-paralelo">
             
-            <div class="box-requisitos" style="background-color: rgba(255,255,255,0.01); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.02);">
-                <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-cpu"></i> Requisitos del Sistema</h3>
-                <p id="app-requirements" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando requisitos...</p>
+            <div class="columna-mitad">
+                <div class="box-descripcion caja-limpia">
+                    <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-file-lines"></i> Descripción
+                    </h3>
+                    <p id="app-description" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0; white-space: pre-line; word-break: break-word;">Cargando detalles...</p>
+                </div>
             </div>
 
-            <div class="box-descripcion" style="background-color: rgba(255,255,255,0.01); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.02);">
-                <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-file-lines"></i> Descripción</h3>
-                <p id="app-description" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Cargando detalles...</p>
-
-                <!-- 🟡 AQUÍ ESTÁ TU CUADRITO DINÁMICO REPETIBLE -->
-                <div id="contenedor-seguridad" style="display: none; border-radius: 8px; padding: 15px; font-size: 0.9rem; margin-top: 25px; margin-bottom: 5px;">
-                    <p id="texto-seguridad" style="margin: 0; line-height: 1.5;"></p>
+            <div class="columna-mitad">
+                <div class="box-requisitos caja-limpia">
+                    <h3 style="color: var(--accent); margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-list"></i> Requisitos del Sistema
+                    </h3>
+                    <p id="app-requirements" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0; white-space: pre-line; word-break: break-word;">Cargando requisitos...</p>
                 </div>
             </div>
 
@@ -54,11 +110,10 @@
 
     </div>
 
-    <!-- ⏳ AQUÍ ES DONDE EDITAS LOS SEGUNDOS Y TUS ANUNCIOS COMO ANTES -->
     <script>
     function startCountdown() {
         const btn = document.getElementById('action-btn');
-        let seconds = 5; // 👈 EDITABLE: Cambia este número por los segundos que quieras
+        let seconds = 5;
 
         btn.disabled = true;
         btn.className = "btn-action btn-waiting";
@@ -68,30 +123,19 @@
             seconds--;
             if (seconds > 0) {
                 const counterElement = document.getElementById("countdown-number");
-                if (counterElement) {
-                    counterElement.innerText = seconds;
-                } else {
-                    btn.innerHTML = `<i class="fa-solid fa-clock"></i> Espera <span id="countdown-number">${seconds}</span> segundos...`;
-                }
+                if (counterElement) counterElement.innerText = seconds;
             } else {
                 clearInterval(interval);
-                
                 btn.disabled = false;
-                btn.className = "btn-action btn-download"; // Se vuelve azul descargar ahora
+                btn.className = "btn-action btn-download"; 
                 btn.innerHTML = `<i class="fa-solid fa-circle-down"></i> DESCARGAR AHORA`;
-                
                 btn.removeAttribute('onclick');
                 
                 btn.onclick = (e) => { 
                     e.preventDefault();
-
                     if (typeof downloadUrl !== 'undefined' && downloadUrl !== "#") {
-                        // 🚀 TUS ANUNCIOS
                         window.open('https://omg10.com', '_blank'); 
-                        
-                        // 📥 ENLACE DEL JUEGO
                         window.location.href = downloadUrl; 
-                        
                         const thanksModal = document.getElementById("thanks-modal");
                         if (thanksModal) thanksModal.style.display = "flex";
                     } else {
@@ -114,7 +158,5 @@
     </div>
 
     <script src="descarga.js"></script>
-    <script async="async" data-cfasync="false" src="https://highrateprofit.com"></script>
-
 </body>
 </html>

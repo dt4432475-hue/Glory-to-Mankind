@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tipoAporte === "juegos-pc") jsonFile = "juegos-pc.json";
     else if (tipoAporte === "juegos-android") jsonFile = "juegos-android.json";
     else if (tipoAporte === "apps") jsonFile = "apps.json";
+    else if (tipoAporte === "isos") jsonFile = "isos.json"; 
     else {
         window.location.href = "index.html";
         return;
@@ -25,56 +26,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const aporte = data.find(item => parseInt(item.id) === aporteId);
 
         if (aporte) {
-            // Inyección usando tus IDs originales exactos
-            document.getElementById("app-icon").src = aporte.icono;
-            document.getElementById("app-title").textContent = aporte.titulo;
-            document.getElementById("app-server").innerHTML = `<strong>Servidor:</strong> ${aporte.servidor}`;
-            document.getElementById("app-gameplay").src = aporte.gameplay;
-            document.getElementById("app-description").innerHTML = aporte.descripcion;
-            document.getElementById("app-requirements").innerHTML = aporte.requisitos;
+            const descEl = document.getElementById("app-description");
+            const reqEl = document.getElementById("app-requirements");
+            const serverTextEl = document.getElementById("server-text");
 
-            // Guardamos la URL final del juego para que el script del HTML la use
-            downloadUrl = aporte.url;
+            // Inyección básica de elementos
+            document.getElementById("app-icon").src = aporte.icono || aporte.image || "";
+            document.getElementById("app-title").textContent = aporte.titulo || aporte.name || "Sin título";
+            document.getElementById("app-gameplay").src = aporte.gameplay || "";
+            
+            // Inyección de la segunda imagen (si no existe en el JSON, repite la primera)
+            document.getElementById("app-gameplay2").src = aporte.gameplay2 || aporte.gameplay || "";
 
-            // CONFIGURACIÓN DEL CUADRITO DE SEGURIDAD
-            const contenedorSeguridad = document.getElementById("contenedor-seguridad");
-            const textoSeguridad = document.getElementById("texto-seguridad");
+            // Inyección del texto del servidor sin romper el icono del HTML
+            if (serverTextEl) {
+                serverTextEl.innerHTML = `<strong>Servidor:</strong> ${aporte.servidor || "Up-4ever"}`;
+            }
 
-            if (aporte.mensajeSeguridad) {
-    textoSeguridad.innerHTML = `${aporte.mensajeSeguridad} <a href="${aporte.enlaceSeguridad || '#'}" target="_blank" style="font-weight: bold; text-decoration: underline; margin-left: 6px;">[Ver Reporte / Antivirus]</a>`;
-    
-    const enlace = textoSeguridad.querySelector("a");
+            // Inyección de la Descripción
+            if (descEl) {
+                descEl.innerHTML = aporte.descripcion || "No hay descripción disponible.";
+            }
 
- // Normalizamos el texto pasándolo a minúsculas y quitando espacios
-const estado = String(aporte.estadoSeguro).trim().toLowerCase();
+            // Inyección de los Requisitos
+            if (reqEl) {
+                reqEl.innerHTML = aporte.requisitos || "No se especifican requisitos.";
+            }
 
-// 🟢 OPCIÓN 1: 100% Seguro -> Verde Esmeralda
-if (estado === "100seguro") {
-    contenedorSeguridad.style.border = "1px solid #10b981"; 
-    contenedorSeguridad.style.backgroundColor = "rgba(16, 185, 129, 0.08)"; 
-    textoSeguridad.style.color = "#a7f3d0"; 
-    if (enlace) enlace.style.color = "#34d399";
-} 
-// 🔵 OPCIÓN 2: Seguro Estándar -> Azul Celeste
-else if (estado === "seguro") {
-    contenedorSeguridad.style.border = "1px solid #38bdf8"; 
-    contenedorSeguridad.style.backgroundColor = "rgba(56, 189, 248, 0.08)"; 
-    textoSeguridad.style.color = "#bae6fd"; 
-    if (enlace) enlace.style.color = "#38bdf8";
-} 
-// 🔴 OPCIÓN 3: Cualquier otra cosa (advertencia o falso positivo) -> Rojo Alerta
-else {
-    contenedorSeguridad.style.border = "1px solid #ef4444"; 
-    contenedorSeguridad.style.backgroundColor = "rgba(239, 68, 68, 0.08)"; 
-    textoSeguridad.style.color = "#fca5a5"; 
-    if (enlace) enlace.style.color = "#ef4444";
-}
-
-    
-    contenedorSeguridad.style.display = "block";
-} else {
-    contenedorSeguridad.style.display = "none";
-}
+            // Enlace de descarga (.url o .link)
+            downloadUrl = aporte.url || aporte.link || "#";
 
         } else {
             window.location.href = "index.html";

@@ -2,15 +2,14 @@
 
   {
     "id": 1,
+    "servidor": "Internet Archive (Servidor Gratuito)",
     "titulo": "Half life 25th Anniversary",
     "icono": "https://i.postimg.cc/N00FdGNR/image.png",
-    "tag": "Shooter, FPS, Acción, PC",
     "url": "https://archive.org/download/half-life-25-aniversario-edition-gtm/Half-Life%2025%20aniversario%20edition%20GTM.rar",
     "gameplay": "https://i.postimg.cc/GmVV5qKk/image.png",
+    "gameplay2": "https://i.postimg.cc/7LZqZ7t2/image.png",
     "descripcion": "Celebra los 25 años del shooter en primera persona que cambió la historia de los videojuegos. Esta versión definitiva de Valve recupera el contenido clásico de 1998, añade la campaña de demostración Uplink, introduce nuevos mapas multijugador y optimiza por completo el motor gráfico para resoluciones modernas y soporte de mandos.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Windows 10 (Requiere procesador y sistema operativo de 64 bits)<br>• Procesador: Compatibilidad con el conjunto de instrucciones SSE2<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: Tarjeta gráfica compatible con DirectX 10 (Shader Model 4.0).",
-    "estadoSeguro": "seguro",  
-    "mensajeSeguridad": "Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨" 
+    "requisitos": "<strong> Recomendados:</strong><br>Sistema Operativo: Windows 10 (Requiere procesador y sistema operativo de 64 bits)<br>• Procesador: Compatibilidad con el conjunto de instrucciones SSE2<br>• Memoria RAM: 1 GB o superior<br>• Gráficos: Tarjeta gráfica compatible con DirectX 10 (Shader Model 4.0)" 
   },
   {
     
@@ -21,6 +20,7 @@
   "tag": "Plataformas, 2D, Acción, Retro, PC",
   "url": "https://archive.org/download/claw_20260524/Claw.rar",
   "gameplay": "https://i.postimg.cc/zfD7pWYr/image.png",
+  "gameplay2": "https://i.postimg.cc/ncPfq5jq/image.png",
   "descripcion": "Lanzado originalmente en 1997 por Monolith Productions, Captain Claw es uno de los juegos de plataformas en 2D más icónicos y desafiantes de la historia de PC. Encarna al legendario capitán gato pirata Nathaniel J. Claw en su épica misión para escapar de la prisión armada de los Cocker-Spaniards y reunir las gemas ocultas del Amuleto de las Nueve Vidas. El título destaca por sus fluidas mecánicas de combate con espada, pistolas y dinamita, así como por sus cinemáticas animadas de alta calidad y un diseño de niveles sumamente exigente.",
   "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Windows 7, 10 o superior (compatible mediante parches modernos como dgVoodoo o CrazyHook)<br>• Procesador: Intel Pentium 75 MHz o equivalente<br>• Memoria RAM: 16 MB o superior<br>• Gráficos: Tarjeta de video compatible con DirectX 5 o superior",
  "estadoSeguro": "seguro",

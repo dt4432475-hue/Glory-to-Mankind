@@ -33,9 +33,7 @@
     "url": "https://archive.org/download/monopoly_202605/Monopoly.apk",
     "gameplay": "https://i.postimg.cc/ZRgdqY0N/image.png",
     "descripcion": "Monopoly es la adaptación oficial para dispositivos móviles del clásico juego de mesa de Hasbro. Compra, vende y planea tu estrategia para dominar el mercado inmobiliario desde tu teléfono o tablet. El juego incluye tableros interactivos animados en 3D, modos de juego rápidos y multijugador local o en línea para competir de forma segura con amigos y jugadores de todo el mundo.",
-    "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 6.0 (Marshmallow) o superior<br>• Procesador: Quad-Core de 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 500 MB de espacio libre disponible",
-     "estadoSeguro": "seguro",
-  "mensajeSeguridad":"Verificado 🛡:  Este archivo ha sido escaneado y verificado como 100% seguro. Puedes descargarlo sin preocupación.✨"
+    "requisitos": "<strong>MÍNIMOS:</strong><br>Sistema Operativo: Android 6.0 (Marshmallow) o superior<br>• Procesador: Quad-Core de 1.5 GHz o equivalente<br>• Memoria RAM: 2 GB o superior<br>• Almacenamiento: 500 MB de espacio libre disponible"
     },
  
     {
@@ -62,7 +60,7 @@
     
  {
   "id": 7,
-  "titulo": "Geometry Dash",
+  "titulo": "Geometry Dash 2.2",
   "icono": "https://i.postimg.cc/D0sdBZRg/image.png",
   "servidor": "Internet Archive (Servidor Gratuito)",
   "url": "https://archive.org/download/geometry-dash-mod_2.2.144/geometry-dash-mod_2.2.144_working.apk",
@@ -73,7 +71,7 @@
 
  {
   "id": 8,
-  "titulo": "PPSSPP Gold",
+  "titulo": "PPSSPP Gold Edition",
   "icono": "https://i.postimg.cc/cJYmDg7Z/image.png",
   "servidor": "Internet Archive (Servidor Gratuito)",
   "url": "https://archive.org/download/ppsspp-gold-v-1.19.1/PPSSPP%20Gold%20v1.19.1%20-%20espacioapk.com.apk",
@@ -104,7 +102,7 @@
 },
 {
   "id": 11,
-  "titulo": "CITRA",
+  "titulo": "CITRA MMJ",
   "icono": "https://i.postimg.cc/T3DtNmw2/image.png",
   "servidor": "GitHub / Archivos Comunitarios",
   "url": "https://github.com/weihuoya/citra/releases/download/20251112/Citra_MMJ_20251112.apk",
@@ -160,18 +158,4 @@
   "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Android 10 o superior<br>• Procesador: Qualcomm Snapdragon con GPU Adreno (Recomendado para mejor compatibilidad con Turnip)<br>• Memoria RAM: 4 GB o superior<br>• Almacenamiento: Espacio libre suficiente para los juegos de PC instalados."
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 ]

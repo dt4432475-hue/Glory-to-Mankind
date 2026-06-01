@@ -466,6 +466,7 @@ body {
     flex-direction: column;
     justify-content: flex-end; /* Empuja el texto hacia la parte inferior */
     gap: 0.3rem;
+    margin-top: auto;
     
     /* 🎨 DEGRADADO MAESTRO: Oscurece la base para que el texto blanco sea 100% legible */
     background: linear-gradient(to top, 
@@ -504,20 +505,6 @@ body {
 /* Agregamos una transición suave al título original para que el brillo no sea brusco */
 .card-content h3 {
     transition: color 0.25s ease, text-shadow 0.25s ease !important;
-}
-
-.card-footer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 4; /* Flotan en la esquina superior derecha */
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.tag-clickable:hover {
-    background-color: rgba(0, 255, 135, 0.2) !important;
-    transform: scale(1.04);
 }
 
 /* 🔮 CLASE DINÁMICA: Se activará sola cuando el usuario baje con el mouse */

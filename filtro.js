@@ -35,13 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error al cargar datos:", error));
 
-    // 2. Función para renderizar las tarjetas con solo palabras clave interactivas
-    function renderCards(items) {
-        if (!container) return; 
-        container.innerHTML = "";
+  function renderCards(items) {
+        container.innerHTML = ""; 
+        counter.textContent = items.length; 
 
         if (items.length === 0) {
-            container.innerHTML = `<p class="no-results" style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 40px 0;">No se encontraron aportes.</p>`;
+            container.innerHTML = `
+                <div class="no-results">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p>No se encontraron aportes que coincidan con tu búsqueda.</p>
+                </div>`;
             return;
         }
 
@@ -49,47 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("div");
             card.className = "card";
 
-            let tagsHTML = "";
-            const tagsString = aporte.tag || aporte.tags || "General";
-            const tagsArray = tagsString.split(",").map(t => t.trim());
-
-            tagsArray.forEach(tag => {
-                if (!tag.toLowerCase().includes("gb") && !tag.toLowerCase().includes("mb") && isNaN(tag)) {
-                    tagsHTML += `
-                        <span class="tag tag-clickable" data-tag="${tag}" style="cursor: pointer; background: rgba(0, 255, 135, 0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; color: #00ff87; border: 1px solid rgba(0, 255, 135, 0.2); transition: all 0.2s;">
-                            ${tag}
-                        </span>`;
-                }
-            });
-
+            // Estructura 100% limpia sin código muerto
             card.innerHTML = `
-                <div class="card-link-wrapper" style="position: relative; display: block;">
-                    <a href="descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}" style="text-decoration: none; color: inherit;">
+                <div class="card-link-wrapper">
+                    <a href="descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}">
+                        
                         <div class="card-image">
-                            <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo}">
+                            <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo || 'Aporte'}">
                         </div>
+                        
                         <div class="card-content">
                             <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
                             <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
                         </div>
+                        
                     </a>
-                    <div class="card-footer" style="padding: 0 15px 15px 15px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; z-index: 10;">
-                        ${tagsHTML}
-                    </div>
                 </div>
             `;
             container.appendChild(card);
-        });
-
-        document.querySelectorAll(".tag-clickable").forEach(tagSpan => {
-            tagSpan.addEventListener("click", (e) => {
-                e.preventDefault();
-                const selectedTag = e.target.getAttribute("data-tag");
-                if (searchInput) {
-                    searchInput.value = selectedTag;
-                    filterItems(); 
-                }
-            });
         });
     }
 

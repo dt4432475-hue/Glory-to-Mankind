@@ -29,9 +29,9 @@
   "titulo": "Warcraft III: Gold Edition",
   "icono": "https://i.postimg.cc/sgkZnsHP/wc3gold-cover-460x215.webp",
   "servidor": "Internet Archive (Servidor Gratuito)",
-  "url": "https://archive.org/download/squirrel-stapler/Squirrel%20Stapler.rar",
+  "url": "https://archive.org/download/warcraft-iii-1.30/Warcraft%20III%201.30.zip",
   "gameplay": "https://i.postimg.cc/wBtYBd94/War3TFT-SS2.webp",
-  "gameplay2": "https://i.postimg.cc/sDVFhWjC/209028-ss034.webp",
+  "gameplay2": "https://i.postimg.cc/Jh4ZHM05/WC3Scrn-Shot-053126-225927-01.webp",
   "descripcion": "Esta edición definitiva incluye el juego base Reign of Chaos y la mítica expansión The Frozen Throne. Comanda a cuatro poderosas facciones (Humanos, Orcos, Muertos Vivientes y Elfos Nocturnos) en un legendario título de estrategia en tiempo real que revolucionó el género introduciendo héroes con mecánicas de rol y subida de niveles.",
   "requisitos": "<strong>Recomendados:</strong><br>• Sistema Operativo: Windows 7 / 10 / 11 (64-bits)<br>• Procesador: Intel Pentium D o AMD Athlon 64 X2<br>• Memoria RAM: 2 GB o superior<br>• Gráficos: NVIDIA GeForce 6800 o ATI Radeon X1600 (256 MB)"
 },
@@ -53,19 +53,11 @@
   "titulo": "Counter-Strike 1.6",
   "icono": "https://i.postimg.cc/SxPNddsw/image-(2).webp",
   "servidor": "Internet Archive (Servidor Gratuito)",
-  "tag": "Shooter, FPS, Acción, Clásico, PC",
   "url": "https://up-4ever.net",
   "gameplay": "https://i.postimg.cc/WzYQV9Q2/Mod-29861-sd-image.webp",
   "gameplay2": "https://i.postimg.cc/9fBgV89M/Counter-Strike-1-6-The-Game-that-Defined-Competitive-FPS.webp",
   "descripcion": "Counter-Strike 1.6 es el legendario shooter táctico en primera persona desarrollado por Valve. Enfrenta a Terroristas y Antiterroristas en intensas rondas basadas en objetivos como plantar la bomba o rescatar rehenes. Es considerado uno de los pilares fundamentales de los deportes electrónicos y el juego competitivo.",
   "requisitos": "<strong>Recomendados:</strong><br>• Sistema Operativo: Windows XP / 7 / 10 / 11<br>• Procesador: 800 MHz o equivalente moderno<br>• Memoria RAM: 512 MB o superior<br>• Gráficos: Tarjeta de video de 32 MB compatible con OpenGL / DirectX"
 }
-
-
-
-
-
-  
-
 
 ]

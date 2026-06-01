@@ -2,7 +2,6 @@
    GLORY TO MANKIND - HOJA DE ESTILOS RESPETANDO EL DISEÑO ORIGINAL
    ========================================================================== */
 
-
 :root {
     --bg-main: #0a0e17;
     --bg-card: #111726;
@@ -18,12 +17,12 @@
     --transition-premium: cubic-bezier(0.25, 0.8, 0.25, 1);
     --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 
 body {
     /* Forzamos el uso de la fuente "Inter" cargada desde Google Fonts para evitar que se pierda */
@@ -40,7 +39,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 
 /* ==========================================================================
    CABECERA CORREGIDA SIN LUPA Y CON TEXTO COMPLETO
@@ -67,7 +65,6 @@ body {
   transition: none !important;
 }
 
-
    .nav-logo {
     font-size: 1.4rem;
     font-weight: 800;
@@ -86,7 +83,6 @@ body {
     border: 1px solid rgba(0, 255, 135, 0.25); /* Bordecito neón brillante */
     background-color: var(--bg-deep);
 }
-
 
 .nav-logo span {
   font-weight: 900; /* Le da más grosor a las letras para que el color luzca espectacular */
@@ -108,8 +104,6 @@ body {
 
   display: inline-block;
 }
-
-
 
 /* 🔍 BUSCADOR LIMPIO (SIN LUPA REBELDE) */
 .nav-search {
@@ -188,7 +182,7 @@ body {
     background-image: linear-gradient(rgba(17, 23, 38, 0.95), rgba(17, 23, 38, 0.95)), 
                       linear-gradient(90deg, #00ff87, #0066ff, #00ff87, #00ffff) !important;
     background-origin: border-box !important;
-    background-clip: padding-box, border-box !important;
+    background-clip: padding-box, border-box !important;         
     
     /* Hacemos que el degradado del borde mida el triple para poder animarlo */
     background-size: 100% 100%, 300% 100% !important;
@@ -222,7 +216,7 @@ body {
 #hero-bg.hero-banner {
     position: relative;
     background: linear-gradient(135deg, rgba(13, 19, 33, 0.45) 0%, rgba(6, 9, 17, 0.65) 100%), 
-                url('img/1.jpg') no-repeat center 35% !important;
+                url('https://i.postimg.cc/264fhRVF/backiee-311075-landscape.webp') no-repeat center 35% !important;
     background-size: cover !important;
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-md);

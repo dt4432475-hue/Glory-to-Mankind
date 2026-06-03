@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error al cargar datos:", error));
 
-  function renderCards(items) {
+    function renderCards(items) {
         container.innerHTML = ""; 
         counter.textContent = items.length; 
 
@@ -52,18 +52,43 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("div");
             card.className = "card";
 
-            // Estructura 100% limpia sin código muerto
+            // 🎮 ASIGNACIÓN DE ICONOS Y TEXTOS SEGÚN LA CATEGORÍA
+            let platformIcon = "fa-solid fa-cube"; // Icono por defecto
+            let platformText = "Aporte";           // Texto por defecto
+
+            switch(aporte.categoria) {
+                case "juegos-pc":
+                    platformIcon = "fa-solid fa-desktop";
+                    platformText = "Juegos PC";
+                    break;
+                case "juegos-android":
+                    platformIcon = "fa-brands fa-android";
+                    platformText = "Juegos Android";
+                    break;
+                case "apps":
+                    platformIcon = "fa-solid fa-cubes";
+                    platformText = "Apps / Programas";
+                    break;
+                case "isos":
+                    platformIcon = "fa-solid fa-compact-disc";
+                    platformText = "ISOs Windows";
+                    break;
+            }
+
+            // Renderizado de la tarjeta respetando tus clases originales
             card.innerHTML = `
                 <div class="card-link-wrapper">
                     <a href="descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}">
                         
                         <div class="card-image">
-                            <img src="${aporte.icono || aporte.image || 'https://placeholder.com'}" alt="${aporte.titulo || 'Aporte'}">
+                            <img src="${aporte.icono || 'https://via.placeholder.com/150'}" alt="${aporte.titulo}">
                         </div>
                         
                         <div class="card-content">
-                            <h3>${aporte.titulo || aporte.name || 'Sin título'}</h3>
-                            <p class="server">${aporte.servidor || 'Up-4ever (Servidor Gratuito)'}</p>
+                            <h3>${aporte.titulo || 'Sin título'}</h3>
+                            <p class="platform-tag ${aporte.categoria}">
+                                <i class="${platformIcon}"></i> ${platformText}
+                            </p>
                         </div>
                         
                     </a>
@@ -72,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             container.appendChild(card);
         });
     }
-
+  
     function updateCounter(count) {
         if (counter) counter.innerText = count;
     }

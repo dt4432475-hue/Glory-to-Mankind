@@ -18,15 +18,26 @@
     --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ==========================================================================
+   PARCHE DEFINITIVO: FUENTE BLINDADA + ICONOS SEGUROS
+   ========================================================================== */
+
+/* 1. Forzamos la fuente 'Inter' en absolutamente toda la estructura de la web */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* 2. 🔥 EXCEPCIÓN TOTAL: Le devolvemos a Font Awesome su tipografía original 
+   para que los iconos dejen de verse como cuadrados vacíos */
+.fa, .fas, .far, .fal, .fad, .fab, .fa-solid, .fa-brands, [class*="fa-"] {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "Font Awesome 5 Brands", sans-serif !important;
+    font-weight: 900 !important; /* Necesario para que algunos iconos sólidos carguen bien */
 }
 
 body {
-    /* Forzamos el uso de la fuente "Inter" cargada desde Google Fonts para evitar que se pierda */
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     background-color: var(--bg-main);
     color: var(--text-white);
     line-height: 1.6;
@@ -35,6 +46,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
     
+    /* 📱 Evita que el navegador del celular cambie el tamaño de la letra a su antojo */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+
     /* Suavizado de tipografía profesional */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1135,4 +1150,42 @@ body {
     grid-row: 2 !important;
     width: 100% !important;
   }
+}
+
+/* ==========================================================================
+   ETIQUETAS DINÁMICAS CON ICONOS PARA LAS TARJETAS (REEMPLAZA TEXTO GRIS)
+   ========================================================================== */
+
+.card-content .platform-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b; /* Color apagado por defecto para no saturar */
+    margin: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaciado perfecto entre el icono de Font Awesome y el texto */
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ⚡ ILUMINACIÓN DE ICONOS SEGÚN SU CATEGORÍA REAL */
+.card-content .platform-tag.juegos-pc i {
+    color: #00ffff; /* Cyan neón para PC */
+}
+
+.card-content .platform-tag.juegos-android i {
+    color: #a4c639; /* Verde clásico oficial de Android */
+}
+
+.card-content .platform-tag.apps i {
+    color: #ff007f; /* Rosa neón gamer para Programas */
+}
+
+.card-content .platform-tag.isos i {
+    color: #0066ff; /* Azul característico de Windows */
+}
+
+/* Al pasar el cursor sobre la tarjeta, el texto de la plataforma resalta en blanco */
+.card:hover .platform-tag {
+    color: var(--text-white) !important;
 }

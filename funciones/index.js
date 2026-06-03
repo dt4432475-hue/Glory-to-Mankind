@@ -1,172 +1,80 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById("search-input");
-    const container = document.getElementById("downloads-container"); 
-    const counter = document.getElementById("counted-items"); 
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    
-    // CAPTURAMOS EL BANNER PRINCIPAL PARA CONTROLARLO
-    const heroBanner = document.querySelector(".hero-banner");
+    const gridAportes = document.getElementById("grid-aportes");
+    const totalAportesText = document.getElementById("total-aportes");
+    const menuLinks = document.querySelectorAll(".nav-menu .nav-item");
 
-    let allItems = [];
-    let currentCategory = "todos";
+    // ==========================================
+    // MAPEO DE SECCIONES (Texto del menú -> Archivo JSON real)
+    // ==========================================
+    const seccionesJson = {
+        "Juegos PC": "secciones/juegos_pc.json",
+        "Juegos Android": "secciones/juegos_android.json",
+        "Apps Android": "secciones/apps_android.json",
+        "ISOs Gamer": "secciones/isos_herramientas.json" // Adaptado a tu nuevo nombre de archivo
+    };
 
-    // 1. Cargar datos de múltiples archivos JSON de forma simultánea
-    Promise.all([
-        fetch("juegos-pc.json").then(res => res.json()).catch(() => []),
-        fetch("juegos-android.json").then(res => res.json()).catch(() => []),
-        fetch("apps.json").then(res => res.json()).catch(() => []),
-        fetch("isos.json").then(res => res.json()).catch(() => [])
-    ])
-    .then(([juegosPc, juegosAndroid, apps, isos]) => {
-        const pcList = Array.isArray(juegosPc) ? juegosPc : [];
-        const androidList = Array.isArray(juegosAndroid) ? juegosAndroid : [];
-        const appsList = Array.isArray(apps) ? apps : [];
-        const isosList = Array.isArray(isos) ? isos : [];
-
-        pcList.forEach(item => item.categoria = "juegos-pc");
-        androidList.forEach(item => item.categoria = "juegos-android");
-        appsList.forEach(item => item.categoria = "apps");
-        isosList.forEach(item => item.categoria = "isos");
-
-        allItems = [...pcList, ...androidList, ...appsList, ...isosList];
-
-        renderCards(allItems);
-        updateCounter(allItems.length);
-    })
-    .catch(error => console.error("Error al cargar datos:", error));
-
-    function renderCards(items) {
-        container.innerHTML = ""; 
-        counter.textContent = items.length; 
-
-        if (items.length === 0) {
-            container.innerHTML = `
-                <div class="no-results">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <p>No se encontraron aportes que coincidan con tu búsqueda.</p>
-                </div>`;
+    // Función para cargar y dibujar las casillas
+    function cargarSeccion(nombreSeccion) {
+        const urlJson = seccionesJson[nombreSeccion];
+        
+        // Si se hace clic en "Inicio" o "Optimiza Windows", podemos mostrar un mensaje o dejarlo vacío temporalmente
+        if (!urlJson) {
+            gridAportes.innerHTML = "<p style='color: #627284; text-align: center; width: 100%; grid-column: 1/-1;'>Selecciona una sección activa del menú para ver los aportes.</p>";
+            totalAportesText.textContent = "0 aportes disponibles";
             return;
         }
 
-        items.forEach(aporte => {
-            const card = document.createElement("div");
-            card.className = "card";
+        fetch(urlJson)
+            .then(response => {
+                if (!response.ok) throw new Error("Error al cargar el archivo JSON");
+                return response.json();
+            })
+            .then(data => {
+                totalAportesText.textContent = `${data.length} aportes disponibles`;
+                gridAportes.innerHTML = ""; // Limpiar las casillas de la sección anterior
 
-            // 🎮 ASIGNACIÓN DE ICONOS Y TEXTOS SEGÚN LA CATEGORÍA
-            let platformIcon = "fa-solid fa-cube"; // Icono por defecto
-            let platformText = "Aporte";           // Texto por defecto
+                // Generar las casillas verticales dinámicamente con las clases de tu CSS
+                data.forEach(aporte => {
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+                    // Aquí se aplica tu imagen de fondo desde el JSON
+                    card.style.backgroundImage = `url('${aporte.imagen}')`;
 
-            switch(aporte.categoria) {
-                case "juegos-pc":
-                    platformIcon = "fa-solid fa-desktop";
-                    platformText = "Juegos PC";
-                    break;
-                case "juegos-android":
-                    platformIcon = "fa-brands fa-android";
-                    platformText = "Juegos Android";
-                    break;
-                case "apps":
-                    platformIcon = "fa-solid fa-cubes";
-                    platformText = "Apps / Programas";
-                    break;
-                case "isos":
-                    platformIcon = "fa-solid fa-compact-disc";
-                    platformText = "ISOs Windows";
-                    break;
-            }
+                    const cardInfo = document.createElement("div");
+                    cardInfo.classList.add("card-info");
 
-            // Renderizado de la tarjeta respetando tus clases originales
-            card.innerHTML = `
-                <div class="card-link-wrapper">
-                    <a href="descarga.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}">
-                        
-                        <div class="card-image">
-                            <img src="${aporte.icono || 'https://via.placeholder.com/150'}" alt="${aporte.titulo}">
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3>${aporte.titulo || 'Sin título'}</h3>
-                            <p class="platform-tag ${aporte.categoria}">
-                                <i class="${platformIcon}"></i> ${platformText}
-                            </p>
-                        </div>
-                        
-                    </a>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-    }
-  
-    function updateCounter(count) {
-        if (counter) counter.innerText = count;
-    }
- function manageBannerVisibility(query) {
-        if (!heroBanner) return;
+                    const titulo = document.createElement("h3");
+                    titulo.textContent = aporte.titulo;
 
-        if (query.length > 0 || currentCategory !== "todos") {
-            heroBanner.style.opacity = "0";
-            heroBanner.style.transform = "translateY(-10px)";
-            // Espera un instante a que termine la animación de CSS antes de ocultarlo por completo
-            setTimeout(() => {
-                if(searchInput.value.trim().length > 0 || currentCategory !== "todos") {
-                    heroBanner.style.display = "none";
-                }
-            }, 300);
-        } else {
-            heroBanner.style.display = "block";
-            // Forzar un reflujo en el navegador para activar la animación de entrada
-            setTimeout(() => {
-                heroBanner.style.opacity = "1";
-                heroBanner.style.transform = "translateY(0)";
-            }, 10);
-        }
+                    cardInfo.appendChild(titulo);
+                    card.appendChild(cardInfo);
+                    gridAportes.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                gridAportes.innerHTML = "<p style='color: #ff4a4a; text-align: center; width: 100%; grid-column: 1/-1;'>Crea publicaciones en este archivo JSON para que aparezcan aquí.</p>";
+                totalAportesText.textContent = "0 aportes";
+            });
     }
 
-    function filterItems() {
-        const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+    // Escuchar los clics de las pestañas del menú
+    menuLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault(); // Evita que la página se mueva o recargue
 
-        // Controlamos el banner antes de filtrar
-        manageBannerVisibility(query);
+            // Cambiar la línea verde estética (.active) a la pestaña presionada
+            menuLinks.forEach(item => item.classList.remove("active"));
+            link.classList.add("active");
 
-        const filtered = allItems.filter(item => {
-            const matchesCategory = (currentCategory === "todos" || item.categoria === currentCategory);
+            // Obtener el texto exacto del botón que presionaste (ej: "Apps Android")
+            const seccionSeleccionada = link.textContent.trim();
             
-            const title = (item.titulo || item.name || "").toLowerCase();
-            const tag = (item.tag || item.tags || "").toLowerCase();
-            const server = (item.servidor || "").toLowerCase();
-            
-            const matchesSearch = title.includes(query) || tag.includes(query) || server.includes(query);
-
-            return matchesCategory && matchesSearch;
-        });
-
-        renderCards(filtered);
-    }
-
-    if (searchInput) {
-        searchInput.addEventListener("input", filterItems);
-    }
-
-    filterButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-            
-            currentCategory = button.getAttribute("data-filter");
-            filterItems(); // Ejecuta el filtro completo y analiza el banner
+            // Cargar el JSON correspondiente
+            cargarSeccion(seccionSeleccionada);
         });
     });
+
+    // Carga inicial por defecto al abrir la página
+    cargarSeccion("Juegos PC");
 });
-    // 📌 CONTROLADOR SENSOR DE SCROLL PARA HACER LA NAVBAR TRANSPARENTE
-    window.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".main-navbar");
-        if (navbar) {
-            if (window.scrollY > 20) {
-                navbar.classList.add("scrolled"); // Activa el cristal transparente si bajó más de 20px
-            } else {
-                navbar.classList.remove("scrolled"); // Vuelve a sólido si regresó arriba del todo
-            }
-        }
-    });

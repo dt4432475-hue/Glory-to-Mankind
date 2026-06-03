@@ -2,27 +2,66 @@ document.addEventListener("DOMContentLoaded", () => {
     const gridAportes = document.getElementById("grid-aportes");
     const totalAportesText = document.getElementById("total-aportes");
     const menuLinks = document.querySelectorAll(".nav-menu .nav-item");
+    const heroBanner = document.querySelector(".hero-section"); // Captura el banner de bienvenida
+    const buscador = document.querySelector(".search-container input"); // Captura tu barra de búsqueda
 
     // ==========================================
-    // MAPEO DE SECCIONES (Texto del menú -> Archivo JSON real)
+    // MAPEO EXACTO DE TUS 4 ARCHIVOS JSON REALES
     // ==========================================
     const seccionesJson = {
-        "Juegos PC": "secciones/juegos_pc.json",
-        "Juegos Android": "secciones/juegos_android.json",
-        "Apps Android": "secciones/apps_android.json",
-        "ISOs Gamer": "secciones/isos_herramientas.json" // Adaptado a tu nuevo nombre de archivo
+        "Juegos PC": "./secciones/juegos_pc.json",
+        "Juegos Android": "./secciones/juegos_android.json",
+        "Apps Android": "./secciones/apps_android.json",
+        "Isos y Herramientas": "./secciones/isos_herramientas.json"
     };
 
-    // Función para cargar y dibujar las casillas
-    function cargarSeccion(nombreSeccion) {
-        const urlJson = seccionesJson[nombreSeccion];
+    // Función auxiliar para renderizar las casillas en el contenedor
+    function dibujarCasillas(listaAportes) {
+        gridAportes.innerHTML = ""; 
         
-        // Si se hace clic en "Inicio" o "Optimiza Windows", podemos mostrar un mensaje o dejarlo vacío temporalmente
-        if (!urlJson) {
-            gridAportes.innerHTML = "<p style='color: #627284; text-align: center; width: 100%; grid-column: 1/-1;'>Selecciona una sección activa del menú para ver los aportes.</p>";
-            totalAportesText.textContent = "0 aportes disponibles";
-            return;
-        }
+        listaAportes.forEach(aporte => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.style.backgroundImage = `url('${aporte.imagen}')`;
+
+            const cardInfo = document.createElement("div");
+            cardInfo.classList.add("card-info");
+
+            const titulo = document.createElement("h3");
+            titulo.textContent = aporte.titulo;
+
+            cardInfo.appendChild(titulo);
+            card.appendChild(cardInfo);
+            gridAportes.appendChild(card);
+        });
+    }
+
+    // PORTADA "INICIO": Muestra el banner y mezcla todo el contenido
+    function cargarInicio() {
+        if (heroBanner) heroBanner.classList.remove("oculto"); // Asegura que se vea el banner
+
+        const archivos = Object.values(seccionesJson);
+
+        Promise.all(archivos.map(url => fetch(url).then(res => res.json()).catch(() => [])))
+            .then(resultados => {
+                let todosLosAportes = resultados.flat();
+                todosLosAportes.sort(() => Math.random() - 0.5); // Surtido mezclado al azar
+
+                totalAportesText.textContent = `${todosLosAportes.length} aportes en total`;
+                dibujarCasillas(todosLosAportes);
+            })
+            .catch(error => {
+                console.error("Error al cargar la portada de Inicio:", error);
+                gridAportes.innerHTML = "<p style='color: #ff4a4a; text-align: center; width: 100%; grid-column: 1/-1;'>Error al generar el surtido de Inicio.</p>";
+            });
+    }
+
+    // SECCIONES INDIVIDUALES: Oculta el banner y carga su respectivo JSON
+    function cargarSeccion(nombreSeccion) {
+        if (heroBanner) heroBanner.classList.add("oculto"); // Oculta el banner de inmediato
+
+        const urlJson = seccionesJson[nombreSeccion];
+        if (!urlJson) return;
 
         fetch(urlJson)
             .then(response => {
@@ -31,50 +70,51 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(data => {
                 totalAportesText.textContent = `${data.length} aportes disponibles`;
-                gridAportes.innerHTML = ""; // Limpiar las casillas de la sección anterior
-
-                // Generar las casillas verticales dinámicamente con las clases de tu CSS
-                data.forEach(aporte => {
-                    const card = document.createElement("div");
-                    card.classList.add("card");
-                    // Aquí se aplica tu imagen de fondo desde el JSON
-                    card.style.backgroundImage = `url('${aporte.imagen}')`;
-
-                    const cardInfo = document.createElement("div");
-                    cardInfo.classList.add("card-info");
-
-                    const titulo = document.createElement("h3");
-                    titulo.textContent = aporte.titulo;
-
-                    cardInfo.appendChild(titulo);
-                    card.appendChild(cardInfo);
-                    gridAportes.appendChild(card);
-                });
+                dibujarCasillas(data);
             })
             .catch(error => {
                 console.error("Error:", error);
-                gridAportes.innerHTML = "<p style='color: #ff4a4a; text-align: center; width: 100%; grid-column: 1/-1;'>Crea publicaciones en este archivo JSON para que aparezcan aquí.</p>";
+                gridAportes.innerHTML = "<p style='color: #ff4a4a; text-align: center; width: 100%; grid-column: 1/-1;'>Error al cargar el contenido.</p>";
                 totalAportesText.textContent = "0 aportes";
             });
     }
 
-    // Escuchar los clics de las pestañas del menú
+    // DETECTAR CLICS EN EL MENÚ SUPERIOR
     menuLinks.forEach(link => {
         link.addEventListener("click", (e) => {
-            e.preventDefault(); // Evita que la página se mueva o recargue
+            e.preventDefault(); 
 
-            // Cambiar la línea verde estética (.active) a la pestaña presionada
             menuLinks.forEach(item => item.classList.remove("active"));
             link.classList.add("active");
 
-            // Obtener el texto exacto del botón que presionaste (ej: "Apps Android")
             const seccionSeleccionada = link.textContent.trim();
             
-            // Cargar el JSON correspondiente
-            cargarSeccion(seccionSeleccionada);
+            if (seccionSeleccionada === "Inicio") {
+                if (buscador) buscador.value = ""; // Limpia el buscador si regresa a Inicio
+                cargarInicio();
+            } else {
+                cargarSeccion(seccionSeleccionada);
+            }
         });
     });
 
-    // Carga inicial por defecto al abrir la página
-    cargarSeccion("Juegos PC");
+    // DETECTAR EVENTO DE ESCRITURA EN EL BUSCADOR
+    if (buscador) {
+        buscador.addEventListener("input", (e) => {
+            const textoBusqueda = e.target.value.trim().toLowerCase();
+
+            if (textoBusqueda !== "") {
+                if (heroBanner) heroBanner.classList.add("oculto"); // Si escribe algo, el banner vuela
+            } else {
+                // Si borra lo escrito, el banner solo regresa si está parado en la pestaña de Inicio
+                const pestañaActiva = document.querySelector(".nav-menu .nav-item.active").textContent.trim();
+                if (pestañaActiva === "Inicio" && heroBanner) {
+                    heroBanner.classList.remove("oculto");
+                }
+            }
+        });
+    }
+
+    // CARGA INICIAL POR DEFECTO
+    cargarInicio();
 });

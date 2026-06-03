@@ -75,20 +75,62 @@ body {
 /* ==========================================
    3. SECCIÓN HERO (BIENVENIDA CENTRAL)
    ========================================== */
+
+/* ==========================================================================
+   CONFIGURACIÓN DEL BANNER CON IMAGEN ESTÁTICA PREMIUM (HERO SECTION)
+   ========================================================================= */
 .hero-section {
-    text-align: center;
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    min-height: 280px; /* Altura ideal para lucir el arte de fondo */
+    display: flex;
+    align-items: center;
+    padding: 40px 5%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 12px; /* Esquinas redondeadas estéticas */
+    
+    /* 1. RUTA DE TU IMAGEN ESTÁTICA DE 2B */
+    background-image: url('/img/fondos/zxc\ \(3\).webp'); /* Pon aquí el nombre exacto de tu archivo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el espacio sin deformarse */
+    background-position: center 25%; /* Centra y sube un poquito el enfoque de la imagen */
+    background-repeat: no-repeat;
+
+    /* 2. FILTRO DE OSCURIDAD PREMIUM */
+    /* Mezcla la imagen con un color negro al 45% para que las letras blancas resalten de locos */
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.45); 
 }
 
-.hero-section .badge {
-    background-color: rgba(0, 255, 170, 0.1);
-    color: #00ffaa;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(0, 255, 170, 0.3);
+/* Contenedor interno de los textos a la izquierda */
+.hero-content {
+    max-width: 650px; /* Evita que el texto se estire demasiado a lo ancho */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 15px 0;
+    font-weight: 700;
+    /* Sombra profunda para darle separación del fondo */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-content p {
+    font-size: 1.05rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+    /* Sombra de seguridad para lectura perfecta */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Mantiene la automatización con tu JavaScript para ocultar el banner */
+.hero-section.oculto {
+    display: none !important;
 }
 
 .hero-section h1 {
@@ -176,4 +218,101 @@ body {
     color: #00ffaa; /* Texto verde neon */
     font-weight: 600;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   ESTILOS RESPONSIVE (ADAPTABILIDAD PARA CELULARES Y TABLETS)
+   ========================================================================== */
+
+/* 📱 1. PARA PANTALLAS MEDIANAS Y CELULARES (Menos de 768px de ancho) */
+@media (max-width: 768px) {
+    
+    /* La barra de navegación superior se vuelve vertical para que no se amontone */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        height: auto; /* Permite que crezca según el contenido */
+    }
+
+    /* El contenedor de búsqueda ocupa el 100% del ancho disponible */
+    .search-container {
+        width: 100%;
+    }
+    
+    .search-container input {
+        width: 100%;
+    }
+
+    /* El menú de las pestañas (Inicio, Juegos PC...) se vuelve una fila con scroll horizontal si no cabe */
+    .nav-menu {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto; /* Si son muchas secciones, pueden deslizarse de lado con el dedo */
+        padding-bottom: 5px;
+        gap: 15px;
+        white-space: nowrap; /* Evita que las pestañas se rompan en dos líneas */
+    }
+
+    /* 2B BANNER RESPONSIVE */
+    .hero-section {
+        min-height: auto;
+        padding: 30px 20px;
+        background-position: center center; /* Centramos el arte en móviles */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Letras un poco más pequeñas para que no ocupen toda la pantalla */
+        margin: 10px 0;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    /* Título de Explorar Aportes */
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    /* 🎴 LA GRILLA DE TARJETAS AUTOMÁTICA */
+    /* En vez de forzar un número de columnas, el navegador acomoda las que quepan */
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+        gap: 12px !important; /* Espacio más compacto en celulares */
+        padding: 10px 0;
+    }
+
+    /* Ajuste de tamaño para las casillas verticales en móviles */
+    .card {
+        height: 210px !important; /* Altura ideal tipo "póster" para celulares */
+    }
+
+    .card-info h3 {
+        font-size: 0.85rem; /* Títulos de los juegos un pelo más pequeños para que no se corten */
+    }
+}
+
+/* 📲 2. PARA CELULARES MUY PEQUEÑOS (Menos de 480px de ancho) */
+@media (max-width: 480px) {
+    .logo-gif {
+        height: 35px; /* Encogemos un poco el logo animado para ganar espacio */
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    /* En celulares muy chicos, ponemos estrictamente 2 columnas de juegos por fila */
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .card {
+        height: 190px !important; /* Altura ajustada para doble columna */
+    }
 }

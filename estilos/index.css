@@ -1166,22 +1166,20 @@ body {
     justify-content: center !important;
 }
 
-/* 3. Estilo base del icono en reposo (Color verde neón base pero APAGADO, sin sombras) */
-.card-content .platform-tag i {
-    font-size: 20px !important;          
-    color: #00ff87 !important; /* Mantiene su color verde neón base */
-    filter: none !important;    /* ⚡ Quitamos cualquier brillo por defecto */
-    transition: transform 0.3s ease, filter 0.3s ease !important; /* Transición suave */
-}
-
 /* ==========================================================================
-   EFECTO HOVER: ACTIVA EL BRILLO NEÓN POTENTE AL PASAR EL MOUSE POR LA CARD
+   ICONO FLOTANTE: ESTILO BASE CON EL TAMAÑO REDUCIDO
    ========================================================================== */
 
+.card-content .platform-tag i {
+    font-size: 16px !important;          /* 🛠️ CAMBIA ESTO: De 20px bájalo a 16px o 15px */
+    color: #00ff87 !important;           /* Mantiene el verde neón base */
+    filter: none !important;             /* Apagado por defecto */
+    transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+/* El brillo al pasar el mouse se queda igual, pero escalará desde el nuevo tamaño */
 .card:hover .platform-tag i {
-    transform: scale(1.15) !important; /* Crece un poquito de tamaño al encenderse */
-    
-    /* ⚡ Aquí se inyecta el brillo potente idéntico al título de Glory to Mankind */
+    transform: scale(1.15) !important; 
     filter: drop-shadow(0 0 5px #00ff87) 
             drop-shadow(0 0 12px #00ff87) 
             drop-shadow(0 0 20px rgba(0, 255, 135, 0.8)) !important;

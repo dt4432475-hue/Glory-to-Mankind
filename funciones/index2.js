@@ -35,6 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("app-gameplay").src = aporte.gameplay || "";
             document.getElementById("app-gameplay2").src = aporte.gameplay2 || aporte.gameplay || "";
 
+            // 📌 INYECCIÓN DE LA ADVERTENCIA CONTROLADA POR EL JSON
+            const warningContainer = document.getElementById("app-warning-container");
+            if (warningContainer) {
+                if (aporte.advertencia && aporte.advertencia.trim() !== "") {
+                    warningContainer.innerHTML = `
+                        <div class="warning-box-neon">
+                            <div class="warning-header">
+                                <i class="fa-solid fa-triangle-exclamation animate-pulse"></i>
+                                <span>ADVERTENCIA DE SEGURIDAD / FALSO POSITIVO</span>
+                            </div>
+                            <p class="warning-body">${aporte.advertencia}</p>
+                        </div>
+                    `;
+                } else {
+                    warningContainer.innerHTML = ""; // Si no hay advertencia, se oculta por completo
+                }
+            }
+
             // Inyección de la Descripción
             if (descEl) {
                 descEl.innerHTML = aporte.descripcion || "No hay descripción disponible.";

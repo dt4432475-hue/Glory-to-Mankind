@@ -1184,3 +1184,57 @@ body {
             drop-shadow(0 0 12px #00ff87) 
             drop-shadow(0 0 20px rgba(0, 255, 135, 0.8)) !important;
 }
+
+/* ==========================================================================
+   RECUADRO DE ADVERTENCIA DINÁMICO (ALERTA NEÓN CYBERPUNK)
+   ========================================================================== */
+#app-warning-container {
+    width: 100%;
+    max-width: 1200px; /* O el ancho máximo que uses en tus bloques */
+    margin: 0 auto;
+    padding: 0 20px; /* Para que no pegue a los bordes de la pantalla */
+    box-sizing: border-box;
+}
+
+.warning-box-neon {
+    background: rgba(255, 102, 0, 0.07) !important; /* Fondo naranja muy sutil transparente */
+    border: 1px dashed #ff6600 !important;          /* Borde discontinuo para estilo técnico/alerta */
+    border-radius: 8px !important;
+    padding: 15px 20px !important;
+    margin: 20px 0 !important;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.2) !important; /* Brillo neón externo naranja */
+}
+
+.warning-box-neon .warning-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    color: #ff6600 !important; /* Texto del título en naranja neón */
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 8px !important;
+    text-shadow: 0 0 8px rgba(255, 102, 0, 0.6) !important; /* Brillo en las letras */
+}
+
+.warning-box-neon .warning-header i {
+    font-size: 16px !important;
+}
+
+.warning-box-neon .warning-body {
+    color: #e2e8f0 !important; /* Texto de la advertencia en blanco grisáceo legible */
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+/* ⚡ ANIMACIÓN DE PULSO CONTINUO PARA EL ICONO DE EXCLAMACIÓN */
+@keyframes pulseAlerta {
+    0% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.15); }
+    100% { opacity: 0.5; transform: scale(1); }
+}
+
+.warning-box-neon .animate-pulse {
+    animation: pulseAlerta 2s infinite ease-in-out !important;
+}

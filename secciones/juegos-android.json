@@ -145,7 +145,8 @@
   "url": "https://archive.org/download/winlator-11.0_202605/Winlator_11.0.apk",
   "gameplay": "https://i.postimg.cc/1thf52hX/image.png",
   "descripcion": "Winlator es una aplicación para Android que te permite emular y ejecutar aplicaciones y videojuegos de Windows (x86 y x64) utilizando Wine y Box86/Box64. Ofrece una gestión avanzada de contenedores, configuración de controladores de pantalla y mapeo de controles en pantalla para disfrutar de juegos clásicos de PC directamente en tu dispositivo móvil.",
-  "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Android 10 o superior<br>• Procesador: Qualcomm Snapdragon con GPU Adreno (Recomendado para mejor compatibilidad con Turnip)<br>• Memoria RAM: 4 GB o superior<br>• Almacenamiento: Espacio libre suficiente para los juegos de PC instalados."
+  "requisitos": "<strong>MÍNIMOS:</strong><br>• Sistema Operativo: Android 10 o superior<br>• Procesador: Qualcomm Snapdragon con GPU Adreno (Recomendado para mejor compatibilidad con Turnip)<br>• Memoria RAM: 4 GB o superior<br>• Almacenamiento: Espacio libre suficiente para los juegos de PC instalados.",
+  "advertencia": "Este archivo puede ser detectado como falso positivo por algunos antivirus debido al crack/activador. Desactiva temporalmente tu protección si tienes problemas con la instalación."
 }
 
 ]

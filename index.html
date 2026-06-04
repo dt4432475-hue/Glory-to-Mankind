@@ -7,12 +7,10 @@
     <meta name="google-site-verification" content="zrFtqPRc4WTSMe9kgQGucfO8Vb257knNITP8XGACHwE" />
     <link rel="icon" type="image/png" href="img/logo titulo y web.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Importar fuente de Google Fonts para evitar fuentes del sistema -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?       family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">        
+    <link rel="stylesheet" href="/estilos/index.css">
     
 </head>
 
@@ -30,18 +28,17 @@
     <a href="#" class="filter-btn active" data-filter="todos"><i class="fa-solid fa-house"></i> Inicio</a>
     <a href="#" class="filter-btn" data-filter="juegos-pc"><i class="fa-solid fa-desktop"></i> Juegos PC</a>
     <a href="#" class="filter-btn" data-filter="juegos-android"><i class="fa-brands fa-android"></i> Juegos Android</a>
-    <a href="#" class="filter-btn" data-filter="apps"><i class="fa-solid fa-cubes"></i> Apps / Programas</a>
-    
-    <a href="#" class="filter-btn" data-filter="isos"><i class="fa-solid fa-compact-disc"></i> ISOs Windows</a>
+    <a href="#" class="filter-btn" data-filter="apps"><i class="fa-solid fa-cubes"></i> Apps Android<s/a>
+    <a href="#" class="filter-btn" data-filter="isos"><i class="fa-solid fa-compact-disc"></i> Isos y Herramientas</a>
 </nav>
     </header>
 
     <div class="page-layout">
-<!-- BANNER PRINCIPAL CORREGIDO Y LIBERADO -->
+
 <section class="hero-banner" id="hero-bg">
     <div class="hero-content-flex">
         <div class="hero-text-side">
-            <span class="hero-badge"><i class="fa-solid fa-fire"></i>"Tamo Activo"</span>
+            <span class="hero-badge"><i class="fa-solid fa-fire"></i>Contenido actualizado</span>
             <h1>Glory to Mankind</h1>
             <p>Bienvenido o bienvenida a nuestro rincon de juegos, programas, lo que quieras. Todos nuestros archivos han sido previamente analizados antes de su lanzamiento por nuestros antivirus, asi que sientete tranquilo mientras navegas por aqui. Esperamos que encuentres lo que estas buscando. 😊 </p>
         </div>
@@ -52,23 +49,22 @@
     <div class="section-header-flex">
         <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Explorar Aportes</h2>
         <div class="stats-counter">
-            <span id="counted-items">0</span> aportes disponibles
+            <span id="counted-items">0</span> Aportes disponibles
         </div>
     </div>
 
     <div class="downloads-grid" id="downloads-container"></div>
 </main>
-
     </div>
 
     <footer class="main-footer">
         <p>© 2026 Glory to Mankind Project. Diseñado de forma original para la distribución de software libre y seguro.</p>
     </footer>
 
-<!-- BOTÓN REACIVADO CON ACCIÓN DE SUBIDA SUAVE -->
 <button id="scroll-top-btn" class="scroll-top-btn" title="Volver arriba" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
     <i class="fa-solid fa-arrow-up"></i>
 </button>
-    <script src="filtro.js"></script>
+
+    <script src="./funciones/filtro.js"></script>
 </body>
 </html>

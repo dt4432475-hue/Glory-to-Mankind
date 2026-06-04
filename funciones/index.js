@@ -12,21 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Cargar datos de múltiples archivos JSON de forma simultánea
     Promise.all([
-        fetch("juegos-pc.json").then(res => res.json()).catch(() => []),
-        fetch("juegos-android.json").then(res => res.json()).catch(() => []),
-        fetch("apps-android.json").then(res => res.json()).catch(() => []),
-        fetch("isos-herramientas.json").then(res => res.json()).catch(() => [])
+        fetch("secciones/juegos-pc.json").then(res => res.json()).catch(() => []),
+        fetch("secciones/juegos-android.json").then(res => res.json()).catch(() => []),
+        fetch("secciones/apps-android.json").then(res => res.json()).catch(() => []),
+        fetch("secciones/isos-herramientas.json").then(res => res.json()).catch(() => [])
     ])
-    .then(([juegosPc, juegosAndroid, apps, isos]) => {
+    .then(([juegosPc, juegosAndroid, appsAndroid, isosyherramientas]) => {
         const pcList = Array.isArray(juegosPc) ? juegosPc : [];
         const androidList = Array.isArray(juegosAndroid) ? juegosAndroid : [];
-        const appsList = Array.isArray(apps) ? apps : [];
-        const isosList = Array.isArray(isos) ? isos : [];
+        const appsList = Array.isArray(appsAndroid) ? appsAndroid : [];
+        const isosList = Array.isArray(isosyherramientas) ? isosyherramientas : [];
 
         pcList.forEach(item => item.categoria = "juegos-pc");
         androidList.forEach(item => item.categoria = "juegos-android");
-        appsList.forEach(item => item.categoria = "apps");
-        isosList.forEach(item => item.categoria = "isos");
+        appsList.forEach(item => item.categoria = "apps-android");
+        isosList.forEach(item => item.categoria = "isos-herramientas");
 
         allItems = [...pcList, ...androidList, ...appsList, ...isosList];
 
@@ -65,11 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     platformIcon = "fa-brands fa-android";
                     platformText = "Juegos Android";
                     break;
-                case "apps":
+                case "apps-android":
                     platformIcon = "fa-solid fa-cubes";
                     platformText = "Apps Android";
                     break;
-                case "isos":
+                case "isos-herramientas":
                     platformIcon = "fa-solid fa-compact-disc";
                     platformText = "Isos y Herramientas";
                     break;
@@ -133,10 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const matchesCategory = (currentCategory === "todos" || item.categoria === currentCategory);
             
             const title = (item.titulo || item.name || "").toLowerCase();
-            const tag = (item.tag || item.tags || "").toLowerCase();
-            const server = (item.servidor || "").toLowerCase();
             
-            const matchesSearch = title.includes(query) || tag.includes(query) || server.includes(query);
+           const matchesSearch = title.includes(query);
 
             return matchesCategory && matchesSearch;
         });

@@ -61,6 +61,11 @@ body {
     border-bottom: 2px solid transparent;
 }
 
+.nav-item i {
+    margin-right: 6px; /* Espacio entre el icono y el texto */
+    font-size: 0.95rem;
+}
+
 /* Efecto al pasar el cursor (Hover) */
 .nav-item:hover {
     color: #00ffaa; /* Color verde brillante */
@@ -220,6 +225,28 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+.card-badge-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(22, 25, 32, 0.85); /* Fondo oscuro semitransparente cyberpunk */
+    border: 1px solid #00ff87; /* Bordes verde neón sutil */
+    border-radius: 50%; /* Lo hace un círculo perfecto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Lo mantiene siempre visible por encima de la imagen de fondo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo del icono interno */
+.card-badge-icon i {
+    color: #00ff87; /* Color verde neón para que combine con tu estética */
+    font-size: 0.9rem;
+}
+
 /* ==========================================================================
    ESTILOS RESPONSIVE (ADAPTABILIDAD PARA CELULARES Y TABLETS)
    ========================================================================== */
@@ -247,11 +274,23 @@ body {
     /* El menú de las pestañas (Inicio, Juegos PC...) se vuelve una fila con scroll horizontal si no cabe */
     .nav-menu {
         width: 100%;
-        justify-content: flex-start;
-        overflow-x: auto; /* Si son muchas secciones, pueden deslizarse de lado con el dedo */
-        padding-bottom: 5px;
-        gap: 15px;
-        white-space: nowrap; /* Evita que las pestañas se rompan en dos líneas */
+        display: flex;
+        flex-wrap: wrap;       /* Permite que los botones salten a la siguiente línea si no caben */
+        justify-content: center; /* Centra los botones de las filas de forma equilibrada */
+        gap: 12px 20px;         /* 12px de espacio entre filas, 20px entre botones */
+        padding: 5px 0;
+        
+        /* Eliminamos cualquier rastro de scroll horizontal */
+        overflow-x: visible;    
+        white-space: normal;    /* Deja que los elementos se distribuyan en múltiples filas */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .nav-menu .nav-item {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+        text-align: center;
     }
 
     /* 2B BANNER RESPONSIVE */

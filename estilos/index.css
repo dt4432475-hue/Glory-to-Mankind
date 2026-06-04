@@ -1139,39 +1139,50 @@ body {
 }
 
 /* ==========================================================================
-   ETIQUETAS DINÁMICAS CON ICONOS PARA LAS TARJETAS (REEMPLAZA TEXTO GRIS)
+   ICONO FLOTANTE: BRILLO ACTIVO ÚNICAMENTE EN HOVER (PASAR EL MOUSE)
    ========================================================================== */
 
+/* 1. Contenedor de referencia en la tarjeta */
+.downloads-grid .card-link-wrapper,
+.card-link-wrapper {
+    position: relative !important;
+}
+
+/* 2. Estado normal (Sin pasar el mouse): El icono está limpio y sin brillo */
 .card-content .platform-tag {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #64748b; /* Color apagado por defecto para no saturar */
-    margin: 0;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* Espaciado perfecto entre el icono de Font Awesome y el texto */
-    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute !important;
+    top: 15px !important;            
+    left: 15px !important;           
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important; 
+    border: none !important;             
+    width: auto !important;             
+    height: auto !important;
+    border-radius: 0 !important;
+    z-index: 15 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-/* ⚡ ILUMINACIÓN DE ICONOS SEGÚN SU CATEGORÍA REAL */
-.card-content .platform-tag.juegos-pc i {
-    color: #00ffff; /* Cyan neón para PC */
+/* 3. Estilo base del icono en reposo (Color verde neón base pero APAGADO, sin sombras) */
+.card-content .platform-tag i {
+    font-size: 20px !important;          
+    color: #00ff87 !important; /* Mantiene su color verde neón base */
+    filter: none !important;    /* ⚡ Quitamos cualquier brillo por defecto */
+    transition: transform 0.3s ease, filter 0.3s ease !important; /* Transición suave */
 }
 
-.card-content .platform-tag.juegos-android i {
-    color: #a4c639; /* Verde clásico oficial de Android */
-}
+/* ==========================================================================
+   EFECTO HOVER: ACTIVA EL BRILLO NEÓN POTENTE AL PASAR EL MOUSE POR LA CARD
+   ========================================================================== */
 
-.card-content .platform-tag.apps i {
-    color: #ff007f; /* Rosa neón gamer para Programas */
-}
-
-.card-content .platform-tag.isos i {
-    color: #0066ff; /* Azul característico de Windows */
-}
-
-/* Al pasar el cursor sobre la tarjeta, el texto de la plataforma resalta en blanco */
-.card:hover .platform-tag {
-    color: var(--text-white) !important;
+.card:hover .platform-tag i {
+    transform: scale(1.15) !important; /* Crece un poquito de tamaño al encenderse */
+    
+    /* ⚡ Aquí se inyecta el brillo potente idéntico al título de Glory to Mankind */
+    filter: drop-shadow(0 0 5px #00ff87) 
+            drop-shadow(0 0 12px #00ff87) 
+            drop-shadow(0 0 20px rgba(0, 255, 135, 0.8)) !important;
 }

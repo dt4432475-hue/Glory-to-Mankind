@@ -36,68 +36,50 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => console.error("Error al cargar datos:", error));
 
     function renderCards(items) {
-        container.innerHTML = ""; 
-        counter.textContent = items.length; 
+    container.innerHTML = ""; // Limpiamos el contenedor antes de renderizar
 
-        if (items.length === 0) {
-            container.innerHTML = `
-                <div class="no-results">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <p>No se encontraron aportes que coincidan con tu búsqueda.</p>
-                </div>`;
-            return;
-        }
-
-        items.forEach(aporte => {
-            const card = document.createElement("div");
-            card.className = "card";
-
-            // 🎮 ASIGNACIÓN DE ICONOS Y TEXTOS SEGÚN LA CATEGORÍA
-            let platformIcon = "fa-solid fa-cube"; // Icono por defecto
-            let platformText = "Aporte";           // Texto por defecto
-
-            switch(aporte.categoria) {
-                case "juegos-pc":
-                    platformIcon = "fa-solid fa-desktop";
-                    platformText = "Juegos PC";
-                    break;
-                case "juegos-android":
-                    platformIcon = "fa-brands fa-android";
-                    platformText = "Juegos Android";
-                    break;
-                case "apps-android":
-                    platformIcon = "fa-solid fa-cubes";
-                    platformText = "Apps Android";
-                    break;
-                case "isos-herramientas":
-                    platformIcon = "fa-solid fa-compact-disc";
-                    platformText = "Isos y Herramientas";
-                    break;
-            }
-
-            // Renderizado de la tarjeta respetando tus clases originales
-            card.innerHTML = `
-                <div class="card-link-wrapper">
-                    <a href="index2.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}">
-                         
-                        <div class="card-image">
-                            <img src="${aporte.icono || 'https://via.placeholder.com/150'}" alt="${aporte.titulo}">
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3>${aporte.titulo || 'Sin título'}</h3>
-                            <p class="platform-tag ${aporte.categoria}">
-                                <i class="${platformIcon}"></i> ${platformText}
-                            </p>
-                        </div>
-                        
-                    </a>
-                </div>
-            `;
-            container.appendChild(card);
-        });
+    if (items.length === 0) {
+        container.innerHTML = `<p class="no-results">No se encontraron aportes que coincidan con tu búsqueda.</p>`;
+        counter.textContent = "0";
+        return;
     }
-  
+
+    counter.textContent = items.length;
+
+    items.forEach(aporte => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        // Aquí adentro es donde ocurre la magia dinámica para cada sección:
+        card.innerHTML = `
+            <div class="card-link-wrapper">
+                <a href="index2.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}">
+                     
+                    <div class="card-image">
+                        <img src="${aporte.icono || 'https://via.placeholder.com/150'}" alt="${aporte.titulo}">
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3>${aporte.titulo || 'Sin título'}</h3>
+                        
+                        <p class="platform-tag ${aporte.categoria}">
+                            <i class="${
+                                aporte.categoria === 'juegos-pc' ? 'fa-solid fa-desktop' :
+                                aporte.categoria === 'juegos-android' ? 'fa-brands fa-android' :
+                                aporte.categoria === 'apps-android' ? 'fa-solid fa-cubes' :
+                                aporte.categoria === 'isos-herramientas' ? 'fa-solid fa-compact-disc' : 
+                                'fa-solid fa-layer-group'
+                            }"></i>
+                        </p>
+                    </div>
+                    
+                </a>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
     function updateCounter(count) {
         if (counter) counter.innerText = count;
     }

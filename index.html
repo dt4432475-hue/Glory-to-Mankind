@@ -3,69 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glory to Mankind</title>
-    <meta name="google-site-verification" content="zrFtqPRc4WTSMe9kgQGucfO8Vb257knNITP8XGACHwE" />
-    <link rel="icon" type="image/png" href="img/logo titulo y web.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?       family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">        
-    <link rel="stylesheet" href="/estilos/index.css">
-    
+    <title>Technomaniac</title>
+    <link rel="stylesheet" href="estilos/style.css">
 </head>
-
 <body>
-    <header class="main-navbar">
-    <div class="nav-logo">
-    <img src="img/logo titulo y web.webp" alt="Logo" class="logo-img"> Glory to <span>Mankind</span>
-</div>
-        <div class="nav-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="search-input" class="search-input" placeholder="Buscar herramientas, juegos, etc">
-        </div>
-    
-<nav class="nav-menu">
-    <a href="#" class="filter-btn active" data-filter="todos"><i class="fa-solid fa-house"></i> Inicio</a>
-    <a href="#" class="filter-btn" data-filter="juegos-pc"><i class="fa-solid fa-desktop"></i> Juegos PC</a>
-    <a href="#" class="filter-btn" data-filter="juegos-android"><i class="fa-brands fa-android"></i> Juegos Android</a>
-    <a href="#" class="filter-btn" data-filter="apps-android"><i class="fa-solid fa-cubes"></i> Apps Android</a>
-    <a href="#" class="filter-btn" data-filter="isos-herramientas"><i class="fa-solid fa-compact-disc"></i> Isos y Herramientas</a>
- 
+    <header>
+    <img src="https://i.postimg.cc/kXF5QvdF/text-(2).gif" alt="Technomaniac Games" class="gif-titulo">
+</header>
+
+<!-- Nueva Barra de Navegación Gamer -->
+<nav class="barra-navegacion">
+    <div class="botones-filtro">
+        <button class="btn-filtro activo" data-filtro="inicio">Inicio</button>
+        <button class="btn-filtro" data-filtro="pc">Juegos de PC</button>
+        <button class="btn-filtro" data-filtro="android">Juegos de Android</button>
+        <button class="btn-filtro" data-filtro="proyectos">Mis Proyectos</button>
+    </div>
+    <div class="contenedor-buscador">
+        <input type="text" id="buscador" placeholder="Buscar aporte...">
+    </div>
 </nav>
-    </header>
 
-    <div class="page-layout">
-
-<section class="hero-banner" id="hero-bg">
-    <div class="hero-content-flex">
-        <div class="hero-text-side">
-            <span class="hero-badge"><i class="fa-solid fa-fire"></i>Contenido actualizado</span>
-            <h1>Glory to Mankind</h1>
-            <p>Bienvenido o bienvenida a nuestro rincon de juegos, programas, lo que quieras. Todos nuestros aportes son seguros , asi que sientete tranquilo mientras navegas por aqui. Esperamos que encuentres lo que estas buscando. 😊 </p>
-        </div>
-    </div>
-</section>
-
-<main class="content-section">
-    <div class="section-header-flex">
-        <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Explorar Aportes</h2>
-        <div class="stats-counter">
-            <span id="counted-items">0</span> Aportes disponibles
-        </div>
-    </div>
-
-    <div class="downloads-grid" id="downloads-container"></div>
+<main>
+    <!-- Título dinámico que cambiará según lo que el usuario pulse -->
+    <h2 id="titulo-dinamico" class="titulo-seccion">Todos los Aportes</h2>
+    
+    <!-- Un solo contenedor donde se mezclará todo dinámicamente -->
+    <div id="contenedor-principal" class="contenedor-juegos"></div>
 </main>
-    </div>
 
-    <footer class="main-footer">
-        <p>© 2026 Glory to Mankind. Diseñado para la distribución de software libre y seguro.</p>
-    </footer>
+<script src="./funciones/script.js"></script>
 
-<button id="scroll-top-btn" class="scroll-top-btn" title="Volver arriba" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
-
-    <script src="./funciones/index.js"></script>
 </body>
 </html>

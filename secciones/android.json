@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Minecraft Bedrock",
+        "descripcion": "Un juego de plataformas infinito con ambientación cyberpunk.",
+        "imagen": "https://placeholder.com",
+        "enlace": "https://itch.io"
+    },
+    {
+        "nombre": "Nova",
+        "descripcion": "Descripción de tu segundo gran juego de computadora.",
+        "imagen": "https://placeholder.com",
+        "enlace": "https://mediafire.com"
+    }
+]

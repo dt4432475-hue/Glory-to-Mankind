@@ -3,29 +3,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("downloads-container"); 
     const counter = document.getElementById("counted-items"); 
     const filterButtons = document.querySelectorAll(".filter-btn");
-    
-    // CAPTURAMOS EL BANNER PRINCIPAL PARA CONTROLARLO
     const heroBanner = document.querySelector(".hero-banner");
 
     let allItems = [];
     let currentCategory = "todos";
 
-    // 1. Cargar datos de múltiples archivos JSON de forma simultánea
+  
     Promise.all([
         fetch("secciones/juegos-pc.json").then(res => res.json()).catch(() => []),
         fetch("secciones/juegos-android.json").then(res => res.json()).catch(() => []),
         fetch("secciones/mis-proyectos.json").then(res => res.json()).catch(() => [])
     ])
-    .then(([juegosPc, juegosAndroid, appsAndroid, isosyherramientas]) => {
+    .then(([juegosPc, juegosAndroid, misProyectos]) => {
         const pcList = Array.isArray(juegosPc) ? juegosPc : [];
         const androidList = Array.isArray(juegosAndroid) ? juegosAndroid : [];
-        const isosList = Array.isArray(misProyectos) ? isosyherramientas : [];
+        const proyectosList = Array.isArray(misProyectos) ? misProyectos : [];
 
         pcList.forEach(item => item.categoria = "juegos-pc");
         androidList.forEach(item => item.categoria = "juegos-android");
-        isosList.forEach(item => item.categoria = "mis-proyectos");
+        proyectosList.forEach(item => item.categoria = "mis-proyectos");
 
-        allItems = [...pcList, ...androidList, ...appsList, ...isosList];
+        allItems = [...pcList, ...androidList, ...proyectosList];
 
         renderCards(allItems);
         updateCounter(allItems.length);
@@ -33,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => console.error("Error al cargar datos:", error));
 
     function renderCards(items) {
-    container.innerHTML = ""; // Limpiamos el contenedor antes de renderizar
+    container.innerHTML = "";
 
     if (items.length === 0) {
         container.innerHTML = `<p class="no-results">No se encontraron aportes que coincidan con tu búsqueda.</p>`;
@@ -47,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = document.createElement("div");
         card.className = "card";
 
-        // Aquí adentro es donde ocurre la magia dinámica para cada sección:
         card.innerHTML = `
             <div class="card-link-wrapper">
                 <a href="index2.html?id=${aporte.id}&tipo=${aporte.categoria}" class="card-download" data-category="${aporte.categoria}">
@@ -85,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (query.length > 0 || currentCategory !== "todos") {
             heroBanner.style.opacity = "0";
             heroBanner.style.transform = "translateY(-10px)";
-            // Espera un instante a que termine la animación de CSS antes de ocultarlo por completo
+        
             setTimeout(() => {
                 if(searchInput.value.trim().length > 0 || currentCategory !== "todos") {
                     heroBanner.style.display = "none";
@@ -93,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 300);
         } else {
             heroBanner.style.display = "block";
-            // Forzar un reflujo en el navegador para activar la animación de entrada
+         
             setTimeout(() => {
                 heroBanner.style.opacity = "1";
                 heroBanner.style.transform = "translateY(0)";
@@ -104,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function filterItems() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
 
-        // Controlamos el banner antes de filtrar
         manageBannerVisibility(query);
 
         const filtered = allItems.filter(item => {
@@ -135,14 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-    // 📌 CONTROLADOR SENSOR DE SCROLL PARA HACER LA NAVBAR TRANSPARENTE
+
     window.addEventListener("scroll", () => {
         const navbar = document.querySelector(".main-navbar");
         if (navbar) {
             if (window.scrollY > 20) {
-                navbar.classList.add("scrolled"); // Activa el cristal transparente si bajó más de 20px
+                navbar.classList.add("scrolled");
             } else {
-                navbar.classList.remove("scrolled"); // Vuelve a sólido si regresó arriba del todo
+                navbar.classList.remove("scrolled");
             }
         }
     });

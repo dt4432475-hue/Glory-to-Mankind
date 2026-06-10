@@ -1,0 +1,1240 @@
+:root {
+    --bg-main: #0a0e17;
+    --bg-card: #111726;
+    --bg-deep: #060911;
+    --accent: #00ff87;
+    --accent-blue: #0066ff;
+    --text-white: #ffffff;
+    --text-muted: #64748b;
+    --radius-md: 10px;
+    --radius-sm: 6px;
+    
+    /* ⚡ TRANSICIONES GAMER ULTRA FLUIDAS */
+    --transition-premium: cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+i, 
+[class^="fa-"], 
+[class*=" fa-"],
+.fa-solid, 
+.fa-brands {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome 5 Free", "Font Awesome 5 Brands", sans-serif !important;
+    font-weight: 900 !important; /* Mantiene el grosor correcto de los iconos de Font Awesome */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main-navbar {
+  background-color: var(--bg-card); /* Color sólido al inicio arriba del todo */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-sizing: border-box; /* Asegura que el padding no rompa el ancho total */
+  
+  /* Posicionamiento fijo arriba sin scroll */
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  
+  /* ⚡ Eliminamos la animación para que sea 100% estática e instantánea */
+  transition: none !important;
+}
+
+   .nav-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    width: 44px;         /* Crecido para que luzca con fuerza */
+    height: 44px;        /* Cuadrado perfecto para que no se deforme */
+    object-fit: cover;   /* Centra el icono perfectamente */
+    border-radius: 50%;  /* Forzado a círculo perfecto */
+    border: 1px solid rgba(0, 255, 135, 0.25); /* Bordecito neón brillante */
+    background-color: var(--bg-deep);
+}
+
+.nav-logo span {
+  font-weight: 900; /* Le da más grosor a las letras para que el color luzca espectacular */
+
+  /* 🎨 NUEVO: Degradado estático gamer (Cyan Neón a Verde Eléctrico) */
+  background: linear-gradient(135deg, #00ffff, #00ff87);
+  background-size: 100% 100%; /* Ajustado al tamaño normal sin excesos */
+
+  /* Recortamos el fondo con la silueta exacta del texto */
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important; /* Hace transparente el color base */
+
+  /* ✨ Brillo neón estático y limpio que no laguea al hacer scroll */
+  filter: drop-shadow(0 0 8px rgba(0, 255, 135, 0.4));
+
+  /* ⚡ OPTIMIZACIÓN: Eliminamos por completo la animación infinita */
+  animation: none !important;
+
+  display: inline-block;
+}
+
+/* 🔍 BUSCADOR LIMPIO (SIN LUPA REBELDE) */
+.nav-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+}
+
+/* Ocultamos por completo el icono de la lupa para evitar errores */
+.nav-search i {
+    display: none !important;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.65rem 1.25rem; /* Ajustado el espacio izquierdo para que el texto empiece desde el inicio */
+    background: rgba(6, 9, 17, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 30px;
+    color: var(--text-white);
+    font-size: 0.85rem;
+    backdrop-filter: blur(4px);
+    transition: var(--transition-fast);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(6, 9, 17, 0.85);
+    box-shadow: 0 0 12px rgba(0, 255, 135, 0.15);
+}
+
+/* 🟢 MENÚ DE SECCIONES CON LÍNEA E ILUMINADO NEÓN */
+.nav-menu {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.filter-btn {
+    padding: 0.7rem 1.1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    transition: var(--transition-fast);
+}
+
+.filter-btn:hover {
+    color: var(--text-white);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ==========================================================================
+   ILUMINACIÓN Y LÍNEA GAMER ULTRADINÁMICA (EFECTO RGB + RESPIRACIÓN NEÓN)
+   ========================================================================== */
+
+.filter-btn.active {
+    color: #00ff87 !important; /* Texto verde brillante */
+    background: rgba(6, 9, 17, 0.85) !important; /* Fondo oscuro sólido para que resalte el borde */
+    font-weight: 700;
+    position: relative;
+    border-radius: 20px !important; /* Mantiene las esquinas circulares perfectas */
+    
+    /* 💥 EL TRUCO: Creamos un borde transparente de 2px de grosor */
+    border: 2px solid transparent !important;
+    
+    /* Inyectamos el degradado dinámico directo en el fondo del borde */
+    background-image: linear-gradient(rgba(17, 23, 38, 0.95), rgba(17, 23, 38, 0.95)), 
+                      linear-gradient(90deg, #00ff87, #0066ff, #00ff87, #00ffff) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;         
+    
+    /* Hacemos que el degradado del borde mida el triple para poder animarlo */
+    background-size: 100% 100%, 300% 100% !important;
+    
+    /* Doble sombra de aura neón que envuelve a toda la casilla completa */
+    box-shadow: 0 0 12px rgba(0, 255, 135, 0.3), 
+                inset 0 0 8px rgba(0, 102, 255, 0.2) !important;
+                
+    /* Activamos las animaciones infinitas de color y respiración */
+    animation: rgb-border-flow 4s linear infinite, gamer-pulse 3s infinite ease-in-out !important;
+}
+
+/* 🗑️ BORRAMOS LA LÍNEA SOLITARIA DE ABAJO PARA QUE NO SE COMPLETE DOBLE */
+.filter-btn.active::after {
+    display: none !important;
+}
+
+/* 🔄 NUEVA ANIMACIÓN: Hace que la onda de colores gire y fluya por todo el contorno */
+@keyframes rgb-border-flow {
+    0% {
+        background-position: 0% 50%, 0% 50%;
+    }
+    50% {
+        background-position: 0% 50%, 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%, 0% 50%;
+    }
+}
+
+#hero-bg.hero-banner {
+    position: relative;
+    background: linear-gradient(135deg, rgba(13, 19, 33, 0.45) 0%, rgba(6, 9, 17, 0.65) 100%), 
+                url('/img/fondos/banner\ 1.webp') no-repeat center 35% !important;
+    background-size: cover !important;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    padding: 1.75rem 2.5rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    
+    /* Efecto de desvanecimiento suave controlado por el script */
+    transition: opacity 0.4s var(--transition-premium), transform 0.4s var(--transition-premium) !important;
+    animation: fadeInBanner 0.6s var(--transition-premium);
+}
+.hero-text-side h1 {
+    font-size: 2.2rem; /* Un toque más pequeña para ahorrar espacio */
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero-text-side p {
+    color: #94a3b8;
+    font-size: 0.95rem; /* Más compacto */
+    margin-bottom: 0; /* Eliminado el margen inferior */
+    line-height: 1.6;
+}
+
+/* Eliminamos el botón de capturas por completo */
+.btn-screenshots, #open-gallery-btn {
+    display: none !important;
+}
+
+
+/* ==========================================================================
+   HERO BANNER ORIGINAL (Mantiene las proporciones exactas de tu diseño)
+   ========================================================================== */
+.page-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex-grow: 1; /* Actúa como un resorte que se estira y empuja el footer al fondo */
+    width: 100%;
+}
+
+.hero-banner {
+    position: relative;
+    background: linear-gradient(135deg, #161f33 0%, #0d1321 100%);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    padding: 3.5rem 3rem;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+     will-change: transform;
+       margin-top: 80px;
+}
+
+.hero-text-side {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(0, 255, 135, 0.1);
+    color: var(--accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.25rem;
+}
+
+.hero-text-side h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-text-side p {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.btn-screenshots {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-fast);
+}
+
+.btn-screenshots:hover {
+    background-color: var(--accent);
+    color: var(--bg-deep);
+    box-shadow: 0 0 15px rgba(0, 255, 135, 0.3);
+}
+
+/* ==========================================================================
+   SECCIÓN EXPLORAR APORTES Y TARJETAS PROTEGIDAS
+   ========================================================================== */
+.content-section {
+    margin-top: 1rem;
+}
+
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-title i {
+    color: var(--accent);
+}
+
+.stats-counter {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background-color: var(--bg-card);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.stats-counter span {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+ /* 5. Ajuste del Grid para que entren 2 tarjetas por fila en celular */
+  .downloads-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    
+    /* 🎯 CAMBIO MAESTRO: Forza exactamente 2 columnas iguales en móviles */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
+    
+    justify-content: center !important;
+    align-content: center !important;
+    gap: 0.8rem !important; /* Separación más compacta ideal para pantallas chicas */
+    padding: 0 !important;
+  }
+/* Estructura vertical unificada para las tarjetas */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative; /* Esencial para que el texto se posicione encima */
+    aspect-ratio: 16 / 10; /* Le da una proporción excelente a la casilla */
+    height: auto;
+    
+    transition: transform 0.3s var(--transition-premium), border-color 0.3s var(--transition-premium), box-shadow 0.3s var(--transition-premium) !important;
+    animation: fadeInUpCard 0.4s var(--transition-premium) backwards;
+    will-change: transform;
+}
+
+/* Generamos un retraso para que las tarjetas no aparezcan toscas de golpe */
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
+
+/* 🔄 DECLARACIÓN DE LAS ANIMACIONES GENERALES POR CSS */
+@keyframes fadeInBanner {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUpCard {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.card-link-wrapper, .card-download {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+}
+
+.card-image {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1; /* Queda abajo */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.4s var(--transition-premium), filter 0.4s var(--transition-premium) !important;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.08); /* Zoom dinámico de la imagen */
+    filter: blur(2px) brightness(0.8); /* Un ligero desenfoque gamer para resaltar más el texto */
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupa todo el alto para aplicar el degradado */
+    z-index: 2; /* Queda por encima de la imagen */
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Empuja el texto hacia la parte inferior */
+    gap: 0.3rem;
+    margin-top: auto;
+    
+    /* 🎨 DEGRADADO MAESTRO: Oscurece la base para que el texto blanco sea 100% legible */
+    background: linear-gradient(to top, 
+                rgba(10, 14, 23, 0.95) 0%, 
+                rgba(10, 14, 23, 0.6) 40%, 
+                rgba(10, 14, 23, 0) 100%) !important;
+}
+
+.card-content h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin: 0;
+    line-height: 1.3;
+    z-index: 3;
+}
+
+.card-content .server {
+    font-size: 0.8rem;
+    color: #94a3b8; /* Un gris un poco más claro para que resalte en el fondo oscuro */
+    margin: 0;
+    z-index: 3;
+}
+
+/* ==========================================================================
+   EFECTO DE ILUMINACIÓN EN EL TÍTULO AL PASAR EL MOUSE (HOVER PREMIUM)
+   ========================================================================== */
+
+/* Cuando el mouse pasa sobre la tarjeta, el título cambia a verde neón y brilla */
+.card:hover .card-content h3 {
+    color: var(--accent) !important; /* Cambia el color del texto a tu verde neón oficial (#00ff87) */
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.6), 
+                 0 0 20px rgba(0, 255, 135, 0.3); /* Aura neón brillante alrededor de las letras */
+}
+
+/* Agregamos una transición suave al título original para que el brillo no sea brusco */
+.card-content h3 {
+    transition: color 0.25s ease, text-shadow 0.25s ease !important;
+}
+
+/* 🔮 CLASE DINÁMICA: Se activará sola cuando el usuario baje con el mouse */
+.main-navbar.scrolled {
+    background-color: rgba(17, 23, 38, 0.75) !important; /* Se vuelve transparente */
+    backdrop-filter: blur(12px) !important; /* Efecto cristal esmerilado premium */
+    padding: 0.75rem 2rem; /* Se achica un poquito verticalmente para ahorrar espacio */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(0, 255, 135, 0.08); /* Sutil línea neón abajo */
+}
+
+/* ==========================================================================
+   ESTILOS ADICIONALES (descarga.html, Modales y Footer)
+   ========================================================================== */
+.download-container {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    
+    /* Animación de entrada para que la pantalla de descarga emerja del fondo con elegancia */
+    animation: fadeInUpContainer 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.gameplay-banner {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--bg-deep);
+    border-radius: 8px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-grid {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* 🔄 DECLARACIÓN DE LA NUEVA ANIMACIÓN DE APARICIÓN ELEGANTE */
+@keyframes fadeInUpContainer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 PARA PANTALLAS PEQUEÑAS (TODO TIPO DE CELULARES - CENTRADO ABSOLUTO) */
+@media (max-width: 768px) {
+    /* Forzamos a que la cabecera alinee absolutamente todo al centro */
+    .main-navbar {
+    position: relative !important; /* Deja de flotar solo en pantallas chicas para no tapar el texto */
+    flex-direction: column;        /* Alinea el logo, buscador y botones en fila vertical */
+    gap: 1rem;
+    padding: 1rem;
+    height: auto !important;       /* Deja que crezca de forma natural */
+  }
+
+    .page-layout {
+        padding: 1rem;
+    }
+
+    /* 🔍 BUSCADOR CENTRADO */
+    .nav-search {
+        max-width: 100%;
+        width: 90%; /* Le damos un ligero margen a los lados para que respire */
+        margin: 0 auto !important; /* Centrado matemático */
+    }
+
+    .search-input {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.85rem;
+        text-align: center; /* Texto de búsqueda al medio */
+    }
+
+    /* 🟢 MENÚ DE SECCIONES PERFECTAMENTE CENTRADO */
+    .nav-menu {
+    display: flex;
+    flex-wrap: wrap;               /* Permite que los botones bajen ordenados */
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+
+    /* Botones pequeños, compactos y con esquinas circulares de la primera versión */
+    .filter-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        width: auto !important;
+        padding: 0.5rem 0.9rem;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        transition: var(--transition-fast);
+    }
+
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    right: 0;
+    width: 100%; 
+    height: 3px;
+    background: linear-gradient(90deg, #00ff87, #0066ff, #00ff87, #00ffff);
+    background-size: 300% 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 255, 135, 0.8), 
+                0 0 20px rgba(0, 102, 255, 0.6);
+    animation: rgb-chroma 4s linear infinite; 
+}
+
+#hero-bg.hero-banner {
+  padding: 1.5rem 1rem;
+  background-position: center center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0 !important; 
+    }
+
+    #hero-bg.hero-banner[style*="display: none"],
+    #hero-bg.hero-banner[style*="opacity: 0"],
+    #hero-bg.hero-banner.hidden {
+        display: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .hero-text-side {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el título y el párrafo dentro del banner */
+        justify-content: center;
+    }
+
+    .hero-text-side h1 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .hero-text-side p {
+        font-size: 0.85rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .hero-badge {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 0.75rem auto;
+    }
+
+    /* Rejilla de juegos en formato móvil */
+    .downloads-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+        /* ==========================================================================
+       OPTIMIZACIÓN DE CASILLAS COMPACTAS PARA MÓVIL (EVITA QUE SE ESTIREN)
+       ========================================================================== */
+    
+    /* 1. Reducimos el ancho máximo de la tarjeta en móvil para que no flote gigante */
+   .card {
+        max-width: 100% !important; 
+        aspect-ratio: 16 / 11; /* Un toque más vertical en celulares */
+    }
+    /* 2. Achicamos la altura de la imagen en celular para que no ocupe tanta pantalla */
+    .card-image {
+        height: 140px !important; /* Bajado de 180px a 140px para que sea una tira elegante */
+    }
+
+    /* 3. Compactamos los textos internos para ahorrar espacio vertical */
+    .card-content {
+        padding: 0.75rem !important;
+    }
+    .card-content h3 {
+        font-size: 0.9rem !important;
+    }
+
+    .card-content .server {
+        font-size: 0.75rem !important;
+    }
+
+}
+/* ==========================================================================
+   ARREGLO EXCLUSIVO PARA EL FOOTER Y EL BOTÓN DE VOLVER ARRIBA
+   ========================================================================== */
+
+.main-footer {
+    width: 100%;
+    text-align: center !important;
+    padding: 2rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    margin-top: auto; /* 📌 ESTO LO ATRAE MAGNÉTICAMENTE AL FONDO */
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    background-color: var(--bg-main); /* Evita transparencias raras */
+}
+
+/* ⬆️ BOTÓN DE VOLVER ARRIBA ESTILIZADO DE TU PRIMERA VERSION */
+.scroll-top-btn {
+    position: fixed !important; /* Se queda flotando fijo en la pantalla */
+    bottom: 2rem !important;    /* Distancia desde abajo */
+    right: 2rem !important;     /* Distancia desde la derecha */
+    width: 46px !important;     /* Tamaño redondo perfecto */
+    height: 46px !important;
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: var(--accent) !important; /* Flecha verde neón */
+    border-radius: 50% !important;   /* Círculo perfecto */
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: var(--transition-fast);
+    z-index: 999 !important; /* Por encima de cualquier otra capa */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra con estilo */
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--accent) !important;
+    color: var(--bg-deep) !important;
+    box-shadow: 0 0 15px var(--accent);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        bottom: 1.5rem !important;
+        right: 1.5rem !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS PREMIUM INTEGRADOS PARA EL BOTÓN DE DESCARGAS (descarga.html)
+   ========================================================================== */
+
+/* 1. Estilo base para todos los estados del botón */
+.btn-action {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 14px 36px !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 30px !important; /* Bordes redondeados premium */
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 🟢 ESTADO 1: Botón Inicial para Generar Enlace */
+.btn-generate {
+    background-color: var(--accent) !important; /* Tu verde neón oficial */
+    color: var(--bg-deep) !important;
+}
+.btn-generate:hover {
+    background-color: #00e074 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 135, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ⏳ ESTADO 2: Bloqueado esperando los 10 segundos */
+.btn-waiting {
+    background-color: #1e2637 !important;
+    color: #52637a !important;
+    cursor: not-allowed !important;
+    border: 1px solid rgba(255, 255, 255, 0.02) !important;
+    box-shadow: none !important;
+}
+
+/* 🔵 ESTADO 3: Botón Final listo para Descargar Ahora */
+.btn-download {
+    background-color: var(--accent-blue) !important; /* Azul oficial de descargas */
+    color: var(--text-white) !important;
+    animation: pulseGlowBlue 2s infinite !important; /* Efecto de pulso para llamar la atención */
+}
+.btn-download:hover {
+    background-color: #1d4ed8 !important;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Animación de pulso azul para el botón de descarga final */
+@keyframes pulseGlowBlue {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(37, 99, 235, 0.4); }
+    50% { transform: scale(1.03); box-shadow: 0 0 25px rgba(37, 99, 235, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(37, 99, 235, 0.4); }
+}
+
+/* ==========================================================================
+   VENTANA EMERGENTE (MODAL) DE GRACIAS POR DESCARGAR
+   ========================================================================== */
+.modal-thanks-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 9, 17, 0.95); /* Fondo oscuro transparente */
+    display: none; /* Oculto por defecto */
+    align-items: center;
+    justify-content: center;
+    z-index: 99999; /* Por encima de absolutamente todo */
+    backdrop-filter: blur(8px);
+}
+
+.modal-thanks-box {
+    background-color: var(--bg-card);
+    border: 2px solid rgba(0, 255, 135, 0.2);
+    box-shadow: 0 0 30px rgba(0, 255, 135, 0.15);
+    border-radius: 16px;
+    padding: 35px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: zoomInGamer 0.3s ease-out forwards;
+}
+
+.modal-thanks-box h2 {
+    color: var(--text-white);
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.modal-thanks-box h2 span {
+    color: var(--accent); /* Resalta en verde neón */
+}
+
+.modal-thanks-gif {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    
+    /* 🛠️ EL TRUCO PARA BORRAR LAS LÍNEAS PLOMAS */
+    border: none !important;            /* Elimina cualquier borde gris del navegador */
+    background-color: transparent !important; /* Quita fondos grises que meten los navegadores */
+    outline: none !important;           /* Asegura que no haya líneas de enfoque */
+    box-shadow: none !important;        /* Quita sombras que simulen bordes ocultos */
+}
+.btn-back-home {
+    background-color: transparent !important;
+    border: 2px solid var(--accent-blue) !important;
+    color: var(--text-white) !important;
+    padding: 12px 30px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-back-home:hover {
+    background-color: var(--accent-blue) !important;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+}
+
+@keyframes zoomInGamer {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+
+  /* 1. Eliminamos los márgenes del body que causan los huecos grises */
+  html, body, .page-layout {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* Evita que la pantalla baile hacia los lados */
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Centrado y estirado completo de la barra */
+  .main-navbar {
+    position: relative !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: auto !important;
+    gap: 1rem !important;
+    padding: 1.2rem 1rem !important;
+    
+    /* Forzamos a cubrir de borde a borde */
+    width: 100% !important; 
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  
+
+  .nav-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .nav-search {
+    width: 100% !important;
+    max-width: 320px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .nav-search input {
+    width: 100% !important; /* Ajusta la caja de texto al contenedor */
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+    width: 100% !important;
+  }
+
+  /* 3. Centrado del Banner Principal */
+  #hero-bg.hero-banner {
+    margin-top: 0 !important;
+    padding: 2rem 1rem !important;
+    width: 100% !important;
+    text-align: center !important; /* Centra los textos del banner */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-content-flex, .hero-text-side {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* 4. Centrado de la Sección de Aportes */
+  .section-header-flex {
+    display: flex !important;
+    flex-direction: column !important; /* Apila el título y el contador en móvil */
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.8rem !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+    /* 5. Ajuste del Grid para que entren 2 tarjetas por fila en celular */
+  .downloads-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    
+    /* 🎯 CAMBIO MAESTRO: Forza exactamente 2 columnas iguales en móviles */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
+    
+    justify-content: center !important;
+    align-content: center !important;
+    gap: 0.8rem !important; /* Separación más compacta ideal para pantallas chicas */
+    padding: 0 !important;
+  }
+
+
+    /* Evitamos que la zona de la imagen se estire por culpa del texto largo */
+  .card-image {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important; /* Fuerza el formato panorámico exacto */
+    height: auto !important;
+    flex-shrink: 0 !important; /* 🎯 ESTO EVITA QUE CAMBIE DE TAMAÑO */
+    overflow: hidden !important;
+  }
+
+  /* Asegura que la foto real llene ese espacio perfectamente */
+  .card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Recorta los bordes de la foto para que no se deforme */
+  }
+
+  .card h3, .card .card-title {
+    font-size: 0.9rem !important; /* Letra un poco más chica para que quepa bien el título */
+    line-height: 1.2 !important;
+  }
+
+  .card-content {
+    padding: 0.8rem !important; /* Menos espacio interno para ganar área visible */
+  }
+
+    /* 🎮 AJUSTES PARA LA PÁGINA DE DESCARGA EN CELULARES */
+  
+  /* Evita que el contenedor se pegue a los bordes del teléfono */
+  .download-container {
+    width: 100% !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reducimos el tamaño del icono principal en móviles para ganar espacio */
+  #app-icon {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 10px !important;
+  }
+
+  #app-title {
+    font-size: 1.4rem !important; /* Letra un poco más compacta */
+  }
+
+  /* 🖼️ Corrección del Banner de Gameplay (Formato horizontal perfecto) */
+  .gameplay-banner {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important; /* Fuerza la proporción panorámica sin estirar */
+    height: auto !important;
+    margin-bottom: 15px !important;
+    overflow: hidden !important;
+  }
+
+  .gameplay-banner img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Corta los bordes sobrantes limpiamente */
+  }
+
+  /* Convierte la cuadrícula de Descripción y Requisitos en una sola columna */
+  .info-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+    /* 📱 Reducción extra para la página de descarga en celulares */
+  #app-icon {
+    width: 60px !important;  /* Achica el icono de 80px a 60px */
+    height: 60px !important;
+  }
+  
+  #app-title {
+    font-size: 1.4rem !important; /* Texto del título más compacto */
+  }
+
+  .gameplay-banner {
+    aspect-ratio: 2.35 / 1 !important; /* Se hace todavía más delgada en pantallas de celular */
+    margin-bottom: 15px !important;
+  }
+
+
+}
+
+/* 💻 ESTO FUERZA LAS 5 COLUMNAS EN PC */
+@media (min-width: 769px) {
+  .downloads-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 1.2rem !important;
+  }
+}
+/* 🎮 PARCHE DEFINITIVO PARA LA PÁGINA DE DESCARGAS (PC) */
+@media (min-width: 769px) {
+  
+  /* Forzamos las dos columnas en la cuadrícula */
+  .info-grid {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important; /* Columna izquierda más ancha */
+    gap: 20px !important;
+    align-items: stretch !important; /* Hace que los requisitos midan igual de alto que la foto */
+    width: 100% !important;
+  }
+
+  /* 📐 ACHICAMOS LA IMAGEN: Forzamos la altura compacta que querías */
+  .gameplay-banner {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important; /* Formato panorámico perfecto */
+    max-height: 280px !important;    /* 🎯 ALTURA MÁXIMA CONTROLADA: No crecerá más de esto */
+    overflow: hidden !important;
+    border-radius: 8px !important;
+  }
+
+  .gameplay-banner img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Centra y recorta la foto limpiamente */
+  }
+  /* Fijamos los Requisitos arriba a la derecha */
+  .box-requisitos {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+  }
+
+  /* Mandamos la Descripción abajo del todo */
+  .box-descripcion {
+    grid-column: 1 / span 2 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   ICONO FLOTANTE: BRILLO ACTIVO ÚNICAMENTE EN HOVER (PASAR EL MOUSE)
+   ========================================================================== */
+
+/* 1. Contenedor de referencia en la tarjeta */
+.downloads-grid .card-link-wrapper,
+.card-link-wrapper {
+    position: relative !important;
+}
+
+/* 2. Estado normal (Sin pasar el mouse): El icono está limpio y sin brillo */
+.card-content .platform-tag {
+    position: absolute !important;
+    top: 15px !important;            
+    left: 15px !important;           
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important; 
+    border: none !important;             
+    width: auto !important;             
+    height: auto !important;
+    border-radius: 0 !important;
+    z-index: 15 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ==========================================================================
+   ICONO FLOTANTE: ESTILO BASE CON EL TAMAÑO REDUCIDO
+   ========================================================================== */
+
+.card-content .platform-tag i {
+    font-size: 16px !important;          /* 🛠️ CAMBIA ESTO: De 20px bájalo a 16px o 15px */
+    color: #00ff87 !important;           /* Mantiene el verde neón base */
+    filter: none !important;             /* Apagado por defecto */
+    transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+/* El brillo al pasar el mouse se queda igual, pero escalará desde el nuevo tamaño */
+.card:hover .platform-tag i {
+    transform: scale(1.15) !important; 
+    filter: drop-shadow(0 0 5px #00ff87) 
+            drop-shadow(0 0 12px #00ff87) 
+            drop-shadow(0 0 20px rgba(0, 255, 135, 0.8)) !important;
+}
+
+/* ==========================================================================
+   RECUADRO DE ADVERTENCIA DINÁMICO (ALERTA NEÓN CYBERPUNK)
+   ========================================================================== */
+#app-warning-container {
+    width: 100%;
+    max-width: 1200px; /* O el ancho máximo que uses en tus bloques */
+    margin: 0 auto;
+    padding: 0 20px; /* Para que no pegue a los bordes de la pantalla */
+    box-sizing: border-box;
+}
+
+.warning-box-neon {
+    background: rgba(255, 102, 0, 0.07) !important; /* Fondo naranja muy sutil transparente */
+    border: 1px dashed #ff6600 !important;          /* Borde discontinuo para estilo técnico/alerta */
+    border-radius: 8px !important;
+    padding: 15px 20px !important;
+    margin: 20px 0 !important;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.2) !important; /* Brillo neón externo naranja */
+}
+
+.warning-box-neon .warning-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    color: #ff6600 !important; /* Texto del título en naranja neón */
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 8px !important;
+    text-shadow: 0 0 8px rgba(255, 102, 0, 0.6) !important; /* Brillo en las letras */
+}
+
+.warning-box-neon .warning-header i {
+    font-size: 16px !important;
+}
+
+.warning-box-neon .warning-body {
+    color: #e2e8f0 !important; /* Texto de la advertencia en blanco grisáceo legible */
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+/* ⚡ ANIMACIÓN DE PULSO CONTINUO PARA EL ICONO DE EXCLAMACIÓN */
+@keyframes pulseAlerta {
+    0% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.15); }
+    100% { opacity: 0.5; transform: scale(1); }
+}
+
+.warning-box-neon .animate-pulse {
+    animation: pulseAlerta 2s infinite ease-in-out !important;
+}

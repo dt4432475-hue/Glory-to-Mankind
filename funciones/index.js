@@ -14,19 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     Promise.all([
         fetch("secciones/juegos-pc.json").then(res => res.json()).catch(() => []),
         fetch("secciones/juegos-android.json").then(res => res.json()).catch(() => []),
-        fetch("secciones/apps-android.json").then(res => res.json()).catch(() => []),
-        fetch("secciones/isos-herramientas.json").then(res => res.json()).catch(() => [])
+        fetch("secciones/mis-proyectos.json").then(res => res.json()).catch(() => [])
     ])
     .then(([juegosPc, juegosAndroid, appsAndroid, isosyherramientas]) => {
         const pcList = Array.isArray(juegosPc) ? juegosPc : [];
         const androidList = Array.isArray(juegosAndroid) ? juegosAndroid : [];
-        const appsList = Array.isArray(appsAndroid) ? appsAndroid : [];
-        const isosList = Array.isArray(isosyherramientas) ? isosyherramientas : [];
+        const isosList = Array.isArray(misProyectos) ? isosyherramientas : [];
 
         pcList.forEach(item => item.categoria = "juegos-pc");
         androidList.forEach(item => item.categoria = "juegos-android");
-        appsList.forEach(item => item.categoria = "apps-android");
-        isosList.forEach(item => item.categoria = "isos-herramientas");
+        isosList.forEach(item => item.categoria = "mis-proyectos");
 
         allItems = [...pcList, ...androidList, ...appsList, ...isosList];
 
@@ -66,8 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <i class="${
                                 aporte.categoria === 'juegos-pc' ? 'fa-solid fa-desktop' :
                                 aporte.categoria === 'juegos-android' ? 'fa-brands fa-android' :
-                                aporte.categoria === 'apps-android' ? 'fa-solid fa-cubes' :
-                                aporte.categoria === 'isos-herramientas' ? 'fa-solid fa-compact-disc' : 
+                                aporte.categoria === 'mis-proyectos' ? 'fa-solid fa-code' : 
                                 'fa-solid fa-layer-group'
                             }"></i>
                         </p>

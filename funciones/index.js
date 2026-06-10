@@ -76,27 +76,21 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCounter(count) {
         if (counter) counter.innerText = count;
     }
- function manageBannerVisibility(query) {
-        if (!heroBanner) return;
+function manageBannerVisibility(query) {
+    if (!heroBanner) return;
 
-        if (query.length > 0 || currentCategory !== "todos") {
-            heroBanner.style.opacity = "0";
-            heroBanner.style.transform = "translateY(-10px)";
-        
-            setTimeout(() => {
-                if(searchInput.value.trim().length > 0 || currentCategory !== "todos") {
-                    heroBanner.style.display = "none";
-                }
-            }, 300);
-        } else {
-            heroBanner.style.display = "block";
-         
-            setTimeout(() => {
-                heroBanner.style.opacity = "1";
-                heroBanner.style.transform = "translateY(0)";
-            }, 10);
-        }
+    if (query.length > 0 || currentCategory !== "todos") {
+        heroBanner.style.opacity = "0";
+        heroBanner.style.visibility = "hidden"; // Mantiene el espacio ocupado
+        heroBanner.style.height = "0";          // Opcional: si quieres que colapse pero mantenga estructura
+        heroBanner.style.padding = "0";         // Opcional: elimina rellenos
+    } else {
+        heroBanner.style.opacity = "1";
+        heroBanner.style.visibility = "visible";
+        heroBanner.style.height = "auto";       // Restaura altura
+        heroBanner.style.padding = "";          // Restaura padding
     }
+}
 
     function filterItems() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : "";

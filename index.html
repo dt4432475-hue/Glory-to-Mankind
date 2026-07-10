@@ -9,33 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?       family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">        
-    <link rel="stylesheet" href="/estilos/index.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">      
+    <link rel="stylesheet" href="/estilos/index.css" media="print" onload="this.media='all'">
 </head>
 
 <body>
     <header class="main-navbar">
     <div class="nav-logo">
-    <img src="img/logo titulo y web.webp" alt="Logo" class="logo-img"> Glory to <span>Mankind</span>
+    <img src="img/index/logo titulo y web.webp" alt="Logo" class="logo-img"> Glory to <span>Mankind</span>
 </div>
-        <div class="nav-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="search-input" class="search-input" placeholder="Buscar herramientas, juegos, etc">
-        </div>
+
+<div class="nav-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" class="search-input" placeholder="Buscar herramientas, juegos, etc">
+</div>
     
 <nav class="nav-menu">
     <a href="#" class="filter-btn active" data-filter="todos"><i class="fa-solid fa-house"></i> Inicio</a>
-    <a href="#" class="filter-btn" data-filter="juegos-pc"><i class="fa-solid fa-desktop"></i> Juegos PC</a>
-    <a href="#" class="filter-btn" data-filter="juegos-android"><i class="fa-brands fa-android"></i> Juegos Android</a>
-    <a href="#" class="filter-btn" data-filter="apps-android"><i class="fa-solid fa-cubes"></i> Apps Android</a>
-    <a href="#" class="filter-btn" data-filter="isos-herramientas"><i class="fa-solid fa-compact-disc"></i> Isos y Herramientas</a>
- 
+    <a href="#" class="filter-btn" data-filter="juegos-pc"><i class="fa-solid fa-desktop"></i> Juegos de PC</a>
+    <a href="#" class="filter-btn" data-filter="juegos-android"><i class="fa-brands fa-android"></i> Juegos de Android</a>
+    <a href="#" class="filter-btn" data-filter="mis-proyectos"><i class="fa-solid fa-code"></i> Mis Proyectos</a>
 </nav>
     </header>
 
     <div class="page-layout">
-
 <section class="hero-banner" id="hero-bg">
     <div class="hero-content-flex">
         <div class="hero-text-side">
@@ -66,6 +63,6 @@
     <i class="fa-solid fa-arrow-up"></i>
 </button>
 
-    <script src="./funciones/index.js"></script>
+    <script src="./funciones/index.js" defer></script>
 </body>
 </html>

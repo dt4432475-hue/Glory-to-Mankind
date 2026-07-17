@@ -2,10 +2,37 @@
     {
     "id": "1",
     "titulo": "Minecraft v1.26.33",
-    "icono": "https://i.postimg.cc/qRwmP2JF/82b21fe6d9166c673eed585a5fc38ef5.jpg",
+    "icono": "https://i.postimg.cc/qvFms2Qq/Minecraft-Bedrock-2023.webp",
     "descripcion": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
     "imagenDestacada": "https://i.postimg.cc/0jz9rYNN/Screenshot-2026-07-17-12-26-10-532-com-mojang-minecraftpe.jpg", 
     "info": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
-    "link": "#"
+    "link": "https://archive.org/download/minecraft-1-26-33/minecraft-1-26-33.apk"
+    },
+    {
+    "id": "2",
+    "titulo": "Minecraft v1.21.51",
+    "icono": "https://i.postimg.cc/qvFms2Qq/Minecraft-Bedrock-2023.webp",  
+    "descripcion": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
+    "imagenDestacada": "https://i.postimg.cc/0jz9rYNN/Screenshot-2026-07-17-12-26-10-532-com-mojang-minecraftpe.jpg", 
+    "info": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
+    "link": "https://archive.org/download/minecraft-1-21-51/minecraft-1-21-51.apk"
+    },
+    {
+    "id": "3",
+    "titulo": "Minecraft v1.20.51", 
+    "icono": "https://i.postimg.cc/qvFms2Qq/Minecraft-Bedrock-2023.webp", 
+    "descripcion": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
+    "imagenDestacada": "https://i.postimg.cc/0jz9rYNN/Screenshot-2026-07-17-12-26-10-532-com-mojang-minecraftpe.jpg", 
+    "info": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
+    "link": "https://archive.org/download/minecraft-1-20-51/minecraft-1-20-51.apk"
+    },
+    {
+    "id": "4",
+    "titulo": "Minecraft v1.19.51", 
+    "icono": "https://i.postimg.cc/qvFms2Qq/Minecraft-Bedrock-2023.webp", 
+    "descripcion": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
+    "imagenDestacada": "https://i.postimg.cc/0jz9rYNN/Screenshot-2026-07-17-12-26-10-532-com-mojang-minecraftpe.jpg", 
+    "info": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
+    "link": "https://archive.org/download/minecraft-1-19-51/minecraft-1-19-51.apk"
     }
 ]

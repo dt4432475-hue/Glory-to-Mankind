@@ -2,9 +2,10 @@
     {
     "id": "1",
     "titulo": "Minecraft v1.26.33",
-    "icono": "img/icono-pequeño.png",
-    "imagenDestacada": "https://i.postimg.cc/hPvS3rDL/image.png", 
-    "info": "Descripción aquí...",
+    "icono": "https://i.postimg.cc/qRwmP2JF/82b21fe6d9166c673eed585a5fc38ef5.jpg",
+    "descripcion": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
+    "imagenDestacada": "https://i.postimg.cc/0jz9rYNN/Screenshot-2026-07-17-12-26-10-532-com-mojang-minecraftpe.jpg", 
+    "info": "Minecraft es un juego de plataformas, donde puedes construir, explorar y jugar con tus propias creaciones. ¡Disfruta de un mundo de juegos y creaciones creativas!",
     "link": "#"
     }
 ]

@@ -1,10 +1,26 @@
 [
     {
     "id": "1",
-    "titulo": "Jenny mod xd",
-    "icono": "img/icono-pequeño.png",
-    "imagenDestacada": "https://i.postimg.cc/hPvS3rDL/image.png", 
+    "titulo": "mod xd",
+    "icono": "#",
+    "imagenDestacada": "#", 
     "info": "Descripción aquí...",
     "link": "#"
+    },
+    {
+    "id": "2",
+    "titulo": "mod xd",
+    "icono": "#",
+    "imagenDestacada": "#", 
+    "info": "Descripción aquí...",    
+    "link": "#" 
+    },
+    {
+    "id": "3",
+    "titulo": "mod xd",
+    "icono": "#",                
+    "imagenDestacada": "#", 
+    "info": "Descripción aquí...",                    
+    "link": "#"                                    
     }
 ]

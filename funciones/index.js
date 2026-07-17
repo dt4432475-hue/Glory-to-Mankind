@@ -8,17 +8,18 @@ async function cargarSeccion(archivo, idContenedor) {
 
         contenedor.innerHTML = '';
 
-        // ... dentro de tu función cargarSeccion
-datos.forEach(item => {
+        datos.forEach(item => {
+           // ... dentro de tu bucle forEach en index.js
     contenedor.innerHTML += `
     <div class="card">
         <img src="${item.icono}" alt="${item.titulo}" class="card-icon">
         <h3>${item.titulo}</h3>
-        <p>${item.descripcion}</p>
-        <a href="detalles.html?id=${item.id}" class="btn">Ver detalles</a>
+        <!-- Usamos || para decir: si no hay descripción, muestra este texto -->
+        <p>${item.descripcion || "Sin descripción disponible"}</p>
+        <a href="detalles.html?id=${item.id}&tipo=${archivo}" class="btn">Ver detalles</a>
     </div>
 `;
-});
+        });
     } catch (error) {
         console.warn(`No se pudo cargar la sección: ${archivo}`);
     }

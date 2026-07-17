@@ -1,10 +1,10 @@
 [
     {
-    "id": "mod-muebles",
-    "titulo": "Mod de Muebles",
-    "descripcion": "orando tu casa al máximo.",
-    "info": "...",
-    "link": "#",
-    "icono": "https://i.postimg.cc/hPvS3rDL/image.png"
+    "id": "1",
+    "titulo": "Jenny mod xd",
+    "icono": "img/icono-pequeño.png",
+    "imagenDestacada": "https://i.postimg.cc/hPvS3rDL/image.png", 
+    "info": "Descripción aquí...",
+    "link": "#"
     }
 ]

@@ -45,12 +45,14 @@ h2 {
 
 .grid {
     display: grid;
-    /* Cambiamos 350px a 200px para que las tarjetas sean más pequeñas y quepan 4 */
-    /* Usamos 'auto-fit' para que se adapten y '1fr' para que aprovechen el espacio */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    /* Cambiamos 'minmax(200px, 1fr)' por un valor fijo (ej. 250px) */
+    /* Al no usar '1fr', las tarjetas ya no se estirarán para ocupar espacio extra */
+    grid-template-columns: repeat(auto-fit, 250px); 
     
-    justify-content: start; 
-    gap: 15px; /* Reducimos el gap para ganar espacio horizontal */
+    /* Esto centra las tarjetas en la fila si no completan el ancho total */
+    justify-content: center; 
+    
+    gap: 20px;
     width: 100%;
     margin-bottom: 40px;
 }
@@ -104,24 +106,102 @@ h2 {
     background: #45a049;
 }
 
-.img-detalle {
-    max-width: 600px; /* Limita el ancho máximo de la imagen */
-    width: 100%;      /* Hace que la imagen sea responsiva (se ajusta en móviles) */
-    height: auto;     /* Mantiene la proporción para que no se vea estirada */
-    border-radius: 12px; /* Opcional: le da esquinas redondeadas bonitas */
-    display: block;   /* Ayuda a centrarla mejor */
-    margin: 20px 0;   /* Separa la imagen del texto */
-}
-
 .container-detalle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px; /* Esto crea el espacio entre TODOS los elementos */
+    /* Quitamos el negro sólido y ponemos algo más suave */
+    background: rgba(255, 255, 255, 0.05); 
+    /* Efecto cristal (glassmorphism) */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    border-radius: 20px;
     padding: 40px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Espacio extra específico si lo necesitas */
-h1 { margin-bottom: 10px; }
-.img-detalle { margin: 15px 0; }
-#btn-descarga { margin-top: 15px; }
+/* 2. Estilo para la imagen que ya tienes como .img-detalle */
+.img-detalle {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 20px auto 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.img-detalle:hover {
+    transform: scale(1.02);
+}
+
+/* 3. Estilo para el botón con el ID que ya tienes #btn-descarga */
+#btn-descarga {
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    border: none;
+    cursor: pointer;
+    display: block;          /* Obliga al botón a comportarse como un bloque */
+    margin: 0 auto;
+}
+
+#btn-descarga:hover {
+    background: linear-gradient(45deg, #57bb5c, #a5d6a7);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.6);
+}
+
+/* 4. Mejora la descripción */
+#descripcion {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    text-align: justify;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#titulo {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.logo-gif {
+    /* Subimos el mínimo a 450px para que destaque mucho más en móviles */
+    /* Subimos el flexible a 80vw para que aproveche casi todo el ancho */
+    width: clamp(450px, 80vw, 900px); 
+    
+    height: auto;      
+    display: block;
+    margin: 30px auto 50px auto;
+}
+
+/* 1. Textos ahora en color blanco */
+#modal-gracias h2, #modal-gracias p {
+    color: #ffffff; /* Blanco puro */
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* 2. Ajuste en el brillo para que resalte más sobre el blanco */
+#modal-gracias h2 {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: brillo-blanco 2s infinite alternate;
+}
+
+@keyframes brillo-blanco {
+    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+    /* El brillo ahora mantendrá el aura blanca más pura */
+    to { text-shadow: 0 0 20px #fff, 0 0 30px #ffffff; }
+}

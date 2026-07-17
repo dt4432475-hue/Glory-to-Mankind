@@ -58,6 +58,22 @@ h2 {
     transition: transform 0.3s ease;
 }
 
+.card-icon {
+    width: 64px;            /* Tamaño del icono (puedes probar 48px o 80px) */
+    height: auto;           /* Mantiene la proporción */
+    margin-bottom: 10px;    /* Separa el icono del título */
+    display: block;         /* Ayuda a centrarlo */
+    margin-left: auto;      /* Centra horizontalmente */
+    margin-right: auto;     /* Centra horizontalmente */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); /* Sombra sutil para que resalte */
+}
+
+/* Ajuste para que el título no se vea tan pegado */
+.card h3 {
+    margin-top: 0;
+    text-align: center; /* Asegura que el título esté centrado debajo del icono */
+}
+
 .card:hover {
     transform: translateY(-5px);
     background: rgba(60, 60, 60, 0.9);
@@ -77,5 +93,19 @@ h2 {
 }
 
 .btn:hover {
+    background: #45a049;
+}
+
+.btn-volver {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.btn-volver:hover {
     background: #45a049;
 }

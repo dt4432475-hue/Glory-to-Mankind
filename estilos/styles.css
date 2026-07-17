@@ -8,7 +8,7 @@ body {
     
     /* Fondo con degradado oscuro encima de la imagen */
     /* Asegúrate de tener tu imagen en la carpeta correcta */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('tu-imagen.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://i.postimg.cc/8zkMJLwR/hey-i-just-realised-that-minecraft-dropped-wallpapers-for-v0-af632nce2dud1.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

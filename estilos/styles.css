@@ -89,6 +89,8 @@ h2 {
     background: rgba(60, 60, 60, 0.9);
 }
 
+
+
 /* --- Botones --- */
 .btn { 
     background: #4caf50; 
@@ -97,13 +99,17 @@ h2 {
     text-align: center; 
     text-decoration: none; 
     border-radius: 6px; 
-    margin-top: 15px;
+    margin-top: auto;
     font-weight: bold;
     transition: background 0.3s;
 }
 
 .btn:hover {
     background: #45a049;
+}
+
+.card p {
+    margin-bottom: 25px; /* Esto separa el texto del botón */
 }
 
 .container-detalle {
@@ -168,6 +174,7 @@ h2 {
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 #titulo {
@@ -186,22 +193,43 @@ h2 {
     margin: 30px auto 50px auto;
 }
 
-/* 1. Textos ahora en color blanco */
-#modal-gracias h2, #modal-gracias p {
-    color: #ffffff; /* Blanco puro */
-    border-left: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-/* 2. Ajuste en el brillo para que resalte más sobre el blanco */
+/* Aumentamos el tamaño de los textos en el modal */
 #modal-gracias h2 {
+    font-size: 2.2rem; /* Título más grande */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     animation: brillo-blanco 2s infinite alternate;
 }
 
-@keyframes brillo-blanco {
-    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
-    /* El brillo ahora mantendrá el aura blanca más pura */
-    to { text-shadow: 0 0 20px #fff, 0 0 30px #ffffff; }
+#modal-gracias p {
+    font-size: 1.3rem; /* Párrafo más legible */
+    margin-top: 15px;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(10px);
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-gif {
+    /* Antes estaba en 100px, lo subimos a 150px o 180px según prefieras */
+    width: 180px; 
+    height: auto;
+    border-radius: 10px;
+}
+
+footer p {
+    color: white;
+    font-size: 1rem;
+    font-family: sans-serif;
 }

@@ -1,10 +1,29 @@
 [
     {
     "id": "1",
-    "titulo": "Action& Stuff",
-    "icono": "img/icono-pequeño.png",
-    "imagenDestacada": "img/foto-grande-del-juego.png", 
-    "info": "Descripción aquí...",
-    "link": "#"
+    "titulo": "Actions & stuff-1-0-2-1",
+    "icono": "/img/addons/action.png",
+    "descripcion": "Mejora tu experiencia en Minecraft Bedrock con nuevas animaciones fluidas y modelos detallados.",
+    "imagenDestacada": "https://i.postimg.cc/VLQ7f2FN/image.png",
+    "info": "Este un addon exclusivo para Minecraft Bedrock 1.21+ que transforma la estética del juego mediante animaciones fluidas y modelos detallados, proporcionando una experiencia visual más realista y dinámica. Este paquete es ideal para jugadores que buscan mejorar sus interacciones y el entorno general, siendo una adición esencial para quienes disfrutan de un Minecraft modernizado.",
+    "link": "https://archive.org/compress/actionsstuff-1-0-2-1_en"
+    },
+    {
+    "id": "2",
+    "titulo": "Tree Capitator",
+    "icono": "/img/addons/trecapitor.png",
+    "descripcion": "Es la herramienta perfecta para ahorrar tiempo en la recolección de madera, optimizando tu jugabilidad.",
+    "imagenDestacada": "https://i.postimg.cc/VLQ7f2FN/image.png",
+    "info": "Este addon es un esencial para Minecraft Bedrock 1.21+ que automatiza la tala de árboles al permitir que, al romper el bloque de la base del tronco, el árbol entero se destruya de forma realista y rápida. Es la herramienta perfecta para ahorrar tiempo en la recolección de madera, optimizando tu jugabilidad y permitiendo una gestión de recursos mucho más eficiente en tus mundos de supervivencia.",
+    "link": "https://archive.org/compress/tree-capitator"
+    },
+    {
+    "id": "3",
+    "titulo": "Cheapest-Trades",
+    "icono": "/img/addons/Cheapest.png",
+    "descripcion": "Optimiza la economía de tus aldeanos al ajustar los precios de intercambio al nivel más bajo posible.",
+    "imagenDestacada": "https://i.postimg.cc/VLQ7f2FN/image.png",
+    "info": "Este addon para Minecraft Bedrock 1.21+ optimiza la economía de tus aldeanos al ajustar los precios de intercambio al nivel más bajo posible. Es la solución ideal para quienes buscan maximizar sus recursos y obtener objetos valiosos de forma mucho más accesible y eficiente durante sus partidas de supervivencia.",
+    "link": "https://archive.org/download/minecraft-1-26-33/minecraft-1-26-33.apk"
     }
 ]

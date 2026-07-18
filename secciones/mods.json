@@ -6,21 +6,5 @@
     "imagenDestacada": "#", 
     "info": "Descripción aquí...",
     "link": "#"
-    },
-    {
-    "id": "2",
-    "titulo": "mod xd",
-    "icono": "#",
-    "imagenDestacada": "#", 
-    "info": "Descripción aquí...",    
-    "link": "#" 
-    },
-    {
-    "id": "3",
-    "titulo": "mod xd",
-    "icono": "#",                
-    "imagenDestacada": "#", 
-    "info": "Descripción aquí...",                    
-    "link": "#"                                    
     }
 ]

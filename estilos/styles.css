@@ -8,7 +8,7 @@ body {
     
     /* Fondo con degradado oscuro encima de la imagen */
     /* Asegúrate de tener tu imagen en la carpeta correcta */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('/img/fnd.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('/img/index/fnd.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -1,29 +1,29 @@
 [
     {
     "id": "1",
-    "titulo": "Actions & stuff-1-0-2-1",
+    "titulo": "Actions & stuff 1.0.2",
     "icono": "/img/addons/action.webp",
-    "descripcion": "Mejora tu experiencia en Minecraft Bedrock con nuevas animaciones fluidas y modelos detallados.",
+    "descripcion": "Compatible para las versiones 1.20 hasta las versiones 1.21.x ",
     "imagenDestacada": "https://i.postimg.cc/VLQ7f2FN/image.png",
-    "info": "Este un addon exclusivo para Minecraft Bedrock 1.21+ que transforma la estética del juego mediante animaciones fluidas y modelos detallados, proporcionando una experiencia visual más realista y dinámica. Este paquete es ideal para jugadores que buscan mejorar sus interacciones y el entorno general, siendo una adición esencial para quienes disfrutan de un Minecraft modernizado.",
-    "link": "https://archive.org/compress/actionsstuff-1-0-2-1_en"
+    "info": "Es un paquete que cambia por completo el aspecto visual del juego. Su objetivo es que tu personaje y los monstruos dejen de ser rígidos y se muevan de forma mucho más realista y fluida.",
+    "link": "https://archive.org/download/actionsstuff-1-0-2-1_en/actionsstuff-1-0-2-1_en.mcpack"
     },
     {
     "id": "2",
     "titulo": "Tree Capitator",
     "icono": "/img/addons/trecapitor.webp",
-    "descripcion": "Es la herramienta perfecta para ahorrar tiempo en la recolección de madera, optimizando tu jugabilidad.",
-    "imagenDestacada": "https://i.postimg.cc/VLQ7f2FN/image.png",
-    "info": "Este addon es un esencial para Minecraft Bedrock 1.21+ que automatiza la tala de árboles al permitir que, al romper el bloque de la base del tronco, el árbol entero se destruya de forma realista y rápida. Es la herramienta perfecta para ahorrar tiempo en la recolección de madera, optimizando tu jugabilidad y permitiendo una gestión de recursos mucho más eficiente en tus mundos de supervivencia.",
-    "link": "https://archive.org/compress/tree-capitator"
+    "descripcion": "Compatible paras las versiones 1.20.30+ hasta las versiones más recientes de la 1.21+",
+    "imagenDestacada": "#",
+    "info": "Este complemento elimina el trabajo aburrido y repetitivo de talar madera, ahorrándote muchísimo tiempo desde el primer día de juego.",
+    "link": "https://archive.org/download/tree-capitator/Tree%20Capitator.mcpack"
     },
     {
     "id": "3",
     "titulo": "Cheapest-Trades",
-    "icono": "/img/addons/Cheapest.webp",
-    "descripcion": "Optimiza la economía de tus aldeanos al ajustar los precios de intercambio al nivel más bajo posible.",
-    "imagenDestacada": "https://i.postimg.cc/VLQ7f2FN/image.png",
-    "info": "Este addon para Minecraft Bedrock 1.21+ optimiza la economía de tus aldeanos al ajustar los precios de intercambio al nivel más bajo posible. Es la solución ideal para quienes buscan maximizar sus recursos y obtener objetos valiosos de forma mucho más accesible y eficiente durante sus partidas de supervivencia.",
-    "link": "https://archive.org/download/minecraft-1-26-33/minecraft-1-26-33.apk"
+    "icono": "/img/addons/cheapest.webp",
+    "descripcion": " Está diseñado y testeado para funcionar plenamente en Minecraft Bedrock 1.21.x",
+    "imagenDestacada": "#",
+    "info": "Este add-on está diseñado para romper las mecánicas de economía del juego y darte acceso fácil a los mejores ítems sin tener que farmear miles de recursos.",
+    "link": "https://archive.org/download/cheapest-trades-addon-mcpe-1.21/Cheapest-Trades-Addon-MCPE-1.21.mcpack"
     }
 ]

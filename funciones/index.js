@@ -27,6 +27,5 @@ async function cargarSeccion(archivo, idContenedor) {
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarSeccion('apks.json', 'container-apks');
-    cargarSeccion('mods.json', 'container-mods');
-    cargarSeccion('addons.json', 'container-addons');
+    cargarSeccion('mods-addons.json', 'container-mods');;
 });

@@ -7,5 +7,14 @@
     "imagenDestacada": "/img/apk/1.26.33.webp",
     "info": "Versión ultra optimizada y estable que incluye las últimas mecánicas de juego, biomas avanzados y un rendimiento superior en todos los dispositivos. Su motor renovado ofrece la máxima compatibilidad con add-ons modernos, garantizando partidas fluidas y libres de errores al personalizar tu mundo.",
     "link": "https://archive.org/download/minecraft-1-26-33/minecraft-1-26-33.apk"
+    },
+    {
+    "id": "2",
+    "titulo": "Minecraft v1.26.23",
+    "icono": "/img/apk/icondeapp.webp",
+    "descripcion": "Ultima version de minecraft disponibe para android",
+    "imagenDestacada": "#",
+    "info": "Versión ultra optimizada y estable que incluye las últimas mecánicas de juego, biomas avanzados y un rendimiento superior en todos los dispositivos. Su motor renovado ofrece la máxima compatibilidad con add-ons modernos, garantizando partidas fluidas y libres de errores al personalizar tu mundo.",
+    "link": "#"
     }
 ]

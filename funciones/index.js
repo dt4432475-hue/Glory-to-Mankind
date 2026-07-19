@@ -16,7 +16,7 @@ async function cargarSeccion(archivo, idContenedor) {
         <h3>${item.titulo}</h3>
         <!-- Usamos || para decir: si no hay descripción, muestra este texto -->
         <p>${item.descripcion || "Sin descripción disponible"}</p>
-        <a href="detalles.html?id=${item.id}&tipo=${archivo}" class="btn">Ver detalles</a>
+        <a href="detalles.html?id=${item.id}&tipo=${archivo}" class="btn">Haz click aquí</a>
     </div>
 `;
         });
